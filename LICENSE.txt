@@ -1,2 +1,11 @@
-Copyright (c) 2026 
-All rights reserved.
+# License
+These licenses apply to all mods within the general workspace.
+
+## Code
+The source code of this Minecraft mod is licensed under the GNU Lesser General Public License v3.0 (LGPLv3).
+
+## Assets
+All assets (including textures, models, animations, and sound effects) are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0).
+
+## Modpack & Add-on Permissions
+You are explicitly permitted to include this mod in any modpack or add-on mods, provided that proper attribution to the original mod is provided. Outright cloning or 1:1 re-uploading of the assets/code without transformative changes is strictly prohibited.
