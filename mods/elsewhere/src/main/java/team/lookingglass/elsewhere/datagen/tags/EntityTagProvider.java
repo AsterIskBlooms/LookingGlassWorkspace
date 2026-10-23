@@ -36,6 +36,10 @@ public class EntityTagProvider extends FabricTagsProvider.EntityTypeTagsProvider
                 .add(EEntities.WEREWOLF_KEY)
         ;
 
+        builder(EntityTypeTags.NOT_AFFECTED_BY_GEYSERS)
+                .add(EEntities.MUD_GOLEM_KEY)
+        ;
+
         builder(EntityTypeTags.AQUATIC).add(EEntities.PERCH_KEY);
         builder(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH).add(EEntities.PERCH_KEY);
         builder(EntityTypeTags.CAN_BREATHE_UNDER_WATER).add(EEntities.PERCH_KEY);
