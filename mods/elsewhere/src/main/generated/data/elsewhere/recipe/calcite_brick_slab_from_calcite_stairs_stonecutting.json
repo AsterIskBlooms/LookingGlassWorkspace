@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:calcite_stairs",
+  "result": {
+    "count": 2,
+    "id": "elsewhere:calcite_brick_slab"
+  }
+}

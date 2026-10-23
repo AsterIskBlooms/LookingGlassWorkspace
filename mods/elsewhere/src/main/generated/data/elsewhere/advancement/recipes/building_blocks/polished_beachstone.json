@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_beachstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:beachstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:polished_beachstone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_beachstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:polished_beachstone"
+    ]
+  }
+}

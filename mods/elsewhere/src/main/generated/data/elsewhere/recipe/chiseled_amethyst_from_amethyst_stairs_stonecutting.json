@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:amethyst_stairs",
+  "result": {
+    "id": "elsewhere:chiseled_amethyst"
+  }
+}

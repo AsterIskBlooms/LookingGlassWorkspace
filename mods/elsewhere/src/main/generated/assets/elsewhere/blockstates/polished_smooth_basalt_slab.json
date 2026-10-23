@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/polished_smooth_basalt_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/polished_smooth_basalt"
+    },
+    "type=top": {
+      "model": "elsewhere:block/polished_smooth_basalt_slab_top"
+    }
+  }
+}

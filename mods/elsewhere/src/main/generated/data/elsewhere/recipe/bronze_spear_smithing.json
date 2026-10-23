@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "elsewhere:bronze_alloy",
+  "base": "minecraft:iron_spear",
+  "result": {
+    "id": "elsewhere:bronze_spear"
+  },
+  "template": "elsewhere:bronze_upgrade_smithing_template"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "elsewhere:stripped_mahogany_log",
+    "C": "minecraft:iron_chain"
+  },
+  "pattern": [
+    "C C",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "elsewhere:mahogany_hanging_sign"
+  }
+}

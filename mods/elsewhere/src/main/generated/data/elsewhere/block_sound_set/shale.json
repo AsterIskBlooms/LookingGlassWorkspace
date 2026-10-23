@@ -1,0 +1,7 @@
+{
+  "break_sound": "elsewhere:block.shale.break",
+  "fall_sound": "elsewhere:block.shale.fall",
+  "hit_sound": "elsewhere:block.shale.hit",
+  "place_sound": "elsewhere:block.shale.place",
+  "step_sound": "elsewhere:block.shale.step"
+}

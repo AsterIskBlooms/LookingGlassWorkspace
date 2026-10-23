@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/cut_pink_sandstone_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/cut_pink_sandstone"
+    },
+    "type=top": {
+      "model": "elsewhere:block/cut_pink_sandstone_slab_top"
+    }
+  }
+}

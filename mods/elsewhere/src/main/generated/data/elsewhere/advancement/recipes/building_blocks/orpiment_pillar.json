@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_orpiment": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_orpiment"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:orpiment_pillar"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_orpiment"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:orpiment_pillar"
+    ]
+  }
+}

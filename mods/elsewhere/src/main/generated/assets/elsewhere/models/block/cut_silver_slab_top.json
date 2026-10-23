@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "elsewhere:block/cut_silver",
+    "side": "elsewhere:block/cut_silver",
+    "top": "elsewhere:block/cut_silver"
+  }
+}

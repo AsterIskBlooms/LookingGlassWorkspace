@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_diorite_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_diorite_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:diorite_stairs_from_polished_diorite_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_diorite_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:diorite_stairs_from_polished_diorite_wall_stonecutting"
+    ]
+  }
+}

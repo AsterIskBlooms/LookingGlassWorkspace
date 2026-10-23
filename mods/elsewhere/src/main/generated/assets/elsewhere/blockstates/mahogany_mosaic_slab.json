@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/mahogany_mosaic_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/mahogany_mosaic"
+    },
+    "type=top": {
+      "model": "elsewhere:block/mahogany_mosaic_slab_top"
+    }
+  }
+}

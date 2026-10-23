@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:orpiment_pillar",
+  "result": {
+    "id": "elsewhere:polished_orpiment_stairs"
+  }
+}

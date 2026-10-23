@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "minecraft:moss_carpet",
+        "weight": 18
+      },
+      {
+        "data": "elsewhere:short_moss_sporophyte",
+        "weight": 40
+      },
+      {
+        "data": "elsewhere:tall_moss_sporophyte",
+        "weight": 10
+      }
+    ]
+  }
+}

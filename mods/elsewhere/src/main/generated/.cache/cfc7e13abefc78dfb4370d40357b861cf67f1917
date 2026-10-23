@@ -1,0 +1,11 @@
+// 26.4-snapshot-5	-999999999-01-01T00:00:00	Elsewhere/Entity Loot Tables
+34ef9d37d88318173653f1be2ac0a496242f0cba data/elsewhere/loot_table/entities/gravekeeper.json
+324c14d4709f05daef71e08d6431d61f168967ef data/elsewhere/loot_table/entities/lost_soul.json
+088e7fdce15122c221b55be4aa894a5c8168c424 data/elsewhere/loot_table/entities/mud_golem.json
+ae0e5e6ebddbbfb93c3ead1759b1614db6416a98 data/elsewhere/loot_table/entities/perch.json
+80dad8f0ba155cb8ae455191663e29b3b6967a44 data/elsewhere/loot_table/entities/subslime.json
+79fac1a22583380d2997e43b0b051fcdbbeb3222 data/elsewhere/loot_table/entities/sweeper.json
+22d5d03ff714e71d34d96714e594d013948466f9 data/elsewhere/loot_table/entities/troll.json
+3285f0955ace1904a1173ef7a18e5331d7cf90cb data/elsewhere/loot_table/entities/vanguard.json
+6ff0f40eabd2a7a1f4598111c150d68083765a61 data/elsewhere/loot_table/entities/whistler.json
+8314695722dac085d756ad5945b8e77b2fbfe06f data/minecraft/loot_table/entities/piglin_brute.json

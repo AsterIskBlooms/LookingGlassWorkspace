@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:bluebonnet"
+  ],
+  "result": {
+    "id": "minecraft:blue_dye"
+  }
+}

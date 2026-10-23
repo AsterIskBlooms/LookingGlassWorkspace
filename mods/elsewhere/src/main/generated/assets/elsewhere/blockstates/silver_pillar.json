@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "elsewhere:block/silver_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "elsewhere:block/silver_pillar"
+    },
+    "axis=z": {
+      "model": "elsewhere:block/silver_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

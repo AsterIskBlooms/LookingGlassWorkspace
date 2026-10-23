@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget",
+    "elsewhere:diamond_nugget"
+  ],
+  "result": {
+    "id": "minecraft:diamond"
+  }
+}

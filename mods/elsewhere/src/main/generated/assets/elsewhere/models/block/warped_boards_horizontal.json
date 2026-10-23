@@ -1,0 +1,6 @@
+{
+  "parent": "mirrorlib:block/cube_directional_horizontal",
+  "textures": {
+    "all": "elsewhere:block/warped_boards"
+  }
+}

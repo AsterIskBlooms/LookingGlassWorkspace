@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "elsewhere:soulsteel_alloy",
+  "base": "minecraft:iron_sword",
+  "result": {
+    "id": "elsewhere:soulsteel_sword"
+  },
+  "template": "elsewhere:soulsteel_upgrade_smithing_template"
+}

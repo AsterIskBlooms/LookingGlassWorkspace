@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "package": "team.lookingglass.mirrorlib.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "NoiseGeneratorSettingsAccessor",
+    "OverworldBiomeGenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "ClientItemInfoLoaderMixin"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:polished_prismarine_slab",
+  "result": {
+    "id": "minecraft:prismarine_slab"
+  }
+}

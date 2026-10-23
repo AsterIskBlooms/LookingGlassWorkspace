@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_silver": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_silver"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:cut_silver"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_silver"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:cut_silver"
+    ]
+  }
+}

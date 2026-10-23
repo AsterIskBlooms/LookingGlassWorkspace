@@ -1,0 +1,29 @@
+{
+  "type": "elsewhere:crag",
+  "allow_underwater": false,
+  "body_state": {
+    "id": "minecraft:stone"
+  },
+  "edge_width": 0.28,
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 11,
+    "min_inclusive": 5
+  },
+  "max_ground_variation": 1,
+  "middle_depth": 1,
+  "middle_state": {
+    "id": "minecraft:dirt"
+  },
+  "radius": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 14,
+    "min_inclusive": 11
+  },
+  "top_state": {
+    "id": "minecraft:grass_block",
+    "properties": {
+      "snowy": "false"
+    }
+  }
+}

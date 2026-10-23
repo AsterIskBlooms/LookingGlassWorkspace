@@ -1,0 +1,8 @@
+{
+  "break_sound": "elsewhere:block.cactus.break",
+  "fall_sound": "elsewhere:block.cactus.fall",
+  "hit_sound": "elsewhere:block.cactus.hit",
+  "place_sound": "elsewhere:block.cactus.place",
+  "step_sound": "elsewhere:block.cactus.step",
+  "volume": 0.2
+}

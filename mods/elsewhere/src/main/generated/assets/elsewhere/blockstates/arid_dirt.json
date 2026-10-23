@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "elsewhere:block/arid_dirt"
+      },
+      {
+        "model": "elsewhere:block/arid_dirt",
+        "y": 90
+      },
+      {
+        "model": "elsewhere:block/arid_dirt",
+        "y": 180
+      },
+      {
+        "model": "elsewhere:block/arid_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

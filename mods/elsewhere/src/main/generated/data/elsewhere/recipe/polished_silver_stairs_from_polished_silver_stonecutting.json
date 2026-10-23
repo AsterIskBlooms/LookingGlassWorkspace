@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:polished_silver",
+  "result": {
+    "id": "elsewhere:polished_silver_stairs"
+  }
+}

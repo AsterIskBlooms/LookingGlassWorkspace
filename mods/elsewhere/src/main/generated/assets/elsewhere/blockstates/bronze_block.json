@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "elsewhere:block/bronze_block"
+    }
+  }
+}

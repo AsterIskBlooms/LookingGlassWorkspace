@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "elsewhere:block/soulglass_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "elsewhere:block/soulglass_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "elsewhere:block/soulglass_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "elsewhere:block/soulglass_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "elsewhere:block/soulglass_cluster"
+    },
+    "facing=west": {
+      "model": "elsewhere:block/soulglass_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

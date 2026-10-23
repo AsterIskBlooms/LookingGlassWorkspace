@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "elsewhere",
+	"version": "${version}",
+	"name": "Elsewhere",
+	"description": "A new world... In another place.",
+	"authors": [
+		"Team LookingGlass"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/elsewhere/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"team.lookingglass.elsewhere.Elsewhere"
+		],
+		"fabric-datagen": [
+			"team.lookingglass.elsewhere.ElsewhereDataGenerator"
+		],
+		"client": [
+			"team.lookingglass.elsewhere.ElsewhereClient"
+		]
+	},
+	"mixins": [
+		"elsewhere.mixins.json"
+	],
+	"accessWidener": "elsewhere.accesswidener",
+	"depends": {
+		"fabricloader": ">=0.20.0",
+		"minecraft": "~26.4-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

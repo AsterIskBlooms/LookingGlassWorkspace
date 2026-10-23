@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:end_stone_wall",
+  "result": {
+    "id": "minecraft:end_stone_brick_stairs"
+  }
+}

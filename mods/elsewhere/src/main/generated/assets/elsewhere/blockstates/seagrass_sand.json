@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "elsewhere:block/seagrass_sand"
+      },
+      {
+        "model": "elsewhere:block/seagrass_sand",
+        "y": 90
+      },
+      {
+        "model": "elsewhere:block/seagrass_sand",
+        "y": 180
+      },
+      {
+        "model": "elsewhere:block/seagrass_sand",
+        "y": 270
+      }
+    ]
+  }
+}

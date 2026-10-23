@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/brown_terracotta_slab"
+    },
+    "type=double": {
+      "model": "minecraft:block/brown_terracotta"
+    },
+    "type=top": {
+      "model": "elsewhere:block/brown_terracotta_slab_top"
+    }
+  }
+}

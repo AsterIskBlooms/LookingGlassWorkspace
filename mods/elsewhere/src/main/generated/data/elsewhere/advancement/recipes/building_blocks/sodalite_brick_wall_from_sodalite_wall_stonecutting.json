@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sodalite_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:sodalite_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:sodalite_brick_wall_from_sodalite_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sodalite_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:sodalite_brick_wall_from_sodalite_wall_stonecutting"
+    ]
+  }
+}

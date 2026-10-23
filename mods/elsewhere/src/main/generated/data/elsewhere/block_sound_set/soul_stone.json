@@ -1,0 +1,7 @@
+{
+  "break_sound": "elsewhere:block.soul_stone.break",
+  "fall_sound": "elsewhere:block.soul_stone.fall",
+  "hit_sound": "elsewhere:block.soul_stone.hit",
+  "place_sound": "elsewhere:block.soul_stone.place",
+  "step_sound": "elsewhere:block.soul_stone.step"
+}

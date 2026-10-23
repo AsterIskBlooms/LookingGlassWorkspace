@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "elsewhere:block/birch_mosaic",
+    "side": "elsewhere:block/birch_mosaic",
+    "top": "elsewhere:block/birch_mosaic"
+  }
+}

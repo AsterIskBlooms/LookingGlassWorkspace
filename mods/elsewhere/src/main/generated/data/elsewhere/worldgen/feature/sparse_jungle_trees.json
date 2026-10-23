@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_selector",
+  "default": "minecraft:jungle_tree",
+  "features": [
+    {
+      "chance": 0.1,
+      "feature": {
+        "feature": "elsewhere:mahogany_tree",
+        "placement": []
+      }
+    },
+    {
+      "chance": 0.5,
+      "feature": {
+        "feature": "elsewhere:jungle_shrub",
+        "placement": []
+      }
+    },
+    {
+      "chance": 0.0125,
+      "feature": "minecraft:fallen_jungle_tree"
+    }
+  ]
+}

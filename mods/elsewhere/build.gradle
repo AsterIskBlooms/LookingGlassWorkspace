@@ -1,0 +1,19 @@
+plugins {
+    id 'net.fabricmc.fabric-loom'
+}
+
+apply from: rootProject.file('common.gradle')
+
+dependencies {
+    implementation project(':mirrorlib')
+    runtimeOnly project(':lavaswim')
+}
+fabricApi {
+    configureDataGeneration {
+        client = true
+    }
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/elsewhere.accesswidener")
+}

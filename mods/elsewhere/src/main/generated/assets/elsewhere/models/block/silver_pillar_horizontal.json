@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "elsewhere:block/silver_pillar_top",
+    "side": "elsewhere:block/silver_pillar_side"
+  }
+}

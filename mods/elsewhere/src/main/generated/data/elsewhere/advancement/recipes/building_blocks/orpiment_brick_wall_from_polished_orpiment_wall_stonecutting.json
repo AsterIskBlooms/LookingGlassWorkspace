@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_orpiment_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_orpiment_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:orpiment_brick_wall_from_polished_orpiment_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_orpiment_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:orpiment_brick_wall_from_polished_orpiment_wall_stonecutting"
+    ]
+  }
+}

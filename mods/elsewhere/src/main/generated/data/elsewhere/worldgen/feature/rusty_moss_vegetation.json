@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "elsewhere:rusty_moss_carpet",
+        "weight": 25
+      },
+      {
+        "data": "elsewhere:short_rusty_moss_sporophyte",
+        "weight": 50
+      },
+      {
+        "data": "elsewhere:tall_rusty_moss_sporophyte",
+        "weight": 10
+      },
+      {
+        "data": "minecraft:red_shrub",
+        "weight": 10
+      }
+    ]
+  }
+}

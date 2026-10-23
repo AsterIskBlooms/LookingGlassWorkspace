@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot",
+    "elsewhere:silver_ingot"
+  ],
+  "result": {
+    "id": "elsewhere:silver_block"
+  }
+}

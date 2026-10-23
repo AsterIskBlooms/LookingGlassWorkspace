@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:yellow_hibiscus"
+  ],
+  "result": {
+    "id": "minecraft:yellow_dye"
+  }
+}

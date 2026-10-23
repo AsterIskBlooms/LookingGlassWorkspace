@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:netherrack_stairs",
+  "result": {
+    "id": "elsewhere:polished_netherrack_wall"
+  }
+}

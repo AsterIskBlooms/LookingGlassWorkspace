@@ -1,0 +1,23 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 6,
+  "base_radius": 4,
+  "count_variance": 5,
+  "max_scan_distance": 1,
+  "radius_variance": 2,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "id": "elsewhere:cattails",
+    "properties": {
+      "half": "lower",
+      "waterlogged": "false"
+    }
+  },
+  "valid_ground": {
+    "type": "minecraft:matching_block_tag",
+    "tag": "minecraft:supports_vegetation"
+  }
+}

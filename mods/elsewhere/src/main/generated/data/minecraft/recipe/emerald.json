@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget",
+    "elsewhere:emerald_nugget"
+  ],
+  "result": {
+    "id": "minecraft:emerald"
+  }
+}

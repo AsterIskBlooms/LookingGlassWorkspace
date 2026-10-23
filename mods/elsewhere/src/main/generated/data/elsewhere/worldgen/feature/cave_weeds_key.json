@@ -1,0 +1,18 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 2,
+  "base_radius": 3,
+  "count_variance": 2,
+  "max_scan_distance": 2,
+  "radius_variance": 2,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "id": "elsewhere:cave_weed"
+  },
+  "valid_ground": {
+    "type": "minecraft:solid"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:quartz",
+    "C": "minecraft:blackstone",
+    "T": "elsewhere:soulsteel_upgrade_smithing_template"
+  },
+  "pattern": [
+    "#T#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "elsewhere:soulsteel_upgrade_smithing_template"
+  }
+}

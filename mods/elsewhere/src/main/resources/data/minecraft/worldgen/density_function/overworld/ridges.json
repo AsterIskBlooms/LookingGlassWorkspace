@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:range_choice",
+  "input": "minecraft:overworld/continents",
+  "min_inclusive": -0.19,
+  "max_exclusive": 1000000.0,
+  "when_out_of_range": "elsewhere:vanilla_ridges",
+  "when_in_range": {
+    "type": "minecraft:range_choice",
+    "input": "elsewhere:temperature",
+    "min_inclusive": 0.55,
+    "max_exclusive": 1000000.0,
+    "when_out_of_range": "elsewhere:vanilla_ridges",
+    "when_in_range": "elsewhere:riverless_ridges"
+  }
+}

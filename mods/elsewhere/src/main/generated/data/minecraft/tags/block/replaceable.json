@@ -1,0 +1,28 @@
+{
+  "values": [
+    "minecraft:wildflowers",
+    "minecraft:pink_petals",
+    "elsewhere:pebble",
+    "elsewhere:tall_red_grass",
+    "elsewhere:bluebonnet",
+    "elsewhere:red_hibiscus",
+    "elsewhere:orange_hibiscus",
+    "elsewhere:yellow_hibiscus",
+    "elsewhere:blue_hibiscus",
+    "elsewhere:purple_hibiscus",
+    "elsewhere:pink_hibiscus",
+    "elsewhere:white_hibiscus",
+    "elsewhere:magenta_coneflower",
+    "elsewhere:yellow_coneflower",
+    "elsewhere:ironweed",
+    "elsewhere:cattails",
+    "elsewhere:cave_weed",
+    "elsewhere:gleamshroom",
+    "elsewhere:short_moss_sporophyte",
+    "elsewhere:tall_moss_sporophyte",
+    "elsewhere:short_rusty_moss_sporophyte",
+    "elsewhere:tall_rusty_moss_sporophyte",
+    "elsewhere:short_pale_moss_sporophyte",
+    "elsewhere:tall_pale_moss_sporophyte"
+  ]
+}

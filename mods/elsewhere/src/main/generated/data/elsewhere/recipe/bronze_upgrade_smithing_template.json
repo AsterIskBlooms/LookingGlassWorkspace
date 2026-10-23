@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:lapis_lazuli",
+    "C": "minecraft:stone",
+    "T": "elsewhere:bronze_upgrade_smithing_template"
+  },
+  "pattern": [
+    "#T#",
+    "#C#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "elsewhere:bronze_upgrade_smithing_template"
+  }
+}

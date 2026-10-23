@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_orange_hibiscus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:orange_hibiscus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:orange_hibiscus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_orange_hibiscus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:orange_hibiscus"
+    ]
+  }
+}

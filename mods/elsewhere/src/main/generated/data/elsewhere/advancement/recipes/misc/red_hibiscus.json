@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_hibiscus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:red_hibiscus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:red_hibiscus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_hibiscus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:red_hibiscus"
+    ]
+  }
+}

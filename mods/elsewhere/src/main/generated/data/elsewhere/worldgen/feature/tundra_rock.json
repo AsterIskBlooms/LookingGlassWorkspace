@@ -1,0 +1,12 @@
+{
+  "type": "elsewhere:large_blob",
+  "can_place_on": {
+    "type": "minecraft:solid"
+  },
+  "radius": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 4,
+    "min_inclusive": 3
+  },
+  "state": "minecraft:tuff"
+}

@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        maven {
+            name = 'Fabric'
+            url = 'https://maven.fabricmc.net/'
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
+
+rootProject.name = 'Workspace'
+
+include 'elsewhere', 'mirrorlib', 'lavaswim'
+project(':elsewhere').projectDir = file('mods/elsewhere')
+project(':mirrorlib').projectDir = file('mods/mirrorlib')
+project(':lavaswim').projectDir = file('mods/lavaswim')

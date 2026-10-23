@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:silver_pillar",
+  "result": {
+    "id": "elsewhere:cut_silver_stairs"
+  }
+}

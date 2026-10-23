@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block_column",
+  "allowed_placement": {
+    "type": "minecraft:matching_fluids",
+    "fluids": "minecraft:water"
+  },
+  "direction": "up",
+  "layers": [
+    {
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 22,
+        "min_inclusive": 13
+      },
+      "provider": {
+        "id": "minecraft:kelp_plant"
+      }
+    },
+    {
+      "height": 1,
+      "provider": {
+        "id": "minecraft:kelp",
+        "properties": {
+          "age": "25"
+        }
+      }
+    }
+  ],
+  "prioritize_tip": false
+}

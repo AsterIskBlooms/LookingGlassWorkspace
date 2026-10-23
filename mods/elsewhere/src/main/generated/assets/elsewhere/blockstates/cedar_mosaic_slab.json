@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/cedar_mosaic_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/cedar_mosaic"
+    },
+    "type=top": {
+      "model": "elsewhere:block/cedar_mosaic_slab_top"
+    }
+  }
+}

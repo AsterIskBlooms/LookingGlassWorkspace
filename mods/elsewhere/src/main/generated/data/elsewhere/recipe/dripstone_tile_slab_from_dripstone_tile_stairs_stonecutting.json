@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:dripstone_tile_stairs",
+  "result": {
+    "count": 2,
+    "id": "elsewhere:dripstone_tile_slab"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "elsewhere:block/ironweed_bottom"
+    },
+    "half=upper": {
+      "model": "elsewhere:block/ironweed_top"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "active=false": { "model": "elsewhere:block/basalt_vent_dormant" },
+    "active=true": { "model": "elsewhere:block/basalt_vent_active" }
+  }
+}

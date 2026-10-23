@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:shale_stairs",
+  "result": {
+    "id": "elsewhere:shale_pillar"
+  }
+}

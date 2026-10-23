@@ -1,0 +1,27 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "elsewhere:bronze"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "elsewhere:bronze"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "elsewhere:bronze"
+      }
+    ]
+  },
+  "trim_overrides": [
+    {
+      "palette": "elsewhere:trim/bronze_darker",
+      "when": {
+        "material": "elsewhere:bronze"
+      }
+    }
+  ]
+}

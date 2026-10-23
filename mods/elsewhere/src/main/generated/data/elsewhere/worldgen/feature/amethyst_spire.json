@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:speleothem",
+  "base_block": "minecraft:amethyst_block",
+  "pointed_block": "elsewhere:amethyst_spire",
+  "replaceable_blocks": "#elsewhere:amethyst_spire_replaceable"
+}

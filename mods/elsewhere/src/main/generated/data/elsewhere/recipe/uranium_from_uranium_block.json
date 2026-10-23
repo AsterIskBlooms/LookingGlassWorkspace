@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium",
+    "elsewhere:uranium"
+  ],
+  "result": {
+    "id": "elsewhere:uranium_block"
+  }
+}

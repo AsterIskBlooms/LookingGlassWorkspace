@@ -1,0 +1,27 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "elsewhere:soulsteel"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "elsewhere:soulsteel"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "elsewhere:soulsteel"
+      }
+    ]
+  },
+  "trim_overrides": [
+    {
+      "palette": "elsewhere:trim/soulsteel_darker",
+      "when": {
+        "material": "elsewhere:soulsteel"
+      }
+    }
+  ]
+}

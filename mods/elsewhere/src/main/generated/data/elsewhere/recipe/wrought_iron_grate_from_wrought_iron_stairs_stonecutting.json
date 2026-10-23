@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:wrought_iron_stairs",
+  "result": {
+    "id": "elsewhere:wrought_iron_grate"
+  }
+}

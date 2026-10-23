@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:smooth_basalt_stairs",
+  "result": {
+    "id": "minecraft:smooth_basalt"
+  }
+}

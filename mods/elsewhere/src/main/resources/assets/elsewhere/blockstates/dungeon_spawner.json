@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "ominous=false,trial_spawner_state=active": {
+      "model": "elsewhere:block/dungeon_spawner_active"
+    },
+    "ominous=false,trial_spawner_state=cooldown": {
+      "model": "elsewhere:block/dungeon_spawner_inactive"
+    },
+    "ominous=false,trial_spawner_state=ejecting_reward": {
+      "model": "elsewhere:block/dungeon_spawner_ejecting_reward"
+    },
+    "ominous=false,trial_spawner_state=inactive": {
+      "model": "elsewhere:block/dungeon_spawner_inactive"
+    },
+    "ominous=false,trial_spawner_state=waiting_for_players": {
+      "model": "elsewhere:block/dungeon_spawner_active"
+    },
+    "ominous=false,trial_spawner_state=waiting_for_reward_ejection": {
+      "model": "elsewhere:block/dungeon_spawner_active"
+    },
+    "ominous=true,trial_spawner_state=active": {
+      "model": "elsewhere:block/dungeon_spawner_active_ominous"
+    },
+    "ominous=true,trial_spawner_state=cooldown": {
+      "model": "elsewhere:block/dungeon_spawner_inactive_ominous"
+    },
+    "ominous=true,trial_spawner_state=ejecting_reward": {
+      "model": "elsewhere:block/dungeon_spawner_ejecting_reward_ominous"
+    },
+    "ominous=true,trial_spawner_state=inactive": {
+      "model": "elsewhere:block/dungeon_spawner_inactive_ominous"
+    },
+    "ominous=true,trial_spawner_state=waiting_for_players": {
+      "model": "elsewhere:block/dungeon_spawner_active_ominous"
+    },
+    "ominous=true,trial_spawner_state=waiting_for_reward_ejection": {
+      "model": "elsewhere:block/dungeon_spawner_active_ominous"
+    }
+  }
+}

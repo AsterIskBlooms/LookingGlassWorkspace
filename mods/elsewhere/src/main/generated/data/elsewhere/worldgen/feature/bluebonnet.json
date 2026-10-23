@@ -1,0 +1,19 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 6,
+  "base_radius": 3,
+  "count_variance": 3,
+  "max_scan_distance": 1,
+  "radius_variance": 1,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "id": "elsewhere:bluebonnet"
+  },
+  "valid_ground": {
+    "type": "minecraft:matching_block_tag",
+    "tag": "minecraft:dirt"
+  }
+}

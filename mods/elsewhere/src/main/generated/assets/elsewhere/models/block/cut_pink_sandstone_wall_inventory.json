@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "elsewhere:block/cut_pink_sandstone_side"
+  }
+}

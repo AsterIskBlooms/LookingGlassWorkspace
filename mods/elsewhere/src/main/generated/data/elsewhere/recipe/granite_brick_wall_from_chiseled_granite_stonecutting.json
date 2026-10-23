@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:chiseled_granite",
+  "result": {
+    "id": "elsewhere:granite_brick_wall"
+  }
+}

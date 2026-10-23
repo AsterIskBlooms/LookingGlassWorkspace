@@ -1,0 +1,38 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "side": "elsewhere:block/basalt_vent_side_active",
+    "bottom": "minecraft:block/basalt_top",
+    "top": "elsewhere:block/basalt_vent_top_active",
+    "overlay_side": "elsewhere:block/basalt_vent_side_overlay",
+    "overlay_top": "elsewhere:block/basalt_vent_top_overlay",
+    "particle": "#side"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "down": { "texture": "#bottom", "cullface": "down" },
+        "up": { "texture": "#top", "cullface": "up" },
+        "north": { "texture": "#side", "cullface": "north" },
+        "south": { "texture": "#side", "cullface": "south" },
+        "west": { "texture": "#side", "cullface": "west" },
+        "east": { "texture": "#side", "cullface": "east" }
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 16, 16 ],
+      "shade": false,
+      "light_emission": 15,
+      "faces": {
+        "up": { "texture": "#overlay_top", "cullface": "up" },
+        "north": { "texture": "#overlay_side", "cullface": "north" },
+        "south": { "texture": "#overlay_side", "cullface": "south" },
+        "west": { "texture": "#overlay_side", "cullface": "west" },
+        "east": { "texture": "#overlay_side", "cullface": "east" }
+      }
+    }
+  ]
+}

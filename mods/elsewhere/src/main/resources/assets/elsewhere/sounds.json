@@ -1,0 +1,470 @@
+{
+  "block.end_stone.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/end_stone/end_stone_break1",
+      "elsewhere:block/end_stone/end_stone_break2",
+      "elsewhere:block/end_stone/end_stone_break3",
+      "elsewhere:block/end_stone/end_stone_break4",
+      "elsewhere:block/end_stone/end_stone_break5"
+    ]
+  },
+  "block.end_stone.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/end_stone/end_stone_place1",
+      "elsewhere:block/end_stone/end_stone_place2",
+      "elsewhere:block/end_stone/end_stone_place3",
+      "elsewhere:block/end_stone/end_stone_place4"
+    ]
+  },
+  "block.end_stone.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/end_stone/end_stone_hit1",
+      "elsewhere:block/end_stone/end_stone_hit2",
+      "elsewhere:block/end_stone/end_stone_hit3",
+      "elsewhere:block/end_stone/end_stone_hit4"
+    ]
+  },
+  "block.end_stone.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/end_stone/end_stone_hit1",
+      "elsewhere:block/end_stone/end_stone_hit2",
+      "elsewhere:block/end_stone/end_stone_hit3",
+      "elsewhere:block/end_stone/end_stone_hit4"
+    ]
+  },
+  "block.end_stone.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/end_stone/end_stone_break1",
+      "elsewhere:block/end_stone/end_stone_break2",
+      "elsewhere:block/end_stone/end_stone_break3",
+      "elsewhere:block/end_stone/end_stone_break4",
+      "elsewhere:block/end_stone/end_stone_break5"
+    ]
+  },
+  "block.stone_bricks.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/stone_bricks/break1",
+      "elsewhere:block/stone_bricks/break2",
+      "elsewhere:block/stone_bricks/break3",
+      "elsewhere:block/stone_bricks/break4"
+    ]
+  },
+  "block.stone_bricks.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/stone_bricks/break1",
+      "elsewhere:block/stone_bricks/break2",
+      "elsewhere:block/stone_bricks/break3",
+      "elsewhere:block/stone_bricks/break4"
+    ]
+  },
+  "block.stone_bricks.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/stone_bricks/step1",
+      "elsewhere:block/stone_bricks/step2",
+      "elsewhere:block/stone_bricks/step3",
+      "elsewhere:block/stone_bricks/step4"
+    ]
+  },
+  "block.stone_bricks.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/stone_bricks/hit1",
+      "elsewhere:block/stone_bricks/hit2",
+      "elsewhere:block/stone_bricks/hit3",
+      "elsewhere:block/stone_bricks/hit4",
+      "elsewhere:block/stone_bricks/hit5",
+      "elsewhere:block/stone_bricks/hit6"
+    ]
+  },
+  "block.stone_bricks.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/stone_bricks/fall1",
+      "elsewhere:block/stone_bricks/fall2",
+      "elsewhere:block/stone_bricks/fall3",
+      "elsewhere:block/stone_bricks/fall4"
+    ]
+  },
+  "block.shale.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/shale/break1",
+      "elsewhere:block/shale/break2",
+      "elsewhere:block/shale/break3",
+      "elsewhere:block/shale/break4"
+    ]
+  },
+  "block.shale.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/shale/place1",
+      "elsewhere:block/shale/place2",
+      "elsewhere:block/shale/place3",
+      "elsewhere:block/shale/place4",
+      "elsewhere:block/shale/place5",
+      "elsewhere:block/shale/place6"
+    ]
+  },
+  "block.shale.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/shale/step1",
+      "elsewhere:block/shale/step2",
+      "elsewhere:block/shale/step3",
+      "elsewhere:block/shale/step4",
+      "elsewhere:block/shale/step5",
+      "elsewhere:block/shale/step6"
+    ]
+  },
+  "block.shale.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/shale/step1",
+      "elsewhere:block/shale/step2",
+      "elsewhere:block/shale/step3",
+      "elsewhere:block/shale/step4",
+      "elsewhere:block/shale/step5",
+      "elsewhere:block/shale/step6"
+    ]
+  },
+  "block.shale.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/shale/place1",
+      "elsewhere:block/shale/place2",
+      "elsewhere:block/shale/place3",
+      "elsewhere:block/shale/place4",
+      "elsewhere:block/shale/place5",
+      "elsewhere:block/shale/place6"
+    ]
+  },
+  "block.shale_bricks.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/shale_bricks/place1",
+      "elsewhere:block/shale_bricks/place2",
+      "elsewhere:block/shale_bricks/place3",
+      "elsewhere:block/shale_bricks/place4",
+      "elsewhere:block/shale_bricks/place5",
+      "elsewhere:block/shale_bricks/place6"
+    ]
+  },
+  "block.shale_bricks.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/shale_bricks/place1",
+      "elsewhere:block/shale_bricks/place2",
+      "elsewhere:block/shale_bricks/place3",
+      "elsewhere:block/shale_bricks/place4",
+      "elsewhere:block/shale_bricks/place5",
+      "elsewhere:block/shale_bricks/place6"
+    ]
+  },
+  "block.shale_bricks.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/shale_bricks/step1",
+      "elsewhere:block/shale_bricks/step2",
+      "elsewhere:block/shale_bricks/step3",
+      "elsewhere:block/shale_bricks/step4",
+      "elsewhere:block/shale_bricks/step5"
+    ]
+  },
+  "block.shale_bricks.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/shale_bricks/step1",
+      "elsewhere:block/shale_bricks/step2",
+      "elsewhere:block/shale_bricks/step3",
+      "elsewhere:block/shale_bricks/step4",
+      "elsewhere:block/shale_bricks/step5"
+    ]
+  },
+  "block.shale_bricks.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/shale_bricks/place1",
+      "elsewhere:block/shale_bricks/place2",
+      "elsewhere:block/shale_bricks/place3",
+      "elsewhere:block/shale_bricks/place4",
+      "elsewhere:block/shale_bricks/place5",
+      "elsewhere:block/shale_bricks/place6"
+    ]
+  },
+  "block.cactus.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/cactus/break1",
+      "elsewhere:block/cactus/break2",
+      "elsewhere:block/cactus/break3",
+      "elsewhere:block/cactus/break4"
+    ]
+  },
+  "block.cactus.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/cactus/place1",
+      "elsewhere:block/cactus/place2",
+      "elsewhere:block/cactus/place3",
+      "elsewhere:block/cactus/place4"
+    ]
+  },
+  "block.cactus.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/cactus/step1",
+      "elsewhere:block/cactus/step2",
+      "elsewhere:block/cactus/step3",
+      "elsewhere:block/cactus/step4",
+      "elsewhere:block/cactus/step5",
+      "elsewhere:block/cactus/step6"
+    ]
+  },
+  "block.cactus.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/cactus/step1",
+      "elsewhere:block/cactus/step2",
+      "elsewhere:block/cactus/step3",
+      "elsewhere:block/cactus/step4",
+      "elsewhere:block/cactus/step5",
+      "elsewhere:block/cactus/step6"
+    ]
+  },
+  "block.cactus.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/cactus/break1",
+      "elsewhere:block/cactus/break2",
+      "elsewhere:block/cactus/break3",
+      "elsewhere:block/cactus/break4"
+    ]
+  },
+  "block.rockweed_basalt.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "elsewhere:block/rockweed_basalt/break1",
+      "elsewhere:block/rockweed_basalt/break2",
+      "elsewhere:block/rockweed_basalt/break3",
+      "elsewhere:block/rockweed_basalt/break4",
+      "elsewhere:block/rockweed_basalt/break5"
+    ]
+  },
+  "block.rockweed_basalt.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "elsewhere:block/rockweed_basalt/break1",
+      "elsewhere:block/rockweed_basalt/break2",
+      "elsewhere:block/rockweed_basalt/break3",
+      "elsewhere:block/rockweed_basalt/break4",
+      "elsewhere:block/rockweed_basalt/break5"
+    ]
+  },
+  "block.rockweed_basalt.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "elsewhere:block/rockweed_basalt/step1",
+      "elsewhere:block/rockweed_basalt/step2",
+      "elsewhere:block/rockweed_basalt/step3",
+      "elsewhere:block/rockweed_basalt/step4",
+      "elsewhere:block/rockweed_basalt/step5",
+      "elsewhere:block/rockweed_basalt/step6"
+    ]
+  },
+  "block.rockweed_basalt.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      "elsewhere:block/rockweed_basalt/step1",
+      "elsewhere:block/rockweed_basalt/step2",
+      "elsewhere:block/rockweed_basalt/step3",
+      "elsewhere:block/rockweed_basalt/step4",
+      "elsewhere:block/rockweed_basalt/step5",
+      "elsewhere:block/rockweed_basalt/step6"
+    ]
+  },
+  "block.rockweed_basalt.fall": {
+    "subtitle": "subtitles.block.generic.fall",
+    "sounds": [
+      "elsewhere:block/rockweed_basalt/break1",
+      "elsewhere:block/rockweed_basalt/break2",
+      "elsewhere:block/rockweed_basalt/break3",
+      "elsewhere:block/rockweed_basalt/break4",
+      "elsewhere:block/rockweed_basalt/break5"
+    ]
+  },
+
+
+
+
+
+  "entity.subslime.jump": {
+    "subtitle": "subtitles.elsewhere.entity.subslime.jump",
+    "sounds": [
+      "elsewhere:entity/subslime/jump1",
+      "elsewhere:entity/subslime/jump2",
+      "elsewhere:entity/subslime/jump3",
+      "elsewhere:entity/subslime/jump4",
+      "elsewhere:entity/subslime/jump5",
+      "elsewhere:entity/subslime/jump6",
+      "elsewhere:entity/subslime/jump7",
+      "elsewhere:entity/subslime/jump8",
+      "elsewhere:entity/subslime/jump9",
+      "elsewhere:entity/subslime/jump10",
+      "elsewhere:entity/subslime/jump11"
+    ]
+  },
+  "entity.subslime.squish": {
+    "subtitle": "subtitles.elsewhere.entity.subslime.squish",
+    "sounds": [
+      "elsewhere:entity/subslime/squish1",
+      "elsewhere:entity/subslime/squish2",
+      "elsewhere:entity/subslime/squish3",
+      "elsewhere:entity/subslime/squish4",
+      "elsewhere:entity/subslime/squish5",
+      "elsewhere:entity/subslime/squish6",
+      "elsewhere:entity/subslime/squish7",
+      "elsewhere:entity/subslime/squish8",
+      "elsewhere:entity/subslime/squish9",
+      "elsewhere:entity/subslime/squish10",
+      "elsewhere:entity/subslime/squish11"
+    ]
+  },
+  "entity.subslime.attack": {
+    "subtitle": "subtitles.elsewhere.entity.subslime.attack",
+    "sounds": [
+      "elsewhere:entity/subslime/attack1",
+      "elsewhere:entity/subslime/attack2"
+    ]
+  },
+  "entity.subslime.hurt": {
+    "subtitle": "subtitles.elsewhere.entity.subslime.hurt",
+    "sounds": [
+      "elsewhere:entity/subslime/hurt1",
+      "elsewhere:entity/subslime/hurt2",
+      "elsewhere:entity/subslime/hurt3",
+      "elsewhere:entity/subslime/hurt4"
+    ]
+  },
+  "entity.subslime.death": {
+    "subtitle": "subtitles.elsewhere.entity.subslime.death",
+    "sounds": [
+      "elsewhere:entity/subslime/death1",
+      "elsewhere:entity/subslime/death2",
+      "elsewhere:entity/subslime/death3",
+      "elsewhere:entity/subslime/death4"
+    ]
+  },
+
+  "entity.vanguard.blabber": {
+    "subtitle": "subtitles.elsewhere.entity.vanguard.blabber",
+    "sounds": [
+      "elsewhere:entity/vanguard/blabber1",
+      "elsewhere:entity/vanguard/blabber2",
+      "elsewhere:entity/vanguard/blabber3",
+      "elsewhere:entity/vanguard/blabber4",
+      "elsewhere:entity/vanguard/blabber5",
+      "elsewhere:entity/vanguard/blabber6",
+      "elsewhere:entity/vanguard/blabber7"
+    ]
+  },
+  "entity.vanguard.double_swing": {
+    "subtitle": "subtitles.elsewhere.entity.vanguard.lunge",
+    "sounds": [
+      "elsewhere:entity/vanguard/double_swing1",
+      "elsewhere:entity/vanguard/double_swing2"
+    ]
+  },
+
+  "entity.whistler.ambient": {
+    "subtitle": "subtitles.elsewhere.entity.whistler.ambient",
+    "sounds": [
+      "minecraft:ambient/cave/cave1",
+      "minecraft:ambient/cave/cave2",
+      "minecraft:ambient/cave/cave4",
+      "minecraft:ambient/cave/cave8",
+      "minecraft:ambient/cave/cave13",
+      "minecraft:ambient/cave/cave15",
+      "minecraft:ambient/cave/cave19"
+    ]
+  },
+  "entity.whistler.detonate": {
+    "subtitle": "subtitles.elsewhere.entity.whistler.detonate",
+    "sounds": [
+      "elsewhere:entity/whistler/detonate"
+    ]
+  },
+
+  "entity.perch.flop": {
+    "subtitle": "subtitles.elsewhere.entity.perch.flop",
+    "sounds": [
+      "minecraft:entity/fish/flop1",
+      "minecraft:entity/fish/flop2",
+      "minecraft:entity/fish/flop3",
+      "minecraft:entity/fish/flop4"
+    ]
+  },
+  "entity.perch.hurt": {
+    "subtitle": "subtitles.elsewhere.entity.perch.hurt",
+    "sounds": [
+      "minecraft:entity/fish/hurt1",
+      "minecraft:entity/fish/hurt2",
+      "minecraft:entity/fish/hurt3",
+      "minecraft:entity/fish/hurt4"
+    ]
+  },
+  "entity.perch.death": {
+    "subtitle": "subtitles.elsewhere.entity.perch.death",
+    "sounds": [
+      "minecraft:entity/fish/hurt1",
+      "minecraft:entity/fish/hurt2",
+      "minecraft:entity/fish/hurt3",
+      "minecraft:entity/fish/hurt4"
+    ]
+  },
+
+
+  "disc.fox": {
+    "sounds": [
+      "elsewhere:records/fox"
+    ]
+  },
+
+  "music.overworld.crystal_caverns": {
+    "category": "music",
+    "sounds": [
+      {
+        "name": "elsewhere:music/game/spires",
+        "stream": true,
+        "weight": 2
+      },
+      {
+        "name": "minecraft:music/game/wet_hands",
+        "stream": true
+      },
+      {
+        "name": "minecraft:music/game/infinite_amethyst",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/memories",
+        "stream": true,
+        "volume": 0.4
+      },
+      {
+        "name": "minecraft:music/game/echo_in_the_wind",
+        "stream": true,
+        "volume": 0.4
+      }
+    ]
+  }
+
+}

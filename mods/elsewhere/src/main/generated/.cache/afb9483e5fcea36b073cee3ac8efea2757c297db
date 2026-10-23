@@ -1,0 +1,18 @@
+// 26.4-snapshot-5	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:worldgen/biome
+a438c3523b28cc2043b791a74838a96895e2390d data/elsewhere/tags/worldgen/biome/has_trial_room.json
+e8d06499e0a29b2242d20e768c1c0da3af4c97fc data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_forest.json
+0a50212c81c7737783f69cb52ee9a008a3d33186 data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_savanna.json
+353ff9eb8613c852cd954c384cc591a235ed7550 data/minecraft/tags/worldgen/biome/has_structure/pillager_outpost.json
+487495bb3fe4bddf174b527ae88ed116f4e66240 data/minecraft/tags/worldgen/biome/has_structure/village_desert.json
+f53ab69296a796b865d2a2732ab1c99f52c6e787 data/minecraft/tags/worldgen/biome/has_structure/village_savanna.json
+56d967c5b16bc318d1bd3cb0ad64f0e759f2a201 data/minecraft/tags/worldgen/biome/has_structure/village_snowy.json
+c65db8042a20826c451805f33d0c46a4dcead506 data/minecraft/tags/worldgen/biome/is_beach.json
+34f25cc03a516641e5c557a1a86595f263395ced data/minecraft/tags/worldgen/biome/is_cave.json
+c7851d336932136f77df88b03379d39b7e3c12bf data/minecraft/tags/worldgen/biome/is_overworld.json
+6cb87bc7b88b5f3d7c6d7212a337363a06dbe7fc data/minecraft/tags/worldgen/biome/is_river.json
+649b28e1042adcaa99192fe120a342cf12a13be4 data/minecraft/tags/worldgen/biome/spawns_cold_variant_farm_animals.json
+649b28e1042adcaa99192fe120a342cf12a13be4 data/minecraft/tags/worldgen/biome/spawns_cold_variant_frogs.json
+55d8922130cdff226ab51a83b30039d897b901ca data/minecraft/tags/worldgen/biome/spawns_gold_rabbits.json
+9f3ed4a004864c8ade3d7f9274f087f6c6f2dc49 data/minecraft/tags/worldgen/biome/spawns_snow_foxes.json
+e0b3eadd1e9fb07985c9d0eb668876101d099906 data/minecraft/tags/worldgen/biome/spawns_warm_variant_farm_animals.json
+e0b3eadd1e9fb07985c9d0eb668876101d099906 data/minecraft/tags/worldgen/biome/spawns_warm_variant_frogs.json

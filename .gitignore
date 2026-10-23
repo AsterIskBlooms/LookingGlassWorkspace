@@ -1,0 +1,9 @@
+# Project exclude paths
+/.gradle/
+/build/
+/mods/elsewhere/build/
+/mods/elsewhere/build/classes/java/main/
+/mods/lavaswim/build/
+/mods/lavaswim/build/classes/java/main/
+/mods/mirrorlib/build/
+/mods/mirrorlib/build/classes/java/main/

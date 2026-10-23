@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "elsewhere:block/netherrack_pillar_top",
+    "side": "elsewhere:block/netherrack_pillar_side"
+  }
+}

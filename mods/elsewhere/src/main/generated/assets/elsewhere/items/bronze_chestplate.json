@@ -1,0 +1,131 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_quartz_trim"
+        },
+        "when": "minecraft:quartz"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_iron_trim"
+        },
+        "when": "minecraft:iron"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_netherite_trim"
+        },
+        "when": "minecraft:netherite"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_redstone_trim"
+        },
+        "when": "minecraft:redstone"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_copper_trim"
+        },
+        "when": "minecraft:copper"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_gold_trim"
+        },
+        "when": "minecraft:gold"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_emerald_trim"
+        },
+        "when": "minecraft:emerald"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_diamond_trim"
+        },
+        "when": "minecraft:diamond"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_lapis_trim"
+        },
+        "when": "minecraft:lapis"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_amethyst_trim"
+        },
+        "when": "minecraft:amethyst"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_resin_trim"
+        },
+        "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_tin_trim"
+        },
+        "when": "elsewhere:tin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_silver_trim"
+        },
+        "when": "elsewhere:silver"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_uranium_trim"
+        },
+        "when": "elsewhere:uranium"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_bronze_darker_trim"
+        },
+        "when": "elsewhere:bronze"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_soulsteel_trim"
+        },
+        "when": "elsewhere:soulsteel"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "elsewhere:item/bronze_chestplate_elsewhere_electrum_trim"
+        },
+        "when": "elsewhere:electrum"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "elsewhere:item/bronze_chestplate"
+    },
+    "property": "minecraft:trim_material"
+  }
+}

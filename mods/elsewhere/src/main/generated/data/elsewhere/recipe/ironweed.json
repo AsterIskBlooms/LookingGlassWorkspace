@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:ironweed"
+  ],
+  "result": {
+    "id": "minecraft:purple_dye"
+  }
+}

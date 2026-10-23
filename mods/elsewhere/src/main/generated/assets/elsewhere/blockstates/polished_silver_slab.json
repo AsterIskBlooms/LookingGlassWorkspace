@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/polished_silver_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/polished_silver"
+    },
+    "type=top": {
+      "model": "elsewhere:block/polished_silver_slab_top"
+    }
+  }
+}

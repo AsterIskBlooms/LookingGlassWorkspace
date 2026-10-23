@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:cut_wrought_iron",
+  "result": {
+    "id": "elsewhere:cut_wrought_iron_stairs"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "elsewhere:block/cherry_boards_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "elsewhere:block/cherry_boards"
+    },
+    "axis=z": {
+      "model": "elsewhere:block/cherry_boards_horizontal",
+      "x": 90
+    }
+  }
+}

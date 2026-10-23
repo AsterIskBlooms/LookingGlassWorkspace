@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_amethyst_pillar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:amethyst_pillar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:amethyst_block_from_amethyst_pillar_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_amethyst_pillar"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:amethyst_block_from_amethyst_pillar_stonecutting"
+    ]
+  }
+}

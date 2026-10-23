@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_granite_brick_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:granite_brick_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:granite_wall_from_granite_brick_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_granite_brick_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:granite_wall_from_granite_brick_wall_stonecutting"
+    ]
+  }
+}

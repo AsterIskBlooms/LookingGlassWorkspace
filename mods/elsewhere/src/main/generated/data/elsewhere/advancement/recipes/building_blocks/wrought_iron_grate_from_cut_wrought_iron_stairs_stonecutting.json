@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_wrought_iron_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:cut_wrought_iron_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:wrought_iron_grate_from_cut_wrought_iron_stairs_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_wrought_iron_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:wrought_iron_grate_from_cut_wrought_iron_stairs_stonecutting"
+    ]
+  }
+}

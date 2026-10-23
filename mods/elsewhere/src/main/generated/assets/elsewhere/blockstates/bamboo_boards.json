@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "elsewhere:block/bamboo_boards_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "elsewhere:block/bamboo_boards"
+    },
+    "axis=z": {
+      "model": "elsewhere:block/bamboo_boards_horizontal",
+      "x": 90
+    }
+  }
+}

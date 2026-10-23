@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_dripstone_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_dripstone_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:dripstone_tile_slab_from_polished_dripstone_slab_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_dripstone_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:dripstone_tile_slab_from_polished_dripstone_slab_stonecutting"
+    ]
+  }
+}

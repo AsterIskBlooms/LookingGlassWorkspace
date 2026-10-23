@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:magenta_coneflower"
+  ],
+  "result": {
+    "id": "minecraft:magenta_dye"
+  }
+}

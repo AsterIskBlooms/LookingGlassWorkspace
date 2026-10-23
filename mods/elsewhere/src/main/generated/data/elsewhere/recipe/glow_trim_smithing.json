@@ -1,0 +1,5 @@
+{
+  "type": "elsewhere:glow_trim_smithing",
+  "addition": "minecraft:glow_ink_sac",
+  "base": "#minecraft:trimmable_armor"
+}

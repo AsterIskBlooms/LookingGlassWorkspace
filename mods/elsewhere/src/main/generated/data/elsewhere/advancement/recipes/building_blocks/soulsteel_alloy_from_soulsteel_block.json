@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soulsteel_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:soulsteel_alloy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:soulsteel_alloy_from_soulsteel_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soulsteel_alloy"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:soulsteel_alloy_from_soulsteel_block"
+    ]
+  }
+}

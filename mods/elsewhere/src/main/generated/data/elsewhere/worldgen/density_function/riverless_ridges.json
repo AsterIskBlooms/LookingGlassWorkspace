@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:range_choice",
+  "input": "elsewhere:vanilla_ridges",
+  "max_exclusive": 0.15,
+  "min_inclusive": -0.15,
+  "when_in_range": {
+    "type": "minecraft:mul",
+    "left": 0.2,
+    "right": {
+      "type": "minecraft:range_choice",
+      "input": "elsewhere:vanilla_ridges",
+      "max_exclusive": 0.0,
+      "min_inclusive": -1000000.0,
+      "when_in_range": -1.0,
+      "when_out_of_range": 1.0
+    }
+  },
+  "when_out_of_range": "elsewhere:vanilla_ridges"
+}

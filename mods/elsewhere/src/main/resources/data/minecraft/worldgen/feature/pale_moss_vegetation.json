@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": {
+          "id": "minecraft:pale_moss_carpet",
+          "properties": {
+            "bottom": "true",
+            "east": "none",
+            "north": "none",
+            "south": "none",
+            "west": "none"
+          }
+        },
+        "weight": 25
+      },
+      {
+        "data": "minecraft:air",
+        "weight": 35
+      },
+      {
+        "data": "elsewhere:short_pale_moss_sporophyte",
+        "weight": 8
+      },
+      {
+        "data": {
+          "id": "elsewhere:tall_pale_moss_sporophyte",
+          "properties": {
+            "half": "lower"
+          }
+        },
+        "weight": 2
+      }
+    ]
+  }
+}

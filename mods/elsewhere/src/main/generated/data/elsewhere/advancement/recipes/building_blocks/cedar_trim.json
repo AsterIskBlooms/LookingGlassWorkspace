@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cedar_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:cedar_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:cedar_trim"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cedar_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:cedar_trim"
+    ]
+  }
+}

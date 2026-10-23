@@ -1,0 +1,112 @@
+{
+  "type": "elsewhere:tidepool",
+  "coral": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "north",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 8
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "east",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 8
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "west",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 8
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "south",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 8
+      },
+      {
+        "data": "minecraft:sea_pickle",
+        "weight": 5
+      },
+      {
+        "data": {
+          "id": "minecraft:sea_pickle",
+          "properties": {
+            "pickles": "2",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 5
+      },
+      {
+        "data": {
+          "id": "minecraft:sea_pickle",
+          "properties": {
+            "pickles": "3",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 3
+      },
+      {
+        "data": {
+          "id": "minecraft:sea_pickle",
+          "properties": {
+            "pickles": "4",
+            "waterlogged": "true"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  },
+  "floor": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "minecraft:smooth_basalt",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:rockweed_basalt",
+        "weight": 1
+      }
+    ]
+  },
+  "rim": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "minecraft:basalt",
+        "weight": 4
+      },
+      {
+        "data": "minecraft:smooth_basalt",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:rockweed_basalt",
+        "weight": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:random_selector",
+  "default": {
+    "feature": "elsewhere:short_kelp",
+    "placement": []
+  },
+  "features": [
+    {
+      "chance": 0.6,
+      "feature": {
+        "feature": "elsewhere:short_kelp",
+        "placement": []
+      }
+    },
+    {
+      "chance": 0.4,
+      "feature": {
+        "feature": "elsewhere:medium_kelp",
+        "placement": []
+      }
+    }
+  ]
+}

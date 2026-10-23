@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:polished_stone_slab",
+  "result": {
+    "id": "elsewhere:stone_tile_slab"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "values": [
+    "elsewhere:azalea_slab",
+    "elsewhere:cedar_slab",
+    "elsewhere:mahogany_slab",
+    "#elsewhere:terracotta_slabs",
+    "#elsewhere:terracotta_brick_slabs",
+    "#elsewhere:terracotta_brick_tile_slabs"
+  ]
+}

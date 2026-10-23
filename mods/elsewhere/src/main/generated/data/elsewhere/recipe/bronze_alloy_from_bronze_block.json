@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy",
+    "elsewhere:bronze_alloy"
+  ],
+  "result": {
+    "id": "elsewhere:bronze_block"
+  }
+}

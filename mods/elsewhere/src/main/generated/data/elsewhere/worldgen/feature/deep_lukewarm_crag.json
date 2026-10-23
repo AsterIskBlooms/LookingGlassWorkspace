@@ -1,0 +1,26 @@
+{
+  "type": "elsewhere:crag",
+  "allow_underwater": true,
+  "body_state": {
+    "id": "minecraft:sandstone"
+  },
+  "edge_width": 0.25,
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 9,
+    "min_inclusive": 7
+  },
+  "max_ground_variation": 3,
+  "middle_depth": 2,
+  "middle_state": {
+    "id": "minecraft:sand"
+  },
+  "radius": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 11,
+    "min_inclusive": 8
+  },
+  "top_state": {
+    "id": "elsewhere:seagrass_sand"
+  }
+}

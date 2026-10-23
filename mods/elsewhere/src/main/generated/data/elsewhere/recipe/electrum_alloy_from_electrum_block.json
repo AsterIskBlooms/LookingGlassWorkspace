@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy",
+    "elsewhere:electrum_alloy"
+  ],
+  "result": {
+    "id": "elsewhere:electrum_block"
+  }
+}

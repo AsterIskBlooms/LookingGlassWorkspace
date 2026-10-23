@@ -1,0 +1,1 @@
+All visual and audio assets in this folder are licensed under CC BY-NC-SA 4.0. See the root LICENSE file for details.

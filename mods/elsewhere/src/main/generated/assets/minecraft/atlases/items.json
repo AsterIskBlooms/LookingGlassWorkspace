@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:paletted_permutations",
+      "palette_key": "minecraft:trim_base",
+      "permutations": {
+        "elsewhere_bronze": "elsewhere:trim/bronze",
+        "elsewhere_bronze_darker": "elsewhere:trim/bronze_darker",
+        "elsewhere_electrum": "elsewhere:trim/electrum",
+        "elsewhere_electrum_darker": "elsewhere:trim/electrum_darker",
+        "elsewhere_silver": "elsewhere:trim/silver",
+        "elsewhere_soulsteel": "elsewhere:trim/soulsteel",
+        "elsewhere_soulsteel_darker": "elsewhere:trim/soulsteel_darker",
+        "elsewhere_tin": "elsewhere:trim/tin",
+        "elsewhere_uranium": "elsewhere:trim/uranium"
+      },
+      "textures": [
+        "minecraft:trims/items/helmet_trim",
+        "minecraft:trims/items/chestplate_trim",
+        "minecraft:trims/items/leggings_trim",
+        "minecraft:trims/items/boots_trim"
+      ]
+    }
+  ]
+}

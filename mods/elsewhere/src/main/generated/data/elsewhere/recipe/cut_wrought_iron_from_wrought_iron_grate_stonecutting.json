@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:wrought_iron_grate",
+  "result": {
+    "id": "elsewhere:cut_wrought_iron"
+  }
+}

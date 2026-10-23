@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "elsewhere:soulglass_shard",
+    "G": "minecraft:glass"
+  },
+  "pattern": [
+    " # ",
+    "#G#",
+    " # "
+  ],
+  "result": {
+    "count": 2,
+    "id": "elsewhere:soulglass"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "elsewhere:soulsteel_sword",
+    "elsewhere:soulsteel_axe",
+    "elsewhere:soulsteel_spear",
+    "elsewhere:soulsteel_pickaxe",
+    "elsewhere:soulsteel_shovel",
+    "elsewhere:soulsteel_hoe",
+    "elsewhere:soulsteel_helmet",
+    "elsewhere:soulsteel_chestplate",
+    "elsewhere:soulsteel_leggings",
+    "elsewhere:soulsteel_boots"
+  ],
+  "result": {
+    "id": "minecraft:netherite_scrap"
+  }
+}

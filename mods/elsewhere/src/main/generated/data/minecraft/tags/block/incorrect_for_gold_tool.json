@@ -1,0 +1,8 @@
+{
+  "fabric:remove": [
+    "#minecraft:needs_iron_tool"
+  ],
+  "values": [
+    "#minecraft:needs_diamond_tool"
+  ]
+}

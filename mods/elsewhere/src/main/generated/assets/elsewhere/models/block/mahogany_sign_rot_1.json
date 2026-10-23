@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_sign_rot_1",
+  "textures": {
+    "all": "elsewhere:block/mahogany_sign",
+    "particle": "elsewhere:block/mahogany_planks"
+  }
+}

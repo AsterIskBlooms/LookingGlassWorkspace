@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "elsewhere:block/jungle_trim",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "elsewhere:block/jungle_trim"
+    },
+    "facing=south": {
+      "model": "elsewhere:block/jungle_trim"
+    },
+    "facing=west": {
+      "model": "elsewhere:block/jungle_trim",
+      "y": 270
+    }
+  }
+}

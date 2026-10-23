@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "elsewhere:electrum_alloy",
+  "base": "minecraft:golden_helmet",
+  "result": {
+    "id": "elsewhere:electrum_helmet"
+  },
+  "template": "elsewhere:electrum_upgrade_smithing_template"
+}

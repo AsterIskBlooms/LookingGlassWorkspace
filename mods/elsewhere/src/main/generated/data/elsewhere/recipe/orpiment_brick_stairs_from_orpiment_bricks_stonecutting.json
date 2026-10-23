@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:orpiment_bricks",
+  "result": {
+    "id": "elsewhere:orpiment_brick_stairs"
+  }
+}

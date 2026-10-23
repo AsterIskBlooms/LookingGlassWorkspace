@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "elsewhere:block/orpiment",
+    "side": "elsewhere:block/orpiment",
+    "top": "elsewhere:block/orpiment"
+  }
+}

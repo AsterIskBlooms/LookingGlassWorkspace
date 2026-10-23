@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_diorite_brick_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:diorite_brick_wall"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:diorite_from_diorite_brick_wall_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diorite_brick_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:diorite_from_diorite_brick_wall_stonecutting"
+    ]
+  }
+}

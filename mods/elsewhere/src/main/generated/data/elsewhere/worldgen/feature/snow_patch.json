@@ -1,0 +1,35 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 15,
+  "base_radius": 3,
+  "count_variance": 7,
+  "max_scan_distance": 1,
+  "radius_variance": 1,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "id": "minecraft:snow",
+    "properties": {
+      "layers": "1"
+    }
+  },
+  "valid_ground": {
+    "type": "minecraft:all_of",
+    "predicates": [
+      {
+        "type": "minecraft:solid",
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      },
+      {
+        "type": "minecraft:matching_fluids",
+        "fluids": "minecraft:empty"
+      }
+    ]
+  }
+}

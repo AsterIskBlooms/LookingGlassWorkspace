@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "elsewhere:block/dripstone_tiles",
+    "side": "elsewhere:block/dripstone_tiles",
+    "top": "elsewhere:block/dripstone_tiles"
+  }
+}

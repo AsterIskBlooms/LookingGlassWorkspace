@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:sodalite_stairs",
+  "result": {
+    "id": "elsewhere:sodalite_brick_stairs"
+  }
+}

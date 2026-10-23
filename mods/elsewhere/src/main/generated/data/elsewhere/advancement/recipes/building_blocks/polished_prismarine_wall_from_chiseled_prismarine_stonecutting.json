@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:chiseled_prismarine"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:polished_prismarine_wall_from_chiseled_prismarine_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_prismarine"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:polished_prismarine_wall_from_chiseled_prismarine_stonecutting"
+    ]
+  }
+}

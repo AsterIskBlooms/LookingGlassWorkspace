@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross_emissive",
+  "textures": {
+    "cross": "elsewhere:block/short_pale_moss_sporophyte",
+    "cross_emissive": "elsewhere:block/short_pale_moss_sporophyte_emissive"
+  }
+}

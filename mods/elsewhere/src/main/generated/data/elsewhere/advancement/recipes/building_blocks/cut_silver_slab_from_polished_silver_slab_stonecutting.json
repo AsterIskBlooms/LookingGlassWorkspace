@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_silver_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_silver_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:cut_silver_slab_from_polished_silver_slab_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_silver_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:cut_silver_slab_from_polished_silver_slab_stonecutting"
+    ]
+  }
+}

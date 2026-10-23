@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shale_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:shale_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:chiseled_shale_from_shale_bricks_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shale_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:chiseled_shale_from_shale_bricks_stonecutting"
+    ]
+  }
+}

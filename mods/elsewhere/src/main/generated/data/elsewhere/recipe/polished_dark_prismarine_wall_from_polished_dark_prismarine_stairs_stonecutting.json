@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:polished_dark_prismarine_stairs",
+  "result": {
+    "id": "elsewhere:polished_dark_prismarine_wall"
+  }
+}

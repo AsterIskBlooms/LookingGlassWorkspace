@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#elsewhere:cedar_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "elsewhere:cedar_planks"
+  }
+}

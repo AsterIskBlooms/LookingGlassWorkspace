@@ -1,0 +1,6 @@
+{
+  "parent": "elsewhere:block/template_big_wall_hanging_lantern",
+  "textures": {
+    "lantern": "elsewhere:block/redstone_lantern"
+  }
+}

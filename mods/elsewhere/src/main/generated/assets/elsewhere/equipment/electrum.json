@@ -1,0 +1,27 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "elsewhere:electrum"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "elsewhere:electrum"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "elsewhere:electrum"
+      }
+    ]
+  },
+  "trim_overrides": [
+    {
+      "palette": "elsewhere:trim/electrum_darker",
+      "when": {
+        "material": "elsewhere:electrum"
+      }
+    }
+  ]
+}

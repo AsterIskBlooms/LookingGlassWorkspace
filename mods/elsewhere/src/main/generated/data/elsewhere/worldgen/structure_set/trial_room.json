@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 14357621,
+    "separation": 3,
+    "spacing": 10
+  },
+  "structures": [
+    {
+      "structure": "elsewhere:trial_room",
+      "weight": 1
+    }
+  ]
+}

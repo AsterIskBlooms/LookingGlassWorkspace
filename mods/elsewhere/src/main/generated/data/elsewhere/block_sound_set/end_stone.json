@@ -1,0 +1,7 @@
+{
+  "break_sound": "elsewhere:block.end_stone.break",
+  "fall_sound": "elsewhere:block.end_stone.fall",
+  "hit_sound": "elsewhere:block.end_stone.hit",
+  "place_sound": "elsewhere:block.end_stone.place",
+  "step_sound": "elsewhere:block.end_stone.step"
+}

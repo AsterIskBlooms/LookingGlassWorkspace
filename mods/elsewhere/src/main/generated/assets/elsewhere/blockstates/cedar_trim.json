@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "elsewhere:block/cedar_trim",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "elsewhere:block/cedar_trim"
+    },
+    "facing=south": {
+      "model": "elsewhere:block/cedar_trim"
+    },
+    "facing=west": {
+      "model": "elsewhere:block/cedar_trim",
+      "y": 270
+    }
+  }
+}

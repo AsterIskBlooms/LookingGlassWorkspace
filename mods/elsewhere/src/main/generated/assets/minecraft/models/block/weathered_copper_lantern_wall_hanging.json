@@ -1,0 +1,6 @@
+{
+  "parent": "elsewhere:block/template_wall_hanging_lantern",
+  "textures": {
+    "lantern": "minecraft:block/weathered_copper_lantern"
+  }
+}

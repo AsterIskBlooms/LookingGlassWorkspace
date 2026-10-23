@@ -1,0 +1,112 @@
+{
+  "variants": {
+    "facing=east,hanging=false,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off"
+    },
+    "facing=east,hanging=false,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 90
+    },
+    "facing=east,hanging=false,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern"
+    },
+    "facing=east,hanging=false,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 90
+    },
+    "facing=east,hanging=true,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off_hanging"
+    },
+    "facing=east,hanging=true,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 90
+    },
+    "facing=east,hanging=true,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_hanging"
+    },
+    "facing=east,hanging=true,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 90
+    },
+    "facing=north,hanging=false,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off"
+    },
+    "facing=north,hanging=false,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging"
+    },
+    "facing=north,hanging=false,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern"
+    },
+    "facing=north,hanging=false,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging"
+    },
+    "facing=north,hanging=true,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off_hanging"
+    },
+    "facing=north,hanging=true,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging"
+    },
+    "facing=north,hanging=true,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_hanging"
+    },
+    "facing=north,hanging=true,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging"
+    },
+    "facing=south,hanging=false,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off"
+    },
+    "facing=south,hanging=false,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=false,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern"
+    },
+    "facing=south,hanging=false,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=true,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off_hanging"
+    },
+    "facing=south,hanging=true,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=true,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_hanging"
+    },
+    "facing=south,hanging=true,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 180
+    },
+    "facing=west,hanging=false,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off"
+    },
+    "facing=west,hanging=false,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 270
+    },
+    "facing=west,hanging=false,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern"
+    },
+    "facing=west,hanging=false,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 270
+    },
+    "facing=west,hanging=true,lit=false,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_off_hanging"
+    },
+    "facing=west,hanging=true,lit=false,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_off_wall_hanging",
+      "y": 270
+    },
+    "facing=west,hanging=true,lit=true,wall_hanging=false": {
+      "model": "elsewhere:block/redstone_lantern_hanging"
+    },
+    "facing=west,hanging=true,lit=true,wall_hanging=true": {
+      "model": "elsewhere:block/redstone_lantern_wall_hanging",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_obsidian": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:chiseled_obsidian"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:obsidian_stairs_from_chiseled_obsidian_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_obsidian"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:obsidian_stairs_from_chiseled_obsidian_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_sodalite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_sodalite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:polished_sodalite_slab_from_polished_sodalite_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_sodalite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:polished_sodalite_slab_from_polished_sodalite_stonecutting"
+    ]
+  }
+}

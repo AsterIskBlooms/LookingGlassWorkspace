@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cut_silver_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:cut_silver_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:cut_silver_slab_from_cut_silver_stairs_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cut_silver_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:cut_silver_slab_from_cut_silver_stairs_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:white_hibiscus"
+  ],
+  "result": {
+    "id": "minecraft:white_dye"
+  }
+}

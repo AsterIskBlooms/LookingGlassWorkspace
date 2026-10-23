@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "elsewhere:electrum_alloy",
+  "base": "minecraft:golden_spear",
+  "result": {
+    "id": "elsewhere:electrum_spear"
+  },
+  "template": "elsewhere:electrum_upgrade_smithing_template"
+}

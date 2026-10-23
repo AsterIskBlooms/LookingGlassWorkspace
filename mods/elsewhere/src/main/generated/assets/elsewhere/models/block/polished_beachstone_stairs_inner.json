@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "elsewhere:block/polished_beachstone",
+    "side": "elsewhere:block/polished_beachstone",
+    "top": "elsewhere:block/polished_beachstone"
+  }
+}

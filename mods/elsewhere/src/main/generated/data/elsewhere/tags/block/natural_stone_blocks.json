@@ -1,0 +1,26 @@
+{
+  "values": [
+    "minecraft:stone",
+    "minecraft:deepslate",
+    "minecraft:granite",
+    "minecraft:diorite",
+    "minecraft:andesite",
+    "minecraft:calcite",
+    "elsewhere:sodalite",
+    "minecraft:tuff",
+    "elsewhere:shale",
+    "minecraft:dripstone_block",
+    "minecraft:sulfur",
+    "elsewhere:orpiment",
+    "minecraft:cinnabar",
+    "minecraft:prismarine",
+    "minecraft:magma_block",
+    "minecraft:blackstone",
+    "minecraft:basalt",
+    "minecraft:smooth_basalt",
+    "minecraft:sandstone",
+    "minecraft:red_sandstone",
+    "elsewhere:pink_sandstone",
+    "elsewhere:soul_stone"
+  ]
+}

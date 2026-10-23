@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stone_tile_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:stone_tile_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:stone_brick_slab_from_stone_tile_stairs_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stone_tile_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:stone_brick_slab_from_stone_tile_stairs_stonecutting"
+    ]
+  }
+}

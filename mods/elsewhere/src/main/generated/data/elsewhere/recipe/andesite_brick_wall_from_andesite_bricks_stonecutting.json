@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:andesite_bricks",
+  "result": {
+    "id": "elsewhere:andesite_brick_wall"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "fabric:remove": [
+    "minecraft:redstone_ore"
+  ],
+  "values": [
+    "elsewhere:tin_ore",
+    "elsewhere:cinnabar_tin_ore",
+    "elsewhere:deepslate_tin_ore",
+    "elsewhere:tin_block",
+    "elsewhere:raw_tin_block",
+    "elsewhere:bronze_block",
+    "minecraft:gold_ore",
+    "minecraft:deepslate_gold_ore",
+    "elsewhere:cinnabar_gold_ore",
+    "minecraft:nether_gold_ore",
+    "minecraft:gold_block",
+    "minecraft:raw_gold_block",
+    "elsewhere:silver_ore",
+    "elsewhere:deepslate_silver_ore",
+    "elsewhere:cinnabar_silver_ore",
+    "elsewhere:silver_block",
+    "elsewhere:raw_silver_block",
+    "minecraft:emerald_ore",
+    "minecraft:deepslate_emerald_ore",
+    "elsewhere:cinnabar_emerald_ore",
+    "minecraft:emerald_block",
+    "elsewhere:soulsteel_block",
+    "elsewhere:electrum_block",
+    "elsewhere:uranium_block",
+    "minecraft:obsidian",
+    "elsewhere:obsidian_stairs",
+    "elsewhere:obsidian_slab",
+    "elsewhere:obsidian_bricks",
+    "elsewhere:obsidian_brick_stairs",
+    "elsewhere:obsidian_brick_slab",
+    "elsewhere:obsidian_pillar",
+    "elsewhere:chiseled_obsidian",
+    "minecraft:crying_obsidian",
+    "minecraft:respawn_anchor"
+  ]
+}

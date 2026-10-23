@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top_inner_faces",
+  "textures": {
+    "bottom": "elsewhere:block/dungeon_spawner_bottom",
+    "side": "elsewhere:block/dungeon_spawner_side",
+    "top": "elsewhere:block/dungeon_spawner_top"
+  }
+}

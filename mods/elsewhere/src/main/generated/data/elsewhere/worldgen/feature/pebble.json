@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "elsewhere:pebble",
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "east",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "south",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 1
+      },
+      {
+        "data": {
+          "id": "elsewhere:pebble",
+          "properties": {
+            "facing": "west",
+            "waterlogged": "false"
+          }
+        },
+        "weight": 1
+      }
+    ]
+  }
+}

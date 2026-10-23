@@ -1,0 +1,13 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "elsewhere:block/arid_grass_block",
+    "tints": [
+      {
+        "type": "minecraft:grass",
+        "downfall": 0.0,
+        "temperature": 1.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "elsewhere:block/tall_pale_moss_sporophyte_top",
+    "layer1": "elsewhere:block/tall_pale_moss_sporophyte_top_emissive"
+  }
+}

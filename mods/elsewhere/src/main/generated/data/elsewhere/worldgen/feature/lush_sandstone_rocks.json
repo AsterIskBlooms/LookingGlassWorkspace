@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:random_selector",
+  "default": {
+    "feature": "elsewhere:sandstone_rock",
+    "placement": []
+  },
+  "features": [
+    {
+      "chance": 0.5,
+      "feature": {
+        "feature": "elsewhere:sandstone_rock",
+        "placement": []
+      }
+    },
+    {
+      "chance": 0.5,
+      "feature": {
+        "feature": "elsewhere:pink_sandstone_rock",
+        "placement": []
+      }
+    }
+  ]
+}

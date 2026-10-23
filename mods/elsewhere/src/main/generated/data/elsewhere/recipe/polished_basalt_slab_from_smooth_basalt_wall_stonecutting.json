@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:smooth_basalt_wall",
+  "result": {
+    "count": 2,
+    "id": "elsewhere:polished_basalt_slab"
+  }
+}

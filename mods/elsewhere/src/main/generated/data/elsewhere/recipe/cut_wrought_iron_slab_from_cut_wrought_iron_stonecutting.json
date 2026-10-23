@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:cut_wrought_iron",
+  "result": {
+    "count": 2,
+    "id": "elsewhere:cut_wrought_iron_slab"
+  }
+}

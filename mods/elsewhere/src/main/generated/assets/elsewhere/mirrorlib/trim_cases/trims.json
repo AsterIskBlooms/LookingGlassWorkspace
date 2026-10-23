@@ -1,0 +1,732 @@
+{
+  "items": {
+    "minecraft:chainmail_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/chainmail_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:chainmail_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/chainmail_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:chainmail_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/chainmail_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:chainmail_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/chainmail_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:copper_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/copper_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/copper_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/copper_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/copper_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/copper_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/copper_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:copper_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/copper_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:copper_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/copper_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/copper_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/copper_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/copper_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/copper_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/copper_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:copper_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/copper_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/copper_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/copper_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/copper_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/copper_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/copper_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:diamond_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/diamond_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/diamond_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/diamond_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/diamond_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/diamond_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/diamond_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:diamond_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/diamond_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:diamond_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/diamond_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:diamond_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/diamond_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:golden_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/golden_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/golden_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/golden_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/golden_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/golden_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/golden_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:golden_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/golden_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:golden_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/golden_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/golden_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/golden_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/golden_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/golden_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/golden_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:golden_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/golden_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/golden_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/golden_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/golden_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/golden_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/golden_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:iron_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/iron_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/iron_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/iron_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/iron_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/iron_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/iron_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:iron_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/iron_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:iron_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/iron_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/iron_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/iron_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/iron_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/iron_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/iron_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:iron_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/iron_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/iron_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/iron_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/iron_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/iron_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/iron_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:leather_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/leather_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/leather_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/leather_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/leather_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/leather_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/leather_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:leather_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/leather_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:leather_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/leather_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/leather_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/leather_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/leather_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/leather_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/leather_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:leather_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/leather_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/leather_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/leather_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/leather_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/leather_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/leather_leggings_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:netherite_boots": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/netherite_boots_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/netherite_boots_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/netherite_boots_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/netherite_boots_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/netherite_boots_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/netherite_boots_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:netherite_chestplate": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/netherite_chestplate_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:netherite_helmet": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/netherite_helmet_elsewhere_electrum_trim"
+      }
+    ],
+    "minecraft:netherite_leggings": [
+      {
+        "material": "elsewhere:tin",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_tin_trim"
+      },
+      {
+        "material": "elsewhere:silver",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_silver_trim"
+      },
+      {
+        "material": "elsewhere:uranium",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_uranium_trim"
+      },
+      {
+        "material": "elsewhere:bronze",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_bronze_trim"
+      },
+      {
+        "material": "elsewhere:soulsteel",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_soulsteel_trim"
+      },
+      {
+        "material": "elsewhere:electrum",
+        "model": "elsewhere:item/netherite_leggings_elsewhere_electrum_trim"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "elsewhere:blue_terracotta_brick_tiles"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

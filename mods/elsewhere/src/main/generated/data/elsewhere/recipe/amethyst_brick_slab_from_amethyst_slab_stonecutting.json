@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:amethyst_slab",
+  "result": {
+    "id": "elsewhere:amethyst_brick_slab"
+  }
+}

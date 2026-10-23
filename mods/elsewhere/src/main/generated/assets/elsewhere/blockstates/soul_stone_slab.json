@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/soul_stone_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/soul_stone"
+    },
+    "type=top": {
+      "model": "elsewhere:block/soul_stone_slab_top"
+    }
+  }
+}

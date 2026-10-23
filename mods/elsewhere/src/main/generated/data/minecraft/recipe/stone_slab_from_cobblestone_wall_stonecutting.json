@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:cobblestone_wall",
+  "result": {
+    "count": 2,
+    "id": "minecraft:stone_slab"
+  }
+}

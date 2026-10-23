@@ -1,0 +1,44 @@
+{
+  "required": true,
+  "package": "team.lookingglass.elsewhere.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "entity.CreeperMixin",
+    "entity.SkeletonMixin",
+    "entity.SlimeMixin",
+    "entity.WitherSkeletonSwordsMixin",
+    "entity.ZombieMixins",
+    "entity.possession.PossessedFiringMixin",
+    "entity.possession.PossessionMixin",
+    "equipment.ArmorMaterialsMixin",
+    "equipment.PickaxePierceMixin",
+    "equipment.SpearMixin",
+    "equipment.ToolMaterialMixin",
+    "equipment.ToolReconfig",
+    "equipment.shield.ShieldBlockDelayMixin",
+    "equipment.shield.ShieldCooldownMixin",
+    "equipment.shield.ShieldItemMixin",
+    "interaction.FireChargeMixin",
+    "interaction.LanternBlockMixin",
+    "interaction.SoundMixin",
+    "world.AmethystClusterMixin",
+    "world.OverworldBiomeGenMixin",
+    "world.TreeGrowerMixin",
+    "world.patch.BiomeDataMixin",
+    "world.patch.FeatureUtilsMixin",
+    "world.patch.PlacementUtilsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "entity.possession.PossessionRenderExtractionMixin",
+    "entity.possession.PossessionRenderingMixin",
+    "entity.possession.PossessionRenderLayerMixin",
+    "entity.possession.PossessionRenderStateMixin",
+    "equipment.EquipmentLayerRendererMixin"
+  ]
+}

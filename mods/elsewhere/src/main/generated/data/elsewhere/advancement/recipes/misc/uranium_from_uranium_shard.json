@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:uranium_from_uranium_shard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_uranium_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:uranium_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_uranium_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:uranium_from_uranium_shard"
+    ]
+  }
+}

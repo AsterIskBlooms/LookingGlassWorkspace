@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:chiseled_shale_bricks",
+  "result": {
+    "id": "elsewhere:shale_brick_wall"
+  }
+}

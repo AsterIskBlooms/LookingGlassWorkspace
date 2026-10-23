@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget",
+    "elsewhere:tin_nugget"
+  ],
+  "result": {
+    "id": "elsewhere:tin_ingot"
+  }
+}

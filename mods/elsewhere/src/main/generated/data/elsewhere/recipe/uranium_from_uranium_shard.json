@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard",
+    "elsewhere:uranium_shard"
+  ],
+  "result": {
+    "id": "elsewhere:uranium"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "elsewhere:bronze_sword",
+    "elsewhere:bronze_axe",
+    "elsewhere:bronze_spear",
+    "elsewhere:bronze_pickaxe",
+    "elsewhere:bronze_shovel",
+    "elsewhere:bronze_hoe",
+    "elsewhere:bronze_helmet",
+    "elsewhere:bronze_chestplate",
+    "elsewhere:bronze_leggings",
+    "elsewhere:bronze_boots"
+  ],
+  "result": {
+    "id": "elsewhere:tin_ingot"
+  }
+}

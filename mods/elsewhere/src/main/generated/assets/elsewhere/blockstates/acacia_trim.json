@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "elsewhere:block/acacia_trim",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "elsewhere:block/acacia_trim"
+    },
+    "facing=south": {
+      "model": "elsewhere:block/acacia_trim"
+    },
+    "facing=west": {
+      "model": "elsewhere:block/acacia_trim",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_purpur": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:chiseled_purpur"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:purpur_pillar_from_chiseled_purpur_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_purpur"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:purpur_pillar_from_chiseled_purpur_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:stone_brick_wall",
+  "result": {
+    "id": "elsewhere:stone_pillar"
+  }
+}

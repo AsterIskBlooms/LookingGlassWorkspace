@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "elsewhere:block/pink_sand"
+      },
+      {
+        "model": "elsewhere:block/pink_sand",
+        "y": 90
+      },
+      {
+        "model": "elsewhere:block/pink_sand",
+        "y": 180
+      },
+      {
+        "model": "elsewhere:block/pink_sand",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "facing=east,hanging=false,wall_hanging=false": {
+      "model": "minecraft:block/lantern"
+    },
+    "facing=east,hanging=false,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 90
+    },
+    "facing=east,hanging=true,wall_hanging=false": {
+      "model": "minecraft:block/lantern_hanging"
+    },
+    "facing=east,hanging=true,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 90
+    },
+    "facing=north,hanging=false,wall_hanging=false": {
+      "model": "minecraft:block/lantern"
+    },
+    "facing=north,hanging=false,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging"
+    },
+    "facing=north,hanging=true,wall_hanging=false": {
+      "model": "minecraft:block/lantern_hanging"
+    },
+    "facing=north,hanging=true,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging"
+    },
+    "facing=south,hanging=false,wall_hanging=false": {
+      "model": "minecraft:block/lantern"
+    },
+    "facing=south,hanging=false,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 180
+    },
+    "facing=south,hanging=true,wall_hanging=false": {
+      "model": "minecraft:block/lantern_hanging"
+    },
+    "facing=south,hanging=true,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 180
+    },
+    "facing=west,hanging=false,wall_hanging=false": {
+      "model": "minecraft:block/lantern"
+    },
+    "facing=west,hanging=false,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 270
+    },
+    "facing=west,hanging=true,wall_hanging=false": {
+      "model": "minecraft:block/lantern_hanging"
+    },
+    "facing=west,hanging=true,wall_hanging=true": {
+      "model": "minecraft:block/lantern_wall_hanging",
+      "y": 270
+    }
+  }
+}

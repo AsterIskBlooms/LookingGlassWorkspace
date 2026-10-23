@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:obsidian_pillar",
+  "result": {
+    "id": "minecraft:obsidian"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chiseled_andesite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:chiseled_andesite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:andesite_slab_from_chiseled_andesite_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chiseled_andesite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:andesite_slab_from_chiseled_andesite_stonecutting"
+    ]
+  }
+}

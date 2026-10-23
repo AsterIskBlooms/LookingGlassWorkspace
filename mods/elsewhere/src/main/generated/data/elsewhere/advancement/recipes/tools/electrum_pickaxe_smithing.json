@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_electrum_alloy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:electrum_alloy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:electrum_pickaxe_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_electrum_alloy"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:electrum_pickaxe_smithing"
+    ]
+  }
+}

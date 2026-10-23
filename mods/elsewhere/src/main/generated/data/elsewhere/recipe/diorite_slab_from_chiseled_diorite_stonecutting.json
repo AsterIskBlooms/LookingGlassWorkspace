@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:chiseled_diorite",
+  "result": {
+    "count": 2,
+    "id": "minecraft:diorite_slab"
+  }
+}

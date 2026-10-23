@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_hanging_sign_rot_1",
+  "textures": {
+    "all": "elsewhere:block/cedar_hanging_sign",
+    "particle": "elsewhere:block/stripped_cedar_log"
+  }
+}

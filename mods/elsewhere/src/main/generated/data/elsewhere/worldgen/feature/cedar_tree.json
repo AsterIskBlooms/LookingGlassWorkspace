@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:tree",
+  "below_trunk_provider": {
+    "id": "minecraft:air"
+  },
+  "decorators": [
+    {
+      "type": "minecraft:beehive",
+      "probability": 0.002
+    }
+  ],
+  "foliage_placer": {
+    "type": "minecraft:pine_foliage_placer",
+    "height": 3,
+    "offset": 0,
+    "radius": 2
+  },
+  "foliage_provider": {
+    "id": "elsewhere:cedar_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "ignore_vines": false,
+  "minimum_size": {
+    "type": "minecraft:two_layers_feature_size",
+    "limit": 2
+  },
+  "trunk_placer": {
+    "type": "minecraft:straight_trunk_placer",
+    "base_height": 6,
+    "height_rand_a": 1,
+    "height_rand_b": 1
+  },
+  "trunk_provider": {
+    "id": "elsewhere:cedar_log",
+    "properties": {
+      "axis": "y"
+    }
+  }
+}

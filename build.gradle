@@ -1,0 +1,9 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}" apply false
+}
+
+tasks.register('datagenAll') {
+    group = 'fabric'
+    description = 'Runs datagen for every mod that has it'
+    dependsOn ':elsewhere:runDatagen'
+}

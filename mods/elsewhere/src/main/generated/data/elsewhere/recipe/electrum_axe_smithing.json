@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "elsewhere:electrum_alloy",
+  "base": "minecraft:golden_axe",
+  "result": {
+    "id": "elsewhere:electrum_axe"
+  },
+  "template": "elsewhere:electrum_upgrade_smithing_template"
+}

@@ -1,0 +1,49 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 7,
+  "base_radius": 6,
+  "count_variance": 5,
+  "max_scan_distance": 1,
+  "radius_variance": 3,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "elsewhere:red_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:orange_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:yellow_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:blue_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:purple_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:pink_hibiscus",
+        "weight": 1
+      },
+      {
+        "data": "elsewhere:white_hibiscus",
+        "weight": 1
+      }
+    ]
+  },
+  "valid_ground": {
+    "type": "minecraft:matching_block_tag",
+    "tag": "minecraft:dirt"
+  }
+}

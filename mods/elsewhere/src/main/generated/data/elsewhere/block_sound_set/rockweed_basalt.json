@@ -1,0 +1,7 @@
+{
+  "break_sound": "elsewhere:block.rockweed_basalt.break",
+  "fall_sound": "elsewhere:block.rockweed_basalt.fall",
+  "hit_sound": "elsewhere:block.rockweed_basalt.hit",
+  "place_sound": "elsewhere:block.rockweed_basalt.place",
+  "step_sound": "elsewhere:block.rockweed_basalt.step"
+}

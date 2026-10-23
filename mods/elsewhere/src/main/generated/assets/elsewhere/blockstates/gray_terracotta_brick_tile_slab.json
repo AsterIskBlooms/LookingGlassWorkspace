@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/gray_terracotta_brick_tile_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/gray_terracotta_brick_tiles"
+    },
+    "type=top": {
+      "model": "elsewhere:block/gray_terracotta_brick_tile_slab_top"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "values": [
+    "#minecraft:is_beach",
+    "#minecraft:is_river",
+    "#minecraft:is_cave",
+    "elsewhere:tundra",
+    "elsewhere:cherry_fields",
+    "elsewhere:bog",
+    "elsewhere:lush_desert",
+    "elsewhere:outback",
+    "elsewhere:steppe",
+    "elsewhere:cloud_forest",
+    "elsewhere:shrubland",
+    "elsewhere:cedar_forest"
+  ]
+}

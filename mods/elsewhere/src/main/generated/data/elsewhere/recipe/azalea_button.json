@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "elsewhere:azalea_planks"
+  ],
+  "result": {
+    "id": "elsewhere:azalea_button"
+  }
+}

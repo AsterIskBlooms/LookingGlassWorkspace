@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/azalea_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/azalea_planks"
+    },
+    "type=top": {
+      "model": "elsewhere:block/azalea_slab_top"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "type": "elsewhere:block_patch",
+  "base_count": 5,
+  "base_radius": 2,
+  "count_variance": 3,
+  "max_scan_distance": 1,
+  "radius_variance": 1,
+  "replaceable": {
+    "type": "minecraft:replaceable"
+  },
+  "scan_direction": "down",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "data": "minecraft:short_dry_grass",
+        "weight": 5
+      },
+      {
+        "data": "minecraft:tall_dry_grass",
+        "weight": 2
+      }
+    ]
+  },
+  "valid_ground": {
+    "type": "minecraft:matching_block_tag",
+    "tag": "elsewhere:soil"
+  }
+}

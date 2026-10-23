@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "elsewhere:block/cut_wrought_iron",
+    "side": "elsewhere:block/cut_wrought_iron",
+    "top": "elsewhere:block/cut_wrought_iron"
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/elsewhere/Workspace.elsewhere.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/elsewhere/Workspace.elsewhere.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/elsewhere/Workspace.elsewhere.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/elsewhere/Workspace.elsewhere.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.test.iml" />
+    </modules>
+  </component>
+</project>

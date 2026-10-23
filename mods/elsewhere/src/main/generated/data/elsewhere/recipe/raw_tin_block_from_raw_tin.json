@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin",
+    "elsewhere:raw_tin"
+  ],
+  "result": {
+    "id": "elsewhere:raw_tin_block"
+  }
+}

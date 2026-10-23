@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cedar_mosaic": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:cedar_mosaic"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:cedar_mosaic_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cedar_mosaic"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:cedar_mosaic_stairs"
+    ]
+  }
+}

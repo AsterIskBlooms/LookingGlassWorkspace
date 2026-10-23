@@ -1,0 +1,18 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "elsewhere:block/mangrove_trim",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "elsewhere:block/mangrove_trim"
+    },
+    "facing=south": {
+      "model": "elsewhere:block/mangrove_trim"
+    },
+    "facing=west": {
+      "model": "elsewhere:block/mangrove_trim",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "elsewhere:block/tall_moss_sporophyte_bottom"
+    },
+    "half=upper": {
+      "model": "elsewhere:block/tall_moss_sporophyte_top"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": [
+    "elsewhere:electrum_sword",
+    "elsewhere:electrum_axe",
+    "elsewhere:electrum_spear",
+    "elsewhere:electrum_pickaxe",
+    "elsewhere:electrum_shovel",
+    "elsewhere:electrum_hoe",
+    "elsewhere:electrum_helmet",
+    "elsewhere:electrum_chestplate",
+    "elsewhere:electrum_leggings",
+    "elsewhere:electrum_boots"
+  ],
+  "result": {
+    "id": "elsewhere:silver_ingot"
+  }
+}

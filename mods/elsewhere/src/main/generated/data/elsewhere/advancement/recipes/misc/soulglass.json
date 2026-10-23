@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soulglass_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:soulglass_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:soulglass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soulglass_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:soulglass"
+    ]
+  }
+}

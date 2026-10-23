@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "elsewhere:stripped_cedar_log",
+    "C": "minecraft:iron_chain"
+  },
+  "pattern": [
+    "C C",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "elsewhere:cedar_hanging_sign"
+  }
+}

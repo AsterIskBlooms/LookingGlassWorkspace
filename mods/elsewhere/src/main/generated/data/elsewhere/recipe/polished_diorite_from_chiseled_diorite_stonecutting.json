@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:chiseled_diorite",
+  "result": {
+    "id": "minecraft:polished_diorite"
+  }
+}

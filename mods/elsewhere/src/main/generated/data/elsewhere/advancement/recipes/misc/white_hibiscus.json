@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:white_hibiscus"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_hibiscus": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:white_hibiscus"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_hibiscus"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:white_hibiscus"
+    ]
+  }
+}

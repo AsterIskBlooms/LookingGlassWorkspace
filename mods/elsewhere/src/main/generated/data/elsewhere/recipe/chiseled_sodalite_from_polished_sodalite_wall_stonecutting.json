@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:polished_sodalite_wall",
+  "result": {
+    "id": "elsewhere:chiseled_sodalite"
+  }
+}

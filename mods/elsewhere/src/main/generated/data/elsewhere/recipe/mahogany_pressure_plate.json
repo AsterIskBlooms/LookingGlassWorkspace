@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "elsewhere:mahogany_planks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "elsewhere:mahogany_pressure_plate"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot",
+    "elsewhere:tin_ingot"
+  ],
+  "result": {
+    "id": "elsewhere:tin_block"
+  }
+}

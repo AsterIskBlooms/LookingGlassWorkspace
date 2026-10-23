@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:orpiment",
+  "result": {
+    "count": 2,
+    "id": "elsewhere:orpiment_slab"
+  }
+}

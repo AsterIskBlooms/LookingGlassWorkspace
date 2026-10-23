@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_prismarine_stairs": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elsewhere:polished_prismarine_stairs"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "elsewhere:prismarine_slab_from_polished_prismarine_stairs_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_polished_prismarine_stairs"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elsewhere:prismarine_slab_from_polished_prismarine_stairs_stonecutting"
+    ]
+  }
+}

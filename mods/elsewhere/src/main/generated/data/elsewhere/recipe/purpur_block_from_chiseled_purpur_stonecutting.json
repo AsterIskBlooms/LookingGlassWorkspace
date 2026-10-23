@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "elsewhere:chiseled_purpur",
+  "result": {
+    "id": "minecraft:purpur_block"
+  }
+}

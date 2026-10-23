@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "elsewhere:block/smooth_soul_stone_slab"
+    },
+    "type=double": {
+      "model": "elsewhere:block/smooth_soul_stone"
+    },
+    "type=top": {
+      "model": "elsewhere:block/smooth_soul_stone_slab_top"
+    }
+  }
+}
