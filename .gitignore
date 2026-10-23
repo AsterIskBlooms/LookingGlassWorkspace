@@ -7,3 +7,6 @@
 /mods/lavaswim/build/classes/java/main/
 /mods/mirrorlib/build/
 /mods/mirrorlib/build/classes/java/main/
+/mods/elsewhere/src/main/generated/
+/mods/elsewhere/run/
+/mods/mirrorlib/run/

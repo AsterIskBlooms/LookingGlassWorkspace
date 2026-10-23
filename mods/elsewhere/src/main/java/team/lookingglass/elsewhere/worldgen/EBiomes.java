@@ -193,7 +193,6 @@ public interface  EBiomes {
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_RED_SHRUB);
         BiomeDefaultFeatures.addNearWaterVegetation(genBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(genBuilder);
-        BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
 
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TUNDRA_VEGETATION_PATCH);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.DRY_GRASS_CLUMP);
