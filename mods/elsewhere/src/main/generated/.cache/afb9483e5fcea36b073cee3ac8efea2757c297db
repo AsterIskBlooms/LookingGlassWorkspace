@@ -3,6 +3,7 @@ a438c3523b28cc2043b791a74838a96895e2390d data/elsewhere/tags/worldgen/biome/has_
 e8d06499e0a29b2242d20e768c1c0da3af4c97fc data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_forest.json
 0a50212c81c7737783f69cb52ee9a008a3d33186 data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_savanna.json
 353ff9eb8613c852cd954c384cc591a235ed7550 data/minecraft/tags/worldgen/biome/has_structure/pillager_outpost.json
+dc30ef9b8bb22a811bf16a12a74f137b6e02a9c5 data/minecraft/tags/worldgen/biome/has_structure/swamp_hut.json
 487495bb3fe4bddf174b527ae88ed116f4e66240 data/minecraft/tags/worldgen/biome/has_structure/village_desert.json
 f53ab69296a796b865d2a2732ab1c99f52c6e787 data/minecraft/tags/worldgen/biome/has_structure/village_savanna.json
 56d967c5b16bc318d1bd3cb0ad64f0e759f2a201 data/minecraft/tags/worldgen/biome/has_structure/village_snowy.json

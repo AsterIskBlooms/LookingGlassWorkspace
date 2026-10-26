@@ -27,6 +27,8 @@ public interface OverworldBiomeGenAccessor {
     @Accessor("FULL_RANGE") Climate.Parameter getFULL_RANGE();
     @Accessor("UNFROZEN_RANGE") Climate.Parameter getUnfrozenRange();
     @Accessor("temperatures") Climate.Parameter[] getTemperatures();
+    @Accessor("humidities") Climate.Parameter[] getHumidities();
+    @Accessor("erosions") Climate.Parameter[] getErosions();
 
     @Invoker("addSurfaceBiome")
     void invokeAddSurfaceBiome(

@@ -3,6 +3,7 @@ package team.lookingglass.elsewhere.worldgen;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.Identifier;
@@ -193,6 +194,7 @@ public interface  EBiomes {
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_RED_SHRUB);
         BiomeDefaultFeatures.addNearWaterVegetation(genBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, EPlacements.SNOW_PATCH);
 
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TUNDRA_VEGETATION_PATCH);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.DRY_GRASS_CLUMP);
@@ -223,7 +225,8 @@ public interface  EBiomes {
         spawnBuilder.addSpawn(EntityTypes.CREEPER, 100, UniformInt.of(4, 4));
         spawnBuilder.addSpawn(EntityTypes.SLIME, 100, UniformInt.of(4, 4));
         spawnBuilder.addSpawn(EntityTypes.SPIDER, 100, UniformInt.of(4, 4));
-        spawnBuilder.addSpawn(EntityTypes.ZOMBIE, 95, UniformInt.of(4, 4));
+        spawnBuilder.addSpawn(EntityTypes.FROSTBITE, 70, UniformInt.of(4, 4));
+        spawnBuilder.addSpawn(EntityTypes.ZOMBIE, 25, UniformInt.of(4, 4));
         spawnBuilder.addSpawn(EntityTypes.BOGGED, 70, UniformInt.of(4, 4));
         spawnBuilder.addSpawn(EntityTypes.SKELETON, 30, UniformInt.of(4, 4));
         spawnBuilder.addSpawn(EntityTypes.ENDERMAN, 10, UniformInt.of(1, 4));
@@ -231,8 +234,7 @@ public interface  EBiomes {
         spawnBuilder.addSpawn(EntityTypes.ZOMBIE_VILLAGER, 5, UniformInt.of(1, 1));
 
         spawnBuilder.addSpawn(EntityTypes.RABBIT, 8, UniformInt.of(2, 3));
-        spawnBuilder.addSpawn(EntityTypes.GOAT, 4, UniformInt.of(1, 3));
-        spawnBuilder.addSpawn(EntityTypes.POLAR_BEAR, 1, UniformInt.of(1, 2));
+        spawnBuilder.addSpawn(EntityTypes.FOX, 2, UniformInt.of(2, 4));
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
@@ -241,18 +243,20 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
-        BiomeDefaultFeatures.addWaterTrees(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.BOG_TREES);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
         BiomeDefaultFeatures.addNearWaterVegetation(genBuilder);
-        BiomeDefaultFeatures.addRareBerryBushes(genBuilder);
+        BiomeDefaultFeatures.addCommonBerryBushes(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
-
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.SWAMP_CATTAILS);
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.SWAMP_GRASS);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .temperature(0.1F)
-                .downfall(0.7F)
+                .temperature(0.0F)
+                .downfall(0.85F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .waterColor(0x3D57D6)
                         .build())

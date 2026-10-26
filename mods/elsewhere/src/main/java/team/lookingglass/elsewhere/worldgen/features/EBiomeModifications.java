@@ -32,7 +32,7 @@ public class EBiomeModifications {
 
         // Basic Features
         BiomeModifications.addFeature(ctx -> ctx.hasTag(BiomeTags.IS_OVERWORLD) && !ctx.hasTag(BiomeTags.IS_OCEAN),
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.PEBBLE);
+                GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.PEBBLE);
         BiomeModifications.addFeature(ctx -> forestRockBiomes.contains(ctx.getBiomeKey()),
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.FOREST_ROCK_SPARSE);
         BiomeModifications.addFeature(ctx -> meadowRockBiomes.contains(ctx.getBiomeKey()),

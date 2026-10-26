@@ -119,6 +119,7 @@ public class EPlacements {
 
     public static final ResourceKey<PlacedFeature> SWAMP_CATTAILS = registerKey("swamp_cattails");
     public static final ResourceKey<PlacedFeature> MANGROVE_CATTAILS = registerKey("mangrove_cattails");
+    public static final ResourceKey<PlacedFeature> BOG_TREES = registerKey("bog_trees");
 
     public static final ResourceKey<PlacedFeature> STEPPE_GRASS = registerKey("steppe_grass");
     public static final ResourceKey<PlacedFeature> STEPPE_PILLARS = registerKey("steppe_pillars");
@@ -201,12 +202,7 @@ public class EPlacements {
                 ));
         PlacementUtils.register(context, SNOW_PATCH,
                 feature.getOrThrow(EFeatures.SNOW_PATCH),
-                List.of(
-                        CountPlacement.of(3),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome()
-                ));
+                List.of(BiomeFilter.biome()));
 
         PlacementUtils.register(context, DRY_GRASS_CLUMP,
                 feature.getOrThrow(EFeatures.DRY_GRASS_CLUMP),
@@ -848,7 +844,7 @@ public class EPlacements {
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                         SurfaceWaterDepthFilter.forMaxDepth(1),
-                        SeaLevelFilter.of(-1, 0),
+                        SeaLevelFilter.of(-2, -1),
                         BiomeFilter.biome()
                 ));
         PlacementUtils.register(context, MANGROVE_CATTAILS,
@@ -858,8 +854,18 @@ public class EPlacements {
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
                         SurfaceWaterDepthFilter.forMaxDepth(1),
-                        SeaLevelFilter.of(-1, 0),
+                        SeaLevelFilter.of(-2, -1),
                         BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, BOG_TREES,
+                feature.getOrThrow(EFeatures.BOG_TREES),
+                List.of(
+                        CountPlacement.of(4),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(
+                                BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING)))
                 ));
 
         PlacementUtils.register(context, STEPPE_GRASS,

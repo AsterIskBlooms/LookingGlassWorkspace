@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import team.lookingglass.elsewhere.worldgen.EBiomes;
 import team.lookingglass.mirrorlib.mixin.OverworldBiomeGenAccessor;
 
@@ -45,7 +46,7 @@ public abstract class OverworldBiomeGenMixin {
                 { Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, null }
         });
         accessor.setPlateauBiomes(new ResourceKey[][]{
-                { Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA },
+                { EBiomes.TUNDRA, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA },
                 { Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.FLOWER_FOREST, Biomes.FLOWER_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
                 { Biomes.SUNFLOWER_PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.PALE_GARDEN },
                 { Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, EBiomes.CEDAR_FOREST, EBiomes.CEDAR_FOREST, Biomes.JUNGLE },
@@ -69,6 +70,19 @@ public abstract class OverworldBiomeGenMixin {
         else if (temperatureIndex == 1) { return humidityIndex >= 3 ? EBiomes.TIDEPOOLS : EBiomes.COLD_BEACH; }
         else if (temperatureIndex == 0) { return humidityIndex >= 3 ? Biomes.SNOWY_BEACH : EBiomes.FROZEN_BEACH; }
         else { return Biomes.BEACH; }
+    }
+
+    @Inject(method = "pickBadlandsBiome", at = @At("HEAD"), cancellable = true)
+    private void elsewhere$pickBadlandsBiome(int humidityIndex, Climate.Parameter weirdness, CallbackInfoReturnable<ResourceKey<Biome>> cir) {
+        if (humidityIndex >= 3 && weirdness.max() >= 0L) {
+            cir.setReturnValue(EBiomes.CLOUD_FOREST);
+        }
+    }
+    @Unique
+    private ResourceKey<Biome> elsewhere$pickSwampBiome(int temperatureIndex, int humidityIndex, Climate.Parameter weirdness) {
+        if (temperatureIndex == 0) { return EBiomes.BOG; }
+        if (temperatureIndex <= 2) { return Biomes.SWAMP; }
+        return Biomes.MANGROVE_SWAMP;
     }
 
     // Cave Biomes
@@ -102,50 +116,14 @@ public abstract class OverworldBiomeGenMixin {
                 EBiomes.VOLCANIC_DEPTHS
         );
     }
-
-    // River Biomes
-    @SuppressWarnings("unchecked")
-    @Redirect(method = "addValleys", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/OverworldBiomeBuilder;addSurfaceBiome(Ljava/util/function/Consumer;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;FLnet/minecraft/resources/ResourceKey;)V"))
-    private void elsewhere$splitRiverTemperatures(OverworldBiomeBuilder builder,
-                                                  Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes,
-                                                  Climate.Parameter temperature,
-                                                  Climate.Parameter humidity,
-                                                  Climate.Parameter continentalness,
-                                                  Climate.Parameter erosion,
-                                                  Climate.Parameter weirdness,
-                                                  float offset,
-                                                  ResourceKey<Biome> biome
-    ) {
-        OverworldBiomeGenAccessor accessor = (OverworldBiomeGenAccessor)(Object) builder;
-        if (biome == Biomes.RIVER && temperature == accessor.getUnfrozenRange()) {
-            Climate.Parameter[] temperatures = accessor.getTemperatures();
-            ResourceKey<Biome>[] rivers = new ResourceKey[]{Biomes.FROZEN_RIVER, EBiomes.COLD_RIVER, Biomes.RIVER, EBiomes.LUKEWARM_RIVER, EBiomes.LUKEWARM_RIVER};
-            for (int i = 1; i < temperatures.length; i++) {
-                accessor.invokeAddSurfaceBiome(biomes, temperatures[i], humidity, continentalness, erosion, weirdness, offset, rivers[i]);
-            }
-        } else {
-            accessor.invokeAddSurfaceBiome(biomes, temperature, humidity, continentalness, erosion, weirdness, offset, biome);
-        }
-    }
-
     @Unique
-    private void addDeepUndergroundBiome(
-            final Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes,
-            final Climate.Parameter temperature,
-            final Climate.Parameter humidity,
-            final Climate.Parameter continentalness,
-            final Climate.Parameter erosion,
-            final Climate.Parameter weirdness,
-            final float offset,
-            final ResourceKey<Biome> biome
-    ) {
+    private void addDeepUndergroundBiome(final Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes, final Climate.Parameter temperature, final Climate.Parameter humidity, final Climate.Parameter continentalness, final Climate.Parameter erosion, final Climate.Parameter weirdness, final float offset, final ResourceKey<Biome> biome) {
         biomes.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.span(0.9F, 1.1F), weirdness, offset), biome));
     }
 
     // Stop lower caves from generating as surface biomes
     @Redirect(method = "addSurfaceBiome", at = @At(value = "INVOKE", target = "Ljava/util/function/Consumer;accept(Ljava/lang/Object;)V", ordinal = 1))
     private void elsewhere$skipUndergroundSurfaceBiome(Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes, Object pair) {}
-
     @Redirect(method = "addMidSlice", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/OverworldBiomeBuilder;pickBeachBiome(II)Lnet/minecraft/resources/ResourceKey;"))
     private ResourceKey<Biome> elsewhere$redirectBeachMidSlice(OverworldBiomeBuilder instance, int temperatureIndex, int humidityIndex, @Local(argsOnly = true, name = "weirdness") Climate.Parameter weirdness) {
         return elsewhere$pickBeachBiome(temperatureIndex, humidityIndex, weirdness);
@@ -157,5 +135,32 @@ public abstract class OverworldBiomeGenMixin {
     @Redirect(method = "pickShatteredCoastBiome", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/OverworldBiomeBuilder;pickBeachBiome(II)Lnet/minecraft/resources/ResourceKey;"))
     private ResourceKey<Biome> elsewhere$redirectBeachShatteredCoast(OverworldBiomeBuilder instance, int temperatureIndex, int humidityIndex, @Local(argsOnly = true, name = "weirdness") Climate.Parameter weirdness) {
         return elsewhere$pickBeachBiome(temperatureIndex, humidityIndex, weirdness);
+    }
+    // Swamps & Rivers
+    @SuppressWarnings("unchecked")
+    @Redirect(method = {"addValleys", "addMidSlice", "addLowSlice"}, at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/biome/OverworldBiomeBuilder;addSurfaceBiome(Ljava/util/function/Consumer;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;Lnet/minecraft/world/level/biome/Climate$Parameter;FLnet/minecraft/resources/ResourceKey;)V"))
+    private void elsewhere$redirectSurfaceBiomes(OverworldBiomeBuilder builder, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes, Climate.Parameter temperature, Climate.Parameter humidity, Climate.Parameter continentalness, Climate.Parameter erosion, Climate.Parameter weirdness, float offset, ResourceKey<Biome> biome) {
+        OverworldBiomeGenAccessor accessor = (OverworldBiomeGenAccessor)(Object) builder; assert accessor != null;
+        Climate.Parameter[] temperatures = accessor.getTemperatures();
+        Climate.Parameter[] erosions = accessor.getErosions();
+        boolean bogBox = temperature == temperatures[0]
+                && erosion.equals(erosions[6])
+                && continentalness.max() >= Climate.Parameter.point(1.0F).max();
+        if (biome == Biomes.RIVER && temperature == accessor.getUnfrozenRange()) {
+            ResourceKey<Biome>[] rivers = new ResourceKey[]{Biomes.FROZEN_RIVER, EBiomes.COLD_RIVER, Biomes.RIVER, EBiomes.LUKEWARM_RIVER, EBiomes.LUKEWARM_RIVER};
+            for (int i = 1; i < temperatures.length; i++) {
+                accessor.invokeAddSurfaceBiome(biomes, temperatures[i], humidity, continentalness, erosion, weirdness, offset, rivers[i]);
+            }
+        } else if (biome == Biomes.SWAMP) {
+            Climate.Parameter[] humidities = accessor.getHumidities();
+            for (int t = 0; t < temperatures.length; t++) {
+                for (int h = 0; h < humidities.length; h++) {
+                    accessor.invokeAddSurfaceBiome(biomes, temperatures[t], humidities[h], continentalness, erosion, weirdness, offset, elsewhere$pickSwampBiome(t, h, weirdness));
+                }
+            }
+        } else if (!(biome == Biomes.MANGROVE_SWAMP || bogBox)) {
+            // MANGROVE_SWAMP is covered by the SWAMP branch, bogBox is replaced by BOG
+            accessor.invokeAddSurfaceBiome(biomes, temperature, humidity, continentalness, erosion, weirdness, offset, biome);
+        }
     }
 }

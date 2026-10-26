@@ -238,7 +238,7 @@
       "elsewhere:dry_grass_clump"
     ],
     [
-      "minecraft:freeze_top_layer"
+      "elsewhere:snow_patch"
     ]
   ],
   "has_precipitation": true,

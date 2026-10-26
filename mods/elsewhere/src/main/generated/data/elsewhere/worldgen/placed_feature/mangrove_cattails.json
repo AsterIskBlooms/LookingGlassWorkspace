@@ -18,8 +18,8 @@
     },
     {
       "type": "elsewhere:sea_level_filter",
-      "max_offset": 0,
-      "min_offset": -1
+      "max_offset": -1,
+      "min_offset": -2
     },
     {
       "type": "minecraft:biome"

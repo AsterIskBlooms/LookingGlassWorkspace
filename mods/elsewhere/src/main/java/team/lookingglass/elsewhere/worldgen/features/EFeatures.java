@@ -5,6 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
@@ -131,6 +132,7 @@ public class EFeatures {
     public static final ResourceKey<Feature> CAVE_ROOTED_DIRT = registerKey("cave_rooted_dirt");
 
     public static final ResourceKey<Feature> CATTAILS = registerKey("cattails");
+    public static final ResourceKey<Feature> BOG_TREES = registerKey("bog_trees");
 
     public static final ResourceKey<Feature> LIMESTONE_ROCK = registerKey("limestone_rock");
 
@@ -180,13 +182,11 @@ public class EFeatures {
         ));
 
         context.register(RED_GRASS_VEGETATION, new SimpleBlockFeature(BlockStateProvider.of(EBlocks.SHORT_RED_GRASS)));
-
         context.register(RED_VEGETATION_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(EBlockTags.SOIL), Holder.direct(BlockStateProvider.of(EBlocks.RED_GRASS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(RED_GRASS_VEGETATION)), CaveSurface.FLOOR,
                 ConstantInt.of(1), 0.0F, 5, 0.25F, UniformInt.of(3, 5), 0.35F)
         );
-
         context.register(DRY_GRASS_CLUMP, new BlockPatchFeature(
                 new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(Blocks.SHORT_DRY_GRASS.defaultBlockState(), 5)
@@ -197,16 +197,8 @@ public class EFeatures {
                 2, 1, 5, 3,
                 Direction.DOWN, 1
         ));
-
         context.register(TUNDRA_ROCK, new LargeBlobFeature(Blocks.TUFF.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 4)));
-
-        context.register(SNOW_PATCH, new BlockPatchFeature(
-                BlockStateProvider.of(Blocks.SNOW),
-                BlockPredicate.allOf(BlockPredicate.solid(Direction.DOWN), BlockPredicate.noFluid()),
-                BlockPredicate.replaceable(),
-                3, 1, 15, 7,
-                Direction.DOWN, 1
-        ));
+        context.register(SNOW_PATCH, new PatchySnowFeature(0.03, 0.15, 0.15));
 
         context.register(AMETHYST_NODE_KEY, new AmethystNodeFeature());
 
@@ -437,7 +429,7 @@ public class EFeatures {
         ), PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.GRASS_JUNGLE),
                 CountPlacement.of(32), OffsetPlacement.ofTriangle(7, 3),
                 BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                        BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN, new Block[]{Blocks.PODZOL})))))));
+                        BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN, Blocks.PODZOL)))))));
 
         context.register(FLOWER_FOREST_TREES_KEY, new RandomSelectorFeature(List.of(
                 new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 0.0025F),
@@ -667,6 +659,14 @@ public class EFeatures {
                 4, 2, 6, 5,
                 Direction.DOWN, 1
         ));
+        context.register(BOG_TREES, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(TreeFeatures.SWAMP_OAK)), 195)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 150)
+                        .add(placedFeatures.getOrThrow(TreePlacements.YELLOW_POPLAR), 28)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 42)
+                        .build()
+                ));
 
         context.register(LIMESTONE_ROCK, new BlockColumnClusterFeature(
                 List.of(BlockColumnFeature.layer(UniformInt.of(5, 7), BlockStateProvider.of(EBlocks.LIMESTONE.defaultBlockState()))),
@@ -705,7 +705,7 @@ public class EFeatures {
 
         for(int amount = minState; amount <= maxState; ++amount) {
             for(Direction direction : Direction.Plane.HORIZONTAL) {
-                segmentedBlockBuild.add((BlockState)((BlockState)block.defaultBlockState().setValue(amountProperty, amount)).setValue(directionProperty, direction), 1);
+                segmentedBlockBuild.add((block.defaultBlockState().setValue(amountProperty, amount)).setValue(directionProperty, direction), 1);
             }
         }
 

@@ -29,22 +29,13 @@
               "weight": 8
             },
             {
-              "type": "minecraft:goat",
+              "type": "minecraft:fox",
               "count": {
                 "type": "minecraft:uniform",
-                "max_inclusive": 3,
-                "min_inclusive": 1
+                "max_inclusive": 4,
+                "min_inclusive": 2
               },
-              "weight": 4
-            },
-            {
-              "type": "minecraft:polar_bear",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 2,
-                "min_inclusive": 1
-              },
-              "weight": 1
+              "weight": 2
             }
           ],
           "monster": [
@@ -76,13 +67,22 @@
               "weight": 100
             },
             {
+              "type": "minecraft:frostbite",
+              "count": {
+                "type": "minecraft:uniform",
+                "max_inclusive": 4,
+                "min_inclusive": 4
+              },
+              "weight": 70
+            },
+            {
               "type": "minecraft:zombie",
               "count": {
                 "type": "minecraft:uniform",
                 "max_inclusive": 4,
                 "min_inclusive": 4
               },
-              "weight": 95
+              "weight": 25
             },
             {
               "type": "minecraft:bogged",
@@ -152,7 +152,7 @@
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.7,
+  "downfall": 0.85,
   "effects": {
     "water_color": "#3d57d6"
   },
@@ -208,17 +208,20 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_water",
+      "elsewhere:bog_trees",
+      "minecraft:patch_grass_taiga",
+      "minecraft:patch_dead_bush",
+      "minecraft:patch_waterlily",
+      "minecraft:brown_mushroom_swamp",
+      "minecraft:red_mushroom_swamp",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:patch_berry_rare",
-      "elsewhere:swamp_cattails",
-      "elsewhere:swamp_grass"
+      "minecraft:patch_berry_common"
     ],
     [
       "minecraft:freeze_top_layer"
     ]
   ],
   "has_precipitation": true,
-  "temperature": 0.1
+  "temperature": 0.0
 }

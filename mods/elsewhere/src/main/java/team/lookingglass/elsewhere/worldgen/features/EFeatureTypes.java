@@ -14,5 +14,6 @@ public class EFeatureTypes {
         Registry.register(BuiltInRegistries.FEATURE_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "large_blob"), LargeBlobFeature.CODEC);
         Registry.register(BuiltInRegistries.FEATURE_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "tidepool"), TidePoolFeature.CODEC);
         Registry.register(BuiltInRegistries.FEATURE_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "crag"), CragFeature.CODEC);
+        Registry.register(BuiltInRegistries.FEATURE_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "patchy_snow"), PatchySnowFeature.CODEC);
     }
 }

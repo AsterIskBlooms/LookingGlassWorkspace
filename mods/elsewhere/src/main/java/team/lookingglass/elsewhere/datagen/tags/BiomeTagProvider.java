@@ -60,6 +60,8 @@ public class BiomeTagProvider extends FabricTagsProvider<Biome> {
                 EBiomes.TUNDRA
         );
 
+        builder(BiomeTags.HAS_SWAMP_HUT).add(EBiomes.BOG);
+
         builder(EBiomeTags.HAS_TRIAL_ROOM).addTag(BiomeTags.IS_CAVE);
 
         builder(BiomeTags.HAS_ABANDONED_CAMP_SAVANNA).add(EBiomes.STEPPE, EBiomes.OUTBACK);

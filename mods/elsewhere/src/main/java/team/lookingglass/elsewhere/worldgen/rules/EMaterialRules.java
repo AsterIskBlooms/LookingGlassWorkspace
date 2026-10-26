@@ -221,47 +221,22 @@ public class EMaterialRules {
                                                 )
                                         )
                                 )
-                        ),
-                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.SULFUR_CAVES),
-                                MaterialRules.sequence(
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.4F, -0.1F),
-                                                new BlockRule(Blocks.CINNABAR.defaultBlockState())),
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.1F, 0.325F),
-                                                new BlockRule(Blocks.SULFUR.defaultBlockState())),
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.325F, 0.4F),
-                                                new BlockRule(EBlocks.ORPIMENT.defaultBlockState())),
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.4F),
-                                                new BlockRule(Blocks.CINNABAR.defaultBlockState()))
-                                )
                         )
                 )
         );
 
         MaterialRule swampRules = MaterialRules.ifTrue(
-                MaterialRules.isBiome(biomes, Biomes.SWAMP),
+                MaterialRules.isBiome(biomes, Biomes.SWAMP, EBiomes.BOG),
                 MaterialRules.sequence(
-                        prelimAndWaterCheck(
-                                MaterialRules.ifTrue(
-                                        onFloor,
-                                        MaterialRules.ifTrue(
-                                                MaterialRules.noiseCondition2d(Noises.SURFACE_SECONDARY, 0.0, 1.0),
-                                                new BlockRule(Blocks.GRASS_BLOCK.defaultBlockState())
-                                        )
-                                )
-                        ),
-                        prelimAndWaterCheck(
-                                MaterialRules.ifTrue(
-                                        underFloor,
-                                        MaterialRules.ifTrue(
-                                                MaterialRules.noiseCondition2d(Noises.SURFACE_SECONDARY, 0.0, 1.0),
-                                                new BlockRule(Blocks.DIRT.defaultBlockState())
-                                        )
-                                )
-                        ),
+                        prelimAndWaterCheck(MaterialRules.ifTrue(onFloor,
+                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SURFACE_SECONDARY, 0.0, 1.0),
+                                        new BlockRule(Blocks.GRASS_BLOCK.defaultBlockState())))),
+                        prelimAndWaterCheck(MaterialRules.ifTrue(underFloor,
+                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SURFACE_SECONDARY, 0.0, 1.0),
+                                        new BlockRule(Blocks.DIRT.defaultBlockState())))),
                         MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState())),
                         MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.MUD.defaultBlockState()))
-                )
-        );
+                ));
 
         MaterialRule outbackRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, EBiomes.OUTBACK),
@@ -689,53 +664,34 @@ public class EMaterialRules {
                 )
         );
 
+        MaterialRule baseCaveRules = MaterialRules.ifTrue(
+                MaterialRules.isBiome(biomes, EBiomes.CAVES),
+                MaterialRules.sequence(
+                        MaterialRules.ifTrue(AbovePreliminarySurfaceCondition.INSTANCE, MaterialRules.ifTrue(onFloor,
+                                new BlockRule(Blocks.STONE.defaultBlockState()))),
+                        MaterialRules.ifTrue(AbovePreliminarySurfaceCondition.INSTANCE, MaterialRules.ifTrue(underFloor,
+                                new BlockRule(Blocks.STONE.defaultBlockState())))
+                ));
+
         MaterialRule crystalCavernRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, EBiomes.CRYSTAL_CAVERNS),
                 MaterialRules.sequence(
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.25, -0.2),
-                                new BlockRule(EBlocks.SODALITE.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.0, 0.05),
-                                new BlockRule(EBlocks.SODALITE.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.25, 0.3),
-                                new BlockRule(EBlocks.SODALITE.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.2, -0.1),
-                                new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.1, 0.2),
-                                new BlockRule(Blocks.CALCITE.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.2, 0.4),
-                                new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.4),
-                                new BlockRule(Blocks.CALCITE.defaultBlockState())
-                        ),
-                        MaterialRules.ifTrue(
-                                AbovePreliminarySurfaceCondition.INSTANCE,
-                                MaterialRules.ifTrue(
-                                        onFloor,
-                                        new BlockRule(Blocks.STONE.defaultBlockState())
-                                )
-                        ),
-                        MaterialRules.ifTrue(
-                                AbovePreliminarySurfaceCondition.INSTANCE,
-                                MaterialRules.ifTrue(
-                                        underFloor,
-                                        new BlockRule(Blocks.STONE.defaultBlockState())
-                                )
-                        )
-                )
-        );
+                        // Band 1
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.3, -0.2),
+                                new BlockRule(EBlocks.SODALITE.defaultBlockState())),
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.35, -0.15),
+                                new BlockRule(Blocks.CALCITE.defaultBlockState())),
+                        // Band 2
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.1, 0.2),
+                                new BlockRule(EBlocks.SODALITE.defaultBlockState())),
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.05, 0.3),
+                                new BlockRule(Blocks.CALCITE.defaultBlockState())),
+
+                        MaterialRules.ifTrue(AbovePreliminarySurfaceCondition.INSTANCE, MaterialRules.ifTrue(onFloor,
+                                new BlockRule(Blocks.STONE.defaultBlockState()))),
+                        MaterialRules.ifTrue(AbovePreliminarySurfaceCondition.INSTANCE, MaterialRules.ifTrue(underFloor,
+                                new BlockRule(Blocks.STONE.defaultBlockState())))
+                ));
 
         MaterialRule sulfurCaveRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, Biomes.SULFUR_CAVES), MaterialRules.ifTrue(
@@ -827,6 +783,7 @@ public class EMaterialRules {
                 outbackRules, lushDesertRules,
                 cloudForestRules,
                 tundraRules,
+                baseCaveRules,
                 crystalCavernRules, sulfurCaveRules,
                 aridCaveRules, volcanicDepthsRules
         );

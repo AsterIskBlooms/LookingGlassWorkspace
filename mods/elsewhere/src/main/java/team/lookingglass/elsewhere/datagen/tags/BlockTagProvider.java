@@ -20,7 +20,6 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-
         builder(BlockTags.BASE_STONE_OVERWORLD);
         builder(BlockTags.BASE_STONE_NETHER).add(EBlockItemIds.SOUL_STONE);
         builder(BlockTags.DEEPSLATE_ORE_REPLACEABLES).add(EBlockItemIds.SHALE);
@@ -32,6 +31,7 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 BlockItemIds.BASALT, BlockItemIds.SMOOTH_BASALT, BlockItemIds.SANDSTONE, BlockItemIds.RED_SANDSTONE, EBlockItemIds.PINK_SANDSTONE, EBlockItemIds.SOUL_STONE
                 );
         builder(BlockTags.MOSS_REPLACEABLE).addTag(EBlockTags.NATURAL_STONE_BLOCKS).addTag(BlockTags.DIRT);
+        builder(BlockTags.SUPPORTS_SUGAR_CANE).addTag(EBlockTags.SOIL);
 
         builder(BlockTags.DEEPSLATE_ORE_REPLACEABLES).add(BlockItemIds.SMOOTH_BASALT, BlockItemIds.BLACKSTONE);
         builder(EBlockTags.CINNABAR_ORE_REPLACEABLES).add(BlockItemIds.CINNABAR);
