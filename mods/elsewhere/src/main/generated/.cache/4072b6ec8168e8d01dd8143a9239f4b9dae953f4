@@ -1,4 +1,4 @@
-// 26.4-snapshot-5	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:entity_type
+// 26.4-snapshot-6	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:entity_type
 930aa4fb9a2cefed969e50982f9d4bc13508cb12 data/elsewhere/tags/entity_type/possessable.json
 32fdd69dc4fb3287ffe28e84de12b6454188689b data/minecraft/tags/entity_type/aquatic.json
 32fdd69dc4fb3287ffe28e84de12b6454188689b data/minecraft/tags/entity_type/can_breathe_under_water.json

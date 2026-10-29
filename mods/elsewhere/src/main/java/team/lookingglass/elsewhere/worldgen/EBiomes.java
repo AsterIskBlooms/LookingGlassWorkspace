@@ -3,9 +3,7 @@ package team.lookingglass.elsewhere.worldgen;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.placement.AquaticPlacements;
-import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
-import net.minecraft.data.worldgen.placement.VegetationPlacements;
+import net.minecraft.data.worldgen.placement.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
@@ -81,7 +79,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -123,7 +121,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -185,7 +183,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
@@ -234,12 +232,13 @@ public interface  EBiomes {
         spawnBuilder.addSpawn(EntityTypes.ZOMBIE_VILLAGER, 5, UniformInt.of(1, 1));
 
         spawnBuilder.addSpawn(EntityTypes.RABBIT, 8, UniformInt.of(2, 3));
+        spawnBuilder.addSpawn(EntityTypes.FROG, 1, UniformInt.of(2, 5));
         spawnBuilder.addSpawn(EntityTypes.FOX, 2, UniformInt.of(2, 4));
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
@@ -279,7 +278,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
@@ -318,7 +317,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -357,7 +356,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -397,7 +396,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -445,7 +444,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -489,7 +488,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
@@ -526,7 +525,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
@@ -564,7 +563,7 @@ public interface  EBiomes {
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
@@ -606,7 +605,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_SAND);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
@@ -648,7 +647,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_GRAVEL);
@@ -679,7 +678,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
@@ -714,7 +713,11 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, false, false);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRAVEL);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_ANDESITE_UPPER);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_ANDESITE_LOWER);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_TUFF);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addExtraEmeralds(genBuilder);
@@ -752,7 +755,11 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, false, true);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRAVEL);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRANITE_UPPER);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRANITE_LOWER);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_TUFF);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addExtraGold(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
@@ -786,7 +793,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
         BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
         BiomeDefaultFeatures.addDefaultMonsterRoom(genBuilder);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, false);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
@@ -861,7 +868,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDesertExtraDecoration(genBuilder);
         BiomeDefaultFeatures.addBlueIce(genBuilder);
 
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder, true, true);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addLushCavesSpecialOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);

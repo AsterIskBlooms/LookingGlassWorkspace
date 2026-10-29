@@ -136,7 +136,7 @@ public class MBlockModelGenerators extends BlockModelGenerators {
     }
 
     public BlockFamilyProvider cubeTopFamily(Block block) {
-        TexturedModel model = TexturedModel.CUBE_TOP.get(block);
+        TexturedModel model = TexturedModel.CUBE_BOTTOM_TOP.get(block);
         TextureMapping mapping = model.getMapping()
                 .put(TextureSlot.WALL, TextureMapping.getBlockTexture(block, "_side"))
                 .put(TextureSlot.BOTTOM, model.getMapping().get(TextureSlot.SIDE));

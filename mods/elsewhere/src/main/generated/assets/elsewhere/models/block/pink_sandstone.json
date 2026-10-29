@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_top",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
+    "bottom": "elsewhere:block/pink_sandstone_side",
     "side": "elsewhere:block/pink_sandstone_side",
     "top": "elsewhere:block/pink_sandstone_top"
   }

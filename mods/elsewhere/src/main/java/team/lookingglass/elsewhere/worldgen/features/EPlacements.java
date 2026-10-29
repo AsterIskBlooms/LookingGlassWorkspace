@@ -860,7 +860,7 @@ public class EPlacements {
         PlacementUtils.register(context, BOG_TREES,
                 feature.getOrThrow(EFeatures.BOG_TREES),
                 List.of(
-                        CountPlacement.of(4),
+                        CountPlacement.of(3),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome(),

@@ -113,7 +113,8 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.RED_GRASS_BLOCK,
                         EBlockItemIds.LATERITE,
                         EBlockItemIds.PINK_SAND,
-                        EBlockItemIds.SEAGRASS_SAND
+                        EBlockItemIds.SEAGRASS_SAND,
+                        EBlockItemIds.CHISELED_SNOW_BRICKS
                 );
 
         builder(BlockTags.MINEABLE_WITH_PICKAXE)
@@ -264,10 +265,12 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.LIMESTONE, EBlockItemIds.LIMESTONE_STAIRS, EBlockItemIds.LIMESTONE_SLAB, EBlockItemIds.LIMESTONE_WALL,
                         EBlockItemIds.CUT_LIMESTONE, EBlockItemIds.CUT_LIMESTONE_STAIRS, EBlockItemIds.CUT_LIMESTONE_SLAB, EBlockItemIds.CUT_LIMESTONE_WALL,
 
-                        EBlockItemIds.PACKED_MUD_STAIRS, EBlockItemIds.PACKED_MUD_SLAB, EBlockItemIds.PACKED_MUD_WALL,
+                        EBlockItemIds.PACKED_MUD_STAIRS, EBlockItemIds.PACKED_MUD_SLAB,
                         EBlockItemIds.CHISELED_MUD_BRICKS, EBlockItemIds.MUD_BRICK_PILLAR,
 
                         EBlockItemIds.CHISELED_PURPUR, EBlockItemIds.LAPIS_BRICKS,
+
+                        EBlockItemIds.PACKED_ICE_STAIRS, EBlockItemIds.PACKED_ICE_SLAB, EBlockItemIds.CHISELED_PACKED_ICE_BRICKS,
 
                         EBlockItemIds.SOULGLASS_CLUSTER, EBlockItemIds.RAW_SOULGLASS, EBlockItemIds.SOULGLASS
                 )
@@ -618,7 +621,6 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 EBlockItemIds.SODALITE_WALL, EBlockItemIds.POLISHED_SODALITE_WALL, EBlockItemIds.SODALITE_BRICK_WALL,
                 EBlockItemIds.ORPIMENT_WALL, EBlockItemIds.POLISHED_ORPIMENT_WALL, EBlockItemIds.ORPIMENT_BRICK_WALL,
                 EBlockItemIds.SOUL_STONE_WALL, EBlockItemIds.SMOOTH_SOUL_STONE_WALL, EBlockItemIds.CUT_SOUL_STONE_WALL, EBlockItemIds.POLISHED_SOUL_STONE_WALL,
-                EBlockItemIds.PACKED_MUD_WALL,
 
                 EBlockItemIds.NETHERRACK_WALL, EBlockItemIds.POLISHED_NETHERRACK_WALL, EBlockItemIds.NETHERRACK_BRICK_WALL,
 

@@ -698,6 +698,14 @@ public class EMaterialRules {
                         MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.325F, 0.4F),
                         new BlockRule(EBlocks.ORPIMENT.defaultBlockState())));
 
+        MaterialRule dripstoneCaveRules = MaterialRules.ifTrue(
+                MaterialRules.isBiome(biomes, Biomes.DRIPSTONE_CAVES), MaterialRules.sequence(
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, -0.15F, 0.08F),
+                                new BlockRule(EBlocks.SHALE.defaultBlockState())),
+                        MaterialRules.ifTrue(MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, 0.5F),
+                                new BlockRule(EBlocks.SHALE.defaultBlockState()))
+                ));
+
         MaterialRule aridCaveRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, EBiomes.ARID_CAVES),
                 MaterialRules.sequence(
@@ -784,8 +792,9 @@ public class EMaterialRules {
                 cloudForestRules,
                 tundraRules,
                 baseCaveRules,
-                crystalCavernRules, sulfurCaveRules,
-                aridCaveRules, volcanicDepthsRules
+                dripstoneCaveRules, sulfurCaveRules,
+                crystalCavernRules, aridCaveRules,
+                volcanicDepthsRules
         );
     }
 

@@ -662,9 +662,9 @@ public class EFeatures {
         context.register(BOG_TREES, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(TreeFeatures.SWAMP_OAK)), 195)
-                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 150)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 134)
                         .add(placedFeatures.getOrThrow(TreePlacements.YELLOW_POPLAR), 28)
-                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 42)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 48)
                         .build()
                 ));
 

@@ -281,7 +281,7 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTrivialBlock(EBlocks.CHISELED_SODALITE_BRICKS, TexturedModel.COLUMN);
         gen.createAxisAlignedPillarBlock(EBlocks.SODALITE_PILLAR, TexturedModel.COLUMN);
 
-        gen.family(EBlocks.SHALE)
+        mGen.columnFamily(EBlocks.SHALE)
                 .stairs(EBlocks.SHALE_STAIRS)
                 .slab(EBlocks.SHALE_SLAB)
                 .wall(EBlocks.SHALE_WALL)
@@ -445,7 +445,6 @@ public class ModelProvider extends FabricModelProvider {
         gen.family(Blocks.PACKED_MUD)
                 .stairs(EBlocks.PACKED_MUD_STAIRS)
                 .slab(EBlocks.PACKED_MUD_SLAB)
-                .wall(EBlocks.PACKED_MUD_WALL)
         ;
         gen.createTrivialCube(EBlocks.CHISELED_MUD_BRICKS);
         gen.createRotatedPillarWithHorizontalVariant(EBlocks.MUD_BRICK_PILLAR, TexturedModel.COLUMN, TexturedModel.COLUMN_HORIZONTAL);
@@ -662,6 +661,10 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(EBlocks.SOULSTEEL_BLOCK);
         gen.createTrivialCube(EBlocks.ELECTRUM_BLOCK);
         gen.createTrivialCube(EBlocks.URANIUM_BLOCK);
+
+        gen.family(Blocks.PACKED_ICE).stairs(EBlocks.PACKED_ICE_STAIRS).slab(EBlocks.PACKED_ICE_SLAB);
+        gen.createTrivialBlock(EBlocks.CHISELED_PACKED_ICE_BRICKS, TexturedModel.COLUMN);
+        gen.createTrivialCube(EBlocks.CHISELED_SNOW_BRICKS);
 
         gen.family(Blocks.TERRACOTTA).stairs(EBlocks.TERRACOTTA_STAIRS).slab(EBlocks.TERRACOTTA_SLAB);
         gen.family(EBlocks.TERRACOTTA_BRICKS).stairs(EBlocks.TERRACOTTA_BRICK_STAIRS).slab(EBlocks.TERRACOTTA_BRICK_SLAB);

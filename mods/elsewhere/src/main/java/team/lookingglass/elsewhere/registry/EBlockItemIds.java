@@ -290,7 +290,6 @@ public interface EBlockItemIds {
     BlockItemId AMETHYST_SPIRE = register("amethyst_spire");
     BlockItemId PACKED_MUD_STAIRS = register("packed_mud_stairs");
     BlockItemId PACKED_MUD_SLAB = register("packed_mud_slab");
-    BlockItemId PACKED_MUD_WALL = register("packed_mud_wall");
     BlockItemId CHISELED_MUD_BRICKS = register("chiseled_mud_bricks");
     BlockItemId MUD_BRICK_PILLAR = register("mud_brick_pillar");
 
@@ -571,6 +570,11 @@ public interface EBlockItemIds {
     BlockItemId LAPIS_BRICKS = register("lapis_bricks");
     BlockItemId LAPIS_BRICK_STAIRS = register("lapis_brick_stairs");
     BlockItemId LAPIS_BRICK_SLAB = register("lapis_brick_slab");
+
+    BlockItemId PACKED_ICE_STAIRS = register("packed_ice_stairs");
+    BlockItemId PACKED_ICE_SLAB = register("packed_ice_slab");
+    BlockItemId CHISELED_PACKED_ICE_BRICKS = register("chiseled_packed_ice_bricks");
+    BlockItemId CHISELED_SNOW_BRICKS = register("chiseled_snow_bricks");
 
     BlockItemId DUNGEON_SPAWNER = register("dungeon_spawner");
     BlockItemId DUNGEON_VAULT = register("dungeon_vault");

@@ -229,12 +229,16 @@ public class ETabs {
                     EBlocks.CHISELED_SOUL_STONE,
                     EBlocks.POLISHED_SOUL_STONE, EBlocks.POLISHED_SOUL_STONE_STAIRS, EBlocks.POLISHED_SOUL_STONE_SLAB, EBlocks.POLISHED_SOUL_STONE_WALL);
 
-            // Mud, Quartz, & Amethyst
-            output.insertAfter(Items.PACKED_MUD, EBlocks.PACKED_MUD_STAIRS, EBlocks.PACKED_MUD_SLAB, EBlocks.PACKED_MUD_WALL);
+            // Mud, Ice, & Snow
+            output.insertAfter(Items.PACKED_MUD, EBlocks.PACKED_MUD_STAIRS, EBlocks.PACKED_MUD_SLAB);
             output.insertAfter(Items.MUD_BRICK_WALL, EBlocks.CHISELED_MUD_BRICKS, EBlocks.MUD_BRICK_PILLAR);
+            output.insertAfter(Items.PACKED_ICE, EBlocks.PACKED_ICE_STAIRS, EBlocks.PACKED_ICE_SLAB);
+            output.insertAfter(Items.CHISELED_PACKED_ICE, EBlocks.CHISELED_PACKED_ICE_BRICKS);
+            output.insertAfter(Items.SNOW_BRICK_WALL, EBlocks.CHISELED_SNOW_BRICKS);
+
+            // Quartz & Purpur
             output.insertAfter(Items.QUARTZ_BRICKS, EBlocks.QUARTZ_BRICK_STAIRS, EBlocks.QUARTZ_BRICK_SLAB);
             output.insertAfter(Items.PURPUR_PILLAR, EBlocks.CHISELED_PURPUR);
-
             output.insertAfter(Items.PURPUR_SLAB,
                     Blocks.OBSIDIAN, EBlocks.OBSIDIAN_STAIRS, EBlocks.OBSIDIAN_SLAB, EBlocks.CHISELED_OBSIDIAN,
                     EBlocks.OBSIDIAN_BRICKS, EBlocks.OBSIDIAN_BRICK_STAIRS, EBlocks.OBSIDIAN_BRICK_SLAB, EBlocks.OBSIDIAN_PILLAR

@@ -138,8 +138,6 @@
     [],
     [
       "minecraft:ore_gravel",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
       "minecraft:ore_andesite_upper",
       "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
@@ -171,6 +169,7 @@
     ],
     [],
     [
+      "minecraft:glow_lichen",
       "elsewhere:cave_weeds"
     ],
     [

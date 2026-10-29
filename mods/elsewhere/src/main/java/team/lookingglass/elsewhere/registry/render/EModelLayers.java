@@ -7,13 +7,11 @@ import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.registry.render.shields.QuickShieldModel;
 import team.lookingglass.elsewhere.registry.render.shields.ReinforcedShieldModel;
 
-public final class EModelLayers {
-    public static final ModelLayerLocation QUICK_SHIELD =
-            new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "quick_shield"), "main");
-    public static final ModelLayerLocation REINFORCED_SHIELD =
-            new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "reinforced_shield"), "main");
+public interface EModelLayers {
+    ModelLayerLocation QUICK_SHIELD = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "quick_shield"), "main");
+    ModelLayerLocation REINFORCED_SHIELD = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "reinforced_shield"), "main");
 
-    public static void register() {
+    static void register() {
         ModelLayerRegistry.registerModelLayer(QUICK_SHIELD, QuickShieldModel::createLayer);
         ModelLayerRegistry.registerModelLayer(REINFORCED_SHIELD, ReinforcedShieldModel::createLayer);
     }

@@ -1,4 +1,4 @@
-// 26.4-snapshot-5	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
+// 26.4-snapshot-6	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
 8673e2653fcd324a4c803eb5c338996af05f4d38 data/elsewhere/tags/block/amethyst_spire_replaceable.json
 85a6beb11f0c71fb3406098fe7b4aae4e4dd70d3 data/elsewhere/tags/block/azalea_logs.json
 79256687af643dfc35a6f3672813fb32dd794324 data/elsewhere/tags/block/bamboo_stems.json
@@ -52,8 +52,8 @@ f9c225f54fd18649c89df5dfba6bd070cc3afe83 data/minecraft/tags/block/incorrect_for
 6ecd167811d716ddafd9180e6b0a8be347e6eddb data/minecraft/tags/block/leaves.json
 a0fc52ee862d0a67540a9ae925d06cbbad90c0a7 data/minecraft/tags/block/logs.json
 630fa4fe59aa36773bb14ee32218922249490b4f data/minecraft/tags/block/mineable/axe.json
-ddc3c793dfe7749d99e5553b75f119822425fea2 data/minecraft/tags/block/mineable/pickaxe.json
-16318639a8a9a71f008320902f00ff4780886987 data/minecraft/tags/block/mineable/shovel.json
+909389e6bc439f23a190a831aa67008569b7b086 data/minecraft/tags/block/mineable/pickaxe.json
+08db4ee00b347efee4379895d118ab7bfcdee303 data/minecraft/tags/block/mineable/shovel.json
 31c59f6456f3675975aa30fe1f7ed78f58c5dc52 data/minecraft/tags/block/mob_interactable_doors.json
 3d7e98972d62567721ebbd097dfb22bc186b8010 data/minecraft/tags/block/moss_blocks.json
 29e4272e09de071bc62fd6b5ae878daf25aa0652 data/minecraft/tags/block/moss_replaceable.json
@@ -80,7 +80,7 @@ e039c21fb1945d99b6e7f843924e5976018db75e data/minecraft/tags/block/supports_vege
 8e80275f60bbf2e0aabc6cb5494eef1c0a7e29ce data/minecraft/tags/block/trapdoors.json
 d29c2d7f8d89d56c17a6b85754a44d059aa6fc16 data/minecraft/tags/block/wall_hanging_signs.json
 8c1a18b08ff1c98633b9765fd4267cc244ea872c data/minecraft/tags/block/wall_signs.json
-f7efe390ab8eafba3a7a40d82c913faba2e5d2d3 data/minecraft/tags/block/walls.json
+6753dc3d59048356111d9143de655f959e039a31 data/minecraft/tags/block/walls.json
 1665bc1aeea7c2a277c2b8b33254ad637b417585 data/minecraft/tags/block/wooden_buttons.json
 31c59f6456f3675975aa30fe1f7ed78f58c5dc52 data/minecraft/tags/block/wooden_doors.json
 ffe6fac7acc75e832dee1a7e600f6a8ae363a01b data/minecraft/tags/block/wooden_fences.json

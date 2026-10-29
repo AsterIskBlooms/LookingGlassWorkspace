@@ -38,6 +38,9 @@ public class EEntitySpawns {
                 MobCategory.MONSTER, EEntities.LOST_SOUL, 4, 2, 2);
 
         // New Natural Spawns
+        BiomeModifications.addSpawn(ctx -> ctx.getBiomeKey() == Biomes.SWAMP,
+                MobCategory.CREATURE, EntityTypes.FROG, 1, 2, 5);
+
         List<ResourceKey<Biome>> breezeBiomes = List.of(Biomes.FROZEN_PEAKS, Biomes.JAGGED_PEAKS, Biomes.STONY_PEAKS);
         BiomeModifications.addSpawn(ctx -> breezeBiomes.contains(ctx.getBiomeKey()),
                 MobCategory.MONSTER, EntityTypes.BREEZE, 45, 2, 2);

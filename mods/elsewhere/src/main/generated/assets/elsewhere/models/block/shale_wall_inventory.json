@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/wall_inventory",
   "textures": {
-    "wall": "elsewhere:block/shale"
+    "wall": "elsewhere:block/shale_side"
   }
 }

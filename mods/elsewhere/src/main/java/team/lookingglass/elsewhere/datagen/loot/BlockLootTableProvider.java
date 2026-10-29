@@ -396,7 +396,6 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
 
         dropSelf(EBlocks.PACKED_MUD_STAIRS);
         add(EBlocks.PACKED_MUD_SLAB, createSlabItemTable(EBlocks.PACKED_MUD_SLAB));
-        dropSelf(EBlocks.PACKED_MUD_WALL);
         dropSelf(EBlocks.CHISELED_MUD_BRICKS);
         dropSelf(EBlocks.MUD_BRICK_PILLAR);
 
@@ -590,11 +589,15 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.WARPED_MOSAIC_SLAB, createSlabItemTable(EBlocks.WARPED_MOSAIC_SLAB));
         dropSelf(EBlocks.WARPED_BOARDS);
         dropSelf(EBlocks.WARPED_TRIM);
-
         dropSelf(EBlocks.BAMBOO_STEM);
         dropSelf(EBlocks.STRIPPED_BAMBOO_STEM);
         dropSelf(EBlocks.BAMBOO_BOARDS);
         dropSelf(EBlocks.BAMBOO_TRIM);
+
+        dropSelf(EBlocks.PACKED_ICE_STAIRS);
+        add(EBlocks.PACKED_ICE_SLAB, createSlabItemTable(EBlocks.PACKED_ICE_SLAB));
+        dropSelf(EBlocks.CHISELED_PACKED_ICE_BRICKS);
+        dropSelf(EBlocks.CHISELED_SNOW_BRICKS);
 
         dropSelf(EBlocks.TERRACOTTA_STAIRS);
         add(EBlocks.TERRACOTTA_SLAB, createSlabItemTable(EBlocks.TERRACOTTA_SLAB));

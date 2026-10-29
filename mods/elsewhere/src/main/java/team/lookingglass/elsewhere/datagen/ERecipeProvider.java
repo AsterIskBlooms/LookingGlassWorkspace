@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
@@ -48,12 +47,9 @@ public class ERecipeProvider extends FabricRecipeProvider {
             public void buildRecipes() {
                 HolderGetter<Item> item = registries.lookupOrThrow(Registries.ITEM);
 
-                output.accept(
-                        ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "glow_trim_smithing")),
-                        new GlowTrimSmithingRecipe(new Recipe.CommonInfo(true),
-                                Optional.empty(),
-                                Ingredient.of(item.getOrThrow(ItemTags.TRIMMABLE_ARMOR)),
-                                Ingredient.of(Items.GLOW_INK_SAC)), null);
+                output.accept(ResourceKey.create(Registries.RECIPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "glow_trim_smithing")),
+                        new GlowTrimSmithingRecipe(new Recipe.CommonInfo(true), Optional.empty(),
+                                Ingredient.of(item.getOrThrow(ItemTags.TRIMMABLE_ARMOR)), Ingredient.of(Items.GLOW_INK_SAC)), null);
 
                 shaped(RecipeCategory.COMBAT, Items.STONE_SWORD, 1).pattern("#").pattern("#").pattern("S")
                         .define('#', EBlocks.PEBBLE).define('S', Items.STICK)
@@ -437,6 +433,7 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 recipeStairSlabWall(EBlocks.LIMESTONE, EBlocks.LIMESTONE_STAIRS, EBlocks.LIMESTONE_SLAB, EBlocks.LIMESTONE_WALL);
                 recipe2x2(EBlocks.LIMESTONE, EBlocks.CUT_LIMESTONE);
                 recipeStairSlabWall(EBlocks.CUT_LIMESTONE, EBlocks.CUT_LIMESTONE_STAIRS, EBlocks.CUT_LIMESTONE_SLAB, EBlocks.CUT_LIMESTONE_WALL);
+                stonecutterSet(List.of(EBlocks.LIMESTONE, EBlocks.LIMESTONE_STAIRS, EBlocks.LIMESTONE_WALL, EBlocks.CUT_LIMESTONE, EBlocks.CUT_LIMESTONE_STAIRS, EBlocks.CUT_LIMESTONE_WALL), List.of(EBlocks.LIMESTONE_SLAB, EBlocks.CUT_LIMESTONE_SLAB));
 
                 // Beachstone
                 shaped(RecipeCategory.BUILDING_BLOCKS, EBlocks.BEACHSTONE, 3).define('S', Blocks.SAND).define('#', EBlocks.LIMESTONE)
@@ -448,6 +445,28 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 recipe2x2(EBlocks.POLISHED_BEACHSTONE, EBlocks.BEACHSTONE_BRICKS);
                 recipeStairSlabWall(EBlocks.BEACHSTONE_BRICKS, EBlocks.BEACHSTONE_BRICK_STAIRS, EBlocks.BEACHSTONE_BRICK_SLAB, EBlocks.BEACHSTONE_BRICK_WALL);
                 recipe2x1t1(EBlocks.POLISHED_BEACHSTONE_SLAB, EBlocks.CHISELED_BEACHSTONE);
+                stonecutterSet(List.of(EBlocks.BEACHSTONE, EBlocks.BEACHSTONE_STAIRS, EBlocks.BEACHSTONE_WALL, EBlocks.POLISHED_BEACHSTONE, EBlocks.POLISHED_BEACHSTONE_STAIRS, EBlocks.POLISHED_BEACHSTONE_WALL, EBlocks.BEACHSTONE_BRICKS, EBlocks.BEACHSTONE_BRICK_STAIRS, EBlocks.BEACHSTONE_BRICK_WALL, EBlocks.CHISELED_BEACHSTONE), List.of(EBlocks.BEACHSTONE_SLAB, EBlocks.POLISHED_BEACHSTONE_SLAB, EBlocks.BEACHSTONE_BRICK_SLAB));
+
+                // Ice
+                recipe2x2(Blocks.PACKED_ICE, Blocks.PACKED_ICE_BRICKS);
+                recipeStairSlab(Blocks.PACKED_ICE, EBlocks.PACKED_ICE_STAIRS, EBlocks.PACKED_ICE_SLAB);
+                recipe2x1t1(EBlocks.PACKED_ICE_SLAB, Blocks.CHISELED_PACKED_ICE);
+                recipeStairSlabWall(Blocks.PACKED_ICE_BRICKS, Blocks.PACKED_ICE_BRICK_STAIRS, Blocks.PACKED_ICE_BRICK_SLAB, Blocks.PACKED_ICE_BRICK_WALL);
+                recipe2x1t1(Blocks.PACKED_ICE_BRICK_SLAB, EBlocks.CHISELED_PACKED_ICE_BRICKS);
+                stonecutterSet(List.of(Blocks.PACKED_ICE, EBlocks.PACKED_ICE_STAIRS, Blocks.CHISELED_PACKED_ICE, Blocks.PACKED_ICE_BRICKS, Blocks.PACKED_ICE_BRICK_STAIRS, Blocks.PACKED_ICE_BRICK_WALL, EBlocks.CHISELED_PACKED_ICE_BRICKS), List.of(EBlocks.PACKED_ICE_SLAB, Blocks.PACKED_ICE_BRICK_SLAB));
+
+                // Snow
+                recipe2x2(Blocks.SNOW_BLOCK, Blocks.SNOW_BRICKS);
+                recipeStairSlabWall(Blocks.SNOW_BRICKS, Blocks.SNOW_BRICK_STAIRS, Blocks.SNOW_BRICK_SLAB, Blocks.SNOW_BRICK_WALL);
+                recipe2x1t1(Blocks.SNOW_BRICK_SLAB, EBlocks.CHISELED_SNOW_BRICKS);
+                stonecutterSet(List.of(Blocks.SNOW_BLOCK, Blocks.SNOW_BRICKS, Blocks.SNOW_BRICK_STAIRS, Blocks.SNOW_BRICK_WALL, EBlocks.CHISELED_SNOW_BRICKS), List.of(Blocks.SNOW_BRICK_SLAB));
+
+                // Mud
+                recipe2x2(Blocks.PACKED_MUD, Blocks.MUD_BRICKS);
+                recipeStairSlab(Blocks.PACKED_MUD, EBlocks.PACKED_MUD_STAIRS, EBlocks.PACKED_MUD_SLAB);
+                recipeStairSlabWall(Blocks.MUD_BRICKS, Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_SLAB, Blocks.MUD_BRICK_WALL);
+                recipe2x1t1(Blocks.MUD_BRICK_SLAB, EBlocks.CHISELED_MUD_BRICKS);
+                stonecutterSet(List.of(Blocks.PACKED_MUD, EBlocks.PACKED_MUD_STAIRS, Blocks.MUD_BRICKS, Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_WALL, EBlocks.CHISELED_MUD_BRICKS), List.of(EBlocks.PACKED_MUD_SLAB, Blocks.MUD_BRICK_SLAB));
 
                 // Mudstone
                 shapeless(RecipeCategory.BUILDING_BLOCKS, EBlocks.MUDSTONE).requires(Blocks.MUD).requires(EBlocks.SHALE)

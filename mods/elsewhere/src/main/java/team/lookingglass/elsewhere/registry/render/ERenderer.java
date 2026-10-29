@@ -1,5 +1,6 @@
 package team.lookingglass.elsewhere.registry.render;
 
+import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.minecraft.client.color.block.BlockTintSources;
@@ -9,7 +10,9 @@ import net.minecraft.client.particle.FallingLeavesParticle;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SimpleAnimatedParticle;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.client.renderer.special.SpecialModelRenderers;
+import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.Identifier;
@@ -39,7 +42,11 @@ public class ERenderer {
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.CEDAR_LEAVES);
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.MAHOGANY_LEAVES);
 
-        SpecialModelRenderers.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "quick_shield"), QuickShieldSpecialRenderer.Unbaked.MAP_CODEC);
-        SpecialModelRenderers.ID_MAPPER.put(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "reinforced_shield"), ReinforcedShieldSpecialRenderer.Unbaked.MAP_CODEC);
+        special("quick_shield", QuickShieldSpecialRenderer.Unbaked.MAP_CODEC);
+        special("reinforced_shield", ReinforcedShieldSpecialRenderer.Unbaked.MAP_CODEC);
+    }
+
+    private static void special(String name, MapCodec<? extends SpecialModelRenderer.Unbaked<?>> codec) {
+        Registry.register(BuiltInClientRegistries.SPECIAL_MODEL_RENDERER_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, name), codec);
     }
 }

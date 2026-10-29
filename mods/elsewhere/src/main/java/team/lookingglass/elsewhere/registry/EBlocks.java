@@ -444,7 +444,6 @@ public interface EBlocks {
 
     Block PACKED_MUD_STAIRS = BlockRegistry.registerStair(EBlockItemIds.PACKED_MUD_STAIRS, Blocks.PACKED_MUD);
     Block PACKED_MUD_SLAB = BlockRegistry.registerSlab(EBlockItemIds.PACKED_MUD_SLAB, Blocks.PACKED_MUD);
-    Block PACKED_MUD_WALL = BlockRegistry.registerWall(EBlockItemIds.PACKED_MUD_WALL, Blocks.PACKED_MUD);
     Block CHISELED_MUD_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_MUD_BRICKS, Blocks.MUD_BRICKS);
     Block MUD_BRICK_PILLAR = BlockRegistry.register(EBlockItemIds.MUD_BRICK_PILLAR, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD_BRICKS));
 
@@ -912,6 +911,11 @@ public interface EBlocks {
     Block LAPIS_BRICKS = BlockRegistry.register(EBlockItemIds.LAPIS_BRICKS, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.LAPIS_BLOCK).sound(EBlockSoundSets.STONE_BRICKS));
     Block LAPIS_BRICK_STAIRS = BlockRegistry.registerStair(EBlockItemIds.LAPIS_BRICK_STAIRS, LAPIS_BRICKS);
     Block LAPIS_BRICK_SLAB = BlockRegistry.registerSlab(EBlockItemIds.LAPIS_BRICK_SLAB, LAPIS_BRICKS);
+
+    Block PACKED_ICE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.PACKED_ICE_STAIRS, Blocks.PACKED_ICE);
+    Block PACKED_ICE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.PACKED_ICE_SLAB, Blocks.PACKED_ICE);
+    Block CHISELED_PACKED_ICE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_PACKED_ICE_BRICKS, Blocks.PACKED_ICE_BRICKS);
+    Block CHISELED_SNOW_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_SNOW_BRICKS, Blocks.SNOW_BRICKS);
 
     Block DUNGEON_SPAWNER = BlockRegistry.register(EBlockItemIds.DUNGEON_SPAWNER, DungeonSpawnerBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.TRIAL_SPAWNER));
     Block DUNGEON_VAULT = BlockRegistry.register(EBlockItemIds.DUNGEON_VAULT, DungeonVaultBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.VAULT));
