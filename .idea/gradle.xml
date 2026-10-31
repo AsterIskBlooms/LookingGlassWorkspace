@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/mods/elsewhere" />
             <option value="$PROJECT_DIR$/mods/lavaswim" />
             <option value="$PROJECT_DIR$/mods/mirrorlib" />
+            <option value="$PROJECT_DIR$/mods/stratum" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="true" />

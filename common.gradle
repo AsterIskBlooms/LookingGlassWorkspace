@@ -22,6 +22,18 @@ loom {
     }
 }
 
+fabricApi {
+    configureDataGeneration {
+        client = true
+        modId = project.name
+        outputDirectory = file("src/main/generated")
+    }
+}
+
+processResources {
+    exclude ".cache/**"
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
 

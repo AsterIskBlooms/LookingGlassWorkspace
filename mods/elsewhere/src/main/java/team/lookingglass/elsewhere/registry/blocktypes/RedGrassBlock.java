@@ -22,7 +22,6 @@ import java.util.List;
 import java.util.Optional;
 
 public class RedGrassBlock extends SpreadingSnowyBlock implements BonemealableBlock {
-
     public RedGrassBlock(BlockBehaviour.Properties properties) {
         super(properties, BlockItemIds.DIRT.block());
     }

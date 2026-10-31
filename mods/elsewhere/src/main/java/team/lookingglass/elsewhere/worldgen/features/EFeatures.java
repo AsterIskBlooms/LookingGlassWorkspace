@@ -31,6 +31,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraft.world.level.material.Fluids;
 import team.lookingglass.elsewhere.Elsewhere;
+import team.lookingglass.elsewhere.registry.EBlockItemIds;
 import team.lookingglass.elsewhere.registry.tags.EBlockTags;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.blocktypes.PebbleBlock;
@@ -175,7 +176,7 @@ public class EFeatures {
                                 .add(EBlocks.WHITE_HIBISCUS.defaultBlockState(), 1)
                                 .build()
                 ),
-                BlockPredicate.matchesTag(BlockTags.DIRT),
+                BlockPredicate.matchesTag(EBlockTags.SOIL),
                 BlockPredicate.replaceable(),
                 6, 3, 7, 5,
                 Direction.DOWN, 1

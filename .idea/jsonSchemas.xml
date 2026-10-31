@@ -20,6 +20,9 @@
                   <Item>
                     <option name="path" value="mods/lavaswim/src/main/resources/lavaswim.mixins.json" />
                   </Item>
+                  <Item>
+                    <option name="path" value="mods/stratum/src/main/resources/stratum.mixins.json" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
@@ -41,6 +44,9 @@
                   </Item>
                   <Item>
                     <option name="path" value="mods/mirrorlib/src/main/resources/fabric.mod.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="mods/stratum/src/main/resources/fabric.mod.json" />
                   </Item>
                 </list>
               </option>

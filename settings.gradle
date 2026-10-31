@@ -14,7 +14,8 @@ plugins {
 
 rootProject.name = 'Workspace'
 
-include 'elsewhere', 'mirrorlib', 'lavaswim'
+include 'elsewhere', 'mirrorlib', 'lavaswim', 'stratum'
 project(':elsewhere').projectDir = file('mods/elsewhere')
 project(':mirrorlib').projectDir = file('mods/mirrorlib')
 project(':lavaswim').projectDir = file('mods/lavaswim')
+project(':stratum').projectDir = file('mods/stratum')

@@ -151,7 +151,7 @@ public class EPlacements {
         PlacementUtils.register(context, HIBISCUS_JUNGLE,
                 feature.getOrThrow(EFeatures.HIBISCUS_KEY),
                 List.of(
-                        CountPlacement.of(1),
+                        RarityFilter.onAverageOnceEvery(3),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
@@ -159,7 +159,7 @@ public class EPlacements {
         PlacementUtils.register(context, HIBISCUS_SPARSE_JUNGLE,
                 feature.getOrThrow(EFeatures.HIBISCUS_KEY),
                 List.of(
-                        RarityFilter.onAverageOnceEvery(3),
+                        RarityFilter.onAverageOnceEvery(7),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()

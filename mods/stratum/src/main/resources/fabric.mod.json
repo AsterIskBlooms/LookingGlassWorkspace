@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "stratum",
+	"version": "${version}",
+	"name": "Stratum",
+	"description": "Worldgen for a new world.",
+	"authors": [
+		"Team LookingGlass"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/stratum/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"team.lookingglass.stratum.Stratum"
+		],
+		"fabric-datagen": [
+			"team.lookingglass.stratum.StratumDataGenerator"
+		]
+	},
+	"mixins": [
+		"stratum.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.0",
+		"minecraft": "~26.4-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

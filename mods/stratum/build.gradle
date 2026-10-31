@@ -1,0 +1,9 @@
+plugins {
+    id 'net.fabricmc.fabric-loom'
+}
+
+apply from: rootProject.file('common.gradle')
+
+dependencies {
+    implementation project(':mirrorlib')
+}

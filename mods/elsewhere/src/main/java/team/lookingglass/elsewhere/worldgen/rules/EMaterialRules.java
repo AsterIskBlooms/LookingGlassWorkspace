@@ -588,18 +588,15 @@ public class EMaterialRules {
                                 prelimAndWaterCheck(
                                         MaterialRules.sequence(
                                                 stoneCliffsRule,
-                                                MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState())),
-                                                MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.DIRT.defaultBlockState()))
-                                        )
-                                ),
+                                                MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.SAND.defaultBlockState())),
+                                                MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.SAND.defaultBlockState()))
+                                        )),
                                 MaterialRules.ifTrue(
                                         MaterialRules.not(MaterialRules.waterBlockCheck(0, 0)),
-                                        MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState()))
-                                ),
+                                        MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState()))),
                                 MaterialRules.ifTrue(
                                         MaterialRules.not(MaterialRules.waterBlockCheck(0, 0)),
-                                        MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.MUD.defaultBlockState()))
-                                )
+                                        MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.MUD.defaultBlockState())))
                         )
                 ),
                 MaterialRules.ifTrue(
@@ -610,16 +607,13 @@ public class EMaterialRules {
                                                 stoneCliffsRule,
                                                 MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.COARSE_DIRT.defaultBlockState())),
                                                 MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))
-                                        )
-                                ),
+                                        )),
                                 MaterialRules.ifTrue(
                                         MaterialRules.not(MaterialRules.waterBlockCheck(0, 0)),
-                                        MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState()))
-                                ),
+                                        MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.MUD.defaultBlockState()))),
                                 MaterialRules.ifTrue(
                                         MaterialRules.not(MaterialRules.waterBlockCheck(0, 0)),
-                                        MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.DIRT.defaultBlockState()))
-                                )
+                                        MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.DIRT.defaultBlockState())))
                         )
                 ),
                 MaterialRules.ifTrue(

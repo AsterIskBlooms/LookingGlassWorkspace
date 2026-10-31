@@ -7,11 +7,7 @@ apply from: rootProject.file('common.gradle')
 dependencies {
     implementation project(':mirrorlib')
     runtimeOnly project(':lavaswim')
-}
-fabricApi {
-    configureDataGeneration {
-        client = true
-    }
+    runtimeOnly project(':stratum')
 }
 
 loom {

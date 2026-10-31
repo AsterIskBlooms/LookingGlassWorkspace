@@ -757,7 +757,6 @@ public interface EBlocks {
             BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
 
     // Arid Dirt
-    ResourceKey<Block> ARID_DIRT_KEY = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "arid_dirt"));
     Block ARID_DIRT = BlockRegistry.register(EBlockItemIds.ARID_DIRT, Block::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.WOOD).strength(0.5F).sound(BlockSoundSets.ROOTED_DIRT));
     Block ARID_GRASS_BLOCK = BlockRegistry.register(EBlockItemIds.ARID_GRASS_BLOCK, AridGrassBlock::new, BlockBehaviour.Properties.of()

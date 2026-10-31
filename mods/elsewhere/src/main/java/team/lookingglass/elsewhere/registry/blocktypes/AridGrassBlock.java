@@ -17,15 +17,15 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import team.lookingglass.elsewhere.registry.EBlockItemIds;
 import team.lookingglass.elsewhere.registry.EBlocks;
 
 import java.util.List;
 import java.util.Optional;
 
 public class AridGrassBlock extends SpreadingSnowyBlock implements BonemealableBlock {
-
     public AridGrassBlock(BlockBehaviour.Properties properties) {
-        super(properties, EBlocks.ARID_DIRT_KEY);
+        super(properties, EBlockItemIds.ARID_DIRT.block());
     }
 
     @Override

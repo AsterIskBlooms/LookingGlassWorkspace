@@ -22,7 +22,6 @@ import team.lookingglass.elsewhere.datagen.tags.ItemTagProvider;
 import team.lookingglass.elsewhere.worldgen.*;
 import team.lookingglass.elsewhere.worldgen.features.EFeatures;
 import team.lookingglass.elsewhere.worldgen.features.EPlacements;
-import team.lookingglass.elsewhere.worldgen.noise.EDensityFunctions;
 import team.lookingglass.elsewhere.worldgen.structure.EStructures;
 import team.lookingglass.mirrorlib.trim.gen.AtlasProvider;
 import team.lookingglass.mirrorlib.trim.gen.EquipmentProvider;
@@ -32,7 +31,7 @@ public class ElsewhereDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-		pack.addProvider(RegistryDataGenerator::new);
+		pack.addProvider(ERegistryProvider::new);
 
 		pack.addProvider(ModelProvider::new);
 		pack.addProvider(ParticleProvider::new);
@@ -60,7 +59,6 @@ public class ElsewhereDataGenerator implements DataGeneratorEntrypoint {
 		registryBuilder.add(Registries.FEATURE, EFeatures::bootstrap);
 		registryBuilder.add(Registries.PLACED_FEATURE, EPlacements::bootstrap);
 		registryBuilder.add(Registries.BIOME, EBiomes::bootstrap);
-		registryBuilder.add(Registries.DENSITY_FUNCTION, EDensityFunctions::bootstrap);
 		registryBuilder.add(Registries.JUKEBOX_SONG, EDiscs::bootstrap);
 		registryBuilder.add(Registries.BLOCK_SOUND_SET, EBlockSoundSets::bootstrap);
 		registryBuilder.add(Registries.TEMPLATE_POOL, EStructures::bootstrapTemplatePools);
