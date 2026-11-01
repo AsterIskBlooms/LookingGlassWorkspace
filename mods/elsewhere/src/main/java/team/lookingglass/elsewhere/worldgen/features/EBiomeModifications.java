@@ -126,6 +126,10 @@ public class EBiomeModifications {
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.DAPPLED_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.RUSTY_MOSS_PATCH);
 
+        // Taigas
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.TAIGA,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TAIGA_VEGETATION_PATCH);
+
         // Birch Forests
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.BIRCH_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.BIRCH_TREES);
@@ -148,10 +152,18 @@ public class EBiomeModifications {
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.MANGROVE_SWAMP,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.SWAMP_CATTAILS);
 
+        // Rivers
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.RIVER,
+                GenerationStep.Decoration.RAW_GENERATION, EPlacements.MUD_DISK_CLAY);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.RIVER,
+                GenerationStep.Decoration.RAW_GENERATION, EPlacements.MUD_DISK_GRAVEL);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.RIVER,
+                GenerationStep.Decoration.RAW_GENERATION, EPlacements.MUD_DISK_SAND);
+
         // Flatlands
-        List<ResourceKey<Biome>> flatlands = List.of(Biomes.PLAINS, Biomes.MEADOW);
-        BiomeModifications.addFeature(ctx -> flatlands.contains(ctx.getBiomeKey()),
-                GenerationStep.Decoration.RAW_GENERATION, EPlacements.PLAINS_CRAG);
+//        List<ResourceKey<Biome>> flatlands = List.of(Biomes.PLAINS, Biomes.MEADOW);
+//        BiomeModifications.addFeature(ctx -> flatlands.contains(ctx.getBiomeKey()),
+//                GenerationStep.Decoration.RAW_GENERATION, EPlacements.PLAINS_CRAG);
 
         // Ancient Debris
         BiomeModifications.addFeature(ctx -> ctx.hasTag(BiomeTags.IS_NETHER),

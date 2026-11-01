@@ -1,6 +1,6 @@
 {
   "type": "elsewhere:patchy_snow",
   "edge_jitter": 0.15,
-  "scale": 0.03,
-  "threshold": 0.15
+  "scale": 0.08,
+  "threshold": 0.1
 }

@@ -192,7 +192,9 @@
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
-      "minecraft:disk_clay"
+      "minecraft:disk_clay",
+      "elsewhere:mud_disk_clay",
+      "elsewhere:mud_disk_sand"
     ],
     [],
     [],

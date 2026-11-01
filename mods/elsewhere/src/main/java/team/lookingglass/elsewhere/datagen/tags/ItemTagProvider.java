@@ -3,10 +3,12 @@ package team.lookingglass.elsewhere.datagen.tags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.tags.BlockItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import team.lookingglass.elsewhere.registry.EBlockItemIds;
-import team.lookingglass.elsewhere.registry.tags.EItemTags;
 import team.lookingglass.elsewhere.registry.EItemIds;
+import team.lookingglass.elsewhere.registry.tags.EBlockItemTags;
+import team.lookingglass.elsewhere.registry.tags.EItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -15,63 +17,16 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         super(output, registriesFuture);
     }
 
-
-
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
+        // BlockItem Tags
+        new BlockItemTagProvider(id -> BlockItemTagsProvider.wrapForItems(tag(id.item()))).run();
+
         // Food
         builder(ItemTags.CAT_FOOD).add(EItemIds.RAW_PERCH);
         builder(ItemTags.OCELOT_FOOD).add(EItemIds.RAW_PERCH);
         builder(ItemTags.WOLF_FOOD).add(EItemIds.RAW_PERCH, EItemIds.COOKED_PERCH);
         builder(ItemTags.MEAT).add(EItemIds.RAW_PERCH, EItemIds.COOKED_PERCH);
-
-        // Wood
-        builder(EItemTags.AZALEA_LOGS).add(
-                EBlockItemIds.AZALEA_LOG, EBlockItemIds.STRIPPED_AZALEA_LOG,
-                EBlockItemIds.AZALEA_WOOD, EBlockItemIds.STRIPPED_AZALEA_WOOD
-        );
-        builder(EItemTags.CEDAR_LOGS).add(
-                EBlockItemIds.CEDAR_LOG, EBlockItemIds.STRIPPED_CEDAR_LOG,
-                EBlockItemIds.CEDAR_WOOD, EBlockItemIds.STRIPPED_CEDAR_WOOD
-        );
-        builder(EItemTags.MAHOGANY_LOGS).add(
-                EBlockItemIds.MAHOGANY_LOG, EBlockItemIds.STRIPPED_MAHOGANY_LOG,
-                EBlockItemIds.MAHOGANY_WOOD, EBlockItemIds.STRIPPED_MAHOGANY_WOOD
-        );
-        builder(ItemTags.LOGS).add(
-                EBlockItemIds.AZALEA_LOG, EBlockItemIds.STRIPPED_AZALEA_LOG,
-                EBlockItemIds.AZALEA_WOOD, EBlockItemIds.STRIPPED_AZALEA_WOOD,
-                EBlockItemIds.CEDAR_LOG, EBlockItemIds.STRIPPED_CEDAR_LOG,
-                EBlockItemIds.CEDAR_WOOD, EBlockItemIds.STRIPPED_CEDAR_WOOD,
-                EBlockItemIds.MAHOGANY_LOG, EBlockItemIds.STRIPPED_MAHOGANY_LOG,
-                EBlockItemIds.MAHOGANY_WOOD, EBlockItemIds.STRIPPED_MAHOGANY_WOOD
-        );
-        builder(ItemTags.LOGS_THAT_BURN).add(
-                EBlockItemIds.AZALEA_LOG, EBlockItemIds.STRIPPED_AZALEA_LOG,
-                EBlockItemIds.AZALEA_WOOD, EBlockItemIds.STRIPPED_AZALEA_WOOD,
-                EBlockItemIds.CEDAR_LOG, EBlockItemIds.STRIPPED_CEDAR_LOG,
-                EBlockItemIds.CEDAR_WOOD, EBlockItemIds.STRIPPED_CEDAR_WOOD,
-                EBlockItemIds.MAHOGANY_LOG, EBlockItemIds.STRIPPED_MAHOGANY_LOG,
-                EBlockItemIds.MAHOGANY_WOOD, EBlockItemIds.STRIPPED_MAHOGANY_WOOD
-        );
-        builder(ItemTags.PLANKS).add(
-                EBlockItemIds.AZALEA_PLANKS, EBlockItemIds.CEDAR_PLANKS, EBlockItemIds.MAHOGANY_PLANKS
-        );
-        builder(ItemTags.WOODEN_STAIRS).add(
-                EBlockItemIds.AZALEA_STAIRS, EBlockItemIds.CEDAR_STAIRS, EBlockItemIds.MAHOGANY_STAIRS
-        );
-        builder(ItemTags.WOODEN_SLABS).add(
-                EBlockItemIds.AZALEA_SLAB, EBlockItemIds.CEDAR_SLAB, EBlockItemIds.MAHOGANY_SLAB
-        );
-        builder(ItemTags.WOODEN_FENCES).add(
-                EBlockItemIds.AZALEA_FENCE, EBlockItemIds.CEDAR_FENCE, EBlockItemIds.MAHOGANY_FENCE
-        );
-        builder(ItemTags.FENCE_GATES).add(
-                EBlockItemIds.AZALEA_FENCE_GATE, EBlockItemIds.CEDAR_FENCE_GATE, EBlockItemIds.MAHOGANY_FENCE_GATE
-        );
-
-        // Sand
-        builder(ItemTags.SAND).add(EBlockItemIds.PINK_SAND);
 
         // Bronze
         builder(EItemTags.BRONZE_TOOLS).add(
@@ -91,7 +46,7 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 EItemIds.SOULSTEEL_HELMET, EItemIds.SOULSTEEL_CHESTPLATE, EItemIds.SOULSTEEL_LEGGINGS, EItemIds.SOULSTEEL_BOOTS
         );
 
-        // Soulsteel
+        // Electrum
         builder(EItemTags.ELECTRUM_TOOLS).add(
                 EItemIds.ELECTRUM_SWORD, EItemIds.ELECTRUM_AXE, EItemIds.ELECTRUM_SPEAR,
                 EItemIds.ELECTRUM_PICKAXE, EItemIds.ELECTRUM_SHOVEL, EItemIds.ELECTRUM_HOE
@@ -121,8 +76,7 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         builder(ItemTags.LEG_ARMOR).add(EItemIds.BRONZE_LEGGINGS, EItemIds.SOULSTEEL_LEGGINGS, EItemIds.ELECTRUM_LEGGINGS);
         builder(ItemTags.FOOT_ARMOR).add(EItemIds.BRONZE_BOOTS, EItemIds.SOULSTEEL_BOOTS, EItemIds.ELECTRUM_BOOTS);
 
-
-        // Trim Tags
+        // Trim tags
         builder(ItemTags.TRIM_MATERIALS).add(
                 EItemIds.TIN_INGOT, EItemIds.BRONZE_ALLOY, EItemIds.SILVER_INGOT, EItemIds.SOULSTEEL_ALLOY, EItemIds.ELECTRUM_ALLOY
         );
@@ -132,22 +86,67 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .addTag(EItemTags.ELECTRUM_EQUIPMENT)
         ;
 
+        // Sulfur Cube Archetypes
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_BOUNCY)
+                .addTag(EBlockItemTags.MOSAICS.item()).addTag(EBlockItemTags.BOARDS.item()).addTag(EBlockItemTags.TRIMS.item())
+        ;
 
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_BOUNCY).add(
+                EBlockItemIds.SODALITE, EBlockItemIds.POLISHED_SODALITE, EBlockItemIds.SODALITE_BRICKS,
+                EBlockItemIds.SODALITE_PILLAR, EBlockItemIds.CHISELED_SODALITE, EBlockItemIds.CHISELED_SODALITE_BRICKS,
+                EBlockItemIds.SHALE, EBlockItemIds.POLISHED_SHALE, EBlockItemIds.SHALE_BRICKS,
+                EBlockItemIds.SHALE_PILLAR, EBlockItemIds.CHISELED_SHALE, EBlockItemIds.CHISELED_SHALE_BRICKS,
+                EBlockItemIds.ORPIMENT, EBlockItemIds.POLISHED_ORPIMENT, EBlockItemIds.ORPIMENT_BRICKS, EBlockItemIds.ORPIMENT_PILLAR, EBlockItemIds.CHISELED_ORPIMENT,
+                EBlockItemIds.SOUL_STONE, EBlockItemIds.SMOOTH_SOUL_STONE, EBlockItemIds.CUT_SOUL_STONE, EBlockItemIds.POLISHED_SOUL_STONE, EBlockItemIds.CHISELED_SOUL_STONE,
+                EBlockItemIds.BEACHSTONE, EBlockItemIds.POLISHED_BEACHSTONE, EBlockItemIds.BEACHSTONE_BRICKS, EBlockItemIds.CHISELED_BEACHSTONE,
+                EBlockItemIds.LIMESTONE, EBlockItemIds.CUT_LIMESTONE,
+                EBlockItemIds.POLISHED_STONE, EBlockItemIds.STONE_TILES, EBlockItemIds.MOSSY_STONE_TILES, EBlockItemIds.STONE_PILLAR, EBlockItemIds.CHISELED_STONE,
+                EBlockItemIds.DEEPSLATE_PILLAR, EBlockItemIds.CHISELED_DEEPSLATE_BRICKS,
+                EBlockItemIds.TUFF_PILLAR, EBlockItemIds.BLACKSTONE_PILLAR,
+                EBlockItemIds.ANDESITE_BRICKS, EBlockItemIds.ANDESITE_PILLAR, EBlockItemIds.CHISELED_ANDESITE,
+                EBlockItemIds.GRANITE_BRICKS, EBlockItemIds.DIORITE_BRICKS,
+                EBlockItemIds.BEJEWELED_CALCITE, EBlockItemIds.POLISHED_CALCITE, EBlockItemIds.CALCITE_BRICKS,
+                EBlockItemIds.CALCITE_PILLAR, EBlockItemIds.CHISELED_CALCITE, EBlockItemIds.CHISELED_CALCITE_BRICKS,
+                EBlockItemIds.POLISHED_DRIPSTONE, EBlockItemIds.DRIPSTONE_TILES,
+                EBlockItemIds.DRIPSTONE_PILLAR, EBlockItemIds.CHISELED_DRIPSTONE_TILES,
+                EBlockItemIds.POLISHED_SANDSTONE, EBlockItemIds.POLISHED_RED_SANDSTONE,
+                EBlockItemIds.PINK_SANDSTONE, EBlockItemIds.SMOOTH_PINK_SANDSTONE, EBlockItemIds.CUT_PINK_SANDSTONE,
+                EBlockItemIds.POLISHED_PINK_SANDSTONE, EBlockItemIds.CHISELED_PINK_SANDSTONE,
+                EBlockItemIds.POLISHED_PRISMARINE, EBlockItemIds.PRISMARINE_PILLAR, EBlockItemIds.CHISELED_PRISMARINE,
+                EBlockItemIds.POLISHED_DARK_PRISMARINE, EBlockItemIds.DARK_PRISMARINE_SCALES, EBlockItemIds.CHISELED_DARK_PRISMARINE,
+                EBlockItemIds.BASALT_VENT, EBlockItemIds.ROCKWEED_BASALT,
+                EBlockItemIds.POLISHED_SMOOTH_BASALT, EBlockItemIds.SMOOTH_BASALT_BRICKS, EBlockItemIds.SMOOTH_BASALT_TILES,
+                EBlockItemIds.POLISHED_NETHERRACK, EBlockItemIds.NETHERRACK_BRICKS, EBlockItemIds.NETHERRACK_PILLAR,
+                EBlockItemIds.CHISELED_NETHERRACK, EBlockItemIds.CHISELED_NETHERRACK_BRICKS,
+                EBlockItemIds.POLISHED_END_STONE, EBlockItemIds.END_STONE_PILLAR, EBlockItemIds.CHISELED_END_STONE,
+                EBlockItemIds.OBSIDIAN_BRICKS, EBlockItemIds.OBSIDIAN_PILLAR, EBlockItemIds.CHISELED_OBSIDIAN,
+                EBlockItemIds.AMETHYST_BRICKS, EBlockItemIds.AMETHYST_PILLAR, EBlockItemIds.CHISELED_AMETHYST,
+                EBlockItemIds.LAPIS_BRICKS, EBlockItemIds.CHISELED_PURPUR,
+                EBlockItemIds.CHISELED_MUD_BRICKS, EBlockItemIds.MUD_BRICK_PILLAR,
+                EBlockItemIds.SULFUR_PILLAR, EBlockItemIds.CINNABAR_PILLAR,
+                EBlockItemIds.CINNABAR_COAL_ORE, EBlockItemIds.CINNABAR_REDSTONE_ORE, EBlockItemIds.CINNABAR_DIAMOND_ORE,
+                EBlockItemIds.CINNABAR_LAPIS_ORE, EBlockItemIds.CINNABAR_EMERALD_ORE, EBlockItemIds.SOUL_QUARTZ_ORE
+        ).addTag(EBlockItemTags.TERRACOTTA_BRICKS.item()).addTag(EBlockItemTags.TERRACOTTA_BRICK_TILES.item());
 
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_REGULAR).add(
+                EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK, EBlockItemIds.RED_GRASS_BLOCK, EBlockItemIds.LATERITE
+        );
 
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_FLAT).add(
+                EBlockItemIds.TIN_ORE, EBlockItemIds.DEEPSLATE_TIN_ORE, EBlockItemIds.CINNABAR_TIN_ORE,
+                EBlockItemIds.SILVER_ORE, EBlockItemIds.DEEPSLATE_SILVER_ORE, EBlockItemIds.CINNABAR_SILVER_ORE,
+                EBlockItemIds.SOUL_SILVER_ORE,
+                EBlockItemIds.CINNABAR_COPPER_ORE, EBlockItemIds.CINNABAR_IRON_ORE, EBlockItemIds.CINNABAR_GOLD_ORE,
+                EBlockItemIds.TIN_BLOCK, EBlockItemIds.RAW_TIN_BLOCK, EBlockItemIds.CUT_TIN, EBlockItemIds.CHISELED_TIN,
+                EBlockItemIds.BRONZE_BLOCK,
+                EBlockItemIds.SILVER_BLOCK, EBlockItemIds.RAW_SILVER_BLOCK, EBlockItemIds.POLISHED_SILVER,
+                EBlockItemIds.CUT_SILVER, EBlockItemIds.SILVER_PILLAR,
+                EBlockItemIds.WROUGHT_IRON_BLOCK, EBlockItemIds.CUT_WROUGHT_IRON, EBlockItemIds.WROUGHT_IRON_GRATE,
+                EBlockItemIds.SOULSTEEL_BLOCK, EBlockItemIds.ELECTRUM_BLOCK, EBlockItemIds.URANIUM_BLOCK
+        );
 
-
-
-
-
-
-
-
-
-
-
-
-
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING).add(
+                EBlockItemIds.CHISELED_PACKED_ICE_BRICKS, EBlockItemIds.CHISELED_SNOW_BRICKS
+        );
     }
-
 }

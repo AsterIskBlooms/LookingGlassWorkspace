@@ -3,6 +3,7 @@
   "package": "team.lookingglass.mirrorlib.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "BiomeMixin",
     "NoiseGeneratorSettingsAccessor",
     "OverworldBiomeGenAccessor",
     "SpreadingSnowyBlockMixin"

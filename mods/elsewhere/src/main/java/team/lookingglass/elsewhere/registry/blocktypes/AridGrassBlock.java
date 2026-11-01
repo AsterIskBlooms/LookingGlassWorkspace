@@ -35,7 +35,7 @@ public class AridGrassBlock extends SpreadingSnowyBlock implements BonemealableB
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
-        return false;
+        return true;
     }
 
     @Override

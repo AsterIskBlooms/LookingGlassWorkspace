@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.*;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
@@ -31,7 +32,6 @@ import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minecraft.world.level.material.Fluids;
 import team.lookingglass.elsewhere.Elsewhere;
-import team.lookingglass.elsewhere.registry.EBlockItemIds;
 import team.lookingglass.elsewhere.registry.tags.EBlockTags;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.blocktypes.PebbleBlock;
@@ -46,7 +46,9 @@ public class EFeatures {
     public static final ResourceKey<Feature> HIBISCUS_KEY = registerKey("hibiscus");
 
     public static final ResourceKey<Feature> RED_GRASS_VEGETATION = registerKey("red_grass_vegetation");
+    public static final ResourceKey<Feature> RED_GRASS_TALL_VEGETATION = registerKey("red_grass_tall_vegetation");
     public static final ResourceKey<Feature> RED_VEGETATION_PATCH = registerKey("red_vegetation_patch");
+    public static final ResourceKey<Feature> BIG_RED_VEGETATION_PATCH = registerKey("big_red_vegetation_patch");
     public static final ResourceKey<Feature> DRY_GRASS_CLUMP = registerKey("dry_glass_clump");
     public static final ResourceKey<Feature> TUNDRA_ROCK = registerKey("tundra_rock");
     public static final ResourceKey<Feature> SNOW_PATCH = registerKey("snow_patch");
@@ -54,6 +56,10 @@ public class EFeatures {
     public static final ResourceKey<Feature> AMETHYST_NODE_KEY = registerKey("amethyst_node");
     public static final ResourceKey<Feature> AMETHYST_SPIRE_KEY = registerKey("amethyst_spire");
     public static final ResourceKey<Feature> AMETHYST_SPIRE_CLUSTER_KEY = registerKey("amethyst_spire_cluster");
+
+    public static final ResourceKey<Feature> MUD_DISK_CLAY = registerKey("mud_disk_clay");
+    public static final ResourceKey<Feature> MUD_DISK_GRAVEL = registerKey("mud_disk_gravel");
+    public static final ResourceKey<Feature> MUD_DISK_SAND = registerKey("mud_disk_sand");
 
     public static final ResourceKey<Feature> ORE_BEJEWELED_CALCITE = registerKey("ore_bejeweled_calcite");
     public static final ResourceKey<Feature> ORE_SILVER = registerKey("ore_silver");
@@ -109,7 +115,8 @@ public class EFeatures {
     public static final ResourceKey<Feature> LUSH_SANDSTONE_ROCKS = registerKey("lush_sandstone_rocks");
 
     public static final ResourceKey<Feature> RUSTY_MOSS_VEGETATION = registerKey("rusty_moss_vegetation");
-    public static final ResourceKey<Feature> RUSTY_MOSS_PATCH_KEY = registerKey("rusty_moss_patch");
+    public static final ResourceKey<Feature> RUSTY_MOSS_PATCH = registerKey("rusty_moss_patch");
+    public static final ResourceKey<Feature> LARGE_RUSTY_MOSS_PATCH = registerKey("large_rusty_moss_patch");
     public static final ResourceKey<Feature> RUSTY_MOSS_PATCH_BONEMEAL = registerKey("rusty_moss_patch_bonemeal");
 
     public static final ResourceKey<Feature> MOSSY_MUD_VEGETATION = registerKey("mossy_mud_vegetation");
@@ -183,10 +190,22 @@ public class EFeatures {
         ));
 
         context.register(RED_GRASS_VEGETATION, new SimpleBlockFeature(BlockStateProvider.of(EBlocks.SHORT_RED_GRASS)));
+        context.register(RED_GRASS_TALL_VEGETATION, new SimpleBlockFeature(new WeightedStateProvider(
+                WeightedList.<BlockState>builder()
+                        .add(EBlocks.SHORT_RED_GRASS.defaultBlockState(), 15)
+                        .add(EBlocks.TALL_RED_GRASS.defaultBlockState(), 5)
+                        .add(Blocks.RED_SHRUB.defaultBlockState(), 1)
+                        .build()
+        )));
         context.register(RED_VEGETATION_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(EBlockTags.SOIL), Holder.direct(BlockStateProvider.of(EBlocks.RED_GRASS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(RED_GRASS_VEGETATION)), CaveSurface.FLOOR,
                 ConstantInt.of(1), 0.0F, 5, 0.25F, UniformInt.of(3, 5), 0.35F)
+        );
+        context.register(BIG_RED_VEGETATION_PATCH, new VegetationPatchFeature(
+                blocks.getOrThrow(EBlockTags.SOIL), Holder.direct(BlockStateProvider.of(EBlocks.RED_GRASS_BLOCK)),
+                PlacementUtils.inlinePlaced(features.getOrThrow(RED_GRASS_TALL_VEGETATION)), CaveSurface.FLOOR,
+                ConstantInt.of(1), 0.0F, 5, 0.40F, UniformInt.of(6, 8), 0.65F)
         );
         context.register(DRY_GRASS_CLUMP, new BlockPatchFeature(
                 new WeightedStateProvider(WeightedList.<BlockState>builder()
@@ -199,7 +218,7 @@ public class EFeatures {
                 Direction.DOWN, 1
         ));
         context.register(TUNDRA_ROCK, new LargeBlobFeature(Blocks.TUFF.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 4)));
-        context.register(SNOW_PATCH, new PatchySnowFeature(0.03, 0.15, 0.15));
+        context.register(SNOW_PATCH, new PatchySnowFeature(0.08, 0.1, 0.15));
 
         context.register(AMETHYST_NODE_KEY, new AmethystNodeFeature());
 
@@ -216,6 +235,31 @@ public class EFeatures {
                 blocks.getOrThrow(EBlockTags.AMETHYST_SPIRE_REPLACEABLE),
                 12, UniformInt.of(1, 9), UniformInt.of(1, 3), 3, 3, UniformInt.of(1, 2),
                 UniformFloat.of(0.3F, 0.7F), ConstantFloat.of(0.1F), 0.05F, 1, 3
+        ));
+
+        context.register(MUD_DISK_CLAY, new DiskFeature(
+                BlockStateProvider.holderOf(Blocks.CLAY),
+                BlockPredicate.matchesBlocks(Blocks.MUD, Blocks.CLAY),
+                UniformInt.of(2, 3),
+                1
+        ));
+        context.register(MUD_DISK_GRAVEL, new DiskFeature(
+                BlockStateProvider.holderOf(Blocks.GRAVEL),
+                BlockPredicate.matchesBlocks(Blocks.MUD),
+                UniformInt.of(2, 5),
+                2
+        ));
+        context.register(MUD_DISK_SAND, new DiskFeature(
+                Holder.direct(new RuleBasedStateProvider(
+                        BlockStateProvider.holderOf(Blocks.SAND),
+                        List.of(new RuleBasedStateProvider.Rule(
+                                BlockPredicate.matchesBlocks(Direction.DOWN, Blocks.AIR),
+                                BlockStateProvider.holderOf(Blocks.SANDSTONE)
+                        ))
+                )),
+                BlockPredicate.matchesBlocks(Blocks.MUD),
+                UniformInt.of(2, 6),
+                2
         ));
 
         context.register(ORE_BEJEWELED_CALCITE, new OreFeature(
@@ -303,7 +347,7 @@ public class EFeatures {
                 new CherryFoliagePlacer(ConstantInt.of(4), ConstantInt.of(1), ConstantInt.of(4),
                         0.25F, 0.75F, 0.40F, 0.35F),
                 new TwoLayersFeatureSize(4, 1, 5),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).build());
 
         context.register(SHORT_CACTUS, new BlockColumnFeature(
@@ -343,7 +387,7 @@ public class EFeatures {
                         .build()),
                 new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
                 new TwoLayersFeatureSize(0, 0, 2),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.COARSE_DIRT.defaultBlockState()))
         ).build());
         context.register(OAK_SHRUB, new TreeFeature.Builder(
                 BlockStateProvider.of(Blocks.OAK_LOG),
@@ -351,7 +395,7 @@ public class EFeatures {
                 BlockStateProvider.of(Blocks.OAK_LEAVES),
                 new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
                 new TwoLayersFeatureSize(0, 0, 0),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).build());
         context.register(JUNGLE_SHRUB, new TreeFeature.Builder(
                 BlockStateProvider.of(Blocks.JUNGLE_LOG),
@@ -359,7 +403,7 @@ public class EFeatures {
                 BlockStateProvider.of(Blocks.JUNGLE_LEAVES),
                 new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
                 new TwoLayersFeatureSize(0, 0, 0),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).build());
 
         context.register(CEDAR_TREE, new TreeFeature.Builder(
@@ -368,7 +412,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.CEDAR_LEAVES),
                 new PineFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(2, 0, 1),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(beehive)).build());
         context.register(CEDAR_TREE_LEAF_LITTER, new TreeFeature.Builder(
                 BlockStateProvider.of(EBlocks.CEDAR_LOG),
@@ -376,7 +420,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.CEDAR_LEAVES),
                 new PineFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(3)),
                 new TwoLayersFeatureSize(2, 0, 1),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(sparseLeafLitter, thickLeafLitter, beehive)).build());
         context.register(TALL_CEDAR_LEAF_LITTER, new TreeFeature.Builder(
                 BlockStateProvider.of(EBlocks.CEDAR_LOG),
@@ -384,7 +428,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.CEDAR_LEAVES),
                 new PineFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), ConstantInt.of(4)),
                 new TwoLayersFeatureSize(7, 0, 2),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(sparseLeafLitter, thickLeafLitter, beehive)).build());
         context.register(FALLEN_CEDAR_TREE, createFallenTrees(EBlocks.CEDAR_LOG, 5, 8)
                 .stumpDecorator(TrunkVineDecorator.INSTANCE).build());
@@ -405,7 +449,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.MAHOGANY_LEAVES),
                 new AcaciaFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0)),
                 new TwoLayersFeatureSize(6, 0, 5),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(TrunkVineDecorator.INSTANCE, new LeaveVineDecorator(0.15F), beehive)).build());
 
         context.register(JUNGLE_TREES_KEY, new RandomSelectorFeature(List.of(
@@ -450,7 +494,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.GILDED_BIRCH_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).build());
         context.register(GILDED_BIRCH, new TreeFeature.Builder(
                 BlockStateProvider.of(Blocks.BIRCH_LOG),
@@ -458,7 +502,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.GILDED_BIRCH_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(beehive)).build());
         context.register(SUPER_GILDED_BIRCH, new TreeFeature.Builder(
                 BlockStateProvider.of(Blocks.BIRCH_LOG),
@@ -466,7 +510,7 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.GILDED_BIRCH_LEAVES),
                 new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
                 new TwoLayersFeatureSize(1, 0, 1),
-                Holder.direct(BlockStateProvider.of(Blocks.AIR.defaultBlockState()))
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(beehive)).build());
 
         context.register(BIRCH_TREES_KEY, new RandomSelectorFeature(List.of(
@@ -491,15 +535,22 @@ public class EFeatures {
                         .add(EBlocks.RUSTY_MOSS_CARPET.defaultBlockState(), 25)
                         .add(EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE.defaultBlockState(), 50)
                         .add(EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE.defaultBlockState(), 10)
-                        .add(Blocks.RED_SHRUB.defaultBlockState(), 10)
         )));
-        context.register(RUSTY_MOSS_PATCH_KEY, new VegetationPatchFeature(
+        context.register(RUSTY_MOSS_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
                 Holder.direct(BlockStateProvider.of(EBlocks.RUSTY_MOSS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(RUSTY_MOSS_VEGETATION)),
                 CaveSurface.FLOOR, ConstantInt.of(1),
                 0.0F, 5, 0.5F,
                 UniformInt.of(4, 7), 0.3F
+        ));
+        context.register(LARGE_RUSTY_MOSS_PATCH, new VegetationPatchFeature(
+                blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
+                Holder.direct(BlockStateProvider.of(EBlocks.RUSTY_MOSS_BLOCK)),
+                PlacementUtils.inlinePlaced(features.getOrThrow(RUSTY_MOSS_VEGETATION)),
+                CaveSurface.FLOOR, ConstantInt.of(1),
+                0.0F, 5, 0.62F,
+                UniformInt.of(6, 9), 0.35F
         ));
         context.register(RUSTY_MOSS_PATCH_BONEMEAL, new VegetationPatchFeature(
                 blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),

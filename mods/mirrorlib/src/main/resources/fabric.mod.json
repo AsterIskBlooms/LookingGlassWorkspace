@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"team.lookingglass.mirrorlib.MirrorLib"
+		],
+		"client": [
+			"team.lookingglass.mirrorlib.MirrorLibClient"
 		]
 	},
 	"mixins": [

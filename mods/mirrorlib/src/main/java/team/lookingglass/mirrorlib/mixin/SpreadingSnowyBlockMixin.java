@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import team.lookingglass.mirrorlib.registry.BlockSpreadRegistry;
+import team.lookingglass.mirrorlib.registry.block.BlockSpreadRegistry;
 
 @Mixin(SpreadingSnowyBlock.class)
 public abstract class SpreadingSnowyBlockMixin {

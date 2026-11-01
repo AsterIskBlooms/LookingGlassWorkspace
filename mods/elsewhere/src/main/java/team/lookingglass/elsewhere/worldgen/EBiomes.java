@@ -188,22 +188,25 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_WINDSWEPT_HILLS);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TUNDRA_RUSTY_MOSS_PATCH);
+        BiomeDefaultFeatures.addBushes(genBuilder);
+        BiomeDefaultFeatures.addFerns(genBuilder);
         BiomeDefaultFeatures.addDefaultGrass(genBuilder);
+        BiomeDefaultFeatures.addSavannaExtraGrass(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_RED_SHRUB);
         BiomeDefaultFeatures.addNearWaterVegetation(genBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, EPlacements.SNOW_PATCH);
 
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TUNDRA_VEGETATION_PATCH);
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.DRY_GRASS_CLUMP);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.DRY_GRASS_CLUMP_SPARSE);
         genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.TUNDRA_ROCK);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .temperature(0.0F)
-                .downfall(0.45F)
+                .temperature(0.2F)
+                .downfall(0.55F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
-                        .grassColorOverride(0xa39658)
+                        .grassColorOverride(0xa9b564)
                         .waterColor(0x3D57D6)
                         .build())
                 .setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC, new BackgroundMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES))
@@ -609,6 +612,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_SAND);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
+        mudDisks(genBuilder, false);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -651,6 +655,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
         genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_GRAVEL);
+        mudDisks(genBuilder, true);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -851,6 +856,14 @@ public interface  EBiomes {
 
         spawnBuilder.addSpawn(EntityTypes.WITCH, 25, UniformInt.of(1, 1));
         spawnBuilder.addSpawn(EntityTypes.ENDERMAN, 10, UniformInt.of(1, 4));
+    }
+
+    static void mudDisks(BiomeGenerationSettings.Builder genBuilder, boolean generateGravel) {
+        if (generateGravel) {
+            genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, EPlacements.MUD_DISK_GRAVEL);
+        }
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, EPlacements.MUD_DISK_CLAY);
+        genBuilder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, EPlacements.MUD_DISK_SAND);
     }
 
     // Global features --- Don't use this, this is just for reference... -w-"

@@ -7,16 +7,10 @@ import net.minecraft.world.item.Item;
 import team.lookingglass.elsewhere.Elsewhere;
 
 public interface EItemIds {
-    ResourceKey<Item> AZALEA_SIGN = register("azalea_sign");
-    ResourceKey<Item> AZALEA_HANGING_SIGN = register("azalea_hanging_sign");
     ResourceKey<Item> AZALEA_BOAT = register("azalea_boat");
     ResourceKey<Item> AZALEA_CHEST_BOAT = register("azalea_chest_boat");
-    ResourceKey<Item> CEDAR_SIGN = register("cedar_sign");
-    ResourceKey<Item> CEDAR_HANGING_SIGN = register("cedar_hanging_sign");
     ResourceKey<Item> CEDAR_BOAT = register("cedar_boat");
     ResourceKey<Item> CEDAR_CHEST_BOAT = register("cedar_chest_boat");
-    ResourceKey<Item> MAHOGANY_SIGN = register("mahogany_sign");
-    ResourceKey<Item> MAHOGANY_HANGING_SIGN = register("mahogany_hanging_sign");
     ResourceKey<Item> MAHOGANY_BOAT = register("mahogany_boat");
     ResourceKey<Item> MAHOGANY_CHEST_BOAT = register("mahogany_chest_boat");
 

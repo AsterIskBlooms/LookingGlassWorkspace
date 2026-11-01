@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class PebbleBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-    private static final VoxelShape SHAPE = Block.box(2, 0, 3, 13, 4, 14);
+    private static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 4, 14);
 
     public PebbleBlock(Properties props) {
         super(props);

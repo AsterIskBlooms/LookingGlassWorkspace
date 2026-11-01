@@ -1,4 +1,4 @@
-package team.lookingglass.mirrorlib.registry;
+package team.lookingglass.mirrorlib.registry.block;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

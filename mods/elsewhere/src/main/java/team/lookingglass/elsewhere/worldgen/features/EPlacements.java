@@ -14,9 +14,9 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraft.world.level.material.Fluids;
 import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.tags.EBlockTags;
@@ -56,6 +56,7 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_BIRCH_TREES = registerKey("old_growth_birch_trees");
 
     public static final ResourceKey<PlacedFeature> TUNDRA_VEGETATION_PATCH = registerKey("tundra_vegetation_patch");
+    public static final ResourceKey<PlacedFeature> TAIGA_VEGETATION_PATCH = registerKey("taiga_vegetation_patch");
     public static final ResourceKey<PlacedFeature> TUNDRA_ROCK = registerKey("tundra_rock");
     public static final ResourceKey<PlacedFeature> SNOW_PATCH = registerKey("snow_patch");
 
@@ -64,6 +65,10 @@ public class EPlacements {
 
     public static final ResourceKey<PlacedFeature> AMETHYST_NODE = registerKey("amethyst_node");
     public static final ResourceKey<PlacedFeature> AMETHYST_SPIRE_CLUSTER = registerKey("amethyst_spire_cluster");
+
+    public static final ResourceKey<PlacedFeature> MUD_DISK_CLAY = registerKey("mud_disk_clay");
+    public static final ResourceKey<PlacedFeature> MUD_DISK_GRAVEL = registerKey("mud_disk_gravel");
+    public static final ResourceKey<PlacedFeature> MUD_DISK_SAND = registerKey("mud_disk_sand");
 
     public static final ResourceKey<PlacedFeature> ORE_BEJEWELED_CALCITE = registerKey("ore_bejeweled_calcite");
     public static final ResourceKey<PlacedFeature> ORE_SILVER = registerKey("ore_silver");
@@ -85,6 +90,7 @@ public class EPlacements {
 
     public static final ResourceKey<PlacedFeature> PEBBLE = registerKey("pebble");
     public static final ResourceKey<PlacedFeature> RUSTY_MOSS_PATCH = registerKey("rusty_moss_patch");
+    public static final ResourceKey<PlacedFeature> TUNDRA_RUSTY_MOSS_PATCH = registerKey("tundra_rusty_moss_patch");
     public static final ResourceKey<PlacedFeature> MOSSY_MUD_PATCH = registerKey("mossy_mud_patch");
 
     public static final ResourceKey<PlacedFeature> LUSH_SHORT_CACTUS = registerKey("lush_short_cactus");
@@ -192,6 +198,14 @@ public class EPlacements {
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
                 ));
+        PlacementUtils.register(context, TAIGA_VEGETATION_PATCH,
+                feature.getOrThrow(EFeatures.BIG_RED_VEGETATION_PATCH),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(6),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
         PlacementUtils.register(context, TUNDRA_ROCK,
                 feature.getOrThrow(EFeatures.TUNDRA_ROCK),
                 List.of(
@@ -236,6 +250,32 @@ public class EPlacements {
                         CountPlacement.of(32),
                         InSquarePlacement.spread(),
                         PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+                        BiomeFilter.biome()
+                ));
+
+        PlacementUtils.register(context, MUD_DISK_CLAY,
+                feature.getOrThrow(EFeatures.MUD_DISK_CLAY),
+                List.of(
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_TOP_SOLID,
+                        BlockPredicateFilter.forPredicate(BlockPredicate.matchesSourceFluids(Fluids.WATER)),
+                        BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, MUD_DISK_GRAVEL,
+                feature.getOrThrow(EFeatures.MUD_DISK_GRAVEL),
+                List.of(
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_TOP_SOLID,
+                        BlockPredicateFilter.forPredicate(BlockPredicate.matchesSourceFluids(Fluids.WATER)),
+                        BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, MUD_DISK_SAND,
+                feature.getOrThrow(EFeatures.MUD_DISK_SAND),
+                List.of(
+                        CountPlacement.of(3),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_TOP_SOLID,
+                        BlockPredicateFilter.forPredicate(BlockPredicate.matchesSourceFluids(Fluids.WATER)),
                         BiomeFilter.biome()
                 ));
 
@@ -317,7 +357,7 @@ public class EPlacements {
         PlacementUtils.register(context, ORE_SHALE,
                 feature.getOrThrow(EFeatures.ORE_SHALE),
                 List.of(
-                        CountPlacement.of(4),
+                        CountPlacement.of(2),
                         InSquarePlacement.spread(),
                         HeightRangePlacement.uniform(
                                 VerticalAnchor.bottom(),
@@ -444,7 +484,15 @@ public class EPlacements {
                 ));
 
         PlacementUtils.register(context, RUSTY_MOSS_PATCH,
-                feature.getOrThrow(EFeatures.RUSTY_MOSS_PATCH_KEY),
+                feature.getOrThrow(EFeatures.RUSTY_MOSS_PATCH),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(5),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, TUNDRA_RUSTY_MOSS_PATCH,
+                feature.getOrThrow(EFeatures.LARGE_RUSTY_MOSS_PATCH),
                 List.of(
                         RarityFilter.onAverageOnceEvery(5),
                         InSquarePlacement.spread(),

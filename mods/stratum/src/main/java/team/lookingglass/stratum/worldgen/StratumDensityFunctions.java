@@ -40,6 +40,7 @@ public class StratumDensityFunctions {
     private static final float DESERT_KEEP = 0.05F; // relief kept on desert ground (1 = unchanged, 0 = dead flat)
     private static final float SAVANNA_TOP_Y = 84.0F; // savanna plateau top, in blocks
     private static final float SAVANNA_SPIRE_BLOCKS = 82.0F; // taller than jungle spires
+    private static final float BEACH_Y_OFFSET = 0.003F; // ~1 block above sea level (-0.508)
 
     public static void bootstrap(BootstrapContext<DensityFunction> context) {
         HolderGetter<DensityFunction> functions = context.lookup(Registries.DENSITY_FUNCTION);
@@ -217,8 +218,20 @@ public class StratumDensityFunctions {
 
         // leave coasts and oceans fully vanilla
         DensityFunction landWeight = up(continentsFn, -0.19F, -0.05F);
-        context.register(OFFSET, NoiseRouterData.splineWithBlending(
-                DensityFunctions.lerp(landWeight, vanillaOffset, shapedLand), DensityFunctions.blendOffset()));
+        DensityFunction landShaped = DensityFunctions.lerp(landWeight, vanillaOffset, shapedLand);
+        // Beaches: coast, erosion >= -0.22, low slice (any sign) or mid slice (negative only), not river valleys
+        DensityFunction beachSlice = DensityFunctions.max(
+                down(ridgesRawFn.abs(), 0.27F, 0.3F),
+                DensityFunctions.mul(down(ridgesRawFn, -0.3F, -0.27F), up(ridgesRawFn, -0.43F, -0.4F)));
+        DensityFunction beachW = all(
+                up(continentsFn, -0.19F, -0.16F), down(continentsFn, -0.11F, -0.05F),
+                up(erosionFn, -0.26F, -0.2F),
+                beachSlice,
+                valleyW.mul(-1.0F).add(1.0F));
+        DensityFunction beachTarget = DensityFunctions.constant(-0.508F + BEACH_Y_OFFSET);
+        DensityFunction finalOffset = DensityFunctions.lerp(beachW, landShaped, beachTarget);
+
+        context.register(OFFSET, NoiseRouterData.splineWithBlending(finalOffset, DensityFunctions.blendOffset()));
     }
 
     private static DensityFunction up(DensityFunction f, float a, float b) {

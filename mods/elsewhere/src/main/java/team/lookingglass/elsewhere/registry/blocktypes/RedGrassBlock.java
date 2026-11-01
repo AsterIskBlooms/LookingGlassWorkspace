@@ -33,15 +33,15 @@ public class RedGrassBlock extends SpreadingSnowyBlock implements BonemealableBl
 
     @Override
     public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
-        return false;
+        return true;
     }
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         BlockPos above = pos.above();
         BlockState grass = EBlocks.SHORT_RED_GRASS.defaultBlockState();
-        Optional<Holder.Reference<Feature>> grassFeature = level.registryAccess().lookupOrThrow(Registries.FEATURE)
-                .get(EFeatures.RED_GRASS_VEGETATION);
+        Optional<Holder.Reference<Feature>> grassFeature = level.registryAccess()
+                .lookupOrThrow(Registries.FEATURE).get(EFeatures.RED_GRASS_TALL_VEGETATION);
 
         grow:
         for (int j = 0; j < 128; ++j) {

@@ -42,16 +42,16 @@ import java.util.function.Function;
 
 public interface EItems {
 
-    Item AZALEA_SIGN = register(EItemIds.AZALEA_SIGN, p -> new StandingAndWallBlockItem(EBlocks.AZALEA_SIGN, EBlocks.AZALEA_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
-    Item AZALEA_HANGING_SIGN = register(EItemIds.AZALEA_HANGING_SIGN, p -> new HangingSignItem(EBlocks.AZALEA_HANGING_SIGN, EBlocks.AZALEA_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item AZALEA_SIGN = register(EBlockItemIds.AZALEA_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.AZALEA_SIGN, EBlocks.AZALEA_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item AZALEA_HANGING_SIGN = register(EBlockItemIds.AZALEA_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.AZALEA_HANGING_SIGN, EBlocks.AZALEA_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
     Item AZALEA_BOAT = register(EItemIds.AZALEA_BOAT, p -> new BoatItem(EEntities.AZALEA_BOAT, p), new Item.Properties().stacksTo(1));
     Item AZALEA_CHEST_BOAT = register(EItemIds.AZALEA_CHEST_BOAT, p -> new BoatItem(EEntities.AZALEA_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
-    Item CEDAR_SIGN = register(EItemIds.CEDAR_SIGN, p -> new StandingAndWallBlockItem(EBlocks.CEDAR_SIGN, EBlocks.CEDAR_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
-    Item CEDAR_HANGING_SIGN = register(EItemIds.CEDAR_HANGING_SIGN, p -> new HangingSignItem(EBlocks.CEDAR_HANGING_SIGN, EBlocks.CEDAR_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item CEDAR_SIGN = register(EBlockItemIds.CEDAR_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.CEDAR_SIGN, EBlocks.CEDAR_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item CEDAR_HANGING_SIGN = register(EBlockItemIds.CEDAR_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.CEDAR_HANGING_SIGN, EBlocks.CEDAR_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
     Item CEDAR_BOAT = register(EItemIds.CEDAR_BOAT, p -> new BoatItem(EEntities.CEDAR_BOAT, p), new Item.Properties().stacksTo(1));
     Item CEDAR_CHEST_BOAT = register(EItemIds.CEDAR_CHEST_BOAT, p -> new BoatItem(EEntities.CEDAR_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
-    Item MAHOGANY_SIGN = register(EItemIds.MAHOGANY_SIGN, p -> new StandingAndWallBlockItem(EBlocks.MAHOGANY_SIGN, EBlocks.MAHOGANY_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
-    Item MAHOGANY_HANGING_SIGN = register(EItemIds.MAHOGANY_HANGING_SIGN, p -> new HangingSignItem(EBlocks.MAHOGANY_HANGING_SIGN, EBlocks.MAHOGANY_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item MAHOGANY_SIGN = register(EBlockItemIds.MAHOGANY_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.MAHOGANY_SIGN, EBlocks.MAHOGANY_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item MAHOGANY_HANGING_SIGN = register(EBlockItemIds.MAHOGANY_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.MAHOGANY_HANGING_SIGN, EBlocks.MAHOGANY_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
     Item MAHOGANY_BOAT = register(EItemIds.MAHOGANY_BOAT, p -> new BoatItem(EEntities.MAHOGANY_BOAT, p), new Item.Properties().stacksTo(1));
     Item MAHOGANY_CHEST_BOAT = register(EItemIds.MAHOGANY_CHEST_BOAT, p -> new BoatItem(EEntities.MAHOGANY_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
 

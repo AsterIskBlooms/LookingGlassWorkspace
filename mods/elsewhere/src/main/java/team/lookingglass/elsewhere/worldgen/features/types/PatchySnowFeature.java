@@ -9,12 +9,14 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SnowyBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.synth.PerlinNoise;
+import net.minecraft.world.level.material.Fluids;
 
 public record PatchySnowFeature(double scale, double threshold, double edgeJitter) implements Feature {
     public static final MapCodec<PatchySnowFeature> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
@@ -51,22 +53,23 @@ public record PatchySnowFeature(double scale, double threshold, double edgeJitte
                 int y = level.getHeight(Heightmap.Types.MOTION_BLOCKING, x, z);
                 topPos.set(x, y, z);
                 belowPos.set(topPos).move(Direction.DOWN, 1);
-                Biome biome = level.getBiome(topPos).value();
 
-                if (biome.shouldFreeze(level, belowPos, false)) {
+                if (level.isInsideBuildHeight(belowPos.getY())
+                        && level.getBlockState(belowPos).getBlock() instanceof LiquidBlock
+                        && level.getFluidState(belowPos).isSourceOfType(Fluids.WATER)) {
                     level.setBlock(belowPos, Blocks.ICE.defaultBlockState(), 2);
                 }
+
+                BlockState belowState = level.getBlockState(belowPos);
+                if (!belowState.getFluidState().isEmpty()) continue;
 
                 double n = noise.get(x * scale, 0.0, z * scale)
                         + (random.nextDouble() - 0.5) * edgeJitter;
                 if (n < threshold) continue;
 
-                if (biome.shouldSnow(level, topPos)) {
-                    level.setBlock(topPos, Blocks.SNOW.defaultBlockState(), 2);
-                    BlockState belowState = level.getBlockState(belowPos);
-                    if (belowState.hasProperty(SnowyBlock.SNOWY)) {
-                        level.setBlock(belowPos, belowState.setValue(SnowyBlock.SNOWY, true), 2);
-                    }
+                level.setBlock(topPos, Blocks.SNOW.defaultBlockState(), 2);
+                if (belowState.hasProperty(SnowyBlock.SNOWY)) {
+                    level.setBlock(belowPos, belowState.setValue(SnowyBlock.SNOWY, true), 2);
                 }
             }
         }

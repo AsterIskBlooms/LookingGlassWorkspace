@@ -139,8 +139,7 @@ public class EMaterialRules {
                                         )
                                 )
                         ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.isBiome(biomes, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU),
+                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU),
                                 MaterialRules.sequence(
                                         MaterialRules.ifTrue(
                                                 onFloor,
@@ -158,18 +157,18 @@ public class EMaterialRules {
                                         )
                                 )
                         ),
-                        MaterialRules.ifTrue(
-                                MaterialRules.isBiome(biomes, Biomes.OLD_GROWTH_BIRCH_FOREST),
+                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.TAIGA, Biomes.SNOWY_TAIGA),
                                 MaterialRules.sequence(
-                                        MaterialRules.ifTrue(
-                                                onFloor,
-                                                MaterialRules.ifTrue(
-                                                        MaterialRules.noiseCondition2d(Noises.PATCH, 0.3, 1.0),
-                                                        new BlockRule(Blocks.PODZOL.defaultBlockState())
-                                                )
-                                        )
-                                )
-                        ),
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.2),
+                                                        new BlockRule(Blocks.COARSE_DIRT.defaultBlockState())))
+                                )),
+                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.OLD_GROWTH_BIRCH_FOREST),
+                                MaterialRules.sequence(
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.1),
+                                                        new BlockRule(Blocks.PODZOL.defaultBlockState())))
+                                )),
                         MaterialRules.ifTrue(
                                 MaterialRules.isBiome(biomes, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE),
                                 MaterialRules.sequence(
@@ -510,17 +509,8 @@ public class EMaterialRules {
                         MaterialRules.sequence(
                                 stoneCliffsRule,
                                 MaterialRules.ifTrue(onFloor,
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.35, 1.0),
-                                        new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))),
-                                MaterialRules.ifTrue(onFloor,
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.BADLANDS_SURFACE, -0.05, 0.1),
-                                                new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))),
-                                MaterialRules.ifTrue(onFloor,
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.BADLANDS_SURFACE, -0.35, -0.15),
-                                                new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))),
-                                MaterialRules.ifTrue(onFloor,
-                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.35),
-                                        new BlockRule(Blocks.SNOW_BLOCK.defaultBlockState())))
+                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.15),
+                                                new BlockRule(Blocks.COARSE_DIRT.defaultBlockState())))
                         )
                 ));
 

@@ -8,8 +8,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.PushReaction;
 import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.registry.blocktypes.*;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,9 +19,9 @@ import team.lookingglass.elsewhere.registry.sets.ETreeGrowers;
 import team.lookingglass.elsewhere.registry.sets.EWoodTypes;
 import team.lookingglass.elsewhere.registry.sound.EBlockSoundSets;
 import team.lookingglass.elsewhere.registry.tags.EBlockTags;
-import team.lookingglass.mirrorlib.registry.BlockSpreadRegistry;
+import team.lookingglass.mirrorlib.registry.block.BlockSpreadRegistry;
 import team.lookingglass.elsewhere.worldgen.features.EFeatures;
-import team.lookingglass.mirrorlib.registry.BlockRegistry;
+import team.lookingglass.mirrorlib.registry.block.BlockRegistry;
 
 import java.util.Optional;
 
@@ -866,7 +864,7 @@ public interface EBlocks {
     // Mud
     Block MOSSY_MUD = BlockRegistry.register(EBlockItemIds.MOSSY_MUD, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)
             .sound(EBlockSoundSets.MOSSY_MUD).mapColor(MapColor.COLOR_LIGHT_GREEN));
-    Block MUDSTONE = BlockRegistry.register(EBlockItemIds.MUDSTONE, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(BlockSoundSets.CINNABAR));
+    Block MUDSTONE = BlockRegistry.register(EBlockItemIds.MUDSTONE, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(BlockSoundSets.SULFUR));
 
     Block CUT_TIN = BlockRegistry.registerCopyBlock(EBlockItemIds.CUT_TIN, TIN_BLOCK);
     Block CUT_TIN_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_TIN_STAIRS, CUT_TIN);

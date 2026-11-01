@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.Blocks;
 import team.lookingglass.elsewhere.registry.EItems;
 import team.lookingglass.elsewhere.registry.equipment.EEquipmentAssets;
 import team.lookingglass.elsewhere.registry.equipment.ETrims;
-import team.lookingglass.mirrorlib.registry.MBlockModelGenerators;
+import team.lookingglass.mirrorlib.registry.block.MBlockModelGenerators;
 import team.lookingglass.mirrorlib.trim.gen.TrimModelGenerators;
 
 public class ModelProvider extends FabricModelProvider {

@@ -33,14 +33,14 @@ public abstract class OverworldBiomeGenMixin {
         // New Biome Spread
         accessor.setMiddleBiomes(new ResourceKey[][]{
                 { EBiomes.TUNDRA, EBiomes.TUNDRA, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.TAIGA },
-                { EBiomes.CHERRY_FIELDS, Biomes.MEADOW, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
+                { EBiomes.TUNDRA, EBiomes.TUNDRA, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
                 { Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.FOREST, Biomes.DARK_FOREST },
                 { Biomes.SAVANNA, Biomes.SAVANNA, EBiomes.SHRUBLAND, Biomes.SPARSE_JUNGLE, Biomes.JUNGLE },
                 { EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.LUSH_DESERT }
         });
         accessor.setMiddleBiomesVariant(new ResourceKey[][]{
                 { Biomes.ICE_SPIKES, null, Biomes.SNOWY_TAIGA, null, null },
-                { Biomes.MEADOW, null, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
+                { EBiomes.TUNDRA, null, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
                 { Biomes.SUNFLOWER_PLAINS, null, null, Biomes.BIRCH_FOREST, null },
                 { EBiomes.STEPPE, EBiomes.STEPPE, EBiomes.CEDAR_FOREST, null, Biomes.BAMBOO_JUNGLE },
                 { Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, null }

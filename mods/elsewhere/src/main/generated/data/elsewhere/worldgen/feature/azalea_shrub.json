@@ -1,7 +1,7 @@
 {
   "type": "minecraft:tree",
   "below_trunk_provider": {
-    "id": "minecraft:air"
+    "id": "minecraft:coarse_dirt"
   },
   "decorators": [],
   "foliage_placer": {
