@@ -1,17 +1,20 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:birch_bees_0002",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.0125,
-      "feature": "minecraft:fallen_birch_tree"
+      "data": "minecraft:fallen_birch_tree",
+      "weight": 11
     },
     {
-      "chance": 0.45,
-      "feature": {
+      "data": {
         "feature": "elsewhere:gilded_birch",
         "placement": []
-      }
+      },
+      "weight": 250
+    },
+    {
+      "data": "minecraft:birch_bees_0002",
+      "weight": 650
     }
   ]
 }

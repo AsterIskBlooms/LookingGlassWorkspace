@@ -29,7 +29,8 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
         tag(BlockItemTags.SAND).add(EBlockItemIds.PINK_SAND, EBlockItemIds.SEAGRASS_SAND);
         tag(BlockItemTags.MOSS_BLOCKS).add(EBlockItemIds.RUSTY_MOSS_BLOCK, EBlockItemIds.MOSSY_MUD);
         tag(BlockItemTags.LEAVES).add(
-                EBlockItemIds.CEDAR_LEAVES, EBlockItemIds.MAHOGANY_LEAVES, EBlockItemIds.GILDED_BIRCH_LEAVES
+                EBlockItemIds.CEDAR_LEAVES, EBlockItemIds.MAHOGANY_LEAVES, EBlockItemIds.PINE_LEAVES,
+                EBlockItemIds.GILDED_BIRCH_LEAVES
         );
 
         // Metalwork
@@ -65,52 +66,56 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.MAHOGANY_LOG, EBlockItemIds.STRIPPED_MAHOGANY_LOG,
                 EBlockItemIds.MAHOGANY_WOOD, EBlockItemIds.STRIPPED_MAHOGANY_WOOD
         );
+        tag(EBlockItemTags.PINE_LOGS).add(
+                EBlockItemIds.PINE_LOG, EBlockItemIds.STRIPPED_PINE_LOG,
+                EBlockItemIds.PINE_WOOD, EBlockItemIds.STRIPPED_PINE_WOOD
+        );
         tag(EBlockItemTags.BAMBOO_STEMS).add(EBlockItemIds.BAMBOO_STEM, EBlockItemIds.STRIPPED_BAMBOO_STEM);
 
         tag(BlockItemTags.LOGS_THAT_BURN)
                 .addTag(EBlockItemTags.AZALEA_LOGS)
                 .addTag(EBlockItemTags.CEDAR_LOGS)
-                .addTag(EBlockItemTags.MAHOGANY_LOGS);
-        tag(BlockItemTags.LOGS).addTag(EBlockItemTags.BAMBOO_STEMS);
+                .addTag(EBlockItemTags.MAHOGANY_LOGS)
+                .addTag(EBlockItemTags.PINE_LOGS)
+                .addTag(EBlockItemTags.BAMBOO_STEMS)
+        ;
 
-        // Wood sets (the generic tags like STAIRS/BUTTONS already include their WOODEN_ variant)
+        // Wood Sets
         tag(BlockItemTags.PLANKS).add(
-                EBlockItemIds.AZALEA_PLANKS, EBlockItemIds.CEDAR_PLANKS, EBlockItemIds.MAHOGANY_PLANKS
+                EBlockItemIds.AZALEA_PLANKS, EBlockItemIds.CEDAR_PLANKS, EBlockItemIds.MAHOGANY_PLANKS, EBlockItemIds.PINE_PLANKS
         );
         tag(BlockItemTags.WOODEN_STAIRS).add(
-                EBlockItemIds.AZALEA_STAIRS, EBlockItemIds.CEDAR_STAIRS, EBlockItemIds.MAHOGANY_STAIRS
+                EBlockItemIds.AZALEA_STAIRS, EBlockItemIds.CEDAR_STAIRS, EBlockItemIds.MAHOGANY_STAIRS, EBlockItemIds.PINE_STAIRS
         );
         tag(BlockItemTags.WOODEN_SLABS).add(
-                EBlockItemIds.AZALEA_SLAB, EBlockItemIds.CEDAR_SLAB, EBlockItemIds.MAHOGANY_SLAB
+                EBlockItemIds.AZALEA_SLAB, EBlockItemIds.CEDAR_SLAB, EBlockItemIds.MAHOGANY_SLAB, EBlockItemIds.PINE_SLAB
         );
         tag(BlockItemTags.WOODEN_FENCES).add(
-                EBlockItemIds.AZALEA_FENCE, EBlockItemIds.CEDAR_FENCE, EBlockItemIds.MAHOGANY_FENCE
+                EBlockItemIds.AZALEA_FENCE, EBlockItemIds.CEDAR_FENCE, EBlockItemIds.MAHOGANY_FENCE, EBlockItemIds.PINE_FENCE
         );
         tag(BlockItemTags.FENCE_GATES).add(
-                EBlockItemIds.AZALEA_FENCE_GATE, EBlockItemIds.CEDAR_FENCE_GATE, EBlockItemIds.MAHOGANY_FENCE_GATE
+                EBlockItemIds.AZALEA_FENCE_GATE, EBlockItemIds.CEDAR_FENCE_GATE, EBlockItemIds.MAHOGANY_FENCE_GATE, EBlockItemIds.PINE_FENCE_GATE
         );
         tag(BlockItemTags.WOODEN_PRESSURE_PLATES).add(
-                EBlockItemIds.AZALEA_PRESSURE_PLATE, EBlockItemIds.CEDAR_PRESSURE_PLATE, EBlockItemIds.MAHOGANY_PRESSURE_PLATE
+                EBlockItemIds.AZALEA_PRESSURE_PLATE, EBlockItemIds.CEDAR_PRESSURE_PLATE, EBlockItemIds.MAHOGANY_PRESSURE_PLATE, EBlockItemIds.PINE_PRESSURE_PLATE
         );
         tag(BlockItemTags.WOODEN_BUTTONS).add(
-                EBlockItemIds.AZALEA_BUTTON, EBlockItemIds.CEDAR_BUTTON, EBlockItemIds.MAHOGANY_BUTTON
+                EBlockItemIds.AZALEA_BUTTON, EBlockItemIds.CEDAR_BUTTON, EBlockItemIds.MAHOGANY_BUTTON, EBlockItemIds.PINE_BUTTON
         );
         tag(BlockItemTags.WOODEN_DOORS).add(
-                EBlockItemIds.AZALEA_DOOR, EBlockItemIds.CEDAR_DOOR, EBlockItemIds.MAHOGANY_DOOR
+                EBlockItemIds.AZALEA_DOOR, EBlockItemIds.CEDAR_DOOR, EBlockItemIds.MAHOGANY_DOOR, EBlockItemIds.PINE_DOOR
         );
         tag(BlockItemTags.WOODEN_TRAPDOORS).add(
-                EBlockItemIds.AZALEA_TRAPDOOR, EBlockItemIds.CEDAR_TRAPDOOR, EBlockItemIds.MAHOGANY_TRAPDOOR
+                EBlockItemIds.AZALEA_TRAPDOOR, EBlockItemIds.CEDAR_TRAPDOOR, EBlockItemIds.MAHOGANY_TRAPDOOR, EBlockItemIds.PINE_TRAPDOOR
         );
         tag(BlockItemTags.WOODEN_SHELVES).add(
-                EBlockItemIds.AZALEA_SHELF, EBlockItemIds.CEDAR_SHELF, EBlockItemIds.MAHOGANY_SHELF
+                EBlockItemIds.AZALEA_SHELF, EBlockItemIds.CEDAR_SHELF, EBlockItemIds.MAHOGANY_SHELF, EBlockItemIds.PINE_SHELF
         );
-        // BlockItemTags.SIGNS = block "standing_signs" + item "signs"
         tag(BlockItemTags.SIGNS).add(
-                EBlockItemIds.AZALEA_SIGN, EBlockItemIds.CEDAR_SIGN, EBlockItemIds.MAHOGANY_SIGN
+                EBlockItemIds.AZALEA_SIGN, EBlockItemIds.CEDAR_SIGN, EBlockItemIds.MAHOGANY_SIGN, EBlockItemIds.PINE_SIGN
         );
-        // BlockItemTags.HANGING_SIGNS = block "ceiling_hanging_signs" + item "hanging_signs"
         tag(BlockItemTags.HANGING_SIGNS).add(
-                EBlockItemIds.AZALEA_HANGING_SIGN, EBlockItemIds.CEDAR_HANGING_SIGN, EBlockItemIds.MAHOGANY_HANGING_SIGN
+                EBlockItemIds.AZALEA_HANGING_SIGN, EBlockItemIds.CEDAR_HANGING_SIGN, EBlockItemIds.MAHOGANY_HANGING_SIGN, EBlockItemIds.PINE_HANGING_SIGN
         );
 
         // Mosaics / boards / trims
@@ -119,7 +124,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.BIRCH_MOSAIC, EBlockItemIds.SPRUCE_MOSAIC, EBlockItemIds.JUNGLE_MOSAIC,
                 EBlockItemIds.ACACIA_MOSAIC, EBlockItemIds.CHERRY_MOSAIC, EBlockItemIds.MANGROVE_MOSAIC,
                 EBlockItemIds.CRIMSON_MOSAIC, EBlockItemIds.WARPED_MOSAIC,
-                EBlockItemIds.AZALEA_MOSAIC, EBlockItemIds.CEDAR_MOSAIC, EBlockItemIds.MAHOGANY_MOSAIC,
+                EBlockItemIds.AZALEA_MOSAIC, EBlockItemIds.CEDAR_MOSAIC, EBlockItemIds.MAHOGANY_MOSAIC, EBlockItemIds.PINE_MOSAIC,
                 BlockItemIds.BAMBOO_MOSAIC
         );
         tag(EBlockItemTags.MOSAIC_STAIRS).add(
@@ -127,7 +132,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.BIRCH_MOSAIC_STAIRS, EBlockItemIds.SPRUCE_MOSAIC_STAIRS, EBlockItemIds.JUNGLE_MOSAIC_STAIRS,
                 EBlockItemIds.ACACIA_MOSAIC_STAIRS, EBlockItemIds.CHERRY_MOSAIC_STAIRS, EBlockItemIds.MANGROVE_MOSAIC_STAIRS,
                 EBlockItemIds.CRIMSON_MOSAIC_STAIRS, EBlockItemIds.WARPED_MOSAIC_STAIRS,
-                EBlockItemIds.AZALEA_MOSAIC_STAIRS, EBlockItemIds.CEDAR_MOSAIC_STAIRS, EBlockItemIds.MAHOGANY_MOSAIC_STAIRS,
+                EBlockItemIds.AZALEA_MOSAIC_STAIRS, EBlockItemIds.CEDAR_MOSAIC_STAIRS, EBlockItemIds.MAHOGANY_MOSAIC_STAIRS, EBlockItemIds.PINE_MOSAIC_STAIRS,
                 BlockItemIds.BAMBOO_MOSAIC_STAIRS
         );
         tag(EBlockItemTags.MOSAIC_SLABS).add(
@@ -135,7 +140,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.BIRCH_MOSAIC_SLAB, EBlockItemIds.SPRUCE_MOSAIC_SLAB, EBlockItemIds.JUNGLE_MOSAIC_SLAB,
                 EBlockItemIds.ACACIA_MOSAIC_SLAB, EBlockItemIds.CHERRY_MOSAIC_SLAB, EBlockItemIds.MANGROVE_MOSAIC_SLAB,
                 EBlockItemIds.CRIMSON_MOSAIC_SLAB, EBlockItemIds.WARPED_MOSAIC_SLAB,
-                EBlockItemIds.AZALEA_MOSAIC_SLAB, EBlockItemIds.CEDAR_MOSAIC_SLAB, EBlockItemIds.MAHOGANY_MOSAIC_SLAB,
+                EBlockItemIds.AZALEA_MOSAIC_SLAB, EBlockItemIds.CEDAR_MOSAIC_SLAB, EBlockItemIds.MAHOGANY_MOSAIC_SLAB, EBlockItemIds.PINE_MOSAIC_SLAB,
                 BlockItemIds.BAMBOO_MOSAIC_SLAB
         );
         tag(EBlockItemTags.BOARDS).add(
@@ -143,7 +148,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.BIRCH_BOARDS, EBlockItemIds.SPRUCE_BOARDS, EBlockItemIds.JUNGLE_BOARDS,
                 EBlockItemIds.ACACIA_BOARDS, EBlockItemIds.CHERRY_BOARDS, EBlockItemIds.MANGROVE_BOARDS,
                 EBlockItemIds.CRIMSON_BOARDS, EBlockItemIds.WARPED_BOARDS,
-                EBlockItemIds.AZALEA_BOARDS, EBlockItemIds.CEDAR_BOARDS, EBlockItemIds.MAHOGANY_BOARDS,
+                EBlockItemIds.AZALEA_BOARDS, EBlockItemIds.CEDAR_BOARDS, EBlockItemIds.MAHOGANY_BOARDS, EBlockItemIds.PINE_BOARDS,
                 EBlockItemIds.BAMBOO_BOARDS
         );
         tag(EBlockItemTags.TRIMS).add(
@@ -151,7 +156,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.BIRCH_TRIM, EBlockItemIds.SPRUCE_TRIM, EBlockItemIds.JUNGLE_TRIM,
                 EBlockItemIds.ACACIA_TRIM, EBlockItemIds.CHERRY_TRIM, EBlockItemIds.MANGROVE_TRIM,
                 EBlockItemIds.CRIMSON_TRIM, EBlockItemIds.WARPED_TRIM,
-                EBlockItemIds.AZALEA_TRIM, EBlockItemIds.CEDAR_TRIM, EBlockItemIds.MAHOGANY_TRIM,
+                EBlockItemIds.AZALEA_TRIM, EBlockItemIds.CEDAR_TRIM, EBlockItemIds.MAHOGANY_TRIM, EBlockItemIds.PINE_TRIM,
                 EBlockItemIds.BAMBOO_TRIM
         );
 

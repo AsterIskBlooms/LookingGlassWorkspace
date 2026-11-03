@@ -16,6 +16,7 @@ public interface EBlockItemTags {
     BlockItemTagId AZALEA_LOGS = create("azalea_logs");
     BlockItemTagId CEDAR_LOGS = create("cedar_logs");
     BlockItemTagId MAHOGANY_LOGS = create("mahogany_logs");
+    BlockItemTagId PINE_LOGS = create("pine_logs");
     BlockItemTagId BAMBOO_STEMS = create("bamboo_stems");
 
     BlockItemTagId TERRACOTTA_STAIRS = create("terracotta_stairs");

@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.material.Fluids;
@@ -125,7 +126,11 @@ public class EPlacements {
 
     public static final ResourceKey<PlacedFeature> SWAMP_CATTAILS = registerKey("swamp_cattails");
     public static final ResourceKey<PlacedFeature> MANGROVE_CATTAILS = registerKey("mangrove_cattails");
-    public static final ResourceKey<PlacedFeature> BOG_TREES = registerKey("bog_trees");
+    public static final ResourceKey<PlacedFeature> TREES_BOG = registerKey("trees_bog");
+
+    public static final ResourceKey<PlacedFeature> TREES_TAIGA = registerKey("trees_taiga");
+    public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_SPRUCE_TAIGA = registerKey("trees_old_growth_spruce_taiga");
+    public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
 
     public static final ResourceKey<PlacedFeature> STEPPE_GRASS = registerKey("steppe_grass");
     public static final ResourceKey<PlacedFeature> STEPPE_PILLARS = registerKey("steppe_pillars");
@@ -614,7 +619,7 @@ public class EPlacements {
         PlacementUtils.register(context, OAK_SHRUBS,
                 feature.getOrThrow(EFeatures.OAK_SHRUB),
                 List.of(
-                        CountPlacement.of(2),
+                        CountPlacement.of(1),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome(),
@@ -905,8 +910,8 @@ public class EPlacements {
                         SeaLevelFilter.of(-2, -1),
                         BiomeFilter.biome()
                 ));
-        PlacementUtils.register(context, BOG_TREES,
-                feature.getOrThrow(EFeatures.BOG_TREES),
+        PlacementUtils.register(context, TREES_BOG,
+                feature.getOrThrow(EFeatures.TREES_BOG),
                 List.of(
                         CountPlacement.of(3),
                         InSquarePlacement.spread(),
@@ -915,6 +920,16 @@ public class EPlacements {
                         BlockPredicateFilter.forPredicate(BlockPredicate.allOf(
                                 BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING)))
                 ));
+
+        PlacementUtils.register(context, TREES_TAIGA,
+                feature.getOrThrow(EFeatures.TREES_TAIGA),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 1), Blocks.SPRUCE_SAPLING));
+        PlacementUtils.register(context, TREES_OLD_GROWTH_SPRUCE_TAIGA,
+                feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_SPRUCE_TAIGA),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.SPRUCE_SAPLING));
+        PlacementUtils.register(context, TREES_OLD_GROWTH_PINE_TAIGA,
+                feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_PINE_TAIGA),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.SPRUCE_SAPLING));
 
         PlacementUtils.register(context, STEPPE_GRASS,
                 feature.getOrThrow(VegetationFeatures.TALL_GRASS),

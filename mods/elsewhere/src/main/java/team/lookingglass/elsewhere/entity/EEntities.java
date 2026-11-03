@@ -96,7 +96,7 @@ public interface EEntities {
     ResourceKey<EntityType<?>> WHISTLER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "whistler"));
     EntityType<Whistler> WHISTLER = Registry.register(BuiltInRegistries.ENTITY_TYPE, WHISTLER_KEY,
             EntityType.Builder.of(Whistler::new, MobCategory.MONSTER)
-                    .sized(0.6F, 2.0F)
+                    .sized(0.6F, 2.4F)
                     .clientTrackingRange(8)
                     .build(WHISTLER_KEY)
     );
@@ -109,6 +109,8 @@ public interface EEntities {
     ResourceKey<EntityType<?>> CEDAR_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cedar_chest_boat"));
     ResourceKey<EntityType<?>> MAHOGANY_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany_boat"));
     ResourceKey<EntityType<?>> MAHOGANY_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany_chest_boat"));
+    ResourceKey<EntityType<?>> PINE_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine_boat"));
+    ResourceKey<EntityType<?>> PINE_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine_chest_boat"));
 
     EntityType<Boat> AZALEA_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, AZALEA_BOAT_KEY, EntityType.Builder.of(boatFactory(() -> EItems.AZALEA_BOAT), MobCategory.MISC)
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(AZALEA_BOAT_KEY));
@@ -124,6 +126,11 @@ public interface EEntities {
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(MAHOGANY_BOAT_KEY));
     EntityType<ChestBoat> MAHOGANY_CHEST_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, MAHOGANY_CHEST_BOAT_KEY, EntityType.Builder.of(chestBoatFactory(() -> EItems.MAHOGANY_CHEST_BOAT), MobCategory.MISC)
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(MAHOGANY_CHEST_BOAT_KEY));
+
+    EntityType<Boat> PINE_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, PINE_BOAT_KEY, EntityType.Builder.of(boatFactory(() -> EItems.PINE_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(PINE_BOAT_KEY));
+    EntityType<ChestBoat> PINE_CHEST_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, PINE_CHEST_BOAT_KEY, EntityType.Builder.of(chestBoatFactory(() -> EItems.PINE_CHEST_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(PINE_CHEST_BOAT_KEY));
 
     @SuppressWarnings("DataFlowIssue")
     static void initialize() {

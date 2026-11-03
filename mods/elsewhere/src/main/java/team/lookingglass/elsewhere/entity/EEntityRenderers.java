@@ -67,5 +67,12 @@ public class EEntityRenderers {
         EntityRenderers.register(registry, EEntities.MAHOGANY_BOAT, context -> new BoatRenderer(context, MAHOGANY_BOAT_LAYER));
         ModelLayerRegistry.registerModelLayer(MAHOGANY_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
         EntityRenderers.register(registry, EEntities.MAHOGANY_CHEST_BOAT, context -> new BoatRenderer(context, MAHOGANY_CHEST_BOAT_LAYER));
+
+        ModelLayerLocation PINE_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "boat/pine"), "main");
+        ModelLayerLocation PINE_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "chest_boat/pine"), "main");
+        ModelLayerRegistry.registerModelLayer(PINE_BOAT_LAYER, BoatModel::createBoatModel);
+        EntityRenderers.register(registry, EEntities.PINE_BOAT, context -> new BoatRenderer(context, PINE_BOAT_LAYER));
+        ModelLayerRegistry.registerModelLayer(PINE_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        EntityRenderers.register(registry, EEntities.PINE_CHEST_BOAT, context -> new BoatRenderer(context, PINE_CHEST_BOAT_LAYER));
     }
 }

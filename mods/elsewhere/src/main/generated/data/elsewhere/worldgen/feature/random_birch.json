@@ -1,13 +1,16 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:birch_checked",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.25,
-      "feature": {
+      "data": {
         "feature": "elsewhere:gilded_birch_clear",
         "placement": []
-      }
+      },
+      "weight": 25
+    },
+    {
+      "data": "minecraft:birch_checked",
+      "weight": 75
     }
   ]
 }

@@ -17,6 +17,7 @@ import java.util.function.Function;
 public interface EParticles {
     SimpleParticleType SPARKLE = register("sparkle", false);
     SimpleParticleType GILDED_BIRCH_LEAVES = register("gilded_birch_leaves", false);
+    SimpleParticleType PINE_LEAVES = register("pine_leaves", false);
     SimpleParticleType SUBSLIME_PARTICLE = register("subslime_particle", false);
 
     private static SimpleParticleType register(String name, boolean overrideLimiter) {

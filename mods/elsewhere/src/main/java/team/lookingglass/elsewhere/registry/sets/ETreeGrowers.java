@@ -22,6 +22,13 @@ public interface ETreeGrowers {
             WeightedList.<ResourceKey<Feature>>builder().build(),
             EFeatures.MAHOGANY_TREE
     );
+    TreeGrower PINE = new TreeGrower(
+            "pine",
+            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.MAHOGANY_TREE).build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            EFeatures.MAHOGANY_TREE
+    );
 
     static void initialize() {
     }

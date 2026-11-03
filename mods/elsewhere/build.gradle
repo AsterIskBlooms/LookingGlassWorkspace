@@ -7,7 +7,7 @@ apply from: rootProject.file('common.gradle')
 dependencies {
     implementation project(':mirrorlib')
     runtimeOnly project(':lavaswim')
-    runtimeOnly project(':stratum')
+    //runtimeOnly project(':stratum')
 }
 
 loom {

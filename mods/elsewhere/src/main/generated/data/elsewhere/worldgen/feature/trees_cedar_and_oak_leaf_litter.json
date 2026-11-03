@@ -1,42 +1,38 @@
 {
-  "type": "minecraft:random_selector",
-  "default": {
-    "feature": "elsewhere:cedar_tree_leaf_litter",
-    "placement": []
-  },
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.2,
-      "feature": {
+      "data": {
         "feature": "elsewhere:cedar_tree_leaf_litter",
         "placement": []
-      }
+      },
+      "weight": 285
     },
     {
-      "chance": 0.035,
-      "feature": {
+      "data": {
         "feature": "elsewhere:tall_cedar_leaf_litter",
         "placement": []
-      }
+      },
+      "weight": 35
     },
     {
-      "chance": 0.008,
-      "feature": {
+      "data": {
         "feature": "elsewhere:fallen_cedar_tree",
         "placement": []
-      }
+      },
+      "weight": 8
     },
     {
-      "chance": 0.18,
-      "feature": "minecraft:oak_bees_0002_leaf_litter"
+      "data": "minecraft:oak_bees_0002_leaf_litter",
+      "weight": 132
     },
     {
-      "chance": 0.025,
-      "feature": "minecraft:fancy_oak_bees_0002_leaf_litter"
+      "data": "minecraft:fancy_oak_bees_0002_leaf_litter",
+      "weight": 19
     },
     {
-      "chance": 0.005,
-      "feature": "minecraft:fallen_oak_tree"
+      "data": "minecraft:fallen_oak_tree",
+      "weight": 4
     }
   ]
 }

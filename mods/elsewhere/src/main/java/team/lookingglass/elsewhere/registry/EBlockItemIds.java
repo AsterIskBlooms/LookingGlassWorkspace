@@ -466,6 +466,33 @@ public interface EBlockItemIds {
     BlockItemId MAHOGANY_SAPLING = register("mahogany_sapling");
     BlockItemId MAHOGANY_LEAVES = register("mahogany_leaves");
 
+    // Pine
+    BlockItemId PINE_LOG = register("pine_log");
+    BlockItemId STRIPPED_PINE_LOG = register("stripped_pine_log");
+    BlockItemId PINE_WOOD = register("pine_wood");
+    BlockItemId STRIPPED_PINE_WOOD = register("stripped_pine_wood");
+    BlockItemId PINE_PLANKS = register("pine_planks");
+    BlockItemId PINE_STAIRS = register("pine_stairs");
+    BlockItemId PINE_SLAB = register("pine_slab");
+    BlockItemId PINE_MOSAIC = register("pine_mosaic");
+    BlockItemId PINE_MOSAIC_STAIRS = register("pine_mosaic_stairs");
+    BlockItemId PINE_MOSAIC_SLAB = register("pine_mosaic_slab");
+    BlockItemId PINE_BOARDS = register("pine_boards");
+    BlockItemId PINE_TRIM = register("pine_trim");
+    BlockItemId PINE_FENCE = register("pine_fence");
+    BlockItemId PINE_FENCE_GATE = register("pine_fence_gate");
+    BlockItemId PINE_DOOR = register("pine_door");
+    BlockItemId PINE_TRAPDOOR = register("pine_trapdoor");
+    BlockItemId PINE_PRESSURE_PLATE = register("pine_pressure_plate");
+    BlockItemId PINE_BUTTON = register("pine_button");
+    BlockItemId PINE_SIGN = register("pine_sign");
+    BlockItemId PINE_WALL_SIGN = register("pine_wall_sign");
+    BlockItemId PINE_HANGING_SIGN = register("pine_hanging_sign");
+    BlockItemId PINE_WALL_HANGING_SIGN = register("pine_wall_hanging_sign");
+    BlockItemId PINE_SHELF = register("pine_shelf");
+    BlockItemId PINE_SAPLING = register("pine_sapling");
+    BlockItemId PINE_LEAVES = register("pine_leaves");
+
     // Arid Dirt
     BlockItemId ARID_DIRT = register("arid_dirt");
     BlockItemId ARID_GRASS_BLOCK = register("arid_grass_block");

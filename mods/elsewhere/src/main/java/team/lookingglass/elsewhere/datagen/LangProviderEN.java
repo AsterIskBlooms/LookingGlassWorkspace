@@ -583,6 +583,45 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.potted_mahogany_sapling", "Potted Mahogany Sapling");
         translationBuilder.add("block.elsewhere.mahogany_leaves", "Mahogany Leaves");
 
+        translationBuilder.add("block.elsewhere.pine_log", "Pine Log");
+        translationBuilder.add("block.elsewhere.stripped_pine_log", "Stripped Pine Log");
+        translationBuilder.add("block.elsewhere.pine_wood", "Pine Wood");
+        translationBuilder.add("block.elsewhere.stripped_pine_wood", "Stripped Pine Wood");
+
+        translationBuilder.add("block.elsewhere.pine_planks", "Pine Planks");
+        translationBuilder.add("block.elsewhere.pine_stairs", "Pine Stairs");
+        translationBuilder.add("block.elsewhere.pine_slab", "Pine Slab");
+        translationBuilder.add("block.elsewhere.pine_mosaic", "Pine Mosaic");
+        translationBuilder.add("block.elsewhere.pine_mosaic_stairs", "Pine Mosaic Stairs");
+        translationBuilder.add("block.elsewhere.pine_mosaic_slab", "Pine Mosaic Slab");
+        translationBuilder.add("block.elsewhere.pine_boards", "Pine Boards");
+        translationBuilder.add("block.elsewhere.pine_trim", "Pine Trim");
+
+        translationBuilder.add("block.elsewhere.pine_fence", "Pine Fence");
+        translationBuilder.add("block.elsewhere.pine_fence_gate", "Pine Fence Gate");
+        translationBuilder.add("block.elsewhere.pine_door", "Pine Door");
+        translationBuilder.add("block.elsewhere.pine_trapdoor", "Pine Trapdoor");
+        translationBuilder.add("block.elsewhere.pine_pressure_plate", "Pine Pressure Plate");
+        translationBuilder.add("block.elsewhere.pine_button", "Pine Button");
+        translationBuilder.add("block.elsewhere.pine_shelf", "Pine Shelf");
+
+        translationBuilder.add("block.elsewhere.pine_sign", "Pine Sign");
+        translationBuilder.add("block.elsewhere.pine_wall_sign", "Pine Wall Sign");
+        translationBuilder.add("block.elsewhere.pine_hanging_sign", "Pine Hanging Sign");
+        translationBuilder.add("block.elsewhere.pine_wall_hanging_sign", "Pine Wall Hanging Sign");
+
+        translationBuilder.add("item.elsewhere.pine_sign", "Pine Sign");
+        translationBuilder.add("item.elsewhere.pine_hanging_sign", "Pine Hanging Sign");
+        translationBuilder.add("item.elsewhere.pine_boat", "Pine Boat");
+        translationBuilder.add("item.elsewhere.pine_chest_boat", "Pine Boat with Chest");
+
+        translationBuilder.add("entity.elsewhere.pine_boat", "Pine Boat");
+        translationBuilder.add("entity.elsewhere.pine_chest_boat", "Pine Boat with Chest");
+
+        translationBuilder.add("block.elsewhere.pine_sapling", "Pine Sapling");
+        translationBuilder.add("block.elsewhere.potted_pine_sapling", "Potted Pine Sapling");
+        translationBuilder.add("block.elsewhere.pine_leaves", "Pine Leaves");
+
         translationBuilder.add("block.elsewhere.rusty_moss_block", "Rusty Moss Block");
         translationBuilder.add("block.elsewhere.rusty_moss_carpet", "Rusty Moss Carpet");
 
@@ -915,6 +954,7 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("tag.elsewhere.poplar_logs", "Poplar Logs");
         translationBuilder.add("tag.elsewhere.azalea_logs", "Azalea Logs");
         translationBuilder.add("tag.elsewhere.cedar_logs", "Cedar Logs");
+        translationBuilder.add("tag.elsewhere.pine_logs", "Pine Logs");
         translationBuilder.add("tag.elsewhere.mahogany_logs", "Mahogany Logs");
         translationBuilder.add("tag.elsewhere.bamboo_stems", "Bamboo Stems");
 

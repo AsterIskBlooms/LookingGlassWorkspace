@@ -1,23 +1,19 @@
 {
-  "type": "minecraft:random_selector",
-  "default": {
-    "feature": "elsewhere:sandstone_rock",
-    "placement": []
-  },
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.5,
-      "feature": {
+      "data": {
         "feature": "elsewhere:sandstone_rock",
         "placement": []
-      }
+      },
+      "weight": 75
     },
     {
-      "chance": 0.5,
-      "feature": {
+      "data": {
         "feature": "elsewhere:pink_sandstone_rock",
         "placement": []
-      }
+      },
+      "weight": 25
     }
   ]
 }

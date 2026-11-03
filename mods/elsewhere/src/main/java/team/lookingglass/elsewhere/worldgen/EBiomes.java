@@ -196,14 +196,14 @@ public interface  EBiomes {
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_RED_SHRUB);
         BiomeDefaultFeatures.addNearWaterVegetation(genBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(genBuilder);
-        genBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, EPlacements.SNOW_PATCH);
+        BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
 
         genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.DRY_GRASS_CLUMP_SPARSE);
         genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.TUNDRA_ROCK);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
-                .temperature(0.2F)
+                .temperature(0.4F)
                 .downfall(0.55F)
                 .specialEffects(new BiomeSpecialEffects.Builder()
                         .grassColorOverride(0xa9b564)
@@ -245,7 +245,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.BOG_TREES);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_BOG);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);

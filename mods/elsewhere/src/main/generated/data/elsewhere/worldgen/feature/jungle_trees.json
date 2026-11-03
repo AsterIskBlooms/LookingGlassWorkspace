@@ -1,42 +1,45 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:jungle_tree",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.35,
-      "feature": {
+      "data": "minecraft:jungle_tree",
+      "weight": 550
+    },
+    {
+      "data": {
         "feature": "elsewhere:mahogany_tree",
         "placement": []
-      }
+      },
+      "weight": 470
     },
     {
-      "chance": 0.1,
-      "feature": {
-        "feature": "elsewhere:cedar_tree",
-        "placement": []
-      }
-    },
-    {
-      "chance": 0.005,
-      "feature": {
-        "feature": "elsewhere:fallen_cedar_tree",
-        "placement": []
-      }
-    },
-    {
-      "chance": 0.5,
-      "feature": {
+      "data": {
         "feature": "elsewhere:jungle_shrub",
         "placement": []
-      }
+      },
+      "weight": 470
     },
     {
-      "chance": 0.33333334,
-      "feature": "minecraft:mega_jungle_tree_checked"
+      "data": "minecraft:mega_jungle_tree_checked",
+      "weight": 162
     },
     {
-      "chance": 0.0125,
-      "feature": "minecraft:fallen_jungle_tree"
+      "data": {
+        "feature": "elsewhere:cedar_tree",
+        "placement": []
+      },
+      "weight": 68
+    },
+    {
+      "data": "minecraft:fallen_jungle_tree",
+      "weight": 19
+    },
+    {
+      "data": {
+        "feature": "elsewhere:fallen_cedar_tree",
+        "placement": []
+      },
+      "weight": 3
     }
   ]
 }

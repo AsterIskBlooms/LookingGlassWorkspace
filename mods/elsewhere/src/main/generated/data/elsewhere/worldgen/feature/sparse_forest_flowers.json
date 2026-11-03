@@ -1,16 +1,19 @@
 {
-  "type": "minecraft:random_selector",
-  "default": {
-    "feature": "minecraft:wildflower",
-    "placement": []
-  },
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.5,
-      "feature": {
+      "data": {
         "feature": "minecraft:flower_cherry",
         "placement": []
-      }
+      },
+      "weight": 50
+    },
+    {
+      "data": {
+        "feature": "minecraft:wildflower",
+        "placement": []
+      },
+      "weight": 50
     }
   ]
 }

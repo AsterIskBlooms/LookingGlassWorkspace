@@ -498,6 +498,33 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.POTTED_MAHOGANY_SAPLING, createPotFlowerItemTable(EBlocks.BLUEBONNET));
         add(EBlocks.MAHOGANY_LEAVES, createLeavesDrops(EBlocks.MAHOGANY_LEAVES, EBlocks.MAHOGANY_SAPLING, 0.05F));
 
+        dropSelf(EBlocks.PINE_LOG);
+        dropSelf(EBlocks.STRIPPED_PINE_LOG);
+        dropSelf(EBlocks.PINE_WOOD);
+        dropSelf(EBlocks.STRIPPED_PINE_WOOD);
+        dropSelf(EBlocks.PINE_PLANKS);
+        dropSelf(EBlocks.PINE_MOSAIC);
+        dropSelf(EBlocks.PINE_BOARDS);
+        dropSelf(EBlocks.PINE_TRIM);
+        dropSelf(EBlocks.PINE_STAIRS);
+        dropSelf(EBlocks.PINE_MOSAIC_STAIRS);
+        dropSelf(EBlocks.PINE_FENCE);
+        dropSelf(EBlocks.PINE_FENCE_GATE);
+        add(EBlocks.PINE_SLAB, createSlabItemTable(EBlocks.PINE_SLAB));
+        add(EBlocks.PINE_MOSAIC_SLAB, createSlabItemTable(EBlocks.PINE_MOSAIC_SLAB));
+        add(EBlocks.PINE_DOOR, createDoorTable(EBlocks.PINE_DOOR));
+        dropSelf(EBlocks.PINE_TRAPDOOR);
+        dropSelf(EBlocks.PINE_PRESSURE_PLATE);
+        dropSelf(EBlocks.PINE_BUTTON);
+        dropOther(EBlocks.PINE_SIGN, EItems.PINE_SIGN);
+        dropOther(EBlocks.PINE_WALL_SIGN, EItems.PINE_SIGN);
+        dropOther(EBlocks.PINE_HANGING_SIGN, EItems.PINE_HANGING_SIGN);
+        dropOther(EBlocks.PINE_WALL_HANGING_SIGN, EItems.PINE_HANGING_SIGN);
+        dropSelf(EBlocks.PINE_SHELF);
+        dropSelf(EBlocks.PINE_SAPLING);
+        add(EBlocks.POTTED_PINE_SAPLING, createPotFlowerItemTable(EBlocks.BLUEBONNET));
+        add(EBlocks.PINE_LEAVES, createLeavesDrops(EBlocks.PINE_LEAVES, EBlocks.PINE_SAPLING, 0.05F));
+
         dropSelf(EBlocks.LATERITE);
 
         add(EBlocks.BEJEWELED_CALCITE, createMultipleOreDrops(EBlocks.BEJEWELED_CALCITE, EItems.EMERALD_NUGGET, 3, 5));

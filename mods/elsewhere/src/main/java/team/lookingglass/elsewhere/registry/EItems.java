@@ -54,6 +54,10 @@ public interface EItems {
     Item MAHOGANY_HANGING_SIGN = register(EBlockItemIds.MAHOGANY_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.MAHOGANY_HANGING_SIGN, EBlocks.MAHOGANY_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
     Item MAHOGANY_BOAT = register(EItemIds.MAHOGANY_BOAT, p -> new BoatItem(EEntities.MAHOGANY_BOAT, p), new Item.Properties().stacksTo(1));
     Item MAHOGANY_CHEST_BOAT = register(EItemIds.MAHOGANY_CHEST_BOAT, p -> new BoatItem(EEntities.MAHOGANY_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
+    Item PINE_SIGN = register(EBlockItemIds.PINE_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.PINE_SIGN, EBlocks.PINE_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item PINE_HANGING_SIGN = register(EBlockItemIds.PINE_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.PINE_HANGING_SIGN, EBlocks.PINE_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item PINE_BOAT = register(EItemIds.PINE_BOAT, p -> new BoatItem(EEntities.PINE_BOAT, p), new Item.Properties().stacksTo(1));
+    Item PINE_CHEST_BOAT = register(EItemIds.PINE_CHEST_BOAT, p -> new BoatItem(EEntities.PINE_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
 
     Item DIAMOND_NUGGET = register(EItemIds.DIAMOND_NUGGET, Item::new, new Item.Properties());
     Item EMERALD_NUGGET = register(EItemIds.EMERALD_NUGGET, Item::new, new Item.Properties());

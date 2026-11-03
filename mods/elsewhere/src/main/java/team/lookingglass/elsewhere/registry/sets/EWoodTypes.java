@@ -19,19 +19,28 @@ public interface EWoodTypes {
     WoodType CEDAR = WoodType.register(new WoodType(
             Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cedar").toString(),
             EBlockSets.CEDAR,
-            BlockSoundSets.CHERRY_WOOD,
-            BlockSoundSets.CHERRY_WOOD_HANGING_SIGN,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_OPEN
+            BlockSoundSets.WOOD,
+            BlockSoundSets.HANGING_SIGN,
+            SoundEvents.FENCE_GATE_CLOSE,
+            SoundEvents.FENCE_GATE_OPEN
     ));
 
     WoodType MAHOGANY = WoodType.register(new WoodType(
             Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany").toString(),
             EBlockSets.MAHOGANY,
-            BlockSoundSets.CHERRY_WOOD,
-            BlockSoundSets.CHERRY_WOOD_HANGING_SIGN,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_OPEN
+            BlockSoundSets.WOOD,
+            BlockSoundSets.HANGING_SIGN,
+            SoundEvents.FENCE_GATE_CLOSE,
+            SoundEvents.FENCE_GATE_OPEN
+    ));
+
+    WoodType PINE = WoodType.register(new WoodType(
+            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine").toString(),
+            EBlockSets.PINE,
+            BlockSoundSets.WOOD,
+            BlockSoundSets.HANGING_SIGN,
+            SoundEvents.FENCE_GATE_CLOSE,
+            SoundEvents.FENCE_GATE_OPEN
     ));
 
 

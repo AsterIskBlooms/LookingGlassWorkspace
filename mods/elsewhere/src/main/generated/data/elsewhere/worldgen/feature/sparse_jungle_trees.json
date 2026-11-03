@@ -1,24 +1,27 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:jungle_tree",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.1,
-      "feature": {
-        "feature": "elsewhere:mahogany_tree",
-        "placement": []
-      }
-    },
-    {
-      "chance": 0.5,
-      "feature": {
+      "data": {
         "feature": "elsewhere:jungle_shrub",
         "placement": []
-      }
+      },
+      "weight": 420
     },
     {
-      "chance": 0.0125,
-      "feature": "minecraft:fallen_jungle_tree"
+      "data": "minecraft:jungle_tree",
+      "weight": 400
+    },
+    {
+      "data": {
+        "feature": "elsewhere:mahogany_tree",
+        "placement": []
+      },
+      "weight": 95
+    },
+    {
+      "data": "minecraft:fallen_jungle_tree",
+      "weight": 7
     }
   ]
 }

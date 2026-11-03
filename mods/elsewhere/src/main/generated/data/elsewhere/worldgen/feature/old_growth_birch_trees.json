@@ -1,32 +1,35 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:birch_bees_0002",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.00625,
-      "feature": "minecraft:fallen_super_birch_tree"
+      "data": "minecraft:birch_bees_0002",
+      "weight": 650
     },
     {
-      "chance": 0.15,
-      "feature": "minecraft:super_birch_bees_0002"
+      "data": "minecraft:super_birch_bees_0002",
+      "weight": 280
     },
     {
-      "chance": 0.0125,
-      "feature": "minecraft:fallen_birch_tree"
-    },
-    {
-      "chance": 0.3,
-      "feature": {
+      "data": {
         "feature": "elsewhere:gilded_birch",
         "placement": []
-      }
+      },
+      "weight": 220
     },
     {
-      "chance": 0.15,
-      "feature": {
+      "data": {
         "feature": "elsewhere:super_gilded_birch",
         "placement": []
-      }
+      },
+      "weight": 110
+    },
+    {
+      "data": "minecraft:fallen_birch_tree",
+      "weight": 14
+    },
+    {
+      "data": "minecraft:fallen_super_birch_tree",
+      "weight": 13
     }
   ]
 }

@@ -519,39 +519,15 @@ public class EMaterialRules {
                 MaterialRules.sequence(
                         sandstoneCliffsRule,
                         MaterialRules.ifTrue(onFloor,
-                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.45),
+                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.15),
                                         new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState()))),
-                        MaterialRules.ifTrue(onFloor,
-                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -0.075, 0.075),
-                                        new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState()))),
-                        MaterialRules.ifTrue(onFloor,
-                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.45, 1.0),
-                                        new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState()))),
-                        MaterialRules.ifTrue(onFloor, new BlockRule(Blocks.SAND.defaultBlockState())),
                         MaterialRules.ifTrue(underFloor,
-                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.35),
+                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.15),
                                         new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState()))),
-                        MaterialRules.ifTrue(
-                                underFloor,
-                                MaterialRules.ifTrue(
-                                        MaterialRules.noiseCondition2d(Noises.PATCH, -0.05, 0.05),
-                                        new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState())
-                                )
-                        ),
-                        MaterialRules.ifTrue(
-                                underFloor,
-                                MaterialRules.ifTrue(
-                                        MaterialRules.noiseCondition2d(Noises.PATCH, 0.35, 1.0),
-                                        new BlockRule(Blocks.SMOOTH_BASALT.defaultBlockState())
-                                )
-                        ),
                         MaterialRules.ifTrue(underFloor, new BlockRule(Blocks.SAND.defaultBlockState())),
-                        MaterialRules.ifTrue(
-                                deepUnderFloor,
-                                new BlockRule(Blocks.SANDSTONE.defaultBlockState())
-                        )
-                )
-        );
+                        MaterialRules.ifTrue(deepUnderFloor,
+                                new BlockRule(Blocks.SANDSTONE.defaultBlockState()))
+                ));
 
         MaterialRule coldBeachRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, EBiomes.COLD_BEACH),

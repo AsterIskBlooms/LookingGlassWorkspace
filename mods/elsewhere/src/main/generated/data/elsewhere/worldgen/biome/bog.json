@@ -217,7 +217,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "elsewhere:bog_trees",
+      "elsewhere:trees_bog",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",

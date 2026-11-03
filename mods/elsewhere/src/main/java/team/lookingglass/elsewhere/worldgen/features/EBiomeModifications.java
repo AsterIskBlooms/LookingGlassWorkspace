@@ -127,8 +127,15 @@ public class EBiomeModifications {
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.RUSTY_MOSS_PATCH);
 
         // Taigas
-        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.TAIGA,
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TAIGA_VEGETATION_PATCH);
+        List<ResourceKey<Biome>> taigas = List.of(Biomes.TAIGA, Biomes.SNOWY_TAIGA);
+        BiomeModifications.addFeature(ctx -> taigas.contains(ctx.getBiomeKey()),
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_TAIGA);
+        BiomeModifications.addFeature(ctx -> taigas.contains(ctx.getBiomeKey()),
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.RUSTY_MOSS_PATCH);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.OLD_GROWTH_SPRUCE_TAIGA,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.OLD_GROWTH_PINE_TAIGA,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_OLD_GROWTH_PINE_TAIGA);
 
         // Birch Forests
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.BIRCH_FOREST,
@@ -207,6 +214,16 @@ public class EBiomeModifications {
         BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_birch_forest_trees")).add(
                 ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_BIRCH_FOREST), context -> context.getGenerationSettings()
                         .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BIRCH_TALL));
+
+        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_taiga_trees")).add(
+                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.TAIGA, Biomes.SNOWY_TAIGA), context -> context.getGenerationSettings()
+                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_TAIGA));
+        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_spruce_taiga_trees")).add(
+                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_SPRUCE_TAIGA), context -> context.getGenerationSettings()
+                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA));
+        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_pine_taiga_trees")).add(
+                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_PINE_TAIGA), context -> context.getGenerationSettings()
+                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA));
 
         BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_ocean_grasses")).add(
                 ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.BEACH).and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)).and(BiomeSelectors.tag(BiomeTags.IS_DEEP_OCEAN)), context -> context.getGenerationSettings()

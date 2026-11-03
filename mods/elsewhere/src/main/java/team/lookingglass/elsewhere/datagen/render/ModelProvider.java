@@ -609,6 +609,27 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTintedLeaves(EBlocks.MAHOGANY_LEAVES, TexturedModel.LEAVES, 0x62F728);
         gen.createPlantWithDefaultItem(EBlocks.MAHOGANY_SAPLING, EBlocks.POTTED_MAHOGANY_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
+        gen.woodProvider(EBlocks.PINE_LOG).logWithHorizontal(EBlocks.PINE_LOG).wood(EBlocks.PINE_WOOD);
+        gen.woodProvider(EBlocks.STRIPPED_PINE_LOG).logWithHorizontal(EBlocks.STRIPPED_PINE_LOG).wood(EBlocks.STRIPPED_PINE_WOOD);
+        gen.family(EBlocks.PINE_PLANKS)
+                .stairs(EBlocks.PINE_STAIRS)
+                .slab(EBlocks.PINE_SLAB)
+                .fence(EBlocks.PINE_FENCE)
+                .fenceGate(EBlocks.PINE_FENCE_GATE)
+                .pressurePlate(EBlocks.PINE_PRESSURE_PLATE)
+                .button(EBlocks.PINE_BUTTON)
+        ;
+        gen.createDoor(EBlocks.PINE_DOOR);
+        gen.createOrientableTrapdoor(EBlocks.PINE_TRAPDOOR);
+        mGen.createSignModel(EBlocks.PINE_SIGN, EBlocks.PINE_WALL_SIGN, EBlocks.PINE_PLANKS);
+        mGen.createHangingSignModel(EBlocks.PINE_HANGING_SIGN, EBlocks.PINE_WALL_HANGING_SIGN, EBlocks.STRIPPED_PINE_LOG);
+        gen.family(EBlocks.PINE_MOSAIC).stairs(EBlocks.PINE_MOSAIC_STAIRS).slab(EBlocks.PINE_MOSAIC_SLAB);
+        mGen.createWoodenBoards(EBlocks.PINE_BOARDS);
+        mGen.createSimpleHorizontallyRotatedBlock(EBlocks.PINE_TRIM, TexturedModel.CUBE);
+        gen.createShelf(EBlocks.PINE_SHELF, EBlocks.STRIPPED_PINE_LOG);
+        gen.createTrivialCube(EBlocks.PINE_LEAVES);
+        gen.createPlantWithDefaultItem(EBlocks.PINE_SAPLING, EBlocks.POTTED_PINE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+
         gen.createTrivialBlock(EBlocks.LATERITE, TexturedModel.COLUMN);
 
         gen.createTrivialCube(EBlocks.BEJEWELED_CALCITE);
@@ -787,6 +808,11 @@ public class ModelProvider extends FabricModelProvider {
         gen.generateFlatItem(EItems.MAHOGANY_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.MAHOGANY_BOAT, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.MAHOGANY_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(EItems.PINE_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.PINE_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.PINE_BOAT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.PINE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
     }
 
 

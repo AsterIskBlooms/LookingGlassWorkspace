@@ -754,6 +754,40 @@ public interface EBlocks {
     Block MAHOGANY_LEAVES = BlockRegistry.register(EBlockItemIds.MAHOGANY_LEAVES, p -> new TintedParticleLeavesBlock(0.01F, p),
             BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
 
+    // Pine
+    Block PINE_LOG = BlockRegistry.register(EBlockItemIds.PINE_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_PINE_LOG = BlockRegistry.register(EBlockItemIds.STRIPPED_PINE_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block PINE_WOOD = BlockRegistry.register(EBlockItemIds.PINE_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_PINE_WOOD = BlockRegistry.register(EBlockItemIds.STRIPPED_PINE_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block PINE_PLANKS = BlockRegistry.register(EBlockItemIds.PINE_PLANKS, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block PINE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.PINE_STAIRS, PINE_PLANKS);
+    Block PINE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.PINE_SLAB, PINE_PLANKS);
+    Block PINE_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.PINE_MOSAIC, PINE_PLANKS);
+    Block PINE_MOSAIC_STAIRS = BlockRegistry.registerStair(EBlockItemIds.PINE_MOSAIC_STAIRS, PINE_MOSAIC);
+    Block PINE_MOSAIC_SLAB = BlockRegistry.registerSlab(EBlockItemIds.PINE_MOSAIC_SLAB, PINE_MOSAIC);
+    Block PINE_BOARDS = BlockRegistry.register(EBlockItemIds.PINE_BOARDS, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(PINE_PLANKS));
+    Block PINE_TRIM = BlockRegistry.register(EBlockItemIds.PINE_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(PINE_PLANKS));
+    Block PINE_FENCE = BlockRegistry.registerFence(EBlockItemIds.PINE_FENCE, PINE_PLANKS);
+    Block PINE_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.PINE_FENCE_GATE, EWoodTypes.PINE, PINE_PLANKS);
+    Block PINE_DOOR = BlockRegistry.registerDoor(EBlockItemIds.PINE_DOOR, EBlockSets.PINE, PINE_PLANKS);
+    Block PINE_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.PINE_TRAPDOOR, EBlockSets.PINE, PINE_PLANKS);
+    Block PINE_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.PINE_PRESSURE_PLATE, EBlockSets.PINE, PINE_PLANKS);
+    Block PINE_BUTTON = BlockRegistry.registerButton(EBlockItemIds.PINE_BUTTON, EBlockSets.PINE, PINE_PLANKS, 30);
+    Block PINE_SIGN = BlockRegistry.registerSign(EBlockItemIds.PINE_SIGN, EWoodTypes.PINE, PINE_PLANKS);
+    Block PINE_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.PINE_WALL_SIGN, EWoodTypes.PINE, PINE_PLANKS);
+    Block PINE_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.PINE_HANGING_SIGN, EWoodTypes.PINE, PINE_PLANKS);
+    Block PINE_WALL_HANGING_SIGN = BlockRegistry.registerWallHangingSign(EBlockItemIds.PINE_WALL_HANGING_SIGN, EWoodTypes.PINE, PINE_PLANKS);
+    Block PINE_SHELF = BlockRegistry.registerShelf(EBlockItemIds.PINE_SHELF, PINE_PLANKS);
+    Block PINE_SAPLING = BlockRegistry.registerSapling(EBlockItemIds.PINE_SAPLING, ETreeGrowers.PINE);
+    Block POTTED_PINE_SAPLING = BlockRegistry.registerPottedSapling(blockKey("potted_pine_sapling"), PINE_SAPLING);
+    Block PINE_LEAVES = BlockRegistry.register(EBlockItemIds.PINE_LEAVES, p -> new UntintedParticleLeavesBlock(0.005F, EParticles.PINE_LEAVES, Optional.empty(), p),
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
+
     // Arid Dirt
     Block ARID_DIRT = BlockRegistry.register(EBlockItemIds.ARID_DIRT, Block::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.WOOD).strength(0.5F).sound(BlockSoundSets.ROOTED_DIRT));
@@ -770,8 +804,8 @@ public interface EBlocks {
             .sound(BlockSoundSets.GRASS).mapColor(MapColor.GLOW_LICHEN).offsetType(BlockBehaviour.OffsetType.XZ)
     );
     Block GLEAMSHROOM = BlockRegistry.register(EBlockItemIds.GLEAMSHROOM, GleamshroomBlock::new, BlockBehaviour.Properties.of()
-            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS)
-            .mapColor(MapColor.GLOW_LICHEN).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(_ -> 5).emissiveRendering((_) -> true));
+            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.GLOW_LICHEN).sound(BlockSoundSets.GRASS)
+            .offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(_ -> 5).emissiveRendering((_) -> true));
 
 
     // Terracotta

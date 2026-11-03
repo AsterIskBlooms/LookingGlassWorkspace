@@ -89,9 +89,6 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .addTag(EBlockItemTags.MAHOGANY_LOGS.block())
                 .addTag(EBlockItemTags.BAMBOO_STEMS.block())
         ;
-        builder(BlockTags.PREVENTS_NEARBY_LEAF_DECAY)
-                .addTag(BlockTags.LOGS)
-        ;
 
         // Tool Mineables
         builder(BlockTags.MINEABLE_WITH_SHOVEL).add(

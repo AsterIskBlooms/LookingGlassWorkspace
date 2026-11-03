@@ -241,9 +241,9 @@
       "minecraft:patch_berry_rare"
     ],
     [
-      "elsewhere:snow_patch"
+      "minecraft:freeze_top_layer"
     ]
   ],
   "has_precipitation": true,
-  "temperature": 0.2
+  "temperature": 0.4
 }

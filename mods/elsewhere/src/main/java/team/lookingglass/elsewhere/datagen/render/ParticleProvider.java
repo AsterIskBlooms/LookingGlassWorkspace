@@ -18,9 +18,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ParticleProvider implements DataProvider {
-
     private final FabricPackOutput output;
-
     public ParticleProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         this.output = output;
     }
@@ -30,8 +28,8 @@ public class ParticleProvider implements DataProvider {
         List<CompletableFuture<?>> futures = new ArrayList<>();
         futures.add(saveParticle(cache, EParticles.SPARKLE, false, "sparkle", 7));
         futures.add(saveParticle(cache, EParticles.GILDED_BIRCH_LEAVES, false, "gilded_birch", 4));
+        futures.add(saveParticle(cache, EParticles.PINE_LEAVES, false, "pine", 4));
         futures.add(saveParticle(cache, EParticles.SUBSLIME_PARTICLE, false, "subslime_goo"));
-
 
         return CompletableFuture.allOf(futures.toArray(CompletableFuture[]::new));
     }

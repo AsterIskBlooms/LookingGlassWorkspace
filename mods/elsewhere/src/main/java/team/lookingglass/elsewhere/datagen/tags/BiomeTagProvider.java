@@ -53,7 +53,7 @@ public class BiomeTagProvider extends FabricTagsProvider<Biome> {
 
         builder(BiomeTags.HAS_VILLAGE_DESERT).add(EBiomes.LUSH_DESERT);
         builder(BiomeTags.HAS_VILLAGE_SAVANNA).add(EBiomes.STEPPE, EBiomes.OUTBACK, EBiomes.SHRUBLAND);
-        builder(BiomeTags.HAS_VILLAGE_SNOWY).add(EBiomes.TUNDRA);
+        builder(BiomeTags.HAS_VILLAGE_TAIGA).add(EBiomes.TUNDRA);
         builder(BiomeTags.HAS_PILLAGER_OUTPOST).add(
                 EBiomes.LUSH_DESERT, EBiomes.STEPPE,
                 EBiomes.OUTBACK, EBiomes.SHRUBLAND,

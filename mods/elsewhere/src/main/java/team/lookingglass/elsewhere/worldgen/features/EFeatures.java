@@ -4,6 +4,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
@@ -140,7 +141,13 @@ public class EFeatures {
     public static final ResourceKey<Feature> CAVE_ROOTED_DIRT = registerKey("cave_rooted_dirt");
 
     public static final ResourceKey<Feature> CATTAILS = registerKey("cattails");
-    public static final ResourceKey<Feature> BOG_TREES = registerKey("bog_trees");
+    public static final ResourceKey<Feature> TREES_BOG = registerKey("trees_bog");
+
+    public static final ResourceKey<Feature> PINE_TREE = registerKey("pine_tree");
+    public static final ResourceKey<Feature> MEGA_PINE_TREE = registerKey("mega_pine_tree");
+    public static final ResourceKey<Feature> TREES_TAIGA = registerKey("trees_taiga");
+    public static final ResourceKey<Feature> TREES_OLD_GROWTH_SPRUCE_TAIGA = registerKey("trees_old_growth_spruce_taiga");
+    public static final ResourceKey<Feature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
 
     public static final ResourceKey<Feature> LIMESTONE_ROCK = registerKey("limestone_rock");
 
@@ -368,10 +375,12 @@ public class EFeatures {
         context.register(SANDSTONE_ROCK, new LargeBlobFeature(Blocks.SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
         context.register(RED_SANDSTONE_ROCK, new LargeBlobFeature(Blocks.RED_SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
         context.register(PINK_SANDSTONE_ROCK, new LargeBlobFeature(EBlocks.PINK_SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
-        context.register(LUSH_SANDSTONE_ROCKS, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(SANDSTONE_ROCK)), 0.5F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(PINK_SANDSTONE_ROCK)), 0.5F)),
-                PlacementUtils.inlinePlaced(features.getOrThrow(SANDSTONE_ROCK))));
+        context.register(LUSH_SANDSTONE_ROCKS, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(SANDSTONE_ROCK)), 75)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINK_SANDSTONE_ROCK)), 25)
+                        .build()
+        ));
 
         context.register(COARSE_DIRT_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(EBlockTags.SOIL), Holder.direct(BlockStateProvider.of(Blocks.COARSE_DIRT)),
@@ -433,14 +442,16 @@ public class EFeatures {
         context.register(FALLEN_CEDAR_TREE, createFallenTrees(EBlocks.CEDAR_LOG, 5, 8)
                 .stumpDecorator(TrunkVineDecorator.INSTANCE).build());
 
-        context.register(TREES_CEDAR_AND_OAK_LEAF_LITTER, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(CEDAR_TREE_LEAF_LITTER)), 0.2F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(TALL_CEDAR_LEAF_LITTER)), 0.035F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_CEDAR_TREE)), 0.008F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.OAK_BEES_0002_LEAF_LITTER), 0.18F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FANCY_OAK_BEES_0002_LEAF_LITTER), 0.025F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_OAK_TREE), 0.005F)
-        ), PlacementUtils.inlinePlaced(features.getOrThrow(CEDAR_TREE_LEAF_LITTER))));
+        context.register(TREES_CEDAR_AND_OAK_LEAF_LITTER, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(CEDAR_TREE_LEAF_LITTER)), 285)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(TALL_CEDAR_LEAF_LITTER)), 35)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_CEDAR_TREE)), 8)
+                        .add(placedFeatures.getOrThrow(TreePlacements.OAK_BEES_0002_LEAF_LITTER), 132)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FANCY_OAK_BEES_0002_LEAF_LITTER), 19)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_OAK_TREE), 4)
+                        .build()
+        ));
 
         context.register(MAHOGANY_TREE, new TreeFeature.Builder(
                 BlockStateProvider.of(EBlocks.MAHOGANY_LOG),
@@ -452,41 +463,56 @@ public class EFeatures {
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(TrunkVineDecorator.INSTANCE, new LeaveVineDecorator(0.15F), beehive)).build());
 
-        context.register(JUNGLE_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 0.35F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(CEDAR_TREE)), 0.1F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_CEDAR_TREE)), 0.005F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 0.5F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 0.33333334F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_JUNGLE_TREE), 0.0125F)
-        ), placedFeatures.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED)));
+        context.register(JUNGLE_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 550)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 470)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 470)
+                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 162)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(CEDAR_TREE)), 68)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_JUNGLE_TREE), 19)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_CEDAR_TREE)), 3)
+                        .build()
+        ));
 
-        context.register(SPARSE_JUNGLE_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 0.1F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 0.5F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_JUNGLE_TREE), 0.0125F)
-        ), placedFeatures.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED)));
+        context.register(SPARSE_JUNGLE_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 420)
+                        .add(placedFeatures.getOrThrow(TreePlacements.JUNGLE_TREE_CHECKED), 400)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 95)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_JUNGLE_TREE), 7)
+                        .build()
+        ));
 
-        context.register(BAMBOO_JUNGLE_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 0.05F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 0.15F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 0.7F)
-        ), PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.GRASS_JUNGLE),
-                CountPlacement.of(32), OffsetPlacement.ofTriangle(7, 3),
-                BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
-                        BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN, Blocks.PODZOL)))))));
+        context.register(BAMBOO_JUNGLE_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MAHOGANY_TREE)), 20)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(JUNGLE_SHRUB)), 57)
+                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_JUNGLE_TREE_CHECKED), 226)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.GRASS_JUNGLE),
+                                CountPlacement.of(32), OffsetPlacement.ofTriangle(7, 3),
+                                BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.ONLY_IN_AIR_PREDICATE,
+                                        BlockPredicate.not(BlockPredicate.matchesBlocks(Direction.DOWN, Blocks.PODZOL))))), 97)
+                        .build()
+        ));
 
-        context.register(FLOWER_FOREST_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 0.0025F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_002), 0.18F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 0.1F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FANCY_OAK_BEES_002), 0.12F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.CHERRY_BEES_005), 0.15F)
-        ), placedFeatures.getOrThrow(TreePlacements.OAK_BEES_002)));
+        context.register(FLOWER_FOREST_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.OAK_BEES_002), 550)
+                        .add(placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_002), 330)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 75)
+                        .add(placedFeatures.getOrThrow(TreePlacements.CHERRY_BEES_005), 170)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FANCY_OAK_BEES_002), 140)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 13)
+                        .build()
+        ));
 
-        context.register(SPARSE_FOREST_FLOWERS, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.FLOWER_CHERRY)), 0.5F)
-        ), PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.WILDFLOWER))));
+        context.register(SPARSE_FOREST_FLOWERS, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.FLOWER_CHERRY)), 50)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(VegetationFeatures.WILDFLOWER)), 50)
+                        .build()
+        ));
 
         context.register(GILDED_BIRCH_CLEAR, new TreeFeature.Builder(
                 BlockStateProvider.of(Blocks.BIRCH_LOG),
@@ -513,22 +539,31 @@ public class EFeatures {
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(beehive)).build());
 
-        context.register(BIRCH_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 0.0125F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 0.45F)
-        ), placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_0002_PLACED)));
+        context.register(BIRCH_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 11)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 250)
+                        .add(placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_0002_PLACED), 650)
+                        .build()
+        ));
 
-        context.register(RANDOM_BIRCH, new RandomSelectorFeature(
-                List.of(new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH_CLEAR)), 0.25F)),
-                placedFeatures.getOrThrow(TreePlacements.BIRCH_CHECKED)));
+        context.register(RANDOM_BIRCH, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH_CLEAR)), 25)
+                        .add(placedFeatures.getOrThrow(TreePlacements.BIRCH_CHECKED), 75)
+                        .build()
+        ));
 
-        context.register(OLD_GROWTH_BIRCH_TREES_KEY, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_SUPER_BIRCH_TREE), 0.00625F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.SUPER_BIRCH_BEES_0002), 0.15F),
-                new WeightedPlacedFeature(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 0.0125F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 0.30F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(SUPER_GILDED_BIRCH)), 0.15F)
-        ), placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_0002_PLACED)));
+        context.register(OLD_GROWTH_BIRCH_TREES_KEY, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.BIRCH_BEES_0002_PLACED), 650)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SUPER_BIRCH_BEES_0002), 280)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(GILDED_BIRCH)), 220)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(SUPER_GILDED_BIRCH)), 110)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_BIRCH_TREE), 14)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SUPER_BIRCH_TREE), 13)
+                        .build()
+        ));
 
         context.register(RUSTY_MOSS_VEGETATION, new SimpleBlockFeature(new WeightedStateProvider(
                 WeightedList.<BlockState>builder()
@@ -673,10 +708,12 @@ public class EFeatures {
                 Direction.UP, BlockPredicate.matchesFluids(Fluids.WATER), false
         ));
 
-        context.register(RANDOM_SHORT_KELP, new RandomSelectorFeature(List.of(
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(SHORT_KELP)), 0.6F),
-                new WeightedPlacedFeature(PlacementUtils.inlinePlaced(features.getOrThrow(MEDIUM_KELP)), 0.4F)
-        ), PlacementUtils.inlinePlaced(features.getOrThrow(SHORT_KELP))));
+        context.register(RANDOM_SHORT_KELP, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(SHORT_KELP)), 60)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEDIUM_KELP)), 40)
+                        .build()
+        ));
 
         context.register(CAVE_WEEDS_KEY, new BlockPatchFeature(
                 BlockStateProvider.of(EBlocks.CAVE_WEED.defaultBlockState()),
@@ -711,7 +748,7 @@ public class EFeatures {
                 4, 2, 6, 5,
                 Direction.DOWN, 1
         ));
-        context.register(BOG_TREES, new WeightedRandomSelectorFeature(
+        context.register(TREES_BOG, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(TreeFeatures.SWAMP_OAK)), 195)
                         .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 134)
@@ -719,6 +756,47 @@ public class EFeatures {
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 48)
                         .build()
                 ));
+
+        context.register(PINE_TREE, new TreeFeature.Builder(
+                BlockStateProvider.of(EBlocks.PINE_LOG),
+                new StraightTrunkPlacer(10, 1, 2),
+                BlockStateProvider.of(EBlocks.PINE_LEAVES),
+                new EPineFoliagePlacer(ConstantInt.of(3), UniformInt.of(1, 2), UniformInt.of(10, 12)),
+                new TwoLayersFeatureSize(3, 0, 3),
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
+        ).build());
+        context.register(MEGA_PINE_TREE, new TreeFeature.Builder(
+                BlockStateProvider.of(EBlocks.PINE_LOG),
+                new GiantTrunkPlacer(24, 3, 6),
+                BlockStateProvider.of(EBlocks.PINE_LEAVES),
+                new EPineFoliagePlacer(ConstantInt.of(4), UniformInt.of(1, 2), UniformInt.of(12, 14)),
+                new TwoLayersFeatureSize(14, 1, 6),
+                Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
+        ).decorators(List.of(new AlterGroundDecorator(Holder.direct(BlockStateProvider.of(Blocks.PODZOL))))).build());
+
+        context.register(TREES_TAIGA, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 94)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 46)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 3)
+                        .build()
+        ));
+        context.register(TREES_OLD_GROWTH_SPRUCE_TAIGA, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), 250)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 94)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 190)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 12)
+                        .build()
+        ));
+        context.register(TREES_OLD_GROWTH_PINE_TAIGA, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEGA_PINE_TREE)), 250)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 94)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 190)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 11)
+                        .build()
+        ));
 
         context.register(LIMESTONE_ROCK, new BlockColumnClusterFeature(
                 List.of(BlockColumnFeature.layer(UniformInt.of(5, 7), BlockStateProvider.of(EBlocks.LIMESTONE.defaultBlockState()))),

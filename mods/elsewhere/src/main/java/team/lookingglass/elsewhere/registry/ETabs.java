@@ -51,7 +51,7 @@ public class ETabs {
             output.insertAfter(Items.JUNGLE_LOG, EBlocks.MAHOGANY_LOG);
             output.insertAfter(Items.JUNGLE_LEAVES, EBlocks.MAHOGANY_LEAVES);
 
-            output.insertAfter(Items.STONE, EBlocks.SHALE);
+            output.insertAfter(Items.TUFF, EBlocks.SHALE);
             output.insertAfter(Items.CALCITE, EBlocks.SODALITE);
             output.insertAfter(Items.ANDESITE, EBlocks.LIMESTONE);
             output.insertAfter(Items.CINNABAR, EBlocks.ORPIMENT);
@@ -332,6 +332,18 @@ public class ETabs {
                     EBlocks.CEDAR_PRESSURE_PLATE, EBlocks.CEDAR_BUTTON
             );
 
+            output.insertAfter(Items.SPRUCE_BUTTON,
+                    EBlocks.PINE_LOG, EBlocks.PINE_WOOD,
+                    EBlocks.STRIPPED_PINE_LOG, EBlocks.STRIPPED_PINE_WOOD,
+                    EBlocks.PINE_PLANKS, EBlocks.PINE_MOSAIC,
+                    EBlocks.PINE_STAIRS, EBlocks.PINE_MOSAIC_STAIRS,
+                    EBlocks.PINE_SLAB, EBlocks.PINE_MOSAIC_SLAB,
+                    EBlocks.PINE_BOARDS, EBlocks.PINE_TRIM,
+                    EBlocks.PINE_FENCE, EBlocks.PINE_FENCE_GATE,
+                    EBlocks.PINE_DOOR, EBlocks.PINE_TRAPDOOR,
+                    EBlocks.PINE_PRESSURE_PLATE, EBlocks.PINE_BUTTON
+            );
+
             output.insertAfter(Items.JUNGLE_BUTTON,
                     EBlocks.MAHOGANY_LOG, EBlocks.MAHOGANY_WOOD,
                     EBlocks.STRIPPED_MAHOGANY_LOG, EBlocks.STRIPPED_MAHOGANY_WOOD,
@@ -386,6 +398,9 @@ public class ETabs {
             output.insertAfter(Items.BIRCH_SHELF, EBlocks.CEDAR_SHELF);
             output.insertAfter(Items.BIRCH_HANGING_SIGN, EItems.CEDAR_SIGN, EItems.CEDAR_HANGING_SIGN);
 
+            output.insertAfter(Items.SPRUCE_SHELF, EBlocks.PINE_SHELF);
+            output.insertAfter(Items.SPRUCE_HANGING_SIGN, EItems.PINE_SIGN, EItems.PINE_HANGING_SIGN);
+
             output.insertAfter(Items.JUNGLE_SHELF, EBlocks.MAHOGANY_SHELF);
             output.insertAfter(Items.JUNGLE_HANGING_SIGN, EItems.MAHOGANY_SIGN, EItems.MAHOGANY_HANGING_SIGN);
 
@@ -406,6 +421,7 @@ public class ETabs {
             );
 
             output.insertAfter(Items.BIRCH_CHEST_BOAT, EItems.CEDAR_BOAT, EItems.CEDAR_CHEST_BOAT);
+            output.insertAfter(Items.SPRUCE_CHEST_BOAT, EItems.PINE_BOAT, EItems.PINE_CHEST_BOAT);
             output.insertAfter(Items.JUNGLE_CHEST_BOAT, EItems.MAHOGANY_BOAT, EItems.MAHOGANY_CHEST_BOAT);
             output.insertAfter(Items.PALE_OAK_BOAT, EItems.AZALEA_BOAT, EItems.AZALEA_CHEST_BOAT);
 

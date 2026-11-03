@@ -13,6 +13,8 @@ public interface EItemIds {
     ResourceKey<Item> CEDAR_CHEST_BOAT = register("cedar_chest_boat");
     ResourceKey<Item> MAHOGANY_BOAT = register("mahogany_boat");
     ResourceKey<Item> MAHOGANY_CHEST_BOAT = register("mahogany_chest_boat");
+    ResourceKey<Item> PINE_BOAT = register("pine_boat");
+    ResourceKey<Item> PINE_CHEST_BOAT = register("pine_chest_boat");
 
     ResourceKey<Item> DIAMOND_NUGGET = register("diamond_nugget");
     ResourceKey<Item> EMERALD_NUGGET = register("emerald_nugget");

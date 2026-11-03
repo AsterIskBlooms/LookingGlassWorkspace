@@ -1,29 +1,32 @@
 {
-  "type": "minecraft:random_selector",
-  "default": "minecraft:oak_bees_002",
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.0025,
-      "feature": "minecraft:fallen_birch_tree"
+      "data": "minecraft:oak_bees_002",
+      "weight": 550
     },
     {
-      "chance": 0.18,
-      "feature": "minecraft:birch_bees_002"
+      "data": "minecraft:birch_bees_002",
+      "weight": 330
     },
     {
-      "chance": 0.1,
-      "feature": {
+      "data": {
         "feature": "elsewhere:gilded_birch",
         "placement": []
-      }
+      },
+      "weight": 75
     },
     {
-      "chance": 0.12,
-      "feature": "minecraft:fancy_oak_bees_002"
+      "data": "minecraft:cherry_bees_005",
+      "weight": 170
     },
     {
-      "chance": 0.15,
-      "feature": "minecraft:cherry_bees_005"
+      "data": "minecraft:fancy_oak_bees_002",
+      "weight": 140
+    },
+    {
+      "data": "minecraft:fallen_birch_tree",
+      "weight": 13
     }
   ]
 }

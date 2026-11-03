@@ -6,7 +6,7 @@ e8d06499e0a29b2242d20e768c1c0da3af4c97fc data/minecraft/tags/worldgen/biome/has_
 dc30ef9b8bb22a811bf16a12a74f137b6e02a9c5 data/minecraft/tags/worldgen/biome/has_structure/swamp_hut.json
 487495bb3fe4bddf174b527ae88ed116f4e66240 data/minecraft/tags/worldgen/biome/has_structure/village_desert.json
 f53ab69296a796b865d2a2732ab1c99f52c6e787 data/minecraft/tags/worldgen/biome/has_structure/village_savanna.json
-56d967c5b16bc318d1bd3cb0ad64f0e759f2a201 data/minecraft/tags/worldgen/biome/has_structure/village_snowy.json
+56d967c5b16bc318d1bd3cb0ad64f0e759f2a201 data/minecraft/tags/worldgen/biome/has_structure/village_taiga.json
 c65db8042a20826c451805f33d0c46a4dcead506 data/minecraft/tags/worldgen/biome/is_beach.json
 34f25cc03a516641e5c557a1a86595f263395ced data/minecraft/tags/worldgen/biome/is_cave.json
 c7851d336932136f77df88b03379d39b7e3c12bf data/minecraft/tags/worldgen/biome/is_overworld.json

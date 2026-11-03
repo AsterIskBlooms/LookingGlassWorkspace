@@ -1,23 +1,19 @@
 {
-  "type": "minecraft:random_selector",
-  "default": {
-    "feature": "elsewhere:short_kelp",
-    "placement": []
-  },
+  "type": "minecraft:weighted_random_selector",
   "features": [
     {
-      "chance": 0.6,
-      "feature": {
+      "data": {
         "feature": "elsewhere:short_kelp",
         "placement": []
-      }
+      },
+      "weight": 60
     },
     {
-      "chance": 0.4,
-      "feature": {
+      "data": {
         "feature": "elsewhere:medium_kelp",
         "placement": []
-      }
+      },
+      "weight": 40
     }
   ]
 }

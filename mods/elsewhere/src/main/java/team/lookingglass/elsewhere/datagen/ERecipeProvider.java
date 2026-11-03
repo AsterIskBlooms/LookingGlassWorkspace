@@ -22,6 +22,7 @@ import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.EItems;
 import team.lookingglass.elsewhere.registry.recipe.type.GlowTrimSmithingRecipe;
+import team.lookingglass.elsewhere.registry.tags.EBlockItemTags;
 import team.lookingglass.elsewhere.registry.tags.EItemTags;
 
 import java.util.ArrayList;
@@ -502,7 +503,8 @@ public class ERecipeProvider extends FabricRecipeProvider {
 
                 // Wood
                 fullWoodSet(
-                        EBlocks.AZALEA_LOG, EBlocks.STRIPPED_AZALEA_LOG, EBlocks.AZALEA_WOOD, EBlocks.STRIPPED_AZALEA_WOOD, EItemTags.AZALEA_LOGS,
+                        EBlocks.AZALEA_LOG, EBlocks.STRIPPED_AZALEA_LOG, EBlocks.AZALEA_WOOD, EBlocks.STRIPPED_AZALEA_WOOD,
+                        EBlockItemTags.AZALEA_LOGS.item(),
                         EBlocks.AZALEA_PLANKS, EBlocks.AZALEA_STAIRS, EBlocks.AZALEA_SLAB,
                         EBlocks.AZALEA_MOSAIC, EBlocks.AZALEA_MOSAIC_STAIRS, EBlocks.AZALEA_MOSAIC_SLAB,
                         EBlocks.AZALEA_BOARDS, EBlocks.AZALEA_TRIM,
@@ -511,7 +513,8 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         EItems.AZALEA_BOAT, EBlocks.AZALEA_SHELF
                 );
                 fullWoodSet(
-                        EBlocks.CEDAR_LOG, EBlocks.STRIPPED_CEDAR_LOG, EBlocks.CEDAR_WOOD, EBlocks.STRIPPED_CEDAR_WOOD, EItemTags.CEDAR_LOGS,
+                        EBlocks.CEDAR_LOG, EBlocks.STRIPPED_CEDAR_LOG, EBlocks.CEDAR_WOOD, EBlocks.STRIPPED_CEDAR_WOOD,
+                        EBlockItemTags.CEDAR_LOGS.item(),
                         EBlocks.CEDAR_PLANKS, EBlocks.CEDAR_STAIRS, EBlocks.CEDAR_SLAB,
                         EBlocks.CEDAR_MOSAIC, EBlocks.CEDAR_MOSAIC_STAIRS, EBlocks.CEDAR_MOSAIC_SLAB,
                         EBlocks.CEDAR_BOARDS, EBlocks.CEDAR_TRIM,
@@ -520,13 +523,24 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         EItems.CEDAR_BOAT, EBlocks.CEDAR_SHELF
                 );
                 fullWoodSet(
-                        EBlocks.MAHOGANY_LOG, EBlocks.STRIPPED_MAHOGANY_LOG, EBlocks.MAHOGANY_WOOD, EBlocks.STRIPPED_MAHOGANY_WOOD, EItemTags.MAHOGANY_LOGS,
+                        EBlocks.MAHOGANY_LOG, EBlocks.STRIPPED_MAHOGANY_LOG, EBlocks.MAHOGANY_WOOD, EBlocks.STRIPPED_MAHOGANY_WOOD,
+                        EBlockItemTags.MAHOGANY_LOGS.item(),
                         EBlocks.MAHOGANY_PLANKS, EBlocks.MAHOGANY_STAIRS, EBlocks.MAHOGANY_SLAB,
                         EBlocks.MAHOGANY_MOSAIC, EBlocks.MAHOGANY_MOSAIC_STAIRS, EBlocks.MAHOGANY_MOSAIC_SLAB,
                         EBlocks.MAHOGANY_BOARDS, EBlocks.MAHOGANY_TRIM,
                         EBlocks.MAHOGANY_FENCE, EBlocks.MAHOGANY_FENCE_GATE, EBlocks.MAHOGANY_DOOR, EBlocks.MAHOGANY_TRAPDOOR,
                         EBlocks.MAHOGANY_PRESSURE_PLATE, EBlocks.MAHOGANY_BUTTON, EItems.MAHOGANY_SIGN, EItems.MAHOGANY_HANGING_SIGN,
                         EItems.MAHOGANY_BOAT, EBlocks.MAHOGANY_SHELF
+                );
+                fullWoodSet(
+                        EBlocks.PINE_LOG, EBlocks.STRIPPED_PINE_LOG, EBlocks.PINE_WOOD, EBlocks.STRIPPED_PINE_WOOD,
+                        EBlockItemTags.PINE_LOGS.item(),
+                        EBlocks.PINE_PLANKS, EBlocks.PINE_STAIRS, EBlocks.PINE_SLAB,
+                        EBlocks.PINE_MOSAIC, EBlocks.PINE_MOSAIC_STAIRS, EBlocks.PINE_MOSAIC_SLAB,
+                        EBlocks.PINE_BOARDS, EBlocks.PINE_TRIM,
+                        EBlocks.PINE_FENCE, EBlocks.PINE_FENCE_GATE, EBlocks.PINE_DOOR, EBlocks.PINE_TRAPDOOR,
+                        EBlocks.PINE_PRESSURE_PLATE, EBlocks.PINE_BUTTON, EItems.PINE_SIGN, EItems.PINE_HANGING_SIGN,
+                        EItems.PINE_BOAT, EBlocks.PINE_SHELF
                 );
                 woodSet(
                         Blocks.OAK_PLANKS, Blocks.OAK_STAIRS, Blocks.OAK_SLAB,

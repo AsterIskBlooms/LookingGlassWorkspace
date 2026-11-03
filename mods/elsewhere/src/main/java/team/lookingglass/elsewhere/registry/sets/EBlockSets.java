@@ -58,5 +58,22 @@ public interface EBlockSets {
             SoundEvents.WOODEN_BUTTON_CLICK_ON
     ));
 
+    BlockSetType PINE = BlockSetType.register(new BlockSetType(
+            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine").toString(),
+            true,
+            true,
+            true,
+            BlockSetType.PressurePlateSensitivity.EVERYTHING,
+            BlockSoundSets.WOOD,
+            SoundEvents.WOODEN_DOOR_CLOSE,
+            SoundEvents.WOODEN_DOOR_OPEN,
+            SoundEvents.WOODEN_TRAPDOOR_CLOSE,
+            SoundEvents.WOODEN_TRAPDOOR_OPEN,
+            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF,
+            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON,
+            SoundEvents.WOODEN_BUTTON_CLICK_OFF,
+            SoundEvents.WOODEN_BUTTON_CLICK_ON
+    ));
+
     static void initialize() {}
 }
