@@ -1,4 +1,4 @@
-// 26.4-snapshot-6	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:item
+// 26.4-snapshot-7	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:item
 85a6beb11f0c71fb3406098fe7b4aae4e4dd70d3 data/elsewhere/tags/item/azalea_logs.json
 79256687af643dfc35a6f3672813fb32dd794324 data/elsewhere/tags/item/bamboo_stems.json
 ba90f2e11812eba06c4e0e419d6e1074c67147e4 data/elsewhere/tags/item/boards.json
@@ -60,12 +60,12 @@ bdde8485a39f0e2eba940dfa6639a068206bc983 data/minecraft/tags/item/slabs.json
 9e0e3d3876b9f5285a8e1dc674c0d27062c449ea data/minecraft/tags/item/sulfur_cube_archetype/bouncy.json
 889cb082044a3767b0e7db538f18e1ee7ad5f3f3 data/minecraft/tags/item/sulfur_cube_archetype/fast_sliding.json
 c0f74cf3053b365ff3c66c1021c1bdcbfed9b0cd data/minecraft/tags/item/sulfur_cube_archetype/regular.json
-85e1e116ec7a18b080894a41b86bffae3d936cb4 data/minecraft/tags/item/sulfur_cube_archetype/slow_bouncy.json
+d7af786d2e20add2459e066933df1af2e6b9b0f2 data/minecraft/tags/item/sulfur_cube_archetype/slow_bouncy.json
 c9e9a4d84fc1607ad483fef5929c3d14345cba98 data/minecraft/tags/item/sulfur_cube_archetype/slow_flat.json
 ac587be15c909a26f2f56a703a85267e396a2df9 data/minecraft/tags/item/swords.json
 77c3fd7a237f38fd65454b3eb5125dbab9fd94b4 data/minecraft/tags/item/trim_materials.json
 7f64e42c8ba95c87388cd4732cbb9de934adb6ea data/minecraft/tags/item/trimmable_armor.json
-6753dc3d59048356111d9143de655f959e039a31 data/minecraft/tags/item/walls.json
+0ecabdd48862fb6dd70987cbf44567b5706b6036 data/minecraft/tags/item/walls.json
 2c4168d9c8f036c8deb0f3a85f9f6cb0010b6874 data/minecraft/tags/item/wolf_food.json
 e530e032e82c3a7d714a9d1de6464d2cb4504b8e data/minecraft/tags/item/wooden_buttons.json
 fe508927c7af34df20ed716f06a70ceb06be1830 data/minecraft/tags/item/wooden_doors.json

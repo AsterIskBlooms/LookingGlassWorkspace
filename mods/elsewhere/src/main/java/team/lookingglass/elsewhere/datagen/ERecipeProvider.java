@@ -23,7 +23,6 @@ import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.EItems;
 import team.lookingglass.elsewhere.registry.recipe.type.GlowTrimSmithingRecipe;
 import team.lookingglass.elsewhere.registry.tags.EBlockItemTags;
-import team.lookingglass.elsewhere.registry.tags.EItemTags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -311,15 +310,12 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 stonecutterSet(List.of(Blocks.TUFF, Blocks.TUFF_STAIRS, Blocks.TUFF_WALL, Blocks.POLISHED_TUFF, Blocks.POLISHED_TUFF_STAIRS, Blocks.POLISHED_TUFF_WALL, Blocks.TUFF_BRICKS, Blocks.TUFF_BRICK_STAIRS, Blocks.TUFF_BRICK_WALL, EBlocks.TUFF_PILLAR, Blocks.CHISELED_TUFF), List.of(Blocks.TUFF_SLAB, Blocks.POLISHED_TUFF_SLAB, Blocks.TUFF_BRICK_SLAB));
 
                 // Calcite
-                recipeStairSlabWall(Blocks.CALCITE, EBlocks.CALCITE_STAIRS, EBlocks.CALCITE_SLAB, EBlocks.CALCITE_WALL);
-                recipe2x2(Blocks.CALCITE, EBlocks.POLISHED_CALCITE);
-                recipeStairSlabWall(EBlocks.POLISHED_CALCITE, EBlocks.POLISHED_CALCITE_STAIRS, EBlocks.POLISHED_CALCITE_SLAB, EBlocks.POLISHED_CALCITE_WALL);
-                recipe2x1t1(EBlocks.POLISHED_CALCITE_SLAB, EBlocks.CHISELED_CALCITE);
-                recipe2x1t2(EBlocks.POLISHED_CALCITE, EBlocks.CALCITE_PILLAR);
-                recipe2x2(EBlocks.POLISHED_CALCITE, EBlocks.CALCITE_BRICKS);
-                recipeStairSlabWall(EBlocks.CALCITE_BRICKS, EBlocks.CALCITE_BRICK_STAIRS, EBlocks.CALCITE_BRICK_SLAB, EBlocks.CALCITE_BRICK_WALL);
-                recipe2x1t1(EBlocks.CALCITE_BRICK_SLAB, EBlocks.CHISELED_CALCITE_BRICKS);
-                stonecutterSet(List.of(Blocks.CALCITE, EBlocks.CALCITE_STAIRS, EBlocks.CALCITE_WALL, EBlocks.POLISHED_CALCITE, EBlocks.POLISHED_CALCITE_STAIRS, EBlocks.POLISHED_CALCITE_WALL, EBlocks.CALCITE_BRICKS, EBlocks.CALCITE_BRICK_STAIRS, EBlocks.CALCITE_BRICK_WALL, EBlocks.CALCITE_PILLAR, EBlocks.CHISELED_CALCITE, EBlocks.CHISELED_CALCITE_BRICKS), List.of(EBlocks.CALCITE_SLAB, EBlocks.POLISHED_CALCITE_SLAB, EBlocks.CALCITE_BRICK_SLAB));
+                recipeStairSlabWall(Blocks.CALCITE, Blocks.CALCITE_STAIRS, Blocks.CALCITE_SLAB, Blocks.CALCITE_WALL);
+                recipeStairSlabWall(Blocks.POLISHED_CALCITE, Blocks.POLISHED_CALCITE_STAIRS, Blocks.POLISHED_CALCITE_SLAB, Blocks.POLISHED_CALCITE_WALL);
+                recipe2x1t1(Blocks.POLISHED_CALCITE_SLAB, EBlocks.CHISELED_POLISHED_CALCITE);
+                recipeStairSlabWall(Blocks.POLISHED_CALCITE_BRICKS, Blocks.POLISHED_CALCITE_BRICK_STAIRS, Blocks.POLISHED_CALCITE_BRICK_SLAB, Blocks.POLISHED_CALCITE_BRICK_WALL);
+                recipe2x1t1(Blocks.POLISHED_CALCITE_BRICK_SLAB, EBlocks.CHISELED_POLISHED_CALCITE_BRICKS);
+                stonecutterSet(List.of(Blocks.CALCITE, Blocks.CALCITE_STAIRS, Blocks.CALCITE_WALL, Blocks.POLISHED_CALCITE, Blocks.POLISHED_CALCITE_STAIRS, Blocks.POLISHED_CALCITE_WALL, Blocks.POLISHED_CALCITE_BRICKS, Blocks.POLISHED_CALCITE_BRICK_STAIRS, Blocks.POLISHED_CALCITE_BRICK_WALL, Blocks.CALCITE_PILLAR, EBlocks.CHISELED_POLISHED_CALCITE, EBlocks.CHISELED_POLISHED_CALCITE_BRICKS), List.of(Blocks.CALCITE_SLAB, Blocks.POLISHED_CALCITE_SLAB, Blocks.POLISHED_CALCITE_BRICK_SLAB));
 
                 // Dripstone
                 recipeStairSlabWall(Blocks.DRIPSTONE_BLOCK, EBlocks.DRIPSTONE_STAIRS, EBlocks.DRIPSTONE_SLAB, EBlocks.DRIPSTONE_WALL);

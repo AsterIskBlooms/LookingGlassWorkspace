@@ -187,7 +187,7 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultOres(genBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addFrozenSprings(genBuilder);
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_WINDSWEPT_HILLS);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_TUNDRA);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TUNDRA_RUSTY_MOSS_PATCH);
         BiomeDefaultFeatures.addBushes(genBuilder);
         BiomeDefaultFeatures.addFerns(genBuilder);

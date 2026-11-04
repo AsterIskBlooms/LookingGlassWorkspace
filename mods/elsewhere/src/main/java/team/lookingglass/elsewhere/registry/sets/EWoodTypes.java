@@ -1,48 +1,19 @@
 package team.lookingglass.elsewhere.registry.sets;
 
 import net.minecraft.resources.Identifier;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.block.sounds.BlockSoundSets;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import team.lookingglass.elsewhere.Elsewhere;
 
 public interface EWoodTypes {
-    WoodType AZALEA = WoodType.register(new WoodType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "azalea").toString(),
-            EBlockSets.AZALEA,
-            BlockSoundSets.CHERRY_WOOD,
-            BlockSoundSets.CHERRY_WOOD_HANGING_SIGN,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_CLOSE,
-            SoundEvents.CHERRY_WOOD_FENCE_GATE_OPEN
-    ));
+    WoodType AZALEA = new WoodType(createKey("azalea"), EBlockSets.AZALEA);
+    WoodType CEDAR = new WoodType(createKey("cedar"), BlockSetType.DEFAULT_WOOD);
+    WoodType MAHOGANY = new WoodType(createKey("mahogany"), BlockSetType.DEFAULT_WOOD);
+    WoodType PINE = new WoodType(createKey("pine"), BlockSetType.DEFAULT_WOOD);
 
-    WoodType CEDAR = WoodType.register(new WoodType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cedar").toString(),
-            EBlockSets.CEDAR,
-            BlockSoundSets.WOOD,
-            BlockSoundSets.HANGING_SIGN,
-            SoundEvents.FENCE_GATE_CLOSE,
-            SoundEvents.FENCE_GATE_OPEN
-    ));
-
-    WoodType MAHOGANY = WoodType.register(new WoodType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany").toString(),
-            EBlockSets.MAHOGANY,
-            BlockSoundSets.WOOD,
-            BlockSoundSets.HANGING_SIGN,
-            SoundEvents.FENCE_GATE_CLOSE,
-            SoundEvents.FENCE_GATE_OPEN
-    ));
-
-    WoodType PINE = WoodType.register(new WoodType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine").toString(),
-            EBlockSets.PINE,
-            BlockSoundSets.WOOD,
-            BlockSoundSets.HANGING_SIGN,
-            SoundEvents.FENCE_GATE_CLOSE,
-            SoundEvents.FENCE_GATE_OPEN
-    ));
-
+    private static String createKey(String name) {
+        return Identifier.fromNamespaceAndPath(Elsewhere.MODID, name).toString();
+    }
 
     static void initialize() {}
 }

@@ -91,20 +91,8 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.diorite_brick_wall", "Diorite Brick Wall");
         translationBuilder.add("block.elsewhere.chiseled_diorite", "Chiseled Diorite");
 
-        translationBuilder.add("block.elsewhere.calcite_stairs", "Calcite Stairs");
-        translationBuilder.add("block.elsewhere.calcite_slab", "Calcite Slab");
-        translationBuilder.add("block.elsewhere.calcite_wall", "Calcite Wall");
-        translationBuilder.add("block.elsewhere.polished_calcite", "Polished Calcite");
-        translationBuilder.add("block.elsewhere.polished_calcite_stairs", "Polished Calcite Stairs");
-        translationBuilder.add("block.elsewhere.polished_calcite_slab", "Polished Calcite Slab");
-        translationBuilder.add("block.elsewhere.polished_calcite_wall", "Polished Calcite Wall");
-        translationBuilder.add("block.elsewhere.calcite_bricks", "Calcite Bricks");
-        translationBuilder.add("block.elsewhere.calcite_brick_stairs", "Calcite Brick Stairs");
-        translationBuilder.add("block.elsewhere.calcite_brick_slab", "Calcite Brick Slab");
-        translationBuilder.add("block.elsewhere.calcite_brick_wall", "Calcite Brick Wall");
-        translationBuilder.add("block.elsewhere.chiseled_calcite", "Chiseled Calcite");
-        translationBuilder.add("block.elsewhere.chiseled_calcite_bricks", "Chiseled Calcite Bricks");
-        translationBuilder.add("block.elsewhere.calcite_pillar", "Calcite Pillar");
+        translationBuilder.add("block.elsewhere.chiseled_polished_calcite", "Chiseled Polished Calcite");
+        translationBuilder.add("block.elsewhere.chiseled_polished_calcite_bricks", "Chiseled Polished Calcite Bricks");
 
         translationBuilder.add("block.elsewhere.dripstone_stairs", "Dripstone Stairs");
         translationBuilder.add("block.elsewhere.dripstone_slab", "Dripstone Slab");

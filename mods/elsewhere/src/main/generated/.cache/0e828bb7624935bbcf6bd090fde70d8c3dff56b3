@@ -1,4 +1,4 @@
-// 26.4-snapshot-6	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
+// 26.4-snapshot-7	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
 8673e2653fcd324a4c803eb5c338996af05f4d38 data/elsewhere/tags/block/amethyst_spire_replaceable.json
 85a6beb11f0c71fb3406098fe7b4aae4e4dd70d3 data/elsewhere/tags/block/azalea_logs.json
 79256687af643dfc35a6f3672813fb32dd794324 data/elsewhere/tags/block/bamboo_stems.json
@@ -48,7 +48,7 @@ f9c225f54fd18649c89df5dfba6bd070cc3afe83 data/minecraft/tags/block/incorrect_for
 1aa7e5015f261bc3e73f5a7bfac4534d165e0344 data/minecraft/tags/block/leaves.json
 10162e322f2e609dbcaf33ebea1cf5873ad428a2 data/minecraft/tags/block/logs_that_burn.json
 f0101b24fba4f2b4d8f5a6f3e8287f133a6a7d15 data/minecraft/tags/block/mineable/axe.json
-ce32b623808e7d57ce1cae94eeca0cc23322f214 data/minecraft/tags/block/mineable/pickaxe.json
+8416322dbe4d10a6a16ad85ac280d21f347f4d47 data/minecraft/tags/block/mineable/pickaxe.json
 08db4ee00b347efee4379895d118ab7bfcdee303 data/minecraft/tags/block/mineable/shovel.json
 3d7e98972d62567721ebbd097dfb22bc186b8010 data/minecraft/tags/block/moss_blocks.json
 29e4272e09de071bc62fd6b5ae878daf25aa0652 data/minecraft/tags/block/moss_replaceable.json
@@ -71,7 +71,7 @@ e039c21fb1945d99b6e7f843924e5976018db75e data/minecraft/tags/block/supports_suga
 e039c21fb1945d99b6e7f843924e5976018db75e data/minecraft/tags/block/supports_vegetation.json
 d29c2d7f8d89d56c17a6b85754a44d059aa6fc16 data/minecraft/tags/block/wall_hanging_signs.json
 8c1a18b08ff1c98633b9765fd4267cc244ea872c data/minecraft/tags/block/wall_signs.json
-6753dc3d59048356111d9143de655f959e039a31 data/minecraft/tags/block/walls.json
+0ecabdd48862fb6dd70987cbf44567b5706b6036 data/minecraft/tags/block/walls.json
 e530e032e82c3a7d714a9d1de6464d2cb4504b8e data/minecraft/tags/block/wooden_buttons.json
 fe508927c7af34df20ed716f06a70ceb06be1830 data/minecraft/tags/block/wooden_doors.json
 3c7530f6cbc0d361aaf2d16cbddab3ec57685e0b data/minecraft/tags/block/wooden_fences.json

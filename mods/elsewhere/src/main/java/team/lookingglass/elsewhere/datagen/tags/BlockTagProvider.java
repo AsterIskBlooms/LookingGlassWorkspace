@@ -140,11 +140,7 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.POLISHED_DIORITE_WALL,
                         EBlockItemIds.DIORITE_BRICKS, EBlockItemIds.DIORITE_BRICK_STAIRS, EBlockItemIds.DIORITE_BRICK_SLAB, EBlockItemIds.DIORITE_BRICK_WALL,
 
-                        EBlockItemIds.BEJEWELED_CALCITE,
-                        EBlockItemIds.CALCITE_STAIRS, EBlockItemIds.CALCITE_SLAB, EBlockItemIds.CALCITE_WALL,
-                        EBlockItemIds.POLISHED_CALCITE, EBlockItemIds.POLISHED_CALCITE_STAIRS, EBlockItemIds.POLISHED_CALCITE_SLAB, EBlockItemIds.POLISHED_CALCITE_WALL,
-                        EBlockItemIds.CALCITE_BRICKS, EBlockItemIds.CALCITE_BRICK_STAIRS, EBlockItemIds.CALCITE_BRICK_SLAB, EBlockItemIds.CALCITE_BRICK_WALL,
-                        EBlockItemIds.CALCITE_PILLAR, EBlockItemIds.CHISELED_CALCITE, EBlockItemIds.CHISELED_CALCITE_BRICKS,
+                        EBlockItemIds.BEJEWELED_CALCITE, EBlockItemIds.CHISELED_POLISHED_CALCITE, EBlockItemIds.CHISELED_POLISHED_CALCITE_BRICKS,
 
                         EBlockItemIds.DRIPSTONE_STAIRS, EBlockItemIds.DRIPSTONE_SLAB, EBlockItemIds.DRIPSTONE_WALL,
                         EBlockItemIds.POLISHED_DRIPSTONE, EBlockItemIds.POLISHED_DRIPSTONE_STAIRS, EBlockItemIds.POLISHED_DRIPSTONE_SLAB, EBlockItemIds.POLISHED_DRIPSTONE_WALL,

@@ -123,24 +123,8 @@ public class ModelProvider extends FabricModelProvider {
         ;
         gen.createTrivialBlock(EBlocks.CHISELED_DIORITE, TexturedModel.COLUMN);
 
-        gen.family(Blocks.CALCITE)
-                .stairs(EBlocks.CALCITE_STAIRS)
-                .slab(EBlocks.CALCITE_SLAB)
-                .wall(EBlocks.CALCITE_WALL)
-        ;
-        gen.family(EBlocks.POLISHED_CALCITE)
-                .stairs(EBlocks.POLISHED_CALCITE_STAIRS)
-                .slab(EBlocks.POLISHED_CALCITE_SLAB)
-                .wall(EBlocks.POLISHED_CALCITE_WALL)
-        ;
-        gen.family(EBlocks.CALCITE_BRICKS)
-                .stairs(EBlocks.CALCITE_BRICK_STAIRS)
-                .slab(EBlocks.CALCITE_BRICK_SLAB)
-                .wall(EBlocks.CALCITE_BRICK_WALL)
-        ;
-        gen.createTrivialCube(EBlocks.CHISELED_CALCITE);
-        gen.createTrivialBlock(EBlocks.CHISELED_CALCITE_BRICKS, TexturedModel.COLUMN);
-        gen.createAxisAlignedPillarBlock(EBlocks.CALCITE_PILLAR, TexturedModel.COLUMN);
+        gen.createTrivialCube(EBlocks.CHISELED_POLISHED_CALCITE);
+        gen.createTrivialBlock(EBlocks.CHISELED_POLISHED_CALCITE_BRICKS, TexturedModel.COLUMN);
 
         gen.family(Blocks.DRIPSTONE_BLOCK)
                 .stairs(EBlocks.DRIPSTONE_STAIRS)

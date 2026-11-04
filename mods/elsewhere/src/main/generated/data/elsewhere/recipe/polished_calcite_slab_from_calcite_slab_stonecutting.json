@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "elsewhere:calcite_slab",
-  "result": {
-    "id": "elsewhere:polished_calcite_slab"
-  }
-}

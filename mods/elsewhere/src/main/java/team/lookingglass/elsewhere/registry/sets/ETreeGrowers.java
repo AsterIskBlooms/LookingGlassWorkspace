@@ -9,25 +9,22 @@ import team.lookingglass.elsewhere.worldgen.features.EFeatures;
 public interface ETreeGrowers {
 
     TreeGrower CEDAR = new TreeGrower(
-            "cedar",
             WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.CEDAR_TREE).build(),
             WeightedList.<ResourceKey<Feature>>builder().build(),
             WeightedList.<ResourceKey<Feature>>builder().build(),
             EFeatures.CEDAR_TREE
     );
     TreeGrower MAHOGANY = new TreeGrower(
-            "mahogany",
             WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.MAHOGANY_TREE).build(),
             WeightedList.<ResourceKey<Feature>>builder().build(),
             WeightedList.<ResourceKey<Feature>>builder().build(),
             EFeatures.MAHOGANY_TREE
     );
     TreeGrower PINE = new TreeGrower(
-            "pine",
-            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.MAHOGANY_TREE).build(),
+            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.PINE_TREE).build(),
+            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.MEGA_PINE_TREE).build(),
             WeightedList.<ResourceKey<Feature>>builder().build(),
-            WeightedList.<ResourceKey<Feature>>builder().build(),
-            EFeatures.MAHOGANY_TREE
+            EFeatures.PINE_TREE
     );
 
     static void initialize() {

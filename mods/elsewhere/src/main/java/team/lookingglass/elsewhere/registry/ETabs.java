@@ -132,12 +132,9 @@ public class ETabs {
             output.insertAfter(Items.CHISELED_TUFF, EBlocks.TUFF_PILLAR);
 
             // Calcite, Sodalite, Dripstone, Sulfur, Orpiment, & Cinnabar
-            output.insertAfter(Items.CHISELED_TUFF_BRICKS,
-                    Blocks.CALCITE, EBlocks.CALCITE_STAIRS, EBlocks.CALCITE_SLAB, EBlocks.CALCITE_WALL,
-                    EBlocks.CHISELED_CALCITE, EBlocks.CALCITE_PILLAR,
-                    EBlocks.POLISHED_CALCITE, EBlocks.POLISHED_CALCITE_STAIRS, EBlocks.POLISHED_CALCITE_SLAB, EBlocks.POLISHED_CALCITE_WALL,
-                    EBlocks.CALCITE_BRICKS, EBlocks.CALCITE_BRICK_STAIRS, EBlocks.CALCITE_BRICK_SLAB, EBlocks.CALCITE_BRICK_WALL,
-                    EBlocks.CHISELED_CALCITE_BRICKS,
+            output.insertAfter(Blocks.CALCITE_WALL, EBlocks.CHISELED_POLISHED_CALCITE);
+            output.insertAfter(Blocks.POLISHED_CALCITE_BRICK_WALL,
+                    EBlocks.CHISELED_POLISHED_CALCITE_BRICKS,
 
                     EBlocks.SODALITE, EBlocks.SODALITE_STAIRS, EBlocks.SODALITE_SLAB, EBlocks.SODALITE_WALL,
                     EBlocks.CHISELED_SODALITE, EBlocks.SODALITE_PILLAR,

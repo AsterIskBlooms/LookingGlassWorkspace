@@ -39,6 +39,7 @@ import team.lookingglass.elsewhere.registry.blocktypes.PebbleBlock;
 import team.lookingglass.elsewhere.worldgen.features.types.*;
 
 import java.util.List;
+import java.util.Optional;
 
 public class EFeatures {
 
@@ -145,6 +146,9 @@ public class EFeatures {
 
     public static final ResourceKey<Feature> PINE_TREE = registerKey("pine_tree");
     public static final ResourceKey<Feature> MEGA_PINE_TREE = registerKey("mega_pine_tree");
+    public static final ResourceKey<Feature> FALLEN_PINE_TREE = registerKey("fallen_pine_tree");
+
+    public static final ResourceKey<Feature> TREES_TUNDRA = registerKey("trees_tundra");
     public static final ResourceKey<Feature> TREES_TAIGA = registerKey("trees_taiga");
     public static final ResourceKey<Feature> TREES_OLD_GROWTH_SPRUCE_TAIGA = registerKey("trees_old_growth_spruce_taiga");
     public static final ResourceKey<Feature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
@@ -577,7 +581,7 @@ public class EFeatures {
                 PlacementUtils.inlinePlaced(features.getOrThrow(RUSTY_MOSS_VEGETATION)),
                 CaveSurface.FLOOR, ConstantInt.of(1),
                 0.0F, 5, 0.5F,
-                UniformInt.of(4, 7), 0.3F
+                UniformInt.of(3, 5), 0.3F
         ));
         context.register(LARGE_RUSTY_MOSS_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
@@ -764,7 +768,7 @@ public class EFeatures {
                 new EPineFoliagePlacer(ConstantInt.of(3), UniformInt.of(1, 2), UniformInt.of(10, 12)),
                 new TwoLayersFeatureSize(3, 0, 3),
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
-        ).build());
+        ).decorators(List.of(new ShelfMushroomDecorator(0.32F))).build());
         context.register(MEGA_PINE_TREE, new TreeFeature.Builder(
                 BlockStateProvider.of(EBlocks.PINE_LOG),
                 new GiantTrunkPlacer(24, 3, 6),
@@ -772,12 +776,21 @@ public class EFeatures {
                 new EPineFoliagePlacer(ConstantInt.of(4), UniformInt.of(1, 2), UniformInt.of(12, 14)),
                 new TwoLayersFeatureSize(14, 1, 6),
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
-        ).decorators(List.of(new AlterGroundDecorator(Holder.direct(BlockStateProvider.of(Blocks.PODZOL))))).build());
+        ).decorators(List.of(new EAlterGroundDecorator(Holder.direct(BlockStateProvider.of(Blocks.PODZOL))), new ShelfMushroomDecorator(0.21F))).build());
+        context.register(FALLEN_PINE_TREE, createFallenTrees(EBlocks.PINE_LOG, 7, 11)
+                        .stumpDecorator(TrunkVineDecorator.INSTANCE).logDecorator(new ShelfMushroomDecorator(0.55F)).build());
 
+        context.register(TREES_TUNDRA, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 24)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 24)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 1)
+                        .build()
+        ));
         context.register(TREES_TAIGA, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 94)
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 46)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 24)
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 3)
                         .build()
         ));
@@ -792,7 +805,7 @@ public class EFeatures {
         context.register(TREES_OLD_GROWTH_PINE_TAIGA, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEGA_PINE_TREE)), 250)
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 94)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 35)
                         .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 190)
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 11)
                         .build()

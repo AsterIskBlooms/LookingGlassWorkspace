@@ -128,6 +128,7 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> MANGROVE_CATTAILS = registerKey("mangrove_cattails");
     public static final ResourceKey<PlacedFeature> TREES_BOG = registerKey("trees_bog");
 
+    public static final ResourceKey<PlacedFeature> TREES_TUNDRA = registerKey("trees_tundra");
     public static final ResourceKey<PlacedFeature> TREES_TAIGA = registerKey("trees_taiga");
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_SPRUCE_TAIGA = registerKey("trees_old_growth_spruce_taiga");
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
@@ -921,6 +922,16 @@ public class EPlacements {
                                 BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING)))
                 ));
 
+        PlacementUtils.register(context, TREES_TUNDRA,
+                feature.getOrThrow(EFeatures.TREES_TUNDRA),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(
+                                BlockPredicate.ONLY_IN_AIR_PREDICATE, BlockPredicate.wouldSurvive(Blocks.SPRUCE_SAPLING)))
+                ));
         PlacementUtils.register(context, TREES_TAIGA,
                 feature.getOrThrow(EFeatures.TREES_TAIGA),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(8, 0.1F, 1), Blocks.SPRUCE_SAPLING));

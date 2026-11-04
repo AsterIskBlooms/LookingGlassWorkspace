@@ -229,7 +229,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_windswept_hills",
+      "elsewhere:trees_tundra",
       "elsewhere:tundra_rusty_moss_patch",
       "minecraft:patch_bush",
       "minecraft:patch_large_fern",

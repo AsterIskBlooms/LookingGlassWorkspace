@@ -16,14 +16,12 @@ public class TreeGrowerMixin {
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void elsewhere$treeChanges(CallbackInfo ci) {
         TreeGrower.ACACIA = new TreeGrower(
-                "acacia",
                 WeightedList.<ResourceKey<Feature>>builder().add(TreeFeatures.ACACIA).build(),
                 WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.MEGA_ACACIA).build(),
                 WeightedList.<ResourceKey<Feature>>builder().build(),
                 TreeFeatures.ACACIA
         );
         TreeGrower.BIRCH = new TreeGrower(
-                "birch",
                 WeightedList.<ResourceKey<Feature>>builder().add(TreeFeatures.BIRCH).add(EFeatures.GILDED_BIRCH_CLEAR).build(),
                 WeightedList.<ResourceKey<Feature>>builder().build(),
                 WeightedList.<ResourceKey<Feature>>builder().build(),

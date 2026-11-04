@@ -1,6 +1,5 @@
 package team.lookingglass.elsewhere.worldgen.features.types;
 
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.RandomSource;
@@ -10,7 +9,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
-import team.lookingglass.elsewhere.worldgen.features.EFoliagePlacers;
+import team.lookingglass.elsewhere.worldgen.features.EMiscTypes;
 
 public class EPineFoliagePlacer extends FoliagePlacer {
     public static final MapCodec<EPineFoliagePlacer> CODEC = RecordCodecBuilder.mapCodec(i ->
@@ -26,7 +25,7 @@ public class EPineFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected FoliagePlacerType<?> type() {
-        return EFoliagePlacers.PINE_FOLIAGE_PLACER;
+        return EMiscTypes.PINE_FOLIAGE_PLACER;
     }
 
     @Override

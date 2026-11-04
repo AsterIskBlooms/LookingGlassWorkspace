@@ -161,20 +161,8 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.DIORITE_BRICK_WALL);
         dropSelf(EBlocks.CHISELED_DIORITE);
 
-        dropSelf(EBlocks.CALCITE_STAIRS);
-        add(EBlocks.CALCITE_SLAB, createSlabItemTable(EBlocks.CALCITE_SLAB));
-        dropSelf(EBlocks.CALCITE_WALL);
-        dropSelf(EBlocks.POLISHED_CALCITE);
-        dropSelf(EBlocks.POLISHED_CALCITE_STAIRS);
-        add(EBlocks.POLISHED_CALCITE_SLAB, createSlabItemTable(EBlocks.POLISHED_CALCITE_SLAB));
-        dropSelf(EBlocks.POLISHED_CALCITE_WALL);
-        dropSelf(EBlocks.CALCITE_BRICKS);
-        dropSelf(EBlocks.CALCITE_BRICK_STAIRS);
-        add(EBlocks.CALCITE_BRICK_SLAB, createSlabItemTable(EBlocks.CALCITE_BRICK_SLAB));
-        dropSelf(EBlocks.CALCITE_BRICK_WALL);
-        dropSelf(EBlocks.CHISELED_CALCITE);
-        dropSelf(EBlocks.CHISELED_CALCITE_BRICKS);
-        dropSelf(EBlocks.CALCITE_PILLAR);
+        dropSelf(EBlocks.CHISELED_POLISHED_CALCITE);
+        dropSelf(EBlocks.CHISELED_POLISHED_CALCITE_BRICKS);
 
         dropSelf(EBlocks.DRIPSTONE_STAIRS);
         add(EBlocks.DRIPSTONE_SLAB, createSlabItemTable(EBlocks.DRIPSTONE_SLAB));

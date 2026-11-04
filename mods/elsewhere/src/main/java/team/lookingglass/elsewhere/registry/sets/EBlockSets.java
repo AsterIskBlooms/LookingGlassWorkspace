@@ -7,8 +7,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import team.lookingglass.elsewhere.Elsewhere;
 
 public interface EBlockSets {
-    BlockSetType AZALEA = BlockSetType.register(new BlockSetType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "azalea").toString(),
+    BlockSetType AZALEA = new BlockSetType(
             true,
             true,
             true,
@@ -22,58 +21,7 @@ public interface EBlockSets {
             SoundEvents.CHERRY_WOOD_PRESSURE_PLATE_CLICK_ON,
             SoundEvents.CHERRY_WOOD_BUTTON_CLICK_OFF,
             SoundEvents.CHERRY_WOOD_BUTTON_CLICK_ON
-    ));
-
-    BlockSetType CEDAR = BlockSetType.register(new BlockSetType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cedar").toString(),
-            true,
-            true,
-            true,
-            BlockSetType.PressurePlateSensitivity.EVERYTHING,
-            BlockSoundSets.WOOD,
-            SoundEvents.WOODEN_DOOR_CLOSE,
-            SoundEvents.WOODEN_DOOR_OPEN,
-            SoundEvents.WOODEN_TRAPDOOR_CLOSE,
-            SoundEvents.WOODEN_TRAPDOOR_OPEN,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON,
-            SoundEvents.WOODEN_BUTTON_CLICK_OFF,
-            SoundEvents.WOODEN_BUTTON_CLICK_ON
-    ));
-
-    BlockSetType MAHOGANY = BlockSetType.register(new BlockSetType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany").toString(),
-            true,
-            true,
-            true,
-            BlockSetType.PressurePlateSensitivity.EVERYTHING,
-            BlockSoundSets.WOOD,
-            SoundEvents.WOODEN_DOOR_CLOSE,
-            SoundEvents.WOODEN_DOOR_OPEN,
-            SoundEvents.WOODEN_TRAPDOOR_CLOSE,
-            SoundEvents.WOODEN_TRAPDOOR_OPEN,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON,
-            SoundEvents.WOODEN_BUTTON_CLICK_OFF,
-            SoundEvents.WOODEN_BUTTON_CLICK_ON
-    ));
-
-    BlockSetType PINE = BlockSetType.register(new BlockSetType(
-            Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine").toString(),
-            true,
-            true,
-            true,
-            BlockSetType.PressurePlateSensitivity.EVERYTHING,
-            BlockSoundSets.WOOD,
-            SoundEvents.WOODEN_DOOR_CLOSE,
-            SoundEvents.WOODEN_DOOR_OPEN,
-            SoundEvents.WOODEN_TRAPDOOR_CLOSE,
-            SoundEvents.WOODEN_TRAPDOOR_OPEN,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_OFF,
-            SoundEvents.WOODEN_PRESSURE_PLATE_CLICK_ON,
-            SoundEvents.WOODEN_BUTTON_CLICK_OFF,
-            SoundEvents.WOODEN_BUTTON_CLICK_ON
-    ));
+    );
 
     static void initialize() {}
 }

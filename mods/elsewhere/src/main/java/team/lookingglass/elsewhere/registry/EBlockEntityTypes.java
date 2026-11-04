@@ -36,6 +36,12 @@ public interface EBlockEntityTypes {
         BlockEntityTypes.HANGING_SIGN.addValidBlock(EBlocks.MAHOGANY_HANGING_SIGN);
         BlockEntityTypes.HANGING_SIGN.addValidBlock(EBlocks.MAHOGANY_WALL_HANGING_SIGN);
         BlockEntityTypes.SHELF.addValidBlock(EBlocks.MAHOGANY_SHELF);
+
+        BlockEntityTypes.SIGN.addValidBlock(EBlocks.PINE_SIGN);
+        BlockEntityTypes.SIGN.addValidBlock(EBlocks.PINE_WALL_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EBlocks.PINE_HANGING_SIGN);
+        BlockEntityTypes.HANGING_SIGN.addValidBlock(EBlocks.PINE_WALL_HANGING_SIGN);
+        BlockEntityTypes.SHELF.addValidBlock(EBlocks.PINE_SHELF);
     }
 
     private static <T extends BlockEntity> BlockEntityType<T> register(ResourceKey<BlockEntityType<?>> id, FabricBlockEntityTypeBuilder.Factory<T> factory, Block... validBlocks) {

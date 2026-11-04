@@ -186,7 +186,6 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
                 EBlockItemIds.POLISHED_ANDESITE_WALL, EBlockItemIds.ANDESITE_BRICK_WALL,
                 EBlockItemIds.POLISHED_GRANITE_WALL, EBlockItemIds.GRANITE_BRICK_WALL,
                 EBlockItemIds.POLISHED_DIORITE_WALL, EBlockItemIds.DIORITE_BRICK_WALL,
-                EBlockItemIds.CALCITE_WALL, EBlockItemIds.POLISHED_CALCITE_WALL, EBlockItemIds.CALCITE_BRICK_WALL,
                 EBlockItemIds.DRIPSTONE_WALL, EBlockItemIds.POLISHED_DRIPSTONE_WALL, EBlockItemIds.DRIPSTONE_TILE_WALL,
                 EBlockItemIds.POLISHED_SANDSTONE_WALL, EBlockItemIds.POLISHED_RED_SANDSTONE_WALL,
                 EBlockItemIds.SMOOTH_SANDSTONE_WALL, EBlockItemIds.SMOOTH_RED_SANDSTONE_WALL,

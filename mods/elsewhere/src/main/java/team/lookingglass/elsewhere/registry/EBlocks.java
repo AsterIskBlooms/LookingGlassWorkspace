@@ -4,6 +4,7 @@ import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.sounds.BlockSoundSets;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.PushReaction;
 import team.lookingglass.elsewhere.Elsewhere;
@@ -142,26 +143,8 @@ public interface EBlocks {
     Block CHISELED_DIORITE = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_DIORITE, DIORITE_BRICKS);
 
     Block BEJEWELED_CALCITE = BlockRegistry.registerCopyBlock(EBlockItemIds.BEJEWELED_CALCITE, Blocks.CALCITE);
-    Block CALCITE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CALCITE_STAIRS, Blocks.CALCITE);
-    Block CALCITE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CALCITE_SLAB, Blocks.CALCITE);
-    Block CALCITE_WALL = BlockRegistry.registerWall(EBlockItemIds.CALCITE_WALL, Blocks.CALCITE);
-    Block POLISHED_CALCITE = BlockRegistry.register(EBlockItemIds.POLISHED_CALCITE, Block::new,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CALCITE)
-    );
-    Block POLISHED_CALCITE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_CALCITE_STAIRS, POLISHED_CALCITE);
-    Block POLISHED_CALCITE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_CALCITE_SLAB, POLISHED_CALCITE);
-    Block POLISHED_CALCITE_WALL = BlockRegistry.registerWall(EBlockItemIds.POLISHED_CALCITE_WALL, POLISHED_CALCITE);
-    Block CALCITE_BRICKS = BlockRegistry.register(EBlockItemIds.CALCITE_BRICKS, Block::new,
-            BlockBehaviour.Properties.ofFullCopy(POLISHED_CALCITE)
-    );
-    Block CALCITE_BRICK_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CALCITE_BRICK_STAIRS, CALCITE_BRICKS);
-    Block CALCITE_BRICK_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CALCITE_BRICK_SLAB, CALCITE_BRICKS);
-    Block CALCITE_BRICK_WALL = BlockRegistry.registerWall(EBlockItemIds.CALCITE_BRICK_WALL, CALCITE_BRICKS);
-    Block CHISELED_CALCITE = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_CALCITE, CALCITE_BRICKS);
-    Block CHISELED_CALCITE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_CALCITE_BRICKS, CALCITE_BRICKS);
-    Block CALCITE_PILLAR = BlockRegistry.register(EBlockItemIds.CALCITE_PILLAR, RotatedPillarBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(CALCITE_BRICKS)
-    );
+    Block CHISELED_POLISHED_CALCITE = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_POLISHED_CALCITE, Blocks.POLISHED_CALCITE);
+    Block CHISELED_POLISHED_CALCITE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_POLISHED_CALCITE_BRICKS, Blocks.POLISHED_CALCITE_BRICKS);
 
     Block DRIPSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.DRIPSTONE_STAIRS, Blocks.DRIPSTONE_BLOCK);
     Block DRIPSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.DRIPSTONE_SLAB, Blocks.DRIPSTONE_BLOCK);
@@ -706,10 +689,10 @@ public interface EBlocks {
     Block CEDAR_TRIM = BlockRegistry.register(EBlockItemIds.CEDAR_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(CEDAR_PLANKS));
     Block CEDAR_FENCE = BlockRegistry.registerFence(EBlockItemIds.CEDAR_FENCE, CEDAR_PLANKS);
     Block CEDAR_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.CEDAR_FENCE_GATE, EWoodTypes.CEDAR, CEDAR_PLANKS);
-    Block CEDAR_DOOR = BlockRegistry.registerDoor(EBlockItemIds.CEDAR_DOOR, EBlockSets.CEDAR, CEDAR_PLANKS);
-    Block CEDAR_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.CEDAR_TRAPDOOR, EBlockSets.CEDAR, CEDAR_PLANKS);
-    Block CEDAR_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.CEDAR_PRESSURE_PLATE, EBlockSets.CEDAR, CEDAR_PLANKS);
-    Block CEDAR_BUTTON = BlockRegistry.registerButton(EBlockItemIds.CEDAR_BUTTON, EBlockSets.CEDAR, CEDAR_PLANKS, 30);
+    Block CEDAR_DOOR = BlockRegistry.registerDoor(EBlockItemIds.CEDAR_DOOR, BlockSetType.DEFAULT_WOOD, CEDAR_PLANKS);
+    Block CEDAR_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.CEDAR_TRAPDOOR, BlockSetType.DEFAULT_WOOD, CEDAR_PLANKS);
+    Block CEDAR_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.CEDAR_PRESSURE_PLATE, BlockSetType.DEFAULT_WOOD, CEDAR_PLANKS);
+    Block CEDAR_BUTTON = BlockRegistry.registerButton(EBlockItemIds.CEDAR_BUTTON, BlockSetType.DEFAULT_WOOD, CEDAR_PLANKS, 30);
     Block CEDAR_SIGN = BlockRegistry.registerSign(EBlockItemIds.CEDAR_SIGN, EWoodTypes.CEDAR, CEDAR_PLANKS);
     Block CEDAR_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.CEDAR_WALL_SIGN, EWoodTypes.CEDAR, CEDAR_PLANKS);
     Block CEDAR_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.CEDAR_HANGING_SIGN, EWoodTypes.CEDAR, CEDAR_PLANKS);
@@ -740,10 +723,10 @@ public interface EBlocks {
     Block MAHOGANY_TRIM = BlockRegistry.register(EBlockItemIds.MAHOGANY_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(MAHOGANY_PLANKS));
     Block MAHOGANY_FENCE = BlockRegistry.registerFence(EBlockItemIds.MAHOGANY_FENCE, MAHOGANY_PLANKS);
     Block MAHOGANY_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.MAHOGANY_FENCE_GATE, EWoodTypes.MAHOGANY, MAHOGANY_PLANKS);
-    Block MAHOGANY_DOOR = BlockRegistry.registerDoor(EBlockItemIds.MAHOGANY_DOOR, EBlockSets.MAHOGANY, MAHOGANY_PLANKS);
-    Block MAHOGANY_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.MAHOGANY_TRAPDOOR, EBlockSets.MAHOGANY, MAHOGANY_PLANKS);
-    Block MAHOGANY_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.MAHOGANY_PRESSURE_PLATE, EBlockSets.MAHOGANY, MAHOGANY_PLANKS);
-    Block MAHOGANY_BUTTON = BlockRegistry.registerButton(EBlockItemIds.MAHOGANY_BUTTON, EBlockSets.MAHOGANY, MAHOGANY_PLANKS, 30);
+    Block MAHOGANY_DOOR = BlockRegistry.registerDoor(EBlockItemIds.MAHOGANY_DOOR, BlockSetType.DEFAULT_WOOD, MAHOGANY_PLANKS);
+    Block MAHOGANY_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.MAHOGANY_TRAPDOOR, BlockSetType.DEFAULT_WOOD, MAHOGANY_PLANKS);
+    Block MAHOGANY_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.MAHOGANY_PRESSURE_PLATE, BlockSetType.DEFAULT_WOOD, MAHOGANY_PLANKS);
+    Block MAHOGANY_BUTTON = BlockRegistry.registerButton(EBlockItemIds.MAHOGANY_BUTTON, BlockSetType.DEFAULT_WOOD, MAHOGANY_PLANKS, 30);
     Block MAHOGANY_SIGN = BlockRegistry.registerSign(EBlockItemIds.MAHOGANY_SIGN, EWoodTypes.MAHOGANY, MAHOGANY_PLANKS);
     Block MAHOGANY_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.MAHOGANY_WALL_SIGN, EWoodTypes.MAHOGANY, MAHOGANY_PLANKS);
     Block MAHOGANY_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.MAHOGANY_HANGING_SIGN, EWoodTypes.MAHOGANY, MAHOGANY_PLANKS);
@@ -774,10 +757,10 @@ public interface EBlocks {
     Block PINE_TRIM = BlockRegistry.register(EBlockItemIds.PINE_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(PINE_PLANKS));
     Block PINE_FENCE = BlockRegistry.registerFence(EBlockItemIds.PINE_FENCE, PINE_PLANKS);
     Block PINE_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.PINE_FENCE_GATE, EWoodTypes.PINE, PINE_PLANKS);
-    Block PINE_DOOR = BlockRegistry.registerDoor(EBlockItemIds.PINE_DOOR, EBlockSets.PINE, PINE_PLANKS);
-    Block PINE_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.PINE_TRAPDOOR, EBlockSets.PINE, PINE_PLANKS);
-    Block PINE_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.PINE_PRESSURE_PLATE, EBlockSets.PINE, PINE_PLANKS);
-    Block PINE_BUTTON = BlockRegistry.registerButton(EBlockItemIds.PINE_BUTTON, EBlockSets.PINE, PINE_PLANKS, 30);
+    Block PINE_DOOR = BlockRegistry.registerDoor(EBlockItemIds.PINE_DOOR, BlockSetType.DEFAULT_WOOD, PINE_PLANKS);
+    Block PINE_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.PINE_TRAPDOOR, BlockSetType.DEFAULT_WOOD, PINE_PLANKS);
+    Block PINE_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.PINE_PRESSURE_PLATE, BlockSetType.DEFAULT_WOOD, PINE_PLANKS);
+    Block PINE_BUTTON = BlockRegistry.registerButton(EBlockItemIds.PINE_BUTTON, BlockSetType.DEFAULT_WOOD, PINE_PLANKS, 30);
     Block PINE_SIGN = BlockRegistry.registerSign(EBlockItemIds.PINE_SIGN, EWoodTypes.PINE, PINE_PLANKS);
     Block PINE_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.PINE_WALL_SIGN, EWoodTypes.PINE, PINE_PLANKS);
     Block PINE_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.PINE_HANGING_SIGN, EWoodTypes.PINE, PINE_PLANKS);
