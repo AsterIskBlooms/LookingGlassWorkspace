@@ -7,8 +7,9 @@ import org.apache.logging.log4j.Logger;
 public class MirrorLib implements ModInitializer {
 	public static final String MODID = "mirrorlib";
 	public static final Logger LOGGER = LogManager.getLogger(MODID);
+    public static final boolean DATAGEN = System.getProperty("fabric-api.datagen") != null;
 
-	@Override
+    @Override
 	public void onInitialize() {
 	}
 }

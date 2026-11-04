@@ -445,7 +445,7 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.rose", "Rose");
         translationBuilder.add("block.elsewhere.cattails", "Cattails");
 
-        translationBuilder.add("block.elsewhere.cave_weed", "Cave Weed");
+        translationBuilder.add("block.elsewhere.cave_weed", "CaveModifier Weed");
         translationBuilder.add("block.elsewhere.gleamshroom", "Gleamshroom");
 
         translationBuilder.add("block.elsewhere.arid_dirt", "Arid Dirt");
@@ -931,7 +931,7 @@ public class LangProviderEN extends FabricLanguageProvider {
 
 
         // Tags
-        translationBuilder.add("tag.elsewhere.is_cave", "Is Cave");
+        translationBuilder.add("tag.elsewhere.is_cave", "Is CaveModifier");
 
         translationBuilder.add("tag.elsewhere.mosaics", "Mosaics");
         translationBuilder.add("tag.elsewhere.mosaic_stairs", "Mosaic Stairs");

@@ -1,4 +1,4 @@
-package team.lookingglass.mirrorlib.mixin;
+package team.lookingglass.mirrorlib.mixin.world;
 
 import net.minecraft.world.level.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;

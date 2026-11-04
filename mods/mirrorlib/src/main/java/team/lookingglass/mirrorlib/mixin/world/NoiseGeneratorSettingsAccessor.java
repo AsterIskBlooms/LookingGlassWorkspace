@@ -1,4 +1,4 @@
-package team.lookingglass.mirrorlib.mixin;
+package team.lookingglass.mirrorlib.mixin.world;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;

@@ -925,7 +925,7 @@ public class EPlacements {
         PlacementUtils.register(context, TREES_TUNDRA,
                 feature.getOrThrow(EFeatures.TREES_TUNDRA),
                 List.of(
-                        RarityFilter.onAverageOnceEvery(2),
+                        RarityFilter.onAverageOnceEvery(5),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome(),

@@ -486,7 +486,7 @@ public interface EBlockItemIds {
     BlockItemId ARID_GRASS_BLOCK = register("arid_grass_block");
     BlockItemId CATTAILS = register("cattails");
 
-    // Cave Flora
+    // CaveModifier Flora
     BlockItemId CAVE_WEED = register("cave_weed");
     BlockItemId GLEAMSHROOM = register("gleamshroom");
 

@@ -49,7 +49,7 @@ public class BiomeTagProvider extends FabricTagsProvider<Biome> {
         );
 
         builder(BiomeTags.SPAWNS_GOLD_RABBITS).add(EBiomes.LUSH_DESERT, EBiomes.STEPPE);
-        builder(BiomeTags.SPAWNS_SNOW_FOXES).add(EBiomes.TUNDRA, EBiomes.BOG, EBiomes.FROZEN_BEACH);
+        builder(BiomeTags.SPAWNS_SNOW_FOXES).add(EBiomes.BOG, EBiomes.FROZEN_BEACH);
 
         builder(BiomeTags.HAS_VILLAGE_DESERT).add(EBiomes.LUSH_DESERT);
         builder(BiomeTags.HAS_VILLAGE_SAVANNA).add(EBiomes.STEPPE, EBiomes.OUTBACK, EBiomes.SHRUBLAND);

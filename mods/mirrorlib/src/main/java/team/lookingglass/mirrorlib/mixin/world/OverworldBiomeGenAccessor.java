@@ -1,4 +1,4 @@
-package team.lookingglass.mirrorlib.mixin;
+package team.lookingglass.mirrorlib.mixin.world;
 
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.resources.ResourceKey;

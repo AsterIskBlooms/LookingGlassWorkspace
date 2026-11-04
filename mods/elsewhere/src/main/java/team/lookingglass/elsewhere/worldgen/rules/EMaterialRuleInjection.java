@@ -10,7 +10,7 @@ import net.minecraft.world.level.levelgen.NoiseGeneratorSettings;
 import net.minecraft.world.level.levelgen.material.MaterialRules;
 import net.minecraft.world.level.levelgen.material.condition.MaterialCondition;
 import net.minecraft.world.level.levelgen.material.rule.MaterialRule;
-import team.lookingglass.mirrorlib.mixin.NoiseGeneratorSettingsAccessor;
+import team.lookingglass.mirrorlib.mixin.world.NoiseGeneratorSettingsAccessor;
 
 public class EMaterialRuleInjection {
 

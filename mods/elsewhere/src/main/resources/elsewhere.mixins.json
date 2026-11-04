@@ -21,12 +21,8 @@
     "interaction.FireChargeMixin",
     "interaction.LanternBlockMixin",
     "interaction.SoundMixin",
-    "world.AmethystClusterMixin",
-    "world.OverworldBiomeGenMixin",
-    "world.TreeGrowerMixin",
-    "world.patch.BiomeDataMixin",
-    "world.patch.FeatureUtilsMixin",
-    "world.patch.PlacementUtilsMixin"
+    "interaction.AmethystClusterMixin",
+    "world.TreeGrowerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

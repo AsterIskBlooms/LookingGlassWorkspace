@@ -765,16 +765,16 @@ public class EFeatures {
                 BlockStateProvider.of(EBlocks.PINE_LOG),
                 new StraightTrunkPlacer(10, 1, 2),
                 BlockStateProvider.of(EBlocks.PINE_LEAVES),
-                new EPineFoliagePlacer(ConstantInt.of(3), UniformInt.of(1, 2), UniformInt.of(10, 12)),
+                new EPineFoliagePlacer(ConstantInt.of(3), UniformInt.of(2, 3), UniformInt.of(9, 11)),
                 new TwoLayersFeatureSize(3, 0, 3),
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(new ShelfMushroomDecorator(0.32F))).build());
         context.register(MEGA_PINE_TREE, new TreeFeature.Builder(
                 BlockStateProvider.of(EBlocks.PINE_LOG),
-                new GiantTrunkPlacer(24, 3, 6),
+                new GiantTrunkPlacer(15, 4, 11),
                 BlockStateProvider.of(EBlocks.PINE_LEAVES),
-                new EPineFoliagePlacer(ConstantInt.of(4), UniformInt.of(1, 2), UniformInt.of(12, 14)),
-                new TwoLayersFeatureSize(14, 1, 6),
+                new EPineFoliagePlacer(ConstantInt.of(4), UniformInt.of(1, 2), UniformInt.of(12, 15)),
+                new TwoLayersFeatureSize(15, 1, 6),
                 Holder.direct(BlockStateProvider.of(Blocks.DIRT.defaultBlockState()))
         ).decorators(List.of(new EAlterGroundDecorator(Holder.direct(BlockStateProvider.of(Blocks.PODZOL))), new ShelfMushroomDecorator(0.21F))).build());
         context.register(FALLEN_PINE_TREE, createFallenTrees(EBlocks.PINE_LOG, 7, 11)
@@ -785,29 +785,35 @@ public class EFeatures {
                         .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 24)
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 24)
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 1)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_PINE_TREE)), 1)
                         .build()
         ));
         context.register(TREES_TAIGA, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 94)
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 24)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 17)
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 3)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_PINE_TREE)), 1)
                         .build()
         ));
         context.register(TREES_OLD_GROWTH_SPRUCE_TAIGA, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
-                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), 250)
-                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 94)
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 190)
-                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 12)
+                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), 152)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 35)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEGA_PINE_TREE)), 7)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 172)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 8)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_PINE_TREE)), 8)
                         .build()
         ));
         context.register(TREES_OLD_GROWTH_PINE_TAIGA, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEGA_PINE_TREE)), 250)
+                        .add(placedFeatures.getOrThrow(TreePlacements.MEGA_SPRUCE_CHECKED), 18)
+                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 228)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(MEGA_PINE_TREE)), 86)
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINE_TREE)), 35)
-                        .add(placedFeatures.getOrThrow(TreePlacements.SPRUCE_CHECKED), 190)
-                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 11)
+                        .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 8)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_PINE_TREE)), 8)
                         .build()
         ));
 

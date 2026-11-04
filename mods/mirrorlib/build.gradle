@@ -3,3 +3,7 @@ plugins {
 }
 
 apply from: rootProject.file('common.gradle')
+
+loom {
+    accessWidenerPath = file("src/main/resources/mirrorlib.accesswidener")
+}

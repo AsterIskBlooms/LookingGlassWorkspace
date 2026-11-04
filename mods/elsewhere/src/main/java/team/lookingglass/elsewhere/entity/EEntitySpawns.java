@@ -20,7 +20,7 @@ public class EEntitySpawns {
         BiomeModifications.addSpawn(ctx -> ctx.hasTag(BiomeTags.IS_OVERWORLD),
                 MobCategory.MONSTER, EEntities.GRAVEKEEPER, 60, 1, 1);
 
-        // Cave Mobs
+        // CaveModifier Mobs
         BiomeModifications.addSpawn(ctx -> ctx.hasTag(BiomeTags.IS_CAVE),
                 MobCategory.MONSTER, EEntities.SWEEPER, 50, 1, 2);
         BiomeModifications.addSpawn(ctx -> ctx.hasTag(BiomeTags.IS_CAVE),

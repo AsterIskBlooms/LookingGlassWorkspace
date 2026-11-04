@@ -25,6 +25,7 @@
 	"mixins": [
 		"mirrorlib.mixins.json"
 	],
+	"accessWidener": "mirrorlib.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.20.0",
 		"minecraft": "~26.4-",

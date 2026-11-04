@@ -781,7 +781,7 @@ public interface EBlocks {
             .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.WET_GRASS)
             .mapColor(MapColor.GRASS).offsetType(BlockBehaviour.OffsetType.XZ));
 
-    // Cave Flora
+    // CaveModifier Flora
     Block CAVE_WEED = BlockRegistry.register(EBlockItemIds.CAVE_WEED, CaveWeedBlock::new, BlockBehaviour.Properties.of()
             .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED)
             .sound(BlockSoundSets.GRASS).mapColor(MapColor.GLOW_LICHEN).offsetType(BlockBehaviour.OffsetType.XZ)

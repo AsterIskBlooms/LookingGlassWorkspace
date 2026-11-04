@@ -13,6 +13,6 @@
     </facet>
   </component>
   <component name="McpModuleSettings">
-    <option name="minecraftVersion" value="26.4-snapshot-7" />
+    <option name="srgType" value="SRG" />
   </component>
 </module>

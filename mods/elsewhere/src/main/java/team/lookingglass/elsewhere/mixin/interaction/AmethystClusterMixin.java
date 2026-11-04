@@ -1,4 +1,4 @@
-package team.lookingglass.elsewhere.mixin.world;
+package team.lookingglass.elsewhere.mixin.interaction;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
