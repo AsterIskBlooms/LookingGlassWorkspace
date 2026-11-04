@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:range_choice",
+  "input": "minecraft:overworld/continents",
+  "min_inclusive": -0.19,
+  "max_exclusive": 1000000.0,
+  "when_out_of_range": "stratum:vanilla_ridges",
+  "when_in_range": {
+    "type": "minecraft:range_choice",
+    "input": "stratum:temperature",
+    "min_inclusive": 0.55,
+    "max_exclusive": 1000000.0,
+    "when_out_of_range": "stratum:vanilla_ridges",
+    "when_in_range": {
+      "type": "minecraft:range_choice",
+      "input": "minecraft:overworld/continents",
+      "min_inclusive": 0.03,
+      "max_exclusive": 1000000.0,
+      "when_in_range": {
+        "type": "minecraft:range_choice",
+        "input": "minecraft:overworld/erosion",
+        "min_inclusive": 0.05,
+        "max_exclusive": 1000000.0,
+        "when_in_range": "stratum:riverless_ridges",
+        "when_out_of_range": "stratum:vanilla_ridges"
+      },
+      "when_out_of_range": {
+        "type": "minecraft:range_choice",
+        "input": "minecraft:overworld/continents",
+        "min_inclusive": -0.11,
+        "max_exclusive": 1000000.0,
+        "when_in_range": {
+          "type": "minecraft:range_choice",
+          "input": "minecraft:overworld/erosion",
+          "min_inclusive": -0.375,
+          "max_exclusive": 1000000.0,
+          "when_in_range": "stratum:riverless_ridges",
+          "when_out_of_range": "stratum:vanilla_ridges"
+        },
+        "when_out_of_range": "stratum:riverless_ridges"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+// 26.4-snapshot-6	-999999999-01-01T00:00:00	Stratum/StratumDataRegistry
+5f12ac0d7a66120a90346303a869a7b8254b9ac0 data/stratum/worldgen/density_function/offset.json
+79e3cfab96d20cad0987bd9ed911b0e6f2635255 data/stratum/worldgen/density_function/riverless_ridges.json
+8da236dee2a65a66b3d01fbb3ce923cff19bc074 data/stratum/worldgen/density_function/temperature.json
+6519dbfe84decdbbd93f76b14d1bd190d0f3b181 data/stratum/worldgen/density_function/vanilla_ridges.json
+6997285b8018b71fddb0f237150c98ad6736218b data/stratum/worldgen/noise/edge_texture.json
+a389dd5efadf3798e2db19ea339ab10d3530651f data/stratum/worldgen/noise/hills.json
+89cca27995c17c11ad97cc01e0c472b0d2cd233c data/stratum/worldgen/noise/slope_variation.json
+bce08f24752e049eaa2e14922358237986a9466c data/stratum/worldgen/noise/spires.json
