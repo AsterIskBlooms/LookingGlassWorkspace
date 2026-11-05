@@ -1,8 +1,6 @@
 {
   "type": "minecraft:tree",
-  "below_trunk_provider": {
-    "id": "minecraft:dirt"
-  },
+  "below_trunk_provider": "minecraft:soil_beneath_tree",
   "decorators": [
     {
       "type": "minecraft:beehive",

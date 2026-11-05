@@ -58,29 +58,29 @@ public final class EBiomePlacements {
     private static void modifyGrid(OverworldBiomeView view) {
         fillTable(view.table(WorldOptions.BiomeTable.MIDDLE), new ResourceKey[][]{
                 null,
-                { EBiomes.TUNDRA, EBiomes.TUNDRA, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
-                { Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.FOREST, Biomes.DARK_FOREST },
+                { Biomes.BIRCH_FOREST, EBiomes.TUNDRA, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
+                { Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, EBiomes.OLD_GROWTH_FOREST, Biomes.DARK_FOREST },
                 { Biomes.SAVANNA, Biomes.SAVANNA, EBiomes.SHRUBLAND, Biomes.SPARSE_JUNGLE, Biomes.JUNGLE },
                 { EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.LUSH_DESERT }
         });
         fillTable(view.table(WorldOptions.BiomeTable.MIDDLE_VARIANT), new ResourceKey[][]{
                 null,
-                { EBiomes.TUNDRA, null, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
-                { Biomes.SUNFLOWER_PLAINS, null, null, Biomes.BIRCH_FOREST, null },
+                { null, null, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
+                { Biomes.SUNFLOWER_PLAINS, null, null, null, null },
                 { EBiomes.STEPPE, EBiomes.STEPPE, EBiomes.CEDAR_FOREST, null, Biomes.BAMBOO_JUNGLE },
                 { Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, null }
         });
         fillTable(view.table(WorldOptions.BiomeTable.PLATEAU), new ResourceKey[][]{
                 null,
-                { Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.FLOWER_FOREST, Biomes.FLOWER_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
-                { Biomes.SUNFLOWER_PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.BIRCH_FOREST, Biomes.PALE_GARDEN },
+                { Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.MEADOW, Biomes.FLOWER_FOREST, Biomes.FLOWER_FOREST, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
+                { Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.FOREST, EBiomes.OLD_GROWTH_FOREST, Biomes.PALE_GARDEN },
                 { Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, EBiomes.CEDAR_FOREST, EBiomes.CEDAR_FOREST, Biomes.JUNGLE },
                 null
         });
         fillTable(view.table(WorldOptions.BiomeTable.PLATEAU_VARIANT), new ResourceKey[][]{
-                { null, null, null, null, null },
-                { Biomes.MEADOW, Biomes.MEADOW, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
-                { null, null, null, Biomes.OLD_GROWTH_BIRCH_FOREST, null },
+                null,
+                { null, null, Biomes.DAPPLED_FOREST, null, Biomes.OLD_GROWTH_PINE_TAIGA },
+                { Biomes.MEADOW, Biomes.MEADOW, null, null, null },
                 { Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, null, null, Biomes.BAMBOO_JUNGLE },
                 { Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, EBiomes.CLOUD_FOREST, EBiomes.CLOUD_FOREST }
         });

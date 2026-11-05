@@ -14,7 +14,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
-import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.heightproviders.TrapezoidHeight;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraft.world.level.material.Fluids;
@@ -48,13 +47,13 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerKey("sparse_jungle_trees");
     public static final ResourceKey<PlacedFeature> BAMBOO_JUNGLE_TREES = registerKey("bamboo_jungle_trees");
 
-    public static final ResourceKey<PlacedFeature> FLOWER_FOREST_TREES = registerKey("flower_forest_trees");
+    public static final ResourceKey<PlacedFeature> TREES_FLOWER_FOREST = registerKey("trees_flower_forest");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_WILDFLOWERS = registerKey("flower_forest_wildflowers");
     public static final ResourceKey<PlacedFeature> CHERRY_GROVE_BAMBOO = registerKey("cherry_grove_bamboo");
     public static final ResourceKey<PlacedFeature> SPARSE_CHERRY = registerKey("sparse_cherry");
 
-    public static final ResourceKey<PlacedFeature> BIRCH_TREES = registerKey("birch_trees");
-    public static final ResourceKey<PlacedFeature> OLD_GROWTH_BIRCH_TREES = registerKey("old_growth_birch_trees");
+    public static final ResourceKey<PlacedFeature> TREES_BIRCH = registerKey("trees_birch");
+    public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_BIRCH = registerKey("trees_old_growth_birch");
 
     public static final ResourceKey<PlacedFeature> TUNDRA_VEGETATION_PATCH = registerKey("tundra_vegetation_patch");
     public static final ResourceKey<PlacedFeature> TAIGA_VEGETATION_PATCH = registerKey("taiga_vegetation_patch");
@@ -132,6 +131,9 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> TREES_TAIGA = registerKey("trees_taiga");
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_SPRUCE_TAIGA = registerKey("trees_old_growth_spruce_taiga");
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
+
+    public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_FOREST = registerKey("trees_old_growth_forest");
+    public static final ResourceKey<PlacedFeature> OLD_GROWTH_FLOWERS = registerKey("old_growth_flowers");
 
     public static final ResourceKey<PlacedFeature> STEPPE_GRASS = registerKey("steppe_grass");
     public static final ResourceKey<PlacedFeature> STEPPE_PILLARS = registerKey("steppe_pillars");
@@ -606,7 +608,7 @@ public class EPlacements {
                 ));
 
         PlacementUtils.register(context, AZALEA_SHRUB,
-                feature.getOrThrow(EFeatures.AZALEA_SHRUB_KEY),
+                feature.getOrThrow(EFeatures.AZALEA_SHRUB),
                 List.of(
                         CountPlacement.of(1),
                         InSquarePlacement.spread(),
@@ -695,8 +697,8 @@ public class EPlacements {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1), Blocks.JUNGLE_SAPLING)
         );
 
-        PlacementUtils.register(context, FLOWER_FOREST_TREES,
-                feature.getOrThrow(EFeatures.FLOWER_FOREST_TREES_KEY),
+        PlacementUtils.register(context, TREES_FLOWER_FOREST,
+                feature.getOrThrow(EFeatures.TREES_FLOWER_FOREST),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1), Blocks.OAK_SAPLING)
         );
         PlacementUtils.register(context, FLOWER_FOREST_WILDFLOWERS,
@@ -726,12 +728,12 @@ public class EPlacements {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1F, 1), Blocks.CHERRY_SAPLING)
         );
 
-        PlacementUtils.register(context, BIRCH_TREES,
-                feature.getOrThrow(EFeatures.OLD_GROWTH_BIRCH_TREES_KEY),
+        PlacementUtils.register(context, TREES_BIRCH,
+                feature.getOrThrow(EFeatures.TREES_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.BIRCH_SAPLING)
         );
-        PlacementUtils.register(context, OLD_GROWTH_BIRCH_TREES,
-                feature.getOrThrow(EFeatures.OLD_GROWTH_BIRCH_TREES_KEY),
+        PlacementUtils.register(context, TREES_OLD_GROWTH_BIRCH,
+                feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_BIRCH),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.BIRCH_SAPLING)
         );
 
@@ -941,6 +943,20 @@ public class EPlacements {
         PlacementUtils.register(context, TREES_OLD_GROWTH_PINE_TAIGA,
                 feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_PINE_TAIGA),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.SPRUCE_SAPLING));
+
+        PlacementUtils.register(context, TREES_OLD_GROWTH_FOREST,
+                feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_FOREST),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(16, 0.5F, 1), Blocks.OAK_SAPLING));
+
+        PlacementUtils.register(context, OLD_GROWTH_FLOWERS,
+                feature.getOrThrow(EFeatures.OLD_GROWTH_FLOWERS),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(3),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.ONLY_IN_AIR_PREDICATE)
+                ));
 
         PlacementUtils.register(context, STEPPE_GRASS,
                 feature.getOrThrow(VegetationFeatures.TALL_GRASS),

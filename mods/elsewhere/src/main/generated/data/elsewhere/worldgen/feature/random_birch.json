@@ -9,7 +9,10 @@
       "weight": 25
     },
     {
-      "data": "minecraft:birch_checked",
+      "data": {
+        "feature": "elsewhere:birch_clear",
+        "placement": []
+      },
       "weight": 75
     }
   ]

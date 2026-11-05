@@ -33,6 +33,7 @@ public interface  EBiomes {
         context.register(SHRUBLAND, createShrubland(context));
         context.register(STEPPE, createSteppe(context));
         context.register(CEDAR_FOREST, createCedarForest(context));
+        context.register(OLD_GROWTH_FOREST, createOldGrowthForest(context));
         context.register(CLOUD_FOREST, createCloudForest(context));
 
         context.register(TIDEPOOLS, createTidepools(context));
@@ -55,6 +56,7 @@ public interface  EBiomes {
     ResourceKey<Biome> SHRUBLAND = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "shrubland"));
     ResourceKey<Biome> STEPPE = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "steppe"));
     ResourceKey<Biome> CEDAR_FOREST = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cedar_forest"));
+    ResourceKey<Biome> OLD_GROWTH_FOREST = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "old_growth_forest"));
     ResourceKey<Biome> CLOUD_FOREST = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "cloud_forest"));
 
     ResourceKey<Biome> TIDEPOOLS = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "tidepools"));
@@ -395,6 +397,7 @@ public interface  EBiomes {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
 
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         spawnBuilder.addSpawn(EntityTypes.ARMADILLO, 6, UniformInt.of(1, 2));
 
         BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
@@ -405,12 +408,11 @@ public interface  EBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
         BiomeDefaultFeatures.addDefaultSprings(genBuilder);
         BiomeDefaultFeatures.addWarmFlowers(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.CEDAR_FOREST_TREES);
         BiomeDefaultFeatures.addForestGrass(genBuilder);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_PUMPKIN);
         BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
-
-        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.CEDAR_FOREST_TREES);
 
         return new Biome.BiomeBuilder()
                 .hasPrecipitation(true)
@@ -421,6 +423,48 @@ public interface  EBiomes {
                         .build())
                 .setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC, new BackgroundMusic(SoundEvents.MUSIC_BIOME_FOREST))
                 .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, rgb(0x041633))
+                .mobSpawnSettings(spawnBuilder.build())
+                .generationSettings(genBuilder.build())
+                .build();
+    }
+
+    private static Biome createOldGrowthForest(BootstrapContext<Biome> context) {
+        BiomeGenerationSettings.Builder genBuilder = new BiomeGenerationSettings
+                .Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CARVER));
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
+
+        BiomeDefaultFeatures.addDefaultCarversAndLakes(genBuilder);
+        BiomeDefaultFeatures.addDefaultCrystalFormations(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
+        BiomeDefaultFeatures.addDefaultUndergroundVariety(genBuilder);
+        BiomeDefaultFeatures.addDefaultOres(genBuilder);
+        BiomeDefaultFeatures.addExtraGold(genBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(genBuilder);
+        BiomeDefaultFeatures.addDefaultSprings(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.OLD_GROWTH_FLOWERS);
+        BiomeDefaultFeatures.addBirchForestFlowers(genBuilder);
+        BiomeDefaultFeatures.addBushes(genBuilder);
+        BiomeDefaultFeatures.addFerns(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_OLD_GROWTH_FOREST);
+        BiomeDefaultFeatures.addTaigaGrass(genBuilder);
+        BiomeDefaultFeatures.addSavannaGrass(genBuilder);
+        BiomeDefaultFeatures.addSavannaExtraGrass(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
+        genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_PUMPKIN);
+        BiomeDefaultFeatures.addSurfaceFreezing(genBuilder);
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(true)
+                .temperature(1.2F)
+                .downfall(0.25F)
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        .waterColor(0x3b6cd1)
+                        .build())
+                .setAttribute(EnvironmentAttributes.BACKGROUND_MUSIC, new BackgroundMusic(SoundEvents.MUSIC_BIOME_FOREST))
+                .setAttribute(EnvironmentAttributes.WATER_FOG_COLOR, rgb(0x3b6cd1))
                 .mobSpawnSettings(spawnBuilder.build())
                 .generationSettings(genBuilder.build())
                 .build();

@@ -116,7 +116,7 @@ public class EBiomeModifications {
 
         // Flower Forests
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.FLOWER_FOREST,
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.FLOWER_FOREST_TREES);
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_FLOWER_FOREST);
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.FLOWER_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.FLOWER_FOREST_WILDFLOWERS);
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.CHERRY_GROVE,
@@ -139,9 +139,9 @@ public class EBiomeModifications {
 
         // Birch Forests
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.BIRCH_FOREST,
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.BIRCH_TREES);
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_BIRCH);
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.OLD_GROWTH_BIRCH_FOREST,
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.OLD_GROWTH_BIRCH_TREES);
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_OLD_GROWTH_BIRCH);
 
         // Windswept Savanna
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.WINDSWEPT_SAVANNA,

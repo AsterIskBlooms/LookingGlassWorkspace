@@ -20,6 +20,26 @@
           ],
           "creature": [
             {
+              "type": "minecraft:sheep",
+              "count": 4,
+              "weight": 12
+            },
+            {
+              "type": "minecraft:pig",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:chicken",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:cow",
+              "count": 4,
+              "weight": 8
+            },
+            {
               "type": "minecraft:armadillo",
               "count": {
                 "type": "minecraft:uniform",
@@ -153,10 +173,10 @@
     [
       "minecraft:glow_lichen",
       "minecraft:flower_warm",
+      "elsewhere:cedar_forest_trees",
       "minecraft:patch_grass_forest",
       "minecraft:patch_sugar_cane_desert",
-      "minecraft:patch_pumpkin",
-      "elsewhere:cedar_forest_trees"
+      "minecraft:patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"

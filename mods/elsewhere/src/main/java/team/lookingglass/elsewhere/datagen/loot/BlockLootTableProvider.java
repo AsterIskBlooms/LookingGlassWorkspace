@@ -1,6 +1,16 @@
 package team.lookingglass.elsewhere.datagen.loot;
 
+import net.minecraft.advancements.predicates.BlockPredicate;
+import net.minecraft.advancements.predicates.LocationPredicate;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.predicates.LocationCheck;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
@@ -546,6 +556,8 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.CAVE_WEED, createShearsOrSilkTouchOnlyDrop(EBlocks.CAVE_WEED));
         dropSelf(EBlocks.GLEAMSHROOM);
 
+        add(Blocks.ROSE_BUSH, createDoublePlantShearsOrSilkTouchDrop(Blocks.ROSE_BUSH, EBlocks.ROSE, 2, 3));
+
         add(EBlocks.MOSSY_MUD, createSingleItemTableWithSilkTouch(EBlocks.MOSSY_MUD, Blocks.MUD));
         dropSelf(EBlocks.MUDSTONE);
 
@@ -640,6 +652,25 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
     }
 
     public LootTable.Builder createDoublePlantShearsOrSilkTouchDrop(final Block block) {
-        return LootTable.lootTable().withPool(LootPool.lootPool().when(this.hasShearsOrSilkTouch()).add(LootItem.lootTableItem(block).apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(2)))));
+        return LootTable.lootTable().withPool(LootPool.lootPool().when(this.hasShearsOrSilkTouch()).add(LootItem.lootTableItem(block)
+                .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(2)))));
+    }
+
+    public LootTable.Builder createDoublePlantShearsOrSilkTouchDrop(final Block block, final ItemLike drop) {
+        return createDoublePlantShearsOrSilkTouchDrop(block, drop, 1, 1);
+    }
+
+    public LootTable.Builder createDoublePlantShearsOrSilkTouchDrop(final Block block, final ItemLike drop, int min, int max) {
+        LootPoolEntryContainer.Builder<?> dropEntry = LootItem.lootTableItem(block)
+                .when(this.hasShearsOrSilkTouch()).otherwise(this.applyExplosionDecay(block, LootItem.lootTableItem(drop)
+                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(min, max)))));
+
+        return LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(dropEntry)
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)))
+                        .when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(this.blocks, new Block[]{block}).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER))), Direction.UP)))
+                .withPool(LootPool.lootPool().add(dropEntry)
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)))
+                        .when(LocationCheck.checkLocation(LocationPredicate.Builder.location().setBlock(BlockPredicate.Builder.block().of(this.blocks, new Block[]{block}).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER))), Direction.DOWN)));
     }
 }

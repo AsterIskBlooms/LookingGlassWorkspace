@@ -163,43 +163,47 @@ public class EMaterialRules {
                                                 MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.2),
                                                         new BlockRule(Blocks.COARSE_DIRT.defaultBlockState())))
                                 )),
-                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.OLD_GROWTH_BIRCH_FOREST),
+                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.DARK_FOREST),
                                 MaterialRules.sequence(
                                         MaterialRules.ifTrue(onFloor,
                                                 MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.1),
+                                                        new BlockRule(Blocks.COARSE_DIRT.defaultBlockState())))
+                                )),
+                        MaterialRules.ifTrue(MaterialRules.isBiome(biomes, Biomes.OLD_GROWTH_BIRCH_FOREST),
+                                MaterialRules.sequence(
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.15),
+                                                        new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))),
+
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.35, 1.0),
+                                                        new BlockRule(Blocks.PODZOL.defaultBlockState()))),
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.35),
                                                         new BlockRule(Blocks.PODZOL.defaultBlockState())))
                                 )),
                         MaterialRules.ifTrue(
                                 MaterialRules.isBiome(biomes, Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE),
                                 MaterialRules.sequence(
-                                        MaterialRules.ifTrue(
-                                                onFloor,
-                                                MaterialRules.ifTrue(
-                                                        MaterialRules.noiseCondition2d(Noises.PATCH, 0.3, 1.0),
-                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState())
-                                                )
-                                        ),
-                                        MaterialRules.ifTrue(
-                                                onFloor,
-                                                MaterialRules.ifTrue(
-                                                        MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.3),
-                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState())
-                                                )
-                                        ),
-                                        MaterialRules.ifTrue(
-                                                underFloor,
-                                                MaterialRules.ifTrue(
-                                                        MaterialRules.noiseCondition2d(Noises.PATCH, 0.3, 1.0),
-                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState())
-                                                )
-                                        ),
-                                        MaterialRules.ifTrue(
-                                                underFloor,
-                                                MaterialRules.ifTrue(
-                                                        MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.3),
-                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState())
-                                                )
-                                        )
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.2),
+                                                        new BlockRule(Blocks.MUD.defaultBlockState()))),
+                                        MaterialRules.ifTrue(underFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.2),
+                                                        new BlockRule(Blocks.MUD.defaultBlockState()))),
+
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.3, 1.0),
+                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState()))),
+                                        MaterialRules.ifTrue(onFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.3),
+                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState()))),
+                                        MaterialRules.ifTrue(underFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.3, 1.0),
+                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState()))),
+                                        MaterialRules.ifTrue(underFloor,
+                                                MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.3),
+                                                        new BlockRule(EBlocks.LATERITE.defaultBlockState())))
                                 )
                         ),
                         MaterialRules.ifTrue(
@@ -514,6 +518,24 @@ public class EMaterialRules {
                         )
                 ));
 
+        MaterialRule oldGrowthForestRules = MaterialRules.ifTrue(
+                MaterialRules.isBiome(biomes, EBiomes.OLD_GROWTH_FOREST),
+                prelimAndWaterCheck(
+                        MaterialRules.sequence(
+                                stoneCliffsRule,
+                                MaterialRules.ifTrue(onFloor,
+                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.SMALL_PATCH, 1.15),
+                                                new BlockRule(Blocks.COARSE_DIRT.defaultBlockState()))),
+
+                                MaterialRules.ifTrue(onFloor,
+                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, 0.35, 1.0),
+                                                new BlockRule(Blocks.PODZOL.defaultBlockState()))),
+                                MaterialRules.ifTrue(onFloor,
+                                        MaterialRules.ifTrue(MaterialRules.noiseCondition2d(Noises.PATCH, -1.0, -0.35),
+                                                new BlockRule(Blocks.PODZOL.defaultBlockState())))
+                        )
+                ));
+
         MaterialRule tidepoolRules = MaterialRules.ifTrue(
                 MaterialRules.isBiome(biomes, EBiomes.TIDEPOOLS),
                 MaterialRules.sequence(
@@ -751,6 +773,7 @@ public class EMaterialRules {
                 outbackRules, lushDesertRules,
                 cloudForestRules,
                 tundraRules,
+                oldGrowthForestRules,
                 baseCaveRules,
                 dripstoneCaveRules, sulfurCaveRules,
                 crystalCavernRules, aridCaveRules,

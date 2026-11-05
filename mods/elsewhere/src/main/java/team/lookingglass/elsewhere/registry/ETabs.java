@@ -19,7 +19,7 @@ public class ETabs {
             output.insertAfter(Items.DIRT, EBlocks.ARID_DIRT);
             output.insertAfter(Items.PODZOL, EBlocks.LATERITE);
 
-            output.insertAfter(Items.SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE);
+            output.insertAfter(Items.RED_SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE, EBlocks.BEACHSTONE);
 
             output.insertAfter(Items.SHORT_GRASS,
                     EBlocks.SHORT_RED_GRASS,
@@ -38,11 +38,11 @@ public class ETabs {
 
             output.insertAfter(Items.NETHER_SPROUTS, EBlocks.SHORT_SOUL_SPROUT, EBlocks.TALL_SOUL_SPROUT, EBlocks.SOULGLASS_CLUSTER);
 
-            output.insertAfter(Items.RED_SANDSTONE, EBlocks.BEACHSTONE);
             output.insertAfter(Items.BASALT, EBlocks.BASALT_VENT);
             output.insertAfter(Items.SMOOTH_BASALT, EBlocks.ROCKWEED_BASALT);
             output.insertAfter(Items.SEAGRASS, EBlocks.SEAGRASS_SAND);
 
+            output.insertAfter(Items.SPRUCE_SAPLING, EBlocks.PINE_SAPLING);
             output.insertAfter(Items.BIRCH_SAPLING, EBlocks.CEDAR_SAPLING);
             output.insertAfter(Items.BIRCH_LOG, EBlocks.CEDAR_LOG);
             output.insertAfter(Items.BIRCH_LEAVES, EBlocks.GILDED_BIRCH_LEAVES, EBlocks.CEDAR_LEAVES);
@@ -53,7 +53,7 @@ public class ETabs {
 
             output.insertAfter(Items.TUFF, EBlocks.SHALE);
             output.insertAfter(Items.CALCITE, EBlocks.SODALITE);
-            output.insertAfter(Items.ANDESITE, EBlocks.LIMESTONE);
+            output.insertAfter(Items.POINTED_DRIPSTONE, EBlocks.LIMESTONE);
             output.insertAfter(Items.CINNABAR, EBlocks.ORPIMENT);
             output.insertAfter(Items.SOUL_SOIL, EBlocks.SOUL_STONE);
             output.insertAfter(Items.AMETHYST_CLUSTER, EBlocks.AMETHYST_SPIRE);
@@ -177,7 +177,14 @@ public class ETabs {
                     EBlocks.CHISELED_NETHERRACK, EBlocks.NETHERRACK_PILLAR,
                     EBlocks.POLISHED_NETHERRACK, EBlocks.POLISHED_NETHERRACK_STAIRS, EBlocks.POLISHED_NETHERRACK_SLAB, EBlocks.POLISHED_NETHERRACK_WALL,
                     EBlocks.NETHERRACK_BRICKS, EBlocks.NETHERRACK_BRICK_STAIRS, EBlocks.NETHERRACK_BRICK_SLAB, EBlocks.NETHERRACK_BRICK_WALL,
-                    EBlocks.CHISELED_NETHERRACK_BRICKS);
+                    EBlocks.CHISELED_NETHERRACK_BRICKS,
+
+                    EBlocks.SOUL_STONE, EBlocks.SOUL_STONE_STAIRS, EBlocks.SOUL_STONE_SLAB, EBlocks.SOUL_STONE_WALL,
+                    EBlocks.SMOOTH_SOUL_STONE, EBlocks.SMOOTH_SOUL_STONE_STAIRS, EBlocks.SMOOTH_SOUL_STONE_SLAB, EBlocks.SMOOTH_SOUL_STONE_WALL,
+                    EBlocks.CUT_SOUL_STONE, EBlocks.CUT_SOUL_STONE_STAIRS, EBlocks.CUT_SOUL_STONE_SLAB, EBlocks.CUT_SOUL_STONE_WALL,
+                    EBlocks.CHISELED_SOUL_STONE,
+                    EBlocks.POLISHED_SOUL_STONE, EBlocks.POLISHED_SOUL_STONE_STAIRS, EBlocks.POLISHED_SOUL_STONE_SLAB, EBlocks.POLISHED_SOUL_STONE_WALL
+            );
 
             output.insertAfter(Items.BLACKSTONE_WALL, EBlocks.BLACKSTONE_PILLAR);
 
@@ -220,11 +227,10 @@ public class ETabs {
                     EBlocks.CHISELED_PINK_SANDSTONE,
                     EBlocks.POLISHED_PINK_SANDSTONE, EBlocks.POLISHED_PINK_SANDSTONE_STAIRS, EBlocks.POLISHED_PINK_SANDSTONE_SLAB, EBlocks.POLISHED_PINK_SANDSTONE_WALL,
 
-                    EBlocks.SOUL_STONE, EBlocks.SOUL_STONE_STAIRS, EBlocks.SOUL_STONE_SLAB, EBlocks.SOUL_STONE_WALL,
-                    EBlocks.SMOOTH_SOUL_STONE, EBlocks.SMOOTH_SOUL_STONE_STAIRS, EBlocks.SMOOTH_SOUL_STONE_SLAB, EBlocks.SMOOTH_SOUL_STONE_WALL,
-                    EBlocks.CUT_SOUL_STONE, EBlocks.CUT_SOUL_STONE_STAIRS, EBlocks.CUT_SOUL_STONE_SLAB, EBlocks.CUT_SOUL_STONE_WALL,
-                    EBlocks.CHISELED_SOUL_STONE,
-                    EBlocks.POLISHED_SOUL_STONE, EBlocks.POLISHED_SOUL_STONE_STAIRS, EBlocks.POLISHED_SOUL_STONE_SLAB, EBlocks.POLISHED_SOUL_STONE_WALL);
+                    EBlocks.BEACHSTONE, EBlocks.BEACHSTONE_STAIRS, EBlocks.BEACHSTONE_SLAB, EBlocks.BEACHSTONE_WALL, EBlocks.CHISELED_BEACHSTONE,
+                    EBlocks.POLISHED_BEACHSTONE, EBlocks.POLISHED_BEACHSTONE_STAIRS, EBlocks.POLISHED_BEACHSTONE_SLAB, EBlocks.POLISHED_BEACHSTONE_WALL,
+                    EBlocks.BEACHSTONE_BRICKS, EBlocks.BEACHSTONE_BRICK_STAIRS, EBlocks.BEACHSTONE_BRICK_SLAB, EBlocks.BEACHSTONE_BRICK_WALL
+            );
 
             // Mud, Ice, & Snow
             output.insertAfter(Items.PACKED_MUD, EBlocks.PACKED_MUD_STAIRS, EBlocks.PACKED_MUD_SLAB);

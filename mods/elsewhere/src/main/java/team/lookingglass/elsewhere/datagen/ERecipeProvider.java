@@ -619,6 +619,10 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 itemToDye(EBlocks.IRONWEED, Items.DYE.purple());
                 itemToDye(EBlocks.ROSE, Items.DYE.red());
 
+                shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.ROSE_BUSH).define('#', EBlocks.ROSE)
+                        .pattern("#").pattern("#").pattern("#")
+                        .unlockedBy(getHasName(EBlocks.ROSE), has(EBlocks.ROSE)).save(output, shapedId(Blocks.ROSE_BUSH));
+
 //                recipeStairSlab(Blocks.TERRACOTTA, EBlocks.TERRACOTTA_STAIRS, EBlocks.TERRACOTTA_SLAB);
 //                recipeStairSlab(Blocks.WHITE_TERRACOTTA, EBlocks.WHITE_TERRACOTTA_STAIRS, EBlocks.WHITE_TERRACOTTA_SLAB);
 //                recipeStairSlab(Blocks.LIGHT_GRAY_TERRACOTTA, EBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS, EBlocks.LIGHT_GRAY_TERRACOTTA_SLAB);

@@ -1,19 +1,25 @@
 {
   "type": "minecraft:tree",
-  "below_trunk_provider": {
-    "id": "minecraft:dirt"
-  },
+  "below_trunk_provider": "minecraft:soil_beneath_tree",
   "decorators": [
     {
       "type": "minecraft:beehive",
       "probability": 0.002
+    },
+    {
+      "type": "minecraft:shelf_mushroom",
+      "probability": 0.66
     }
   ],
   "foliage_placer": {
-    "type": "minecraft:blob_foliage_placer",
-    "height": 3,
+    "type": "minecraft:cherry_foliage_placer",
+    "corner_hole_chance": 0.25,
+    "hanging_leaves_chance": 0.22,
+    "hanging_leaves_extension_chance": 0.45,
+    "height": 6,
     "offset": 0,
-    "radius": 2
+    "radius": 4,
+    "wide_bottom_layer_hole_chance": 0.25
   },
   "foliage_provider": {
     "id": "elsewhere:gilded_birch_leaves",
@@ -25,13 +31,30 @@
   },
   "ignore_vines": false,
   "minimum_size": {
-    "type": "minecraft:two_layers_feature_size"
+    "type": "minecraft:two_layers_feature_size",
+    "limit": 10,
+    "upper_size": 4
   },
   "trunk_placer": {
-    "type": "minecraft:straight_trunk_placer",
-    "base_height": 5,
+    "type": "minecraft:cherry_trunk_placer",
+    "base_height": 9,
+    "branch_count": {
+      "type": "minecraft:biased_to_bottom",
+      "max_inclusive": 3,
+      "min_inclusive": 2
+    },
+    "branch_end_offset_from_top": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 3,
+      "min_inclusive": -2
+    },
+    "branch_horizontal_length": 2,
+    "branch_start_offset_from_top": {
+      "max_inclusive": -2,
+      "min_inclusive": -5
+    },
     "height_rand_a": 2,
-    "height_rand_b": 6
+    "height_rand_b": 3
   },
   "trunk_provider": {
     "id": "minecraft:birch_log",
