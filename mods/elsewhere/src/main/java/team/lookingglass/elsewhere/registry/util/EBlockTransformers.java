@@ -13,8 +13,5 @@ public class EBlockTransformers {
         BlockTransformerHelper.registerStripping(EBlocks.MAHOGANY_LOG, EBlocks.STRIPPED_MAHOGANY_LOG);
         BlockTransformerHelper.registerStripping(EBlocks.MAHOGANY_WOOD, EBlocks.STRIPPED_MAHOGANY_WOOD);
         BlockTransformerHelper.registerStripping(EBlocks.BAMBOO_STEM, EBlocks.STRIPPED_BAMBOO_STEM);
-
-        BlockTransformerHelper.registerFlattening(EBlocks.RED_GRASS_BLOCK, Blocks.DIRT_PATH);
-        BlockTransformerHelper.registerTilling(EBlocks.RED_GRASS_BLOCK, Blocks.FARMLAND);
     }
 }

@@ -15,18 +15,17 @@ public class ETabs {
 
     public static void initialize() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
-            output.insertAfter(Items.GRASS_BLOCK, EBlocks.ARID_GRASS_BLOCK, EBlocks.RED_GRASS_BLOCK);
+            output.insertAfter(Items.GRASS_BLOCK, EBlocks.ARID_GRASS_BLOCK);
             output.insertAfter(Items.DIRT, EBlocks.ARID_DIRT);
-            output.insertAfter(Items.PODZOL, EBlocks.LATERITE);
+            output.insertAfter(Items.PODZOL, EBlocks.PEAT, EBlocks.LATERITE);
+            output.insertAfter(Items.CLAY, EBlocks.SILT, EBlocks.SALT);
 
-            output.insertAfter(Items.RED_SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE, EBlocks.BEACHSTONE);
+            output.insertAfter(Items.RED_SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE, EBlocks.ARID_SAND, EBlocks.BEACHSTONE);
 
             output.insertAfter(Items.SHORT_GRASS,
-                    EBlocks.SHORT_RED_GRASS,
                     EBlocks.SHORT_MOSS_SPOROPHYTE, EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE, EBlocks.SHORT_PALE_MOSS_SPOROPHYTE
             );
             output.insertAfter(Items.TALL_GRASS,
-                    EBlocks.TALL_RED_GRASS,
                     EBlocks.TALL_MOSS_SPOROPHYTE, EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE, EBlocks.TALL_PALE_MOSS_SPOROPHYTE
             );
             output.insertAfter(Items.DRY_SHORT_GRASS, EBlocks.CAVE_WEED);
@@ -45,6 +44,7 @@ public class ETabs {
             output.insertAfter(Items.SPRUCE_SAPLING, EBlocks.PINE_SAPLING);
             output.insertAfter(Items.BIRCH_SAPLING, EBlocks.CEDAR_SAPLING);
             output.insertAfter(Items.BIRCH_LOG, EBlocks.CEDAR_LOG);
+            output.insertAfter(Items.SPRUCE_LEAVES, EBlocks.PINE_LEAVES);
             output.insertAfter(Items.BIRCH_LEAVES, EBlocks.GILDED_BIRCH_LEAVES, EBlocks.CEDAR_LEAVES);
 
             output.insertAfter(Items.JUNGLE_SAPLING, EBlocks.MAHOGANY_SAPLING);
@@ -94,7 +94,11 @@ public class ETabs {
 
             output.insertAfter(Items.MOSSY_STONE_BRICK_WALL,
                     EBlocks.STONE_TILES, EBlocks.STONE_TILE_STAIRS, EBlocks.STONE_TILE_SLAB, EBlocks.STONE_TILE_WALL,
-                    EBlocks.MOSSY_STONE_TILES, EBlocks.MOSSY_STONE_TILE_STAIRS, EBlocks.MOSSY_STONE_TILE_SLAB, EBlocks.MOSSY_STONE_TILE_WALL
+                    EBlocks.MOSSY_STONE_TILES, EBlocks.MOSSY_STONE_TILE_STAIRS, EBlocks.MOSSY_STONE_TILE_SLAB, EBlocks.MOSSY_STONE_TILE_WALL,
+
+                    EBlocks.COBBLESTONE_BRICKS, EBlocks.COBBLESTONE_BRICK_STAIRS, EBlocks.COBBLESTONE_BRICK_SLAB, EBlocks.COBBLESTONE_BRICK_WALL,
+                    EBlocks.MOSSY_COBBLESTONE_BRICKS, EBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS, EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB, EBlocks.MOSSY_COBBLESTONE_BRICK_WALL,
+                    EBlocks.CRACKED_COBBLESTONE_BRICKS, EBlocks.CHISELED_COBBLESTONE_BRICKS
             );
 
             output.insertAfter(Items.CHISELED_TUFF_BRICKS,

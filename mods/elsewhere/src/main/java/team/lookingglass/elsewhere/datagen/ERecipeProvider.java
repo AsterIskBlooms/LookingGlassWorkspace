@@ -242,9 +242,16 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 recipeStairSlabWall(Blocks.STONE_BRICKS, Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_SLAB, Blocks.STONE_BRICK_WALL);
                 recipe2x1t1(Blocks.STONE_BRICK_SLAB, Blocks.CHISELED_STONE_BRICKS);
                 recipeStairSlabWall(Blocks.SMOOTH_STONE, EBlocks.SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE_SLAB, EBlocks.SMOOTH_STONE_WALL);
-                recipe2x2(Blocks.COBBLESTONE, EBlocks.STONE_TILES);
+                recipe2x2t2(Blocks.STONE_BRICK_SLAB, EBlocks.STONE_TILES);
                 recipeStairSlabWall(EBlocks.STONE_TILES, EBlocks.STONE_TILE_STAIRS, EBlocks.STONE_TILE_SLAB, EBlocks.STONE_TILE_WALL);
-                stonecutterSet(List.of(Blocks.STONE, Blocks.STONE_STAIRS, EBlocks.STONE_WALL, Blocks.SMOOTH_STONE, EBlocks.SMOOTH_STONE_STAIRS, EBlocks.SMOOTH_STONE_WALL, EBlocks.POLISHED_STONE, EBlocks.POLISHED_STONE_STAIRS, EBlocks.POLISHED_STONE_WALL, Blocks.STONE_BRICKS, Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_WALL, Blocks.CRACKED_STONE_BRICKS, Blocks.CHISELED_STONE_BRICKS, EBlocks.STONE_TILES, EBlocks.STONE_TILE_STAIRS, EBlocks.STONE_TILE_WALL, EBlocks.STONE_PILLAR, EBlocks.CHISELED_STONE, Blocks.COBBLESTONE, Blocks.COBBLESTONE_STAIRS, Blocks.COBBLESTONE_WALL), List.of(Blocks.STONE_SLAB, Blocks.SMOOTH_STONE_SLAB, EBlocks.POLISHED_STONE_SLAB, Blocks.STONE_BRICK_SLAB, EBlocks.STONE_TILE_SLAB, Blocks.COBBLESTONE_SLAB));
+                recipe2x2(Blocks.COBBLESTONE, EBlocks.COBBLESTONE_BRICKS);
+                recipeMossy(EBlocks.COBBLESTONE_BRICKS, EBlocks.MOSSY_COBBLESTONE_BRICKS);
+                smeltingResultFromBaseWithName(EBlocks.COBBLESTONE_BRICKS, EBlocks.CRACKED_COBBLESTONE_BRICKS);
+                recipe2x1t1(EBlocks.COBBLESTONE_BRICK_SLAB, EBlocks.CHISELED_COBBLESTONE_BRICKS);
+                recipeStairSlabWall(EBlocks.COBBLESTONE_BRICKS, EBlocks.COBBLESTONE_BRICK_STAIRS, EBlocks.COBBLESTONE_BRICK_SLAB, EBlocks.COBBLESTONE_BRICK_WALL);
+                recipeStairSlabWall(EBlocks.MOSSY_COBBLESTONE_BRICKS, EBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS, EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB, EBlocks.MOSSY_COBBLESTONE_BRICK_WALL);
+                stonecutterSet(List.of(Blocks.STONE, Blocks.STONE_STAIRS, EBlocks.STONE_WALL, Blocks.SMOOTH_STONE, EBlocks.SMOOTH_STONE_STAIRS, EBlocks.SMOOTH_STONE_WALL, EBlocks.POLISHED_STONE, EBlocks.POLISHED_STONE_STAIRS, EBlocks.POLISHED_STONE_WALL, Blocks.STONE_BRICKS, Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_WALL, Blocks.CRACKED_STONE_BRICKS, Blocks.CHISELED_STONE_BRICKS, EBlocks.STONE_TILES, EBlocks.STONE_TILE_STAIRS, EBlocks.STONE_TILE_WALL, EBlocks.STONE_PILLAR, EBlocks.CHISELED_STONE, Blocks.COBBLESTONE, Blocks.COBBLESTONE_STAIRS, Blocks.COBBLESTONE_WALL, EBlocks.COBBLESTONE_BRICKS, EBlocks.COBBLESTONE_BRICK_STAIRS, EBlocks.COBBLESTONE_BRICK_WALL, EBlocks.CRACKED_COBBLESTONE_BRICKS, EBlocks.CHISELED_COBBLESTONE_BRICKS), List.of(Blocks.STONE_SLAB, Blocks.SMOOTH_STONE_SLAB, EBlocks.POLISHED_STONE_SLAB, Blocks.STONE_BRICK_SLAB, EBlocks.STONE_TILE_SLAB, Blocks.COBBLESTONE_SLAB, EBlocks.COBBLESTONE_BRICK_SLAB));
+                stonecutterSet(List.of(Blocks.MOSSY_COBBLESTONE, Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_WALL, EBlocks.MOSSY_COBBLESTONE_BRICKS, EBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS, EBlocks.MOSSY_COBBLESTONE_BRICK_WALL), List.of(Blocks.MOSSY_COBBLESTONE_SLAB, EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB));
 
                 // Deepslate
                 recipeStairSlabWall(Blocks.DEEPSLATE, EBlocks.DEEPSLATE_STAIRS, EBlocks.DEEPSLATE_SLAB, EBlocks.DEEPSLATE_WALL);
@@ -420,7 +427,7 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 recipeStairSlabWall(EBlocks.POLISHED_SMOOTH_BASALT, EBlocks.POLISHED_SMOOTH_BASALT_STAIRS, EBlocks.POLISHED_SMOOTH_BASALT_SLAB, EBlocks.POLISHED_SMOOTH_BASALT_WALL);
                 recipe2x2(EBlocks.POLISHED_SMOOTH_BASALT, EBlocks.SMOOTH_BASALT_BRICKS);
                 recipeStairSlabWall(EBlocks.SMOOTH_BASALT_BRICKS, EBlocks.SMOOTH_BASALT_BRICK_STAIRS, EBlocks.SMOOTH_BASALT_BRICK_SLAB, EBlocks.SMOOTH_BASALT_BRICK_WALL);
-                recipe2x1t1(EBlocks.SMOOTH_BASALT_BRICK_SLAB, EBlocks.SMOOTH_BASALT_TILES);
+                recipe2x2t2(EBlocks.SMOOTH_BASALT_BRICK_SLAB, EBlocks.SMOOTH_BASALT_TILES);
                 recipeStairSlabWall(EBlocks.SMOOTH_BASALT_TILES, EBlocks.SMOOTH_BASALT_TILE_STAIRS, EBlocks.SMOOTH_BASALT_TILE_SLAB, EBlocks.SMOOTH_BASALT_TILE_WALL);
                 stonecutterSet(List.of(Blocks.BASALT, Blocks.POLISHED_BASALT, Blocks.SMOOTH_BASALT, EBlocks.SMOOTH_BASALT_STAIRS, EBlocks.SMOOTH_BASALT_WALL, EBlocks.POLISHED_SMOOTH_BASALT, EBlocks.POLISHED_SMOOTH_BASALT_STAIRS, EBlocks.POLISHED_SMOOTH_BASALT_WALL, EBlocks.SMOOTH_BASALT_BRICKS, EBlocks.SMOOTH_BASALT_BRICK_STAIRS, EBlocks.SMOOTH_BASALT_BRICK_WALL, EBlocks.SMOOTH_BASALT_TILES, EBlocks.SMOOTH_BASALT_TILE_STAIRS, EBlocks.SMOOTH_BASALT_TILE_WALL), List.of(EBlocks.BASALT_SLAB, EBlocks.POLISHED_BASALT_SLAB, EBlocks.SMOOTH_BASALT_SLAB, EBlocks.POLISHED_SMOOTH_BASALT_SLAB, EBlocks.SMOOTH_BASALT_BRICK_SLAB, EBlocks.SMOOTH_BASALT_TILE_SLAB));
 
@@ -897,6 +904,11 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, shapedId(result));
             }
 
+            private void recipe2x2t2(ItemLike ingredient, ItemLike result) {
+                shaped(RecipeCategory.BUILDING_BLOCKS, result, 2).define('#', ingredient).pattern("##").pattern("##")
+                        .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, shapedId(result));
+            }
+
             private void recipe2x1t2(ItemLike ingredient, ItemLike result) {
                 shaped(RecipeCategory.BUILDING_BLOCKS, result, 2).define('#', ingredient).pattern("#").pattern("#")
                         .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, shapedId(result));
@@ -905,6 +917,13 @@ public class ERecipeProvider extends FabricRecipeProvider {
             private void recipe2x1t1(ItemLike ingredient, ItemLike result) {
                 shaped(RecipeCategory.BUILDING_BLOCKS, result).define('#', ingredient).pattern("#").pattern("#")
                         .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, shapedId(result));
+            }
+
+            private void recipeMossy(ItemLike ingredient, ItemLike result) {
+                shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(ingredient).requires(Blocks.MOSS_BLOCK)
+                        .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, specificPath(result, "from_moss_block"));
+                shapeless(RecipeCategory.BUILDING_BLOCKS, result).requires(ingredient).requires(Blocks.VINE)
+                        .unlockedBy(getHasName(ingredient), has(ingredient)).save(output, specificPath(result, "from_vine"));
             }
 
             private void recipeChain(ItemLike ingredient, ItemLike chain) {

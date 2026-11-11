@@ -52,30 +52,6 @@ public class EBlockModelGenerators extends BlockModelGenerators {
         createGrassLikeBlock(EBlocks.ARID_GRASS_BLOCK, aridPlainGrass, aridSnowyGrass);
         registerSimpleTintedItemModel(EBlocks.ARID_GRASS_BLOCK, aridPlainGrassModel, new GrassColorSource(1.0F, 0.0F));
     }
-    public void createTundraGrassBlock() {
-        Material bottomTexture = TextureMapping.getBlockTexture(Blocks.DIRT);
-
-        TextureMapping normalMapping = new TextureMapping()
-                .put(TextureSlot.BOTTOM, bottomTexture)
-                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
-                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(EBlocks.RED_GRASS_BLOCK, "_top"))
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(EBlocks.RED_GRASS_BLOCK, "_side"));
-
-        TextureMapping snowyMapping = new TextureMapping()
-                .put(TextureSlot.BOTTOM, bottomTexture)
-                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
-                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.SNOW))
-                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(EBlocks.RED_GRASS_BLOCK, "_snow"));
-
-        MultiVariant normalModel = createRotatedVariants(
-                plainModel(ModelTemplates.CUBE_BOTTOM_TOP.create(EBlocks.RED_GRASS_BLOCK, normalMapping, this.modelOutput))
-        );
-        MultiVariant snowyModel = createRotatedVariants(
-                plainModel(ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(EBlocks.RED_GRASS_BLOCK, "_snow", snowyMapping, this.modelOutput))
-        );
-
-        createGrassLikeBlock(EBlocks.RED_GRASS_BLOCK, normalModel, snowyModel);
-    }
     public void createSeagrassSandBlock() {
         Material bottomTexture = TextureMapping.getBlockTexture(Blocks.SAND);
 

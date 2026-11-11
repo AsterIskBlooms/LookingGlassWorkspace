@@ -139,6 +139,16 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.MOSSY_STONE_TILE_WALL);
         dropSelf(EBlocks.CHISELED_STONE);
         dropSelf(EBlocks.STONE_PILLAR);
+        dropSelf(EBlocks.COBBLESTONE_BRICKS);
+        dropSelf(EBlocks.COBBLESTONE_BRICK_STAIRS);
+        add(EBlocks.COBBLESTONE_BRICK_SLAB, createSlabItemTable(EBlocks.COBBLESTONE_BRICK_SLAB));
+        dropSelf(EBlocks.COBBLESTONE_BRICK_WALL);
+        dropSelf(EBlocks.MOSSY_COBBLESTONE_BRICKS);
+        dropSelf(EBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS);
+        add(EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB, createSlabItemTable(EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB));
+        dropSelf(EBlocks.MOSSY_COBBLESTONE_BRICK_WALL);
+        dropSelf(EBlocks.CRACKED_COBBLESTONE_BRICKS);
+        dropSelf(EBlocks.CHISELED_COBBLESTONE_BRICKS);
 
         dropSelf(EBlocks.DEEPSLATE_STAIRS);
         dropSelf(EBlocks.DEEPSLATE_SLAB);
@@ -188,6 +198,7 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.CHISELED_DRIPSTONE_TILES);
         dropSelf(EBlocks.DRIPSTONE_PILLAR);
 
+        dropSelf(EBlocks.ARID_SAND);
         dropSelf(EBlocks.POLISHED_SANDSTONE);
         dropSelf(EBlocks.POLISHED_SANDSTONE_STAIRS);
         add(EBlocks.POLISHED_SANDSTONE_SLAB, createSlabItemTable(EBlocks.POLISHED_SANDSTONE_SLAB));
@@ -400,10 +411,6 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.ARID_DIRT);
         add(EBlocks.ARID_GRASS_BLOCK, createSingleItemTableWithSilkTouch(EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT));
 
-        add(EBlocks.RED_GRASS_BLOCK, createSingleItemTableWithSilkTouch(EBlocks.RED_GRASS_BLOCK, Blocks.DIRT));
-        add(EBlocks.SHORT_RED_GRASS, createShearsOrSilkTouchOnlyDrop(EBlocks.SHORT_RED_GRASS));
-        add(EBlocks.TALL_RED_GRASS, createDoublePlantShearsOrSilkTouchDrop(EBlocks.TALL_RED_GRASS));
-
         add(EBlocks.GILDED_BIRCH_LEAVES, createLeavesDrops(EBlocks.GILDED_BIRCH_LEAVES, Blocks.BIRCH_SAPLING, 0.05F));
 
         dropSelf(EBlocks.RUSTY_MOSS_BLOCK);
@@ -524,6 +531,9 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.PINE_LEAVES, createLeavesDrops(EBlocks.PINE_LEAVES, EBlocks.PINE_SAPLING, 0.05F));
 
         dropSelf(EBlocks.LATERITE);
+        dropSelf(EBlocks.PEAT);
+        dropSelf(EBlocks.SILT);
+        dropSelf(EBlocks.SALT);
 
         add(EBlocks.BEJEWELED_CALCITE, createMultipleOreDrops(EBlocks.BEJEWELED_CALCITE, EItems.EMERALD_NUGGET, 3, 5));
 

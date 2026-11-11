@@ -2,8 +2,11 @@
   "values": [
     "elsewhere:arid_dirt",
     "elsewhere:arid_grass_block",
-    "elsewhere:red_grass_block",
     "elsewhere:laterite",
+    "elsewhere:peat",
+    "elsewhere:silt",
+    "elsewhere:salt",
+    "elsewhere:arid_sand",
     "elsewhere:pink_sand",
     "elsewhere:seagrass_sand",
     "elsewhere:chiseled_snow_bricks"

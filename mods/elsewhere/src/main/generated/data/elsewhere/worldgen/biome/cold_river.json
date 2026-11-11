@@ -20,58 +20,34 @@
           ],
           "monster": [
             {
-              "type": "minecraft:creeper",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
-              "weight": 100
-            },
-            {
-              "type": "minecraft:drowned",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 1,
-                "min_inclusive": 1
-              },
-              "weight": 100
-            },
-            {
-              "type": "minecraft:skeleton",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
-              "weight": 100
-            },
-            {
-              "type": "minecraft:slime",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
-              "weight": 100
-            },
-            {
               "type": "minecraft:spider",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
+              "count": 4,
               "weight": 100
             },
             {
               "type": "minecraft:zombie",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
+              "count": 4,
               "weight": 95
+            },
+            {
+              "type": "minecraft:zombie_villager",
+              "count": 1,
+              "weight": 5
+            },
+            {
+              "type": "minecraft:skeleton",
+              "count": 4,
+              "weight": 100
+            },
+            {
+              "type": "minecraft:creeper",
+              "count": 4,
+              "weight": 100
+            },
+            {
+              "type": "minecraft:slime",
+              "count": 4,
+              "weight": 100
             },
             {
               "type": "minecraft:enderman",
@@ -84,21 +60,13 @@
             },
             {
               "type": "minecraft:witch",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 1,
-                "min_inclusive": 1
-              },
+              "count": 1,
               "weight": 5
             },
             {
-              "type": "minecraft:zombie_villager",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 1,
-                "min_inclusive": 1
-              },
-              "weight": 5
+              "type": "minecraft:drowned",
+              "count": 1,
+              "weight": 100
             }
           ],
           "underground_water_creature": [
@@ -202,6 +170,9 @@
     [],
     [
       "minecraft:glow_lichen"
+    ],
+    [
+      "minecraft:freeze_top_layer"
     ]
   ],
   "has_precipitation": true,

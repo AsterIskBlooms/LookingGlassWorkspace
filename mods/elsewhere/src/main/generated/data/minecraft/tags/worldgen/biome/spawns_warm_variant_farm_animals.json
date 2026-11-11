@@ -1,11 +1,14 @@
 {
   "values": [
-    "elsewhere:outback",
-    "elsewhere:lush_desert",
-    "elsewhere:tidepools",
-    "elsewhere:steppe",
     "elsewhere:shrubland",
     "elsewhere:cedar_forest",
-    "elsewhere:cloud_forest"
+    "elsewhere:rocky_jungle",
+    "elsewhere:tropical_basin",
+    "elsewhere:acacia_flats",
+    "elsewhere:outback",
+    "elsewhere:dunes",
+    "elsewhere:lush_dunes",
+    "elsewhere:cloud_forest",
+    "elsewhere:tidepools"
   ]
 }

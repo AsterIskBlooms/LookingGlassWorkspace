@@ -46,22 +46,25 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> JUNGLE_TREES = registerKey("jungle_trees");
     public static final ResourceKey<PlacedFeature> SPARSE_JUNGLE_TREES = registerKey("sparse_jungle_trees");
     public static final ResourceKey<PlacedFeature> BAMBOO_JUNGLE_TREES = registerKey("bamboo_jungle_trees");
+    public static final ResourceKey<PlacedFeature> TREES_ROCKY_JUNGLE = registerKey("trees_rocky_jungle");
 
     public static final ResourceKey<PlacedFeature> TREES_FLOWER_FOREST = registerKey("trees_flower_forest");
+    public static final ResourceKey<PlacedFeature> TREES_FOREST = registerKey("trees_forest");
     public static final ResourceKey<PlacedFeature> FLOWER_FOREST_WILDFLOWERS = registerKey("flower_forest_wildflowers");
     public static final ResourceKey<PlacedFeature> CHERRY_GROVE_BAMBOO = registerKey("cherry_grove_bamboo");
     public static final ResourceKey<PlacedFeature> SPARSE_CHERRY = registerKey("sparse_cherry");
 
     public static final ResourceKey<PlacedFeature> TREES_BIRCH = registerKey("trees_birch");
+    public static final ResourceKey<PlacedFeature> TREES_GROVE = registerKey("trees_grove");
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_BIRCH = registerKey("trees_old_growth_birch");
 
-    public static final ResourceKey<PlacedFeature> TUNDRA_VEGETATION_PATCH = registerKey("tundra_vegetation_patch");
-    public static final ResourceKey<PlacedFeature> TAIGA_VEGETATION_PATCH = registerKey("taiga_vegetation_patch");
     public static final ResourceKey<PlacedFeature> TUNDRA_ROCK = registerKey("tundra_rock");
     public static final ResourceKey<PlacedFeature> SNOW_PATCH = registerKey("snow_patch");
 
     public static final ResourceKey<PlacedFeature> DRY_GRASS_CLUMP = registerKey("dry_grass_clump");
     public static final ResourceKey<PlacedFeature> DRY_GRASS_CLUMP_SPARSE = registerKey("dry_grass_clump_sparse");
+    public static final ResourceKey<PlacedFeature> BEACH_DRY_GRASS = registerKey("beach_dry_grass");
+    public static final ResourceKey<PlacedFeature> DUNE_DRY_GRASS = registerKey("dune_dry_grass");
 
     public static final ResourceKey<PlacedFeature> AMETHYST_NODE = registerKey("amethyst_node");
     public static final ResourceKey<PlacedFeature> AMETHYST_SPIRE_CLUSTER = registerKey("amethyst_spire_cluster");
@@ -133,12 +136,18 @@ public class EPlacements {
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_PINE_TAIGA = registerKey("trees_old_growth_pine_taiga");
 
     public static final ResourceKey<PlacedFeature> TREES_OLD_GROWTH_FOREST = registerKey("trees_old_growth_forest");
+    public static final ResourceKey<PlacedFeature> FOREST_POND = registerKey("forest_pond");
     public static final ResourceKey<PlacedFeature> OLD_GROWTH_FLOWERS = registerKey("old_growth_flowers");
 
     public static final ResourceKey<PlacedFeature> STEPPE_GRASS = registerKey("steppe_grass");
     public static final ResourceKey<PlacedFeature> STEPPE_PILLARS = registerKey("steppe_pillars");
 
     public static final ResourceKey<PlacedFeature> SWAMP_GRASS = registerKey("swamp_grass");
+
+    public static final ResourceKey<PlacedFeature> TREES_PINE_BARRENS = registerKey("trees_pine_barrens");
+    public static final ResourceKey<PlacedFeature> TREES_OAK_WOODLAND = registerKey("trees_oak_woodland");
+    public static final ResourceKey<PlacedFeature> TREES_RAINFOREST = registerKey("trees_rainforest");
+    public static final ResourceKey<PlacedFeature> TREES_DARK_FOREST = registerKey("trees_dark_forest");
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
@@ -198,22 +207,6 @@ public class EPlacements {
                         BiomeFilter.biome()
                 ));
 
-        PlacementUtils.register(context, TUNDRA_VEGETATION_PATCH,
-                feature.getOrThrow(EFeatures.RED_VEGETATION_PATCH),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(2),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome()
-                ));
-        PlacementUtils.register(context, TAIGA_VEGETATION_PATCH,
-                feature.getOrThrow(EFeatures.BIG_RED_VEGETATION_PATCH),
-                List.of(
-                        RarityFilter.onAverageOnceEvery(6),
-                        InSquarePlacement.spread(),
-                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
-                        BiomeFilter.biome()
-                ));
         PlacementUtils.register(context, TUNDRA_ROCK,
                 feature.getOrThrow(EFeatures.TUNDRA_ROCK),
                 List.of(
@@ -238,6 +231,22 @@ public class EPlacements {
                 feature.getOrThrow(EFeatures.DRY_GRASS_CLUMP),
                 List.of(
                         RarityFilter.onAverageOnceEvery(2),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, BEACH_DRY_GRASS,
+                feature.getOrThrow(EFeatures.BEACH_DRY_GRASS),
+                List.of(
+                        CountPlacement.of(3),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+        PlacementUtils.register(context, DUNE_DRY_GRASS,
+                feature.getOrThrow(EFeatures.BEACH_DRY_GRASS),
+                List.of(
+                        CountPlacement.of(5),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
@@ -545,7 +554,7 @@ public class EPlacements {
         PlacementUtils.register(context, DESERT_ROCKS,
                 feature.getOrThrow(EFeatures.SANDSTONE_ROCK),
                 List.of(
-                        CountPlacement.of(2),
+                        RarityFilter.onAverageOnceEvery(2),
                         InSquarePlacement.spread(),
                         PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
                         BiomeFilter.biome()
@@ -696,11 +705,17 @@ public class EPlacements {
                 feature.getOrThrow(EFeatures.BAMBOO_JUNGLE_TREES_KEY),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(30, 0.1F, 1), Blocks.JUNGLE_SAPLING)
         );
+        PlacementUtils.register(context, TREES_ROCKY_JUNGLE,
+                feature.getOrThrow(EFeatures.TREES_ROCKY_JUNGLE),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(25, 0.1F, 1), Blocks.JUNGLE_SAPLING)
+        );
 
         PlacementUtils.register(context, TREES_FLOWER_FOREST,
                 feature.getOrThrow(EFeatures.TREES_FLOWER_FOREST),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1), Blocks.OAK_SAPLING)
-        );
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(7, 0.1F, 1), Blocks.OAK_SAPLING));
+        PlacementUtils.register(context, TREES_FOREST,
+                feature.getOrThrow(EFeatures.TREES_FOREST),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(14, 0.1F, 1), Blocks.OAK_SAPLING));
         PlacementUtils.register(context, FLOWER_FOREST_WILDFLOWERS,
                 feature.getOrThrow(EFeatures.SPARSE_FOREST_FLOWERS),
                 List.of(
@@ -730,11 +745,20 @@ public class EPlacements {
 
         PlacementUtils.register(context, TREES_BIRCH,
                 feature.getOrThrow(EFeatures.TREES_BIRCH),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.BIRCH_SAPLING)
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.1F, 1), Blocks.BIRCH_SAPLING)
         );
+        PlacementUtils.register(context, TREES_GROVE,
+                feature.getOrThrow(EFeatures.TREES_GROVE),
+                List.of(
+                        PlacementUtils.countExtra(7, 0.1F, 1),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN, Blocks.SNOW_BLOCK, Blocks.POWDER_SNOW))
+                ));
         PlacementUtils.register(context, TREES_OLD_GROWTH_BIRCH,
                 feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_BIRCH),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(10, 0.1F, 1), Blocks.BIRCH_SAPLING)
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(9, 0.1F, 1), Blocks.BIRCH_SAPLING)
         );
 
         PlacementUtils.register(context, DENSE_DRY_GRASS,
@@ -948,6 +972,15 @@ public class EPlacements {
                 feature.getOrThrow(EFeatures.TREES_OLD_GROWTH_FOREST),
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(16, 0.5F, 1), Blocks.OAK_SAPLING));
 
+        PlacementUtils.register(context, FOREST_POND,
+                feature.getOrThrow(EFeatures.FOREST_POND),
+                List.of(
+                        RarityFilter.onAverageOnceEvery(5),
+                        InSquarePlacement.spread(),
+                        PlacementUtils.HEIGHTMAP_WORLD_SURFACE,
+                        BiomeFilter.biome()
+                ));
+
         PlacementUtils.register(context, OLD_GROWTH_FLOWERS,
                 feature.getOrThrow(EFeatures.OLD_GROWTH_FLOWERS),
                 List.of(
@@ -990,6 +1023,21 @@ public class EPlacements {
                                 BlockPredicate.wouldSurvive(Blocks.SHORT_GRASS)))
                 ));
 
+        PlacementUtils.register(context, TREES_PINE_BARRENS,
+                feature.getOrThrow(EFeatures.TREES_PINE_BARRENS),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(2, 0.1F, 1), EBlocks.PINE_SAPLING));
+        PlacementUtils.register(context, TREES_OAK_WOODLAND,
+                feature.getOrThrow(EFeatures.TREES_OAK_WOODLAND),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(5, 0.05F, 1), Blocks.OAK_SAPLING));
+
+        PlacementUtils.register(context, TREES_RAINFOREST,
+                feature.getOrThrow(EFeatures.TREES_RAINFOREST),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(12, 0.05F, 1), Blocks.OAK_SAPLING));
+
+        PlacementUtils.register(context, TREES_DARK_FOREST,
+                feature.getOrThrow(EFeatures.TREES_DARK_FOREST),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(15, 0.1F, 1), Blocks.DARK_OAK_SAPLING)
+        );
 
     }
 

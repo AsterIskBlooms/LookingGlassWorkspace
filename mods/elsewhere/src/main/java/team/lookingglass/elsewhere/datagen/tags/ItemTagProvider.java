@@ -101,6 +101,8 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 EBlockItemIds.BEACHSTONE, EBlockItemIds.POLISHED_BEACHSTONE, EBlockItemIds.BEACHSTONE_BRICKS, EBlockItemIds.CHISELED_BEACHSTONE,
                 EBlockItemIds.LIMESTONE, EBlockItemIds.CUT_LIMESTONE,
                 EBlockItemIds.POLISHED_STONE, EBlockItemIds.STONE_TILES, EBlockItemIds.MOSSY_STONE_TILES, EBlockItemIds.STONE_PILLAR, EBlockItemIds.CHISELED_STONE,
+                EBlockItemIds.COBBLESTONE_BRICKS, EBlockItemIds.MOSSY_COBBLESTONE_BRICKS,
+                EBlockItemIds.CRACKED_COBBLESTONE_BRICKS, EBlockItemIds.CHISELED_COBBLESTONE_BRICKS,
                 EBlockItemIds.DEEPSLATE_PILLAR, EBlockItemIds.CHISELED_DEEPSLATE_BRICKS,
                 EBlockItemIds.TUFF_PILLAR, EBlockItemIds.BLACKSTONE_PILLAR,
                 EBlockItemIds.ANDESITE_BRICKS, EBlockItemIds.ANDESITE_PILLAR, EBlockItemIds.CHISELED_ANDESITE,
@@ -128,7 +130,8 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         ).addTag(EBlockItemTags.TERRACOTTA_BRICKS.item()).addTag(EBlockItemTags.TERRACOTTA_BRICK_TILES.item());
 
         builder(ItemTags.SULFUR_CUBE_ARCHETYPE_REGULAR).add(
-                EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK, EBlockItemIds.RED_GRASS_BLOCK, EBlockItemIds.LATERITE
+                EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK,
+                EBlockItemIds.LATERITE, EBlockItemIds.PEAT, EBlockItemIds.SILT, EBlockItemIds.SALT
         );
 
         builder(ItemTags.SULFUR_CUBE_ARCHETYPE_SLOW_FLAT).add(

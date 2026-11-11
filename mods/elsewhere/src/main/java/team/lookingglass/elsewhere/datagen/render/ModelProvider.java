@@ -79,6 +79,18 @@ public class ModelProvider extends FabricModelProvider {
         ;
         gen.createTrivialCube(EBlocks.CHISELED_STONE);
         gen.createAxisAlignedPillarBlock(EBlocks.STONE_PILLAR, TexturedModel.COLUMN);
+        gen.family(EBlocks.COBBLESTONE_BRICKS)
+                .stairs(EBlocks.COBBLESTONE_BRICK_STAIRS)
+                .slab(EBlocks.COBBLESTONE_BRICK_SLAB)
+                .wall(EBlocks.COBBLESTONE_BRICK_WALL)
+        ;
+        gen.family(EBlocks.MOSSY_COBBLESTONE_BRICKS)
+                .stairs(EBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS)
+                .slab(EBlocks.MOSSY_COBBLESTONE_BRICK_SLAB)
+                .wall(EBlocks.MOSSY_COBBLESTONE_BRICK_WALL)
+        ;
+        gen.createTrivialCube(EBlocks.CRACKED_COBBLESTONE_BRICKS);
+        gen.createTrivialCube(EBlocks.CHISELED_COBBLESTONE_BRICKS);
         gen.family(Blocks.DEEPSLATE)
                 .stairs(EBlocks.DEEPSLATE_STAIRS)
                 .slab(EBlocks.DEEPSLATE_SLAB)
@@ -146,6 +158,8 @@ public class ModelProvider extends FabricModelProvider {
 
 
         // Sandstone Sets
+        gen.createTrivialCube(EBlocks.ARID_SAND);
+
         gen.family(EBlocks.POLISHED_SANDSTONE)
                 .stairs(EBlocks.POLISHED_SANDSTONE_STAIRS)
                 .slab(EBlocks.POLISHED_SANDSTONE_SLAB)
@@ -515,9 +529,6 @@ public class ModelProvider extends FabricModelProvider {
 
         mGen.createRotatedVariantColumn(EBlocks.ARID_DIRT);
         eGen.createAridGrassBlock();
-        eGen.createTundraGrassBlock();
-        gen.createCrossBlockWithDefaultItem(EBlocks.SHORT_RED_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
-        gen.createDoublePlantWithDefaultItem(EBlocks.TALL_RED_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
 
         gen.createTrivialCube(EBlocks.GILDED_BIRCH_LEAVES);
 
@@ -615,6 +626,9 @@ public class ModelProvider extends FabricModelProvider {
         gen.createPlantWithDefaultItem(EBlocks.PINE_SAPLING, EBlocks.POTTED_PINE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
         gen.createTrivialBlock(EBlocks.LATERITE, TexturedModel.COLUMN);
+        gen.createTrivialCube(EBlocks.PEAT);
+        gen.createTrivialCube(EBlocks.SILT);
+        gen.createTrivialCube(EBlocks.SALT);
 
         gen.createTrivialCube(EBlocks.BEJEWELED_CALCITE);
 

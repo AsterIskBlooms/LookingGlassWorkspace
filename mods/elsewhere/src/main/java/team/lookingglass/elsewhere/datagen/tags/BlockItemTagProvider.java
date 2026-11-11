@@ -19,14 +19,14 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
         // Terrain
         tag(BlockItemTags.DIRT).add(
                 EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK,
-                EBlockItemIds.RED_GRASS_BLOCK, EBlockItemIds.LATERITE,
+                EBlockItemIds.LATERITE, EBlockItemIds.PEAT, EBlockItemIds.SILT,
                 BlockItemIds.MUD, EBlockItemIds.MOSSY_MUD
         );
         tag(BlockItemTags.GRASS_BLOCKS).add(
-                EBlockItemIds.ARID_GRASS_BLOCK, EBlockItemIds.RED_GRASS_BLOCK, EBlockItemIds.SEAGRASS_SAND
+                EBlockItemIds.ARID_GRASS_BLOCK, EBlockItemIds.SEAGRASS_SAND
         );
         tag(BlockItemTags.MUD).add(BlockItemIds.MUD, EBlockItemIds.MOSSY_MUD);
-        tag(BlockItemTags.SAND).add(EBlockItemIds.PINK_SAND, EBlockItemIds.SEAGRASS_SAND);
+        tag(BlockItemTags.SAND).add(EBlockItemIds.PINK_SAND, EBlockItemIds.ARID_SAND, EBlockItemIds.SEAGRASS_SAND);
         tag(BlockItemTags.MOSS_BLOCKS).add(EBlockItemIds.RUSTY_MOSS_BLOCK, EBlockItemIds.MOSSY_MUD);
         tag(BlockItemTags.LEAVES).add(
                 EBlockItemIds.CEDAR_LEAVES, EBlockItemIds.MAHOGANY_LEAVES, EBlockItemIds.PINE_LEAVES,
@@ -181,7 +181,9 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
 
         // Walls
         tag(BlockItemTags.WALLS).add(
-                EBlockItemIds.STONE_WALL, EBlockItemIds.SMOOTH_STONE_WALL, EBlockItemIds.POLISHED_STONE_WALL, EBlockItemIds.STONE_TILE_WALL, EBlockItemIds.MOSSY_STONE_TILE_WALL,
+                EBlockItemIds.STONE_WALL, EBlockItemIds.SMOOTH_STONE_WALL, EBlockItemIds.POLISHED_STONE_WALL,
+                EBlockItemIds.STONE_TILE_WALL, EBlockItemIds.MOSSY_STONE_TILE_WALL,
+                EBlockItemIds.COBBLESTONE_BRICK_WALL, EBlockItemIds.MOSSY_COBBLESTONE_BRICK_WALL,
                 EBlockItemIds.DEEPSLATE_WALL,
                 EBlockItemIds.POLISHED_ANDESITE_WALL, EBlockItemIds.ANDESITE_BRICK_WALL,
                 EBlockItemIds.POLISHED_GRANITE_WALL, EBlockItemIds.GRANITE_BRICK_WALL,

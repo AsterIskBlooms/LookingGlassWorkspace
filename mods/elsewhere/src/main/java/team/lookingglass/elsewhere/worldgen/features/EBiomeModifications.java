@@ -1,6 +1,7 @@
 package team.lookingglass.elsewhere.worldgen.features;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
 import net.minecraft.data.worldgen.placement.NetherPlacements;
@@ -11,10 +12,12 @@ import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.worldgen.EBiomes;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class EBiomeModifications {
     public static void initialize() {
@@ -82,7 +85,7 @@ public class EBiomeModifications {
         // Beach
         List<ResourceKey<Biome>> beaches = List.of(Biomes.BEACH, Biomes.SNOWY_BEACH);
         BiomeModifications.addFeature(ctx -> beaches.contains(ctx.getBiomeKey()),
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.DENSE_DRY_GRASS);
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.BEACH_DRY_GRASS);
         BiomeModifications.addFeature(ctx -> beaches.contains(ctx.getBiomeKey()),
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.BEACHSTONE_ROCKS);
 
@@ -114,7 +117,13 @@ public class EBiomeModifications {
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.SPARSE_JUNGLE,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.SPARSE_JUNGLE_TREES);
 
-        // Flower Forests
+        // Forests
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.FOREST,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_FOREST);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.DARK_FOREST,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_DARK_FOREST);
+
+        // Flower Forest
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.FLOWER_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_FLOWER_FOREST);
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.FLOWER_FOREST,
@@ -140,6 +149,8 @@ public class EBiomeModifications {
         // Birch Forests
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.BIRCH_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_BIRCH);
+        BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.GROVE,
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_GROVE);
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.OLD_GROWTH_BIRCH_FOREST,
                 GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.TREES_OLD_GROWTH_BIRCH);
 
@@ -194,46 +205,40 @@ public class EBiomeModifications {
 
 
         // Removals
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_jungle_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.JUNGLE), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_JUNGLE));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_bamboo_jungle_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.BAMBOO_JUNGLE), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BAMBOO_VEGETATION));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_sparse_jungle_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.SPARSE_JUNGLE), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_SPARSE_JUNGLE));
+        removeVegetal("remove_vanilla_jungle_trees", VegetationPlacements.TREES_JUNGLE, Biomes.JUNGLE);
+        removeVegetal("remove_vanilla_bamboo_jungle_trees", VegetationPlacements.BAMBOO_VEGETATION, Biomes.BAMBOO_JUNGLE);
+        removeVegetal("remove_vanilla_sparse_jungle_trees", VegetationPlacements.TREES_SPARSE_JUNGLE, Biomes.SPARSE_JUNGLE);
+        removeVegetal("remove_vanilla_flower_forest_trees", VegetationPlacements.TREES_FLOWER_FOREST, Biomes.FLOWER_FOREST);
+        removeVegetal("remove_vanilla_forest_trees", VegetationPlacements.TREES_BIRCH_AND_OAK_LEAF_LITTER, Biomes.FOREST);
+        removeVegetal("remove_vanilla_dark_forest_trees", VegetationPlacements.DARK_FOREST_VEGETATION, Biomes.DARK_FOREST);
+        removeVegetal("remove_vanilla_birch_forest_trees", VegetationPlacements.TREES_BIRCH, Biomes.BIRCH_FOREST);
+        removeVegetal("remove_vanilla_grove_trees", VegetationPlacements.TREES_GROVE, Biomes.GROVE);
+        removeVegetal("remove_vanilla_old_growth_birch_forest_trees", VegetationPlacements.BIRCH_TALL, Biomes.OLD_GROWTH_BIRCH_FOREST);
+        removeVegetal("remove_vanilla_taiga_trees", VegetationPlacements.TREES_TAIGA, Biomes.TAIGA, Biomes.SNOWY_TAIGA);
+        removeVegetal("remove_vanilla_old_growth_spruce_taiga_trees", VegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA);
+        removeVegetal("remove_vanilla_old_growth_pine_taiga_trees", VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA);
 
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_flower_forest_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.FLOWER_FOREST), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_FLOWER_FOREST));
+        removeFeature("remove_ocean_grasses", GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL,
+                BiomeSelectors.includeByKey(Biomes.BEACH).and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)).and(BiomeSelectors.tag(BiomeTags.IS_DEEP_OCEAN)));
+        removeFeature("remove_beach_grasses", GenerationStep.Decoration.VEGETAL_DECORATION,
+                VegetationPlacements.PATCH_GRASS_BADLANDS, BiomeSelectors.tag(BiomeTags.IS_BEACH));
 
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_birch_forest_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.BIRCH_FOREST), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_BIRCH));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_birch_forest_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_BIRCH_FOREST), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BIRCH_TALL));
+        removeFeature("remove_soul_sand_valley_crimson_roots", GenerationStep.Decoration.UNDERGROUND_DECORATION,
+                NetherPlacements.PATCH_CRIMSON_ROOTS, BiomeSelectors.tag(BiomeTags.IS_BEACH));
+    }
 
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_taiga_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.TAIGA, Biomes.SNOWY_TAIGA), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_TAIGA));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_spruce_taiga_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_SPRUCE_TAIGA), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_SPRUCE_TAIGA));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_vanilla_old_growth_pine_taiga_trees")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.OLD_GROWTH_PINE_TAIGA), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.TREES_OLD_GROWTH_PINE_TAIGA));
+    @SafeVarargs
+    private static void removeFeature(String name, GenerationStep.Decoration step, ResourceKey<PlacedFeature> feature, ResourceKey<Biome>... biomes) {
+        removeFeature(name, step, feature, BiomeSelectors.includeByKey(biomes));
+    }
 
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_ocean_grasses")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.includeByKey(Biomes.BEACH).and(BiomeSelectors.tag(BiomeTags.IS_OCEAN)).and(BiomeSelectors.tag(BiomeTags.IS_DEEP_OCEAN)), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL));
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_beach_grasses")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.tag(BiomeTags.IS_BEACH), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_BADLANDS));
+    private static void removeFeature(String name, GenerationStep.Decoration step, ResourceKey<PlacedFeature> feature, Predicate<BiomeSelectionContext> selector) {
+        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, name))
+                .add(ModificationPhase.REMOVALS, selector, context -> context.getGenerationSettings().removeFeature(step, feature));
+    }
 
-        BiomeModifications.create(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "remove_soul_sand_valley_crimson_roots")).add(
-                ModificationPhase.REMOVALS, BiomeSelectors.tag(BiomeTags.IS_BEACH), context -> context.getGenerationSettings()
-                        .removeFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, NetherPlacements.PATCH_CRIMSON_ROOTS));
+    @SafeVarargs
+    private static void removeVegetal(String name, ResourceKey<PlacedFeature> feature, ResourceKey<Biome>... biomes) {
+        removeFeature(name, GenerationStep.Decoration.VEGETAL_DECORATION, feature, biomes);
     }
 }

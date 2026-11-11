@@ -59,6 +59,16 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.mossy_stone_tile_wall", "Mossy Stone Tile Wall");
         translationBuilder.add("block.elsewhere.chiseled_stone", "Chiseled Stone");
         translationBuilder.add("block.elsewhere.stone_pillar", "Stone Pillar");
+        translationBuilder.add("block.elsewhere.cobblestone_bricks", "Cobblestone Bricks");
+        translationBuilder.add("block.elsewhere.cobblestone_brick_stairs", "Cobblestone Brick Stairs");
+        translationBuilder.add("block.elsewhere.cobblestone_brick_slab", "Cobblestone Brick Slab");
+        translationBuilder.add("block.elsewhere.cobblestone_brick_wall", "Cobblestone Brick Wall");
+        translationBuilder.add("block.elsewhere.mossy_cobblestone_bricks", "Mossy Cobblestone Bricks");
+        translationBuilder.add("block.elsewhere.mossy_cobblestone_brick_stairs", "Mossy Cobblestone Brick Stairs");
+        translationBuilder.add("block.elsewhere.mossy_cobblestone_brick_slab", "Mossy Cobblestone Brick Slab");
+        translationBuilder.add("block.elsewhere.mossy_cobblestone_brick_wall", "Mossy Cobblestone Brick Wall");
+        translationBuilder.add("block.elsewhere.cracked_cobblestone_bricks", "Cracked Cobblestone Bricks");
+        translationBuilder.add("block.elsewhere.chiseled_cobblestone_bricks", "Chiseled Cobblestone Bricks");
 
         translationBuilder.add("block.elsewhere.deepslate_stairs", "Deepslate Stairs");
         translationBuilder.add("block.elsewhere.deepslate_slab", "Deepslate Slab");
@@ -107,6 +117,8 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.dripstone_tile_wall", "Dripstone Tile Wall");
         translationBuilder.add("block.elsewhere.chiseled_dripstone_tiles", "Chiseled Dripstone Tiles");
         translationBuilder.add("block.elsewhere.dripstone_pillar", "Dripstone Pillar");
+
+        translationBuilder.add("block.elsewhere.arid_sand", "Arid Sand");
 
         translationBuilder.add("block.elsewhere.polished_sandstone", "Polished Sandstone");
         translationBuilder.add("block.elsewhere.polished_sandstone_stairs", "Polished Sandstone Stairs");
@@ -627,6 +639,9 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.bejeweled_calcite", "Bejeweled Calcite");
 
         translationBuilder.add("block.elsewhere.laterite", "Laterite");
+        translationBuilder.add("block.elsewhere.peat", "Peat");
+        translationBuilder.add("block.elsewhere.silt", "Silt");
+        translationBuilder.add("block.elsewhere.salt", "Salt");
 
         translationBuilder.add("block.elsewhere.pebble", "Pebble");
 
@@ -1001,27 +1016,42 @@ public class LangProviderEN extends FabricLanguageProvider {
 
 
         // Biomes
-        translationBuilder.add("biome.elsewhere.outback", "Outback");
+        translationBuilder.add("biome.elsewhere.glacial_valley", "Glacial Valley");
+        translationBuilder.add("biome.elsewhere.snowy_tundra", "Snowy Tundra");
+
         translationBuilder.add("biome.elsewhere.tundra", "Tundra");
-        translationBuilder.add("biome.elsewhere.dappled_forest", "Dappled Forest");
-        translationBuilder.add("biome.elsewhere.lush_desert", "Lush Desert");
-        translationBuilder.add("biome.elsewhere.glass_desert", "Glass Desert");
-        translationBuilder.add("biome.elsewhere.cedar_forest", "Cedar Forest");
-        translationBuilder.add("biome.elsewhere.shrubland", "Shrubland");
         translationBuilder.add("biome.elsewhere.steppe", "Steppe");
+        translationBuilder.add("biome.elsewhere.pine_barrens", "Pine Barrens");
+        translationBuilder.add("biome.elsewhere.rainforest", "Rainforest");
 
-        translationBuilder.add("biome.elsewhere.tidepools", "Tidepools");
-        translationBuilder.add("biome.elsewhere.cold_beach", "Cold Beach");
+        translationBuilder.add("biome.elsewhere.cherry_fields", "Cherry Fields");
+        translationBuilder.add("biome.elsewhere.old_growth_forest", "Old Growth Forest");
+        translationBuilder.add("biome.elsewhere.oak_woodland", "Oak Woodland");
+
+        translationBuilder.add("biome.elsewhere.shrubland", "Shrubland");
+        translationBuilder.add("biome.elsewhere.cedar_forest", "Cedar Forest");
+        translationBuilder.add("biome.elsewhere.rocky_jungle", "Rocky Jungle");
+        translationBuilder.add("biome.elsewhere.tropical_basin", "Tropical Basin");
+
+        translationBuilder.add("biome.elsewhere.acacia_flats", "Acacia Flats");
+        translationBuilder.add("biome.elsewhere.outback", "Outback");
+        translationBuilder.add("biome.elsewhere.dunes", "Dunes");
+        translationBuilder.add("biome.elsewhere.lush_dunes", "Lush Dunes");
+        translationBuilder.add("biome.elsewhere.cloud_forest", "Cloud Forest");
+
+        translationBuilder.add("biome.elsewhere.bog", "Bog");
+        translationBuilder.add("biome.elsewhere.marsh", "Marsh");
+
         translationBuilder.add("biome.elsewhere.frozen_beach", "Frozen Beach");
-
+        translationBuilder.add("biome.elsewhere.cold_beach", "Cold Beach");
+        translationBuilder.add("biome.elsewhere.tidepools", "Tidepools");
         translationBuilder.add("biome.elsewhere.cold_river", "Cold River");
-        translationBuilder.add("biome.elsewhere.lukewarm_river", "Lukewarm River");
         translationBuilder.add("biome.elsewhere.warm_river", "Warm River");
 
-        translationBuilder.add("biome.elsewhere.sulfur_caves", "Sulfur Caves");
-        translationBuilder.add("biome.elsewhere.crystalline_caves", "Crystalline Caves");
+        translationBuilder.add("biome.elsewhere.caves", "Caves");
+        translationBuilder.add("biome.elsewhere.crystal_caverns", "Crystal Caverns");
         translationBuilder.add("biome.elsewhere.arid_caves", "Arid Caves");
-        translationBuilder.add("biome.elsewhere.frigid_caves", "Frigid Caves");
+        translationBuilder.add("biome.elsewhere.volcanic_depths", "Volcanic Depths");
 
 
 

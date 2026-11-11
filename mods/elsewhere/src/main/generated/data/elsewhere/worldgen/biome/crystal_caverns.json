@@ -20,48 +20,13 @@
           ],
           "monster": [
             {
-              "type": "elsewhere:subslime",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 2,
-                "min_inclusive": 2
-              },
-              "weight": 100
-            },
-            {
               "type": "minecraft:spider",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
+              "count": 4,
               "weight": 100
-            },
-            {
-              "type": "minecraft:skeleton",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
-              "weight": 100
-            },
-            {
-              "type": "minecraft:zombie",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
-              "weight": 95
             },
             {
               "type": "minecraft:creeper",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 4
-              },
+              "count": 4,
               "weight": 60
             },
             {
@@ -75,11 +40,7 @@
             },
             {
               "type": "minecraft:witch",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 1,
-                "min_inclusive": 1
-              },
+              "count": 1,
               "weight": 25
             },
             {
@@ -90,6 +51,21 @@
                 "min_inclusive": 1
               },
               "weight": 10
+            },
+            {
+              "type": "elsewhere:subslime",
+              "count": 2,
+              "weight": 100
+            },
+            {
+              "type": "minecraft:skeleton",
+              "count": 4,
+              "weight": 100
+            },
+            {
+              "type": "minecraft:zombie",
+              "count": 4,
+              "weight": 95
             }
           ],
           "underground_water_creature": [

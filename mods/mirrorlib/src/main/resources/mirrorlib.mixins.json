@@ -3,11 +3,14 @@
   "package": "team.lookingglass.mirrorlib.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "SpreadingSnowyBlockMixin",
     "world.BiomeMixin",
+    "world.MultiNoiseBiomeSourceMixin",
+    "world.MultiNoiseBiomeSourceParameterListMixin",
     "world.NoiseGeneratorSettingsAccessor",
     "world.OverworldBiomeBuilderMixin",
     "world.OverworldBiomeGenAccessor",
-    "SpreadingSnowyBlockMixin",
+    "world.RandomStateMixin",
     "world.patch.BiomeDataMixin",
     "world.patch.FeatureUtilsMixin",
     "world.patch.PlacementUtilsMixin"

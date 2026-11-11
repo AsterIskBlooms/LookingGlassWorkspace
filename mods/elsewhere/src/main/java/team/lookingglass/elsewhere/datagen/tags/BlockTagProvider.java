@@ -2,6 +2,7 @@ package team.lookingglass.elsewhere.datagen.tags;
 
 import net.minecraft.data.tags.BlockItemTagsProvider;
 import net.minecraft.references.BlockItemIds;
+import net.minecraft.tags.BlockItemTags;
 import team.lookingglass.elsewhere.registry.EBlockItemIds;
 import team.lookingglass.elsewhere.registry.tags.EBlockItemTags;
 import team.lookingglass.elsewhere.registry.tags.EBlockTags;
@@ -43,22 +44,20 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         builder(EBlockTags.AMETHYST_SPIRE_REPLACEABLE).add(BlockItemIds.AMETHYST_BLOCK).addTag(EBlockTags.NATURAL_STONE_BLOCKS);
         builder(BlockTags.SPELEOTHEMS).add(EBlockItemIds.AMETHYST_SPIRE);
 
-        builder(EBlockTags.SOIL).addTag(BlockTags.DIRT).addTag(BlockTags.GRASS_BLOCKS).addTag(BlockTags.SAND);
-        builder(EBlockTags.NETHER_SOIL).addTag(EBlockTags.SOIL).add(
-                BlockItemIds.NETHERRACK, BlockItemIds.CRIMSON_NYLIUM, BlockItemIds.WARPED_NYLIUM,
-                BlockItemIds.SOUL_SAND, BlockItemIds.SOUL_SOIL
-        );
+        builder(EBlockTags.SOIL).addTag(BlockItemTags.DIRT.block()).addTag(BlockItemTags.GRASS_BLOCKS.block());
+        builder(EBlockTags.DRY_SOIL).addTag(EBlockTags.SOIL).addTag(BlockItemTags.SAND.block()).add(BlockItemIds.GRAVEL, EBlockItemIds.SALT);
+        builder(EBlockTags.NETHER_SOIL).addTag(EBlockTags.DRY_SOIL)
+                .add(BlockItemIds.NETHERRACK, BlockItemIds.CRIMSON_NYLIUM, BlockItemIds.WARPED_NYLIUM, BlockItemIds.SOUL_SAND, BlockItemIds.SOUL_SOIL);
 
-        builder(BlockTags.SUPPORTS_DRY_VEGETATION).add(BlockItemIds.GRAVEL);
+        builder(BlockTags.SUPPORTS_DRY_VEGETATION).addTag(EBlockTags.DRY_SOIL);
         builder(BlockTags.SUPPORTS_VEGETATION).addTag(EBlockTags.SOIL);
-        builder(BlockTags.SUPPORTS_CACTUS).addTag(EBlockTags.SOIL);
+        builder(BlockTags.SUPPORTS_CACTUS).addTag(EBlockTags.DRY_SOIL);
 
         builder(BlockTags.ENABLES_BUBBLE_COLUMN_PUSH_UP).add(EBlockItemIds.BASALT_VENT);
 
         builder(BlockTags.REPLACEABLE).add(
                 BlockItemIds.WILDFLOWERS, BlockItemIds.PINK_PETALS,
                 EBlockItemIds.PEBBLE,
-                EBlockItemIds.TALL_RED_GRASS,
                 EBlockItemIds.BLUEBONNET,
                 EBlockItemIds.RED_HIBISCUS, EBlockItemIds.ORANGE_HIBISCUS, EBlockItemIds.YELLOW_HIBISCUS, EBlockItemIds.BLUE_HIBISCUS,
                 EBlockItemIds.PURPLE_HIBISCUS, EBlockItemIds.PINK_HIBISCUS, EBlockItemIds.WHITE_HIBISCUS,
@@ -93,8 +92,8 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         // Tool Mineables
         builder(BlockTags.MINEABLE_WITH_SHOVEL).add(
                 EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK,
-                EBlockItemIds.RED_GRASS_BLOCK, EBlockItemIds.LATERITE,
-                EBlockItemIds.PINK_SAND, EBlockItemIds.SEAGRASS_SAND,
+                EBlockItemIds.LATERITE, EBlockItemIds.PEAT, EBlockItemIds.SILT, EBlockItemIds.SALT,
+                EBlockItemIds.ARID_SAND, EBlockItemIds.PINK_SAND, EBlockItemIds.SEAGRASS_SAND,
                 EBlockItemIds.CHISELED_SNOW_BRICKS
         );
         builder(BlockTags.MINEABLE_WITH_AXE)
@@ -123,6 +122,9 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.STONE_TILES, EBlockItemIds.STONE_TILE_STAIRS, EBlockItemIds.STONE_TILE_SLAB, EBlockItemIds.STONE_TILE_WALL,
                         EBlockItemIds.MOSSY_STONE_TILES, EBlockItemIds.MOSSY_STONE_TILE_STAIRS, EBlockItemIds.MOSSY_STONE_TILE_SLAB, EBlockItemIds.MOSSY_STONE_TILE_WALL,
                         EBlockItemIds.STONE_PILLAR, EBlockItemIds.CHISELED_STONE,
+                        EBlockItemIds.COBBLESTONE_BRICKS, EBlockItemIds.COBBLESTONE_BRICK_STAIRS, EBlockItemIds.COBBLESTONE_BRICK_SLAB, EBlockItemIds.COBBLESTONE_BRICK_WALL,
+                        EBlockItemIds.MOSSY_COBBLESTONE_BRICKS, EBlockItemIds.MOSSY_COBBLESTONE_BRICK_STAIRS, EBlockItemIds.MOSSY_COBBLESTONE_BRICK_SLAB, EBlockItemIds.MOSSY_COBBLESTONE_BRICK_WALL,
+                        EBlockItemIds.CRACKED_COBBLESTONE_BRICKS, EBlockItemIds.CHISELED_COBBLESTONE_BRICKS,
 
                         EBlockItemIds.DEEPSLATE_STAIRS, EBlockItemIds.DEEPSLATE_SLAB, EBlockItemIds.DEEPSLATE_WALL,
                         EBlockItemIds.DEEPSLATE_PILLAR, EBlockItemIds.CHISELED_DEEPSLATE_BRICKS,

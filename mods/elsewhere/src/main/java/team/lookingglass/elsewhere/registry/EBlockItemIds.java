@@ -43,6 +43,16 @@ public interface EBlockItemIds {
     BlockItemId MOSSY_STONE_TILE_STAIRS = register("mossy_stone_tile_stairs");
     BlockItemId MOSSY_STONE_TILE_SLAB = register("mossy_stone_tile_slab");
     BlockItemId MOSSY_STONE_TILE_WALL = register("mossy_stone_tile_wall");
+    BlockItemId COBBLESTONE_BRICKS = register("cobblestone_bricks");
+    BlockItemId COBBLESTONE_BRICK_STAIRS = register("cobblestone_brick_stairs");
+    BlockItemId COBBLESTONE_BRICK_SLAB = register("cobblestone_brick_slab");
+    BlockItemId COBBLESTONE_BRICK_WALL = register("cobblestone_brick_wall");
+    BlockItemId MOSSY_COBBLESTONE_BRICKS = register("mossy_cobblestone_bricks");
+    BlockItemId MOSSY_COBBLESTONE_BRICK_STAIRS = register("mossy_cobblestone_brick_stairs");
+    BlockItemId MOSSY_COBBLESTONE_BRICK_SLAB = register("mossy_cobblestone_brick_slab");
+    BlockItemId MOSSY_COBBLESTONE_BRICK_WALL = register("mossy_cobblestone_brick_wall");
+    BlockItemId CRACKED_COBBLESTONE_BRICKS = register("cracked_cobblestone_bricks");
+    BlockItemId CHISELED_COBBLESTONE_BRICKS = register("chiseled_cobblestone_bricks");
     BlockItemId CHISELED_STONE = register("chiseled_stone");
     BlockItemId STONE_PILLAR = register("stone_pillar");
     BlockItemId DEEPSLATE_STAIRS = register("deepslate_stairs");
@@ -89,6 +99,7 @@ public interface EBlockItemIds {
     BlockItemId DRIPSTONE_PILLAR = register("dripstone_pillar");
 
     // Sandstone
+    BlockItemId ARID_SAND = register("arid_sand");
     BlockItemId POLISHED_SANDSTONE = register("polished_sandstone");
     BlockItemId POLISHED_SANDSTONE_STAIRS = register("polished_sandstone_stairs");
     BlockItemId POLISHED_SANDSTONE_SLAB = register("polished_sandstone_slab");
@@ -359,9 +370,9 @@ public interface EBlockItemIds {
     BlockItemId ROSE = register("rose");
     BlockItemId PEBBLE = register("pebble");
     BlockItemId LATERITE = register("laterite");
-    BlockItemId RED_GRASS_BLOCK = register("red_grass_block");
-    BlockItemId SHORT_RED_GRASS = register("short_red_grass");
-    BlockItemId TALL_RED_GRASS = register("tall_red_grass");
+    BlockItemId PEAT = register("peat");
+    BlockItemId SILT = register("silt");
+    BlockItemId SALT = register("salt");
     BlockItemId RUSTY_MOSS_BLOCK = register("rusty_moss_block");
     BlockItemId RUSTY_MOSS_CARPET = register("rusty_moss_carpet");
 

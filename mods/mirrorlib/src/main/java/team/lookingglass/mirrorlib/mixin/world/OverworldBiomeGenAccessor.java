@@ -30,6 +30,11 @@ public interface OverworldBiomeGenAccessor {
     @Accessor("humidities") Climate.Parameter[] getHumidities();
     @Accessor("erosions") Climate.Parameter[] getErosions();
 
+    @Invoker("addBiomes")
+    void invokeAddBiomes(
+            Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes
+    );
+
     @Invoker("addSurfaceBiome")
     void invokeAddSurfaceBiome(
             Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes,

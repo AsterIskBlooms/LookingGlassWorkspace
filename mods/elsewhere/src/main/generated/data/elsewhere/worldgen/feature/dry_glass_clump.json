@@ -24,6 +24,6 @@
   },
   "valid_ground": {
     "type": "minecraft:matching_block_tag",
-    "tag": "elsewhere:soil"
+    "tag": "elsewhere:dry_soil"
   }
 }

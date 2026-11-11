@@ -34,6 +34,7 @@ public interface EEntities {
             EntityType.Builder.of(Werewolf::new, MobCategory.MONSTER)
                     .sized(1.2F, 2.95F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(WEREWOLF_KEY)
     );
 
@@ -42,6 +43,7 @@ public interface EEntities {
             EntityType.Builder.of(Vanguard::new, MobCategory.MONSTER)
                     .sized(0.95F, 2.15F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(VANGUARD_KEY)
     );
 
@@ -50,6 +52,7 @@ public interface EEntities {
             EntityType.Builder.of(Subslime::new, MobCategory.MONSTER)
                     .sized(0.5625F, 0.5625F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(SUBSLIME_KEY)
     );
 
@@ -58,6 +61,7 @@ public interface EEntities {
             EntityType.Builder.of(Sweeper::new, MobCategory.MONSTER)
                     .sized(0.75F, 2.4F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(SWEEPER_KEY)
     );
 
@@ -66,6 +70,7 @@ public interface EEntities {
             EntityType.Builder.of(MudGolem::new, MobCategory.MONSTER)
                     .sized(1.4F, 2.6F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(MUD_GOLEM_KEY)
     );
 
@@ -82,6 +87,7 @@ public interface EEntities {
             EntityType.Builder.of(Troll::new, MobCategory.MONSTER)
                     .sized(0.75F, 1.6F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(TROLL_KEY)
     );
 
@@ -90,6 +96,7 @@ public interface EEntities {
             EntityType.Builder.of(Gravekeeper::new, MobCategory.MONSTER)
                     .sized(0.7F, 1.8F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(GRAVEKEEPER_KEY)
     );
 
@@ -98,6 +105,7 @@ public interface EEntities {
             EntityType.Builder.of(Whistler::new, MobCategory.MONSTER)
                     .sized(0.6F, 2.4F)
                     .clientTrackingRange(8)
+                    .notInPeaceful()
                     .build(WHISTLER_KEY)
     );
 

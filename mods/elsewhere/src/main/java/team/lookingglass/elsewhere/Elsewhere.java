@@ -16,9 +16,10 @@ import team.lookingglass.elsewhere.registry.sets.ETreeGrowers;
 import team.lookingglass.elsewhere.registry.render.EParticles;
 import team.lookingglass.elsewhere.registry.tags.*;
 import team.lookingglass.elsewhere.registry.util.EBlockTransformers;
-import team.lookingglass.elsewhere.worldgen.EBiomePlacements;
 import team.lookingglass.elsewhere.worldgen.EBiomes;
+import team.lookingglass.elsewhere.worldgen.EDensityEdits;
 import team.lookingglass.elsewhere.worldgen.features.*;
+import team.lookingglass.elsewhere.worldgen.ERegions;
 import team.lookingglass.elsewhere.worldgen.rules.EMaterialRuleInjection;
 import team.lookingglass.elsewhere.worldgen.features.modifiers.EPlacementModifiers;
 import team.lookingglass.mirrorlib.world.WorldPatch;
@@ -65,6 +66,7 @@ public class Elsewhere implements ModInitializer {
 		WorldPatch.features(EFeatures::bootstrap);
 		WorldPatch.placements(EPlacements::bootstrap);
 
-		EBiomePlacements.register();
+		EDensityEdits.initialize();
+		ERegions.initialize();
 	}
 }

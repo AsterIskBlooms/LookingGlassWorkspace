@@ -95,6 +95,18 @@ public interface EBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS)
     );
 
+    Block COBBLESTONE_BRICKS = BlockRegistry.register(EBlockItemIds.COBBLESTONE_BRICKS, Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE).sound(EBlockSoundSets.STONE_TILES));
+    Block COBBLESTONE_BRICK_STAIRS = BlockRegistry.registerStair(EBlockItemIds.COBBLESTONE_BRICK_STAIRS, COBBLESTONE_BRICKS);
+    Block COBBLESTONE_BRICK_SLAB = BlockRegistry.registerSlab(EBlockItemIds.COBBLESTONE_BRICK_SLAB, COBBLESTONE_BRICKS);
+    Block COBBLESTONE_BRICK_WALL = BlockRegistry.registerWall(EBlockItemIds.COBBLESTONE_BRICK_WALL, COBBLESTONE_BRICKS);
+    Block MOSSY_COBBLESTONE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.MOSSY_COBBLESTONE_BRICKS, COBBLESTONE_BRICKS);
+    Block MOSSY_COBBLESTONE_BRICK_STAIRS = BlockRegistry.registerStair(EBlockItemIds.MOSSY_COBBLESTONE_BRICK_STAIRS, MOSSY_COBBLESTONE_BRICKS);
+    Block MOSSY_COBBLESTONE_BRICK_SLAB = BlockRegistry.registerSlab(EBlockItemIds.MOSSY_COBBLESTONE_BRICK_SLAB, MOSSY_COBBLESTONE_BRICKS);
+    Block MOSSY_COBBLESTONE_BRICK_WALL = BlockRegistry.registerWall(EBlockItemIds.MOSSY_COBBLESTONE_BRICK_WALL, MOSSY_COBBLESTONE_BRICKS);
+    Block CRACKED_COBBLESTONE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CRACKED_COBBLESTONE_BRICKS, COBBLESTONE_BRICKS);
+    Block CHISELED_COBBLESTONE_BRICKS = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_COBBLESTONE_BRICKS, COBBLESTONE_BRICKS);
+
     Block DEEPSLATE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.DEEPSLATE_STAIRS, Blocks.DEEPSLATE);
     Block DEEPSLATE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.DEEPSLATE_SLAB, Blocks.DEEPSLATE);
     Block DEEPSLATE_WALL = BlockRegistry.registerWall(EBlockItemIds.DEEPSLATE_WALL, Blocks.DEEPSLATE);
@@ -167,6 +179,9 @@ public interface EBlocks {
 
 
     // Sandstone Fills
+    Block ARID_SAND = BlockRegistry.register(EBlockItemIds.ARID_SAND, p -> new SandBlock(new ColorRGBA(14406560), p),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.SAND));
+
     Block POLISHED_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.POLISHED_SANDSTONE, Blocks.CUT_SANDSTONE);
     Block POLISHED_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_SANDSTONE_STAIRS, POLISHED_SANDSTONE);
     Block POLISHED_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_SANDSTONE_SLAB, POLISHED_SANDSTONE);
@@ -502,56 +517,33 @@ public interface EBlocks {
 
     // Hibiscus
     Block RED_HIBISCUS = BlockRegistry.register(EBlockItemIds.RED_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block ORANGE_HIBISCUS = BlockRegistry.register(EBlockItemIds.ORANGE_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block YELLOW_HIBISCUS = BlockRegistry.register(EBlockItemIds.YELLOW_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block BLUE_HIBISCUS = BlockRegistry.register(EBlockItemIds.BLUE_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block PURPLE_HIBISCUS = BlockRegistry.register(EBlockItemIds.PURPLE_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block PINK_HIBISCUS = BlockRegistry.register(EBlockItemIds.PINK_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
     Block WHITE_HIBISCUS = BlockRegistry.register(EBlockItemIds.WHITE_HIBISCUS, p -> new FlowerBlock(MobEffects.HASTE, 10.0F, p),
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
-    );
+            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ));
 
-    Block POTTED_RED_HIBISCUS = BlockRegistry.register(blockKey("potted_red_hibiscus"), p -> new FlowerPotBlock(RED_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_ORANGE_HIBISCUS = BlockRegistry.register(blockKey("potted_orange_hibiscus"), p -> new FlowerPotBlock(ORANGE_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_YELLOW_HIBISCUS = BlockRegistry.register(blockKey("potted_yellow_hibiscus"), p -> new FlowerPotBlock(YELLOW_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_BLUE_HIBISCUS = BlockRegistry.register(blockKey("potted_blue_hibiscus"), p -> new FlowerPotBlock(BLUE_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_PURPLE_HIBISCUS = BlockRegistry.register(blockKey("potted_purple_hibiscus"), p -> new FlowerPotBlock(PURPLE_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_PINK_HIBISCUS = BlockRegistry.register(blockKey("potted_pink_hibiscus"), p -> new FlowerPotBlock(PINK_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_WHITE_HIBISCUS = BlockRegistry.register(blockKey("potted_white_hibiscus"), p -> new FlowerPotBlock(WHITE_HIBISCUS, p),
-            Blocks.flowerPotProperties()
-    );
+    Block POTTED_RED_HIBISCUS = BlockRegistry.register(blockKey("potted_red_hibiscus"), p -> new FlowerPotBlock(RED_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_ORANGE_HIBISCUS = BlockRegistry.register(blockKey("potted_orange_hibiscus"), p -> new FlowerPotBlock(ORANGE_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_YELLOW_HIBISCUS = BlockRegistry.register(blockKey("potted_yellow_hibiscus"), p -> new FlowerPotBlock(YELLOW_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_BLUE_HIBISCUS = BlockRegistry.register(blockKey("potted_blue_hibiscus"), p -> new FlowerPotBlock(BLUE_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_PURPLE_HIBISCUS = BlockRegistry.register(blockKey("potted_purple_hibiscus"), p -> new FlowerPotBlock(PURPLE_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_PINK_HIBISCUS = BlockRegistry.register(blockKey("potted_pink_hibiscus"), p -> new FlowerPotBlock(PINK_HIBISCUS, p), Blocks.flowerPotProperties());
+    Block POTTED_WHITE_HIBISCUS = BlockRegistry.register(blockKey("potted_white_hibiscus"), p -> new FlowerPotBlock(WHITE_HIBISCUS, p), Blocks.flowerPotProperties());
 
     // Natural blocks
     Block BLUEBONNET = BlockRegistry.register(EBlockItemIds.BLUEBONNET, p -> new FlowerBlock(MobEffects.RESISTANCE, 5.0F, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-    Block POTTED_BLUEBONNET = BlockRegistry.register(blockKey("potted_bluebonnet"), p -> new FlowerPotBlock(BLUEBONNET, p),
-            Blocks.flowerPotProperties()
-    );
+    Block POTTED_BLUEBONNET = BlockRegistry.register(blockKey("potted_bluebonnet"), p -> new FlowerPotBlock(BLUEBONNET, p), Blocks.flowerPotProperties());
 
     Block MAGENTA_CONEFLOWER = BlockRegistry.register(EBlockItemIds.MAGENTA_CONEFLOWER, p -> new FlowerBlock(MobEffects.POISON, 3.0F, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
@@ -559,12 +551,8 @@ public interface EBlocks {
     Block YELLOW_CONEFLOWER = BlockRegistry.register(EBlockItemIds.YELLOW_CONEFLOWER, p -> new FlowerBlock(MobEffects.POISON, 3.0F, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-    Block POTTED_MAGENTA_CONEFLOWER = BlockRegistry.register(blockKey("potted_magenta_coneflower"), p -> new FlowerPotBlock(MAGENTA_CONEFLOWER, p),
-            Blocks.flowerPotProperties()
-    );
-    Block POTTED_YELLOW_CONEFLOWER = BlockRegistry.register(blockKey("potted_yellow_coneflower"), p -> new FlowerPotBlock(YELLOW_CONEFLOWER, p),
-            Blocks.flowerPotProperties()
-    );
+    Block POTTED_MAGENTA_CONEFLOWER = BlockRegistry.register(blockKey("potted_magenta_coneflower"), p -> new FlowerPotBlock(MAGENTA_CONEFLOWER, p), Blocks.flowerPotProperties());
+    Block POTTED_YELLOW_CONEFLOWER = BlockRegistry.register(blockKey("potted_yellow_coneflower"), p -> new FlowerPotBlock(YELLOW_CONEFLOWER, p), Blocks.flowerPotProperties());
 
     Block IRONWEED = BlockRegistry.register(EBlockItemIds.IRONWEED, TallFlowerBlock::new,
             BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
@@ -573,26 +561,23 @@ public interface EBlocks {
     Block ROSE = BlockRegistry.register(EBlockItemIds.ROSE, p -> new FlowerBlock(MobEffects.RESISTANCE, 5.0F, p),
             BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.GRASS).mapColor(MapColor.PLANT).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-    Block POTTED_ROSE = BlockRegistry.register(blockKey("potted_rose"), p -> new FlowerPotBlock(ROSE, p),
-            Blocks.flowerPotProperties()
-    );
+    Block POTTED_ROSE = BlockRegistry.register(blockKey("potted_rose"), p -> new FlowerPotBlock(ROSE, p), Blocks.flowerPotProperties());
 
     Block PEBBLE = BlockRegistry.register(EBlockItemIds.PEBBLE, PebbleBlock::new,
             BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instabreak().sound(BlockSoundSets.STONE).noOcclusion()
     );
 
-    Block LATERITE = BlockRegistry.register(EBlockItemIds.LATERITE, Block::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(0.5F).sound(BlockSoundSets.WART_BLOCK)
+    Block LATERITE = BlockRegistry.register(EBlockItemIds.LATERITE, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_ORANGE).strength(0.5F).sound(BlockSoundSets.WART_BLOCK)
     );
-
-    Block RED_GRASS_BLOCK = BlockRegistry.register(EBlockItemIds.RED_GRASS_BLOCK, RedGrassBlock::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).strength(0.5F).sound(BlockSoundSets.GRASS).randomTicks()
+    Block PEAT = BlockRegistry.register(EBlockItemIds.PEAT, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_BROWN).strength(0.35F).sound(BlockSoundSets.PACKED_MUD)
     );
-    Block SHORT_RED_GRASS = BlockRegistry.register(EBlockItemIds.SHORT_RED_GRASS, BushBlock::new,
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.TERRACOTTA_RED).sound(BlockSoundSets.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
+    Block SILT = BlockRegistry.register(EBlockItemIds.SILT, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.COLOR_LIGHT_GRAY).strength(0.2F).sound(BlockSoundSets.SAND)
     );
-    Block TALL_RED_GRASS = BlockRegistry.register(EBlockItemIds.TALL_RED_GRASS, DoublePlantBlock::new,
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.TERRACOTTA_RED).sound(BlockSoundSets.GRASS).offsetType(BlockBehaviour.OffsetType.XZ)
+    Block SALT = BlockRegistry.register(EBlockItemIds.SALT, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.QUARTZ).strength(1.5F).sound(BlockSoundSets.SUSPICIOUS_GRAVEL)
     );
 
 

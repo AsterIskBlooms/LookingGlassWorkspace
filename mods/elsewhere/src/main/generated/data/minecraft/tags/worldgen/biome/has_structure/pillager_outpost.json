@@ -1,9 +1,11 @@
 {
   "values": [
-    "elsewhere:lush_desert",
+    "elsewhere:snowy_tundra",
+    "elsewhere:tundra",
     "elsewhere:steppe",
-    "elsewhere:outback",
     "elsewhere:shrubland",
-    "elsewhere:tundra"
+    "elsewhere:acacia_flats",
+    "elsewhere:outback",
+    "elsewhere:lush_dunes"
   ]
 }

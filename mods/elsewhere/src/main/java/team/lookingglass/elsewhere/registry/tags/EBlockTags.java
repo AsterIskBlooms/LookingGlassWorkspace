@@ -9,6 +9,7 @@ import team.lookingglass.elsewhere.Elsewhere;
 public interface EBlockTags {
     TagKey<Block> NATURAL_STONE_BLOCKS = create("natural_stone_blocks");
     TagKey<Block> SOIL = create("soil");
+    TagKey<Block> DRY_SOIL = create("dry_soil");
     TagKey<Block> NETHER_SOIL = create("nether_soil");
 
     TagKey<Block> CINNABAR_ORE_REPLACEABLES = create("cinnabar_ore_replaceables");

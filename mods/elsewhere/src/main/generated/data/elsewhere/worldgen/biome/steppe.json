@@ -27,15 +27,6 @@
                 "min_inclusive": 2
               },
               "weight": 3
-            },
-            {
-              "type": "minecraft:armadillo",
-              "count": {
-                "type": "minecraft:uniform",
-                "max_inclusive": 4,
-                "min_inclusive": 2
-              },
-              "weight": 8
             }
           ],
           "monster": [
@@ -99,18 +90,16 @@
       },
       "modifier": "overlay"
     },
-    "minecraft:visual/water_fog_color": "#041633"
+    "minecraft:visual/water_fog_color": "#050533"
   },
   "carvers": [
     "minecraft:cave",
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.05,
+  "downfall": 0.35,
   "effects": {
-    "foliage_color": "#a38b41",
-    "grass_color": "#d6a44d",
-    "water_color": "#45adf2"
+    "water_color": "#3d57d6"
   },
   "features": [
     [
@@ -176,5 +165,5 @@
     ]
   ],
   "has_precipitation": true,
-  "temperature": 2.0
+  "temperature": 0.4
 }

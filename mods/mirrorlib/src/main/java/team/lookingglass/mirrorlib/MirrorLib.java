@@ -1,8 +1,10 @@
 package team.lookingglass.mirrorlib;
 
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.world.level.levelgen.NoiseRouterData;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import team.lookingglass.mirrorlib.world.density.DensityModifiers;
 
 public class MirrorLib implements ModInitializer {
 	public static final String MODID = "mirrorlib";
@@ -11,5 +13,6 @@ public class MirrorLib implements ModInitializer {
 
     @Override
 	public void onInitialize() {
+		DensityModifiers.initialize();
 	}
 }

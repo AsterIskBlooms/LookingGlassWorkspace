@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "elsewhere:block/tall_red_grass_bottom"
-  }
-}
