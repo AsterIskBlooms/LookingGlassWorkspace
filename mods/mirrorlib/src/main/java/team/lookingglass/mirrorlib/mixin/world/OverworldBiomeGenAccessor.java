@@ -29,6 +29,11 @@ public interface OverworldBiomeGenAccessor {
     @Accessor("temperatures") Climate.Parameter[] getTemperatures();
     @Accessor("humidities") Climate.Parameter[] getHumidities();
     @Accessor("erosions") Climate.Parameter[] getErosions();
+    @Accessor("coastContinentalness") Climate.Parameter getCoastContinentalness();
+    @Accessor("inlandContinentalness") Climate.Parameter getInlandContinentalness();
+    @Accessor("farInlandContinentalness") Climate.Parameter getFarInlandContinentalness();
+    @Accessor("deepOceanContinentalness") Climate.Parameter getDeepOceanContinentalness();
+    @Accessor("oceanContinentalness") Climate.Parameter getOceanContinentalness();
 
     @Invoker("addBiomes")
     void invokeAddBiomes(

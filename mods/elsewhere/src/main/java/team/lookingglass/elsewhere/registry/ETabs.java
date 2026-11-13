@@ -22,17 +22,18 @@ public class ETabs {
 
             output.insertAfter(Items.RED_SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE, EBlocks.ARID_SAND, EBlocks.BEACHSTONE);
 
-            output.insertAfter(Items.SHORT_GRASS,
-                    EBlocks.SHORT_MOSS_SPOROPHYTE, EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE, EBlocks.SHORT_PALE_MOSS_SPOROPHYTE
-            );
-            output.insertAfter(Items.TALL_GRASS,
-                    EBlocks.TALL_MOSS_SPOROPHYTE, EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE, EBlocks.TALL_PALE_MOSS_SPOROPHYTE
+            output.insertAfter(Items.DEAD_BUSH,
+                    EBlocks.MOSS_SPOROPHYTE, EBlocks.RUSTY_MOSS_SPOROPHYTE,
+                    EBlocks.OCHRE_MOSS_SPOROPHYTE, EBlocks.PALE_MOSS_SPOROPHYTE
             );
             output.insertAfter(Items.DRY_SHORT_GRASS, EBlocks.CAVE_WEED);
             output.insertAfter(Items.RED_MUSHROOM, EBlocks.GLEAMSHROOM);
             output.insertAfter(Items.LARGE_FERN, EBlocks.CATTAILS);
 
-            output.insertAfter(Items.MOSS_CARPET, EBlocks.RUSTY_MOSS_BLOCK, EBlocks.RUSTY_MOSS_CARPET);
+            output.insertAfter(Items.MOSS_CARPET,
+                    EBlocks.RUSTY_MOSS_BLOCK, EBlocks.RUSTY_MOSS_CARPET,
+                    EBlocks.OCHRE_MOSS_BLOCK, EBlocks.OCHRE_MOSS_CARPET
+            );
             output.insertAfter(Items.MUD, EBlocks.MOSSY_MUD, EBlocks.MUDSTONE);
 
             output.insertAfter(Items.NETHER_SPROUTS, EBlocks.SHORT_SOUL_SPROUT, EBlocks.TALL_SOUL_SPROUT, EBlocks.SOULGLASS_CLUSTER);

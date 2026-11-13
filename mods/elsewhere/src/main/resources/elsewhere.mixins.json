@@ -18,10 +18,11 @@
     "equipment.shield.ShieldBlockDelayMixin",
     "equipment.shield.ShieldCooldownMixin",
     "equipment.shield.ShieldItemMixin",
+    "interaction.AmethystClusterMixin",
     "interaction.FireChargeMixin",
     "interaction.LanternBlockMixin",
     "interaction.SoundMixin",
-    "interaction.AmethystClusterMixin",
+    "world.CaveMixin",
     "world.TreeGrowerMixin"
   ],
   "injectors": {

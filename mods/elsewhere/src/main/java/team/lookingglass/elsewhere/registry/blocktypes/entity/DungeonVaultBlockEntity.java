@@ -1,6 +1,7 @@
 package team.lookingglass.elsewhere.registry.blocktypes.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -47,7 +48,7 @@ public class DungeonVaultBlockEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag getUpdateTag(final HolderLookup.Provider registries) {
+    public CompoundTag getUpdateTag(final HolderGetter.Provider registries) {
         return Util.make(new CompoundTag(), (tag) -> tag.store("shared_data", VaultSharedData.CODEC, registries.createSerializationContext(NbtOps.INSTANCE), this.sharedData));
     }
 

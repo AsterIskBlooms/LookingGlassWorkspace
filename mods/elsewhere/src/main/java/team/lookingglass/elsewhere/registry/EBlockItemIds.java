@@ -375,14 +375,14 @@ public interface EBlockItemIds {
     BlockItemId SALT = register("salt");
     BlockItemId RUSTY_MOSS_BLOCK = register("rusty_moss_block");
     BlockItemId RUSTY_MOSS_CARPET = register("rusty_moss_carpet");
+    BlockItemId OCHRE_MOSS_BLOCK = register("ochre_moss_block");
+    BlockItemId OCHRE_MOSS_CARPET = register("ochre_moss_carpet");
 
     // Sporophytes
-    BlockItemId SHORT_MOSS_SPOROPHYTE = register("short_moss_sporophyte");
-    BlockItemId TALL_MOSS_SPOROPHYTE = register("tall_moss_sporophyte");
-    BlockItemId SHORT_RUSTY_MOSS_SPOROPHYTE = register("short_rusty_moss_sporophyte");
-    BlockItemId TALL_RUSTY_MOSS_SPOROPHYTE = register("tall_rusty_moss_sporophyte");
-    BlockItemId SHORT_PALE_MOSS_SPOROPHYTE = register("short_pale_moss_sporophyte");
-    BlockItemId TALL_PALE_MOSS_SPOROPHYTE = register("tall_pale_moss_sporophyte");
+    BlockItemId MOSS_SPOROPHYTE = register("moss_sporophyte");
+    BlockItemId RUSTY_MOSS_SPOROPHYTE = register("rusty_moss_sporophyte");
+    BlockItemId OCHRE_MOSS_SPOROPHYTE = register("ochre_moss_sporophyte");
+    BlockItemId PALE_MOSS_SPOROPHYTE = register("pale_moss_sporophyte");
     BlockItemId GILDED_BIRCH_LEAVES = register("gilded_birch_leaves");
     BlockItemId SEAGRASS_SAND = register("seagrass_sand");
 

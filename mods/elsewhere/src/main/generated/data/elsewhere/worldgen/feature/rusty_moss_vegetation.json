@@ -8,12 +8,16 @@
         "weight": 25
       },
       {
-        "data": "elsewhere:short_rusty_moss_sporophyte",
-        "weight": 50
+        "data": "minecraft:short_grass",
+        "weight": 25
       },
       {
-        "data": "elsewhere:tall_rusty_moss_sporophyte",
+        "data": "minecraft:tall_grass",
         "weight": 10
+      },
+      {
+        "data": "elsewhere:rusty_moss_sporophyte",
+        "weight": 15
       }
     ]
   }

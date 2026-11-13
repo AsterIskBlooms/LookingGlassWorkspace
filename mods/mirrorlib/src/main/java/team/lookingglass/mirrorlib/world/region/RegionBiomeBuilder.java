@@ -4,16 +4,21 @@ package team.lookingglass.mirrorlib.world.region;
 import com.mojang.datafixers.util.Pair;
 import java.util.Objects;
 import java.util.function.Consumer;
+
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.OverworldBiomeBuilder;
+import team.lookingglass.mirrorlib.MirrorLib;
 import team.lookingglass.mirrorlib.mixin.world.OverworldBiomeGenAccessor;
 
+@SuppressWarnings("unchecked")
 public final class RegionBiomeBuilder {
     private static final ThreadLocal<Integer> BUILD_DEPTH =
             ThreadLocal.withInitial(() -> 0);
-
 
     public static final class BiomeGrid {
         private final ResourceKey<Biome>[][] original;
@@ -88,9 +93,28 @@ public final class RegionBiomeBuilder {
 
             return result;
         }
+
+        /** One biome per temperature row, repeated across all humidities: { frozen, cold, normal, warm, warm }. */
+        public BiomeGrid byTemperature(ResourceKey<Biome>[] perTemperature) {
+            if (perTemperature.length != this.original.length) {
+                throw new IllegalArgumentException("Need one entry per temperature row");
+            }
+            ResourceKey<Biome>[][] grid = new ResourceKey[perTemperature.length][];
+            for (int t = 0; t < grid.length; t++) {
+                grid[t] = new ResourceKey[this.original[t].length];
+                java.util.Arrays.fill(grid[t], perTemperature[t]);
+            }
+            return this.replace(grid);
+        }
+
+        /** For 1-row grids (beaches, badlands). */
+        public BiomeGrid replaceRow(ResourceKey<Biome>[] row) {
+            if (this.original.length != 1) throw new IllegalStateException("Not a single-row grid");
+            return this.replace(new ResourceKey[][]{ row });
+        }
     }
 
-
+    public static final ResourceKey<Biome> MIDDLE = ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(MirrorLib.MODID, "middle"));
     private final BiomeGrid oceans;
     private final BiomeGrid middle;
     private final BiomeGrid middleVariant;
@@ -99,8 +123,7 @@ public final class RegionBiomeBuilder {
     private final BiomeGrid shattered;
 
     public RegionBiomeBuilder() {
-        OverworldBiomeGenAccessor defaults =
-                (OverworldBiomeGenAccessor) (Object) new OverworldBiomeBuilder();
+        OverworldBiomeGenAccessor defaults = (OverworldBiomeGenAccessor) (Object) new OverworldBiomeBuilder();
 
         this.middle = new BiomeGrid(defaults.getMiddleBiomes());
         this.middleVariant = new BiomeGrid(defaults.getMiddleBiomesVariant(), this.middle);
@@ -110,50 +133,93 @@ public final class RegionBiomeBuilder {
         this.oceans = new BiomeGrid(defaults.getOceans());
     }
 
+    // Vanilla biomes translated to grid
+    private final BiomeGrid beaches = new BiomeGrid(fillRows(Biomes.SNOWY_BEACH, Biomes.BEACH, Biomes.BEACH, Biomes.BEACH, Biomes.DESERT));
+    private final BiomeGrid badlands = new BiomeGrid(new ResourceKey[][]{row(Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS) });
+    private final BiomeGrid badlandsVariant = new BiomeGrid(new ResourceKey[][]{row(Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, null, null) }, this.badlands);
+    private final BiomeGrid rivers = new BiomeGrid(fillRows(Biomes.FROZEN_RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER, Biomes.RIVER));
+    private final BiomeGrid swamps = new BiomeGrid(fillRows(Biomes.FROZEN_RIVER, Biomes.SWAMP, Biomes.SWAMP, Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP));
     public BiomeGrid oceans() {
         return this.oceans;
     }
-
     public BiomeGrid middle() {
         return this.middle;
     }
-
     public BiomeGrid middleVariant() {
         return this.middleVariant;
     }
-
     public BiomeGrid plateau() {
         return this.plateau;
     }
-
     public BiomeGrid plateauVariant() {
         return this.plateauVariant;
     }
-
     public BiomeGrid shattered() {
         return this.shattered;
     }
+    public BiomeGrid beaches() { return this.beaches; }
+    public BiomeGrid badlands() { return this.badlands; }
+    public BiomeGrid badlandsVariant() { return this.badlandsVariant; }
+    public BiomeGrid rivers() { return this.rivers; }
+    public BiomeGrid swamps() { return this.swamps; }
 
+    @SafeVarargs
+    private static ResourceKey<Biome>[] row(ResourceKey<Biome>... keys) { return keys; }
+
+    private static ResourceKey<Biome>[][] fillRows(ResourceKey<Biome>... perTemperature) {
+        ResourceKey<Biome>[][] g = new ResourceKey[perTemperature.length][5];
+        for (int t = 0; t < g.length; t++) java.util.Arrays.fill(g[t], perTemperature[t]);
+        return g;
+    }
+
+    public ResourceKey<Biome> pickBadlands(int humidityIndex, boolean variant) {
+        return (variant ? this.badlandsVariant : this.badlands).get(0, humidityIndex);
+    }
+
+    public ResourceKey<Biome> pickBeach(int temperatureIndex, int humidityIndex) {
+        ResourceKey<Biome> beach = this.beaches.get(temperatureIndex, humidityIndex);
+        return MIDDLE.equals(beach) ? this.middle.get(temperatureIndex, humidityIndex) : beach;
+    }
+
+    @SuppressWarnings({"ConstantConditions"})
     public void addBiomes(
             Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes
     ) {
         OverworldBiomeBuilder builder = new OverworldBiomeBuilder();
-        OverworldBiomeGenAccessor accessor =
-                (OverworldBiomeGenAccessor) (Object) builder;
+        ((Region.RegionHolder) (Object) builder).mirrorlib$setRegion(this);
+        OverworldBiomeGenAccessor accessor = (OverworldBiomeGenAccessor) (Object) builder;
+
+        Climate.Parameter[] temps = accessor.getTemperatures();
+        Climate.Parameter[] hums = accessor.getHumidities();
 
         accessor.setMiddleBiomes(this.middle.values());
         accessor.setMiddleBiomesVariant(this.middleVariant.values());
         accessor.setPlateauBiomes(this.plateau.values());
         accessor.setPlateauBiomesVariant(this.plateauVariant.values());
-
         copyInto(accessor.getOceans(), this.oceans.values());
         copyInto(accessor.getShatteredBiomes(), this.shattered.values());
+
+        Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> wrapped = pair -> {
+            ResourceKey<Biome> key = pair.getSecond();
+            if (key.equals(Biomes.SWAMP)) {
+                Climate.ParameterPoint p = pair.getFirst();
+                Climate.Parameter t = new Climate.Parameter(temps[0].min(), p.temperature().max());
+                this.emitGrid(this.swamps, Pair.of(new Climate.ParameterPoint(t, p.humidity(),
+                        p.continentalness(), p.erosion(), p.depth(), p.weirdness(), p.offset()), key), temps, hums, biomes);
+            } else if (key.equals(Biomes.MANGROVE_SWAMP)) {
+                this.emitGrid(this.swamps, pair, temps, hums, biomes);
+            } else if (key.equals(Biomes.RIVER) || key.equals(Biomes.FROZEN_RIVER)) {
+                this.emitGrid(this.rivers, pair, temps, hums, biomes);
+            } else {
+                biomes.accept(pair);
+            }
+        };
 
         int previous = BUILD_DEPTH.get();
         BUILD_DEPTH.set(previous + 1);
 
         try {
-            accessor.invokeAddBiomes(biomes);
+            accessor.invokeAddBiomes(wrapped);
         } finally {
             if (previous == 0) {
                 BUILD_DEPTH.remove();
@@ -174,5 +240,52 @@ public final class RegionBiomeBuilder {
         for (int i = 0; i < destination.length; i++) {
             System.arraycopy(source[i], 0, destination[i], 0, source[i].length);
         }
+    }
+
+    private static Climate.Parameter overlap(Climate.Parameter a, Climate.Parameter b) {
+        long lo = Math.max(a.min(), b.min());
+        long hi = Math.min(a.max(), b.max());
+        if (lo > hi) return null;
+        if (lo == hi && a.min() != a.max()) return null; // only touching a band edge
+        return new Climate.Parameter(lo, hi);
+    }
+
+    private ResourceKey<Biome> cell(BiomeGrid grid, int t, int h, ResourceKey<Biome> fallback) {
+        ResourceKey<Biome> k = grid.get(t, h);
+        return k != null ? k : fallback;
+    }
+
+    private void emitGrid(BiomeGrid grid, Pair<Climate.ParameterPoint, ResourceKey<Biome>> pair,
+                          Climate.Parameter[] temps, Climate.Parameter[] hums,
+                          Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> out) {
+        Climate.ParameterPoint p = pair.getFirst();
+        boolean any = false;
+
+        for (int t = 0; t < temps.length; t++) {
+            Climate.Parameter tr = overlap(p.temperature(), temps[t]);
+            if (tr == null) continue;
+
+            int h = 0;
+            while (h < hums.length) {
+                Climate.Parameter first = overlap(p.humidity(), hums[h]);
+                if (first == null) { h++; continue; }
+
+                ResourceKey<Biome> target = cell(grid, t, h, pair.getSecond());
+                long min = first.min(), max = first.max();
+                int next = h + 1;
+                while (next < hums.length) {
+                    Climate.Parameter nr = overlap(p.humidity(), hums[next]);
+                    if (nr == null || !cell(grid, t, next, pair.getSecond()).equals(target)) break;
+                    max = nr.max();
+                    next++;
+                }
+
+                out.accept(Pair.of(new Climate.ParameterPoint(tr, new Climate.Parameter(min, max),
+                        p.continentalness(), p.erosion(), p.depth(), p.weirdness(), p.offset()), target));
+                any = true;
+                h = next;
+            }
+        }
+        if (!any) out.accept(pair);
     }
 }

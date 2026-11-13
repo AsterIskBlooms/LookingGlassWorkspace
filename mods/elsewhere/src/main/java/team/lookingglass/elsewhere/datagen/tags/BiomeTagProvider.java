@@ -24,6 +24,7 @@ public class BiomeTagProvider extends FabricTagsProvider<Biome> {
         builder(BiomeTags.IS_BEACH).add(EBiomes.FROZEN_BEACH, EBiomes.COLD_BEACH, EBiomes.TIDEPOOLS);
         builder(BiomeTags.IS_RIVER).add(EBiomes.COLD_RIVER, EBiomes.WARM_RIVER);
         builder(BiomeTags.IS_CAVE).add(EBiomes.CAVES, EBiomes.CRYSTAL_CAVERNS, EBiomes.ARID_CAVES, EBiomes.VOLCANIC_DEPTHS);
+        builder(EBiomeTags.HAS_TRIAL_ROOM).addTag(BiomeTags.IS_CAVE); // legacy, but still referenced somewhere
 
         builder(BiomeTags.IS_TAIGA).add(EBiomes.PINE_BARRENS);
         builder(BiomeTags.IS_JUNGLE).add(EBiomes.RAINFOREST, EBiomes.ROCKY_JUNGLE, EBiomes.TROPICAL_BASIN);
@@ -79,14 +80,15 @@ public class BiomeTagProvider extends FabricTagsProvider<Biome> {
         builder(BiomeTags.HAS_ABANDONED_CAMP_SAVANNA).add(EBiomes.ACACIA_FLATS, EBiomes.OUTBACK);
         builder(BiomeTags.HAS_ABANDONED_CAMP_SWAMP).add(EBiomes.MARSH);
 
-        // Overworld (every land biome; beaches, rivers and caves come in through their tags)
+        // Overworld
         builder(BiomeTags.IS_OVERWORLD)
                 .addTag(BiomeTags.IS_BEACH).addTag(BiomeTags.IS_RIVER).addTag(BiomeTags.IS_CAVE)
-                .add(EBiomes.GLACIAL_VALLEY, EBiomes.SNOWY_TUNDRA)
-                .add(EBiomes.TUNDRA, EBiomes.STEPPE, EBiomes.PINE_BARRENS, EBiomes.RAINFOREST)
-                .add(EBiomes.CHERRY_FIELDS, EBiomes.OLD_GROWTH_FOREST, EBiomes.OAK_WOODLAND)
-                .add(EBiomes.SHRUBLAND, EBiomes.CEDAR_FOREST, EBiomes.ROCKY_JUNGLE, EBiomes.TROPICAL_BASIN)
-                .add(EBiomes.ACACIA_FLATS, EBiomes.OUTBACK, EBiomes.DUNES, EBiomes.LUSH_DUNES, EBiomes.CLOUD_FOREST)
-                .add(EBiomes.BOG, EBiomes.MARSH);
+                .add(EBiomes.GLACIAL_VALLEY, EBiomes.SNOWY_TUNDRA,
+                        EBiomes.TUNDRA, EBiomes.STEPPE, EBiomes.PINE_BARRENS, EBiomes.RAINFOREST,
+                        EBiomes.CHERRY_FIELDS, EBiomes.OLD_GROWTH_FOREST, EBiomes.OAK_WOODLAND,
+                        EBiomes.SHRUBLAND, EBiomes.CEDAR_FOREST, EBiomes.ROCKY_JUNGLE, EBiomes.TROPICAL_BASIN,
+                        EBiomes.ACACIA_FLATS, EBiomes.OUTBACK, EBiomes.DUNES, EBiomes.LUSH_DUNES, EBiomes.CLOUD_FOREST,
+                        EBiomes.BOG, EBiomes.MARSH
+                );
     }
 }

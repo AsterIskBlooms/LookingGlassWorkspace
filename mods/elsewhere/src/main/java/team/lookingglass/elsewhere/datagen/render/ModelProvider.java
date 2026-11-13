@@ -533,15 +533,12 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(EBlocks.GILDED_BIRCH_LEAVES);
 
         gen.createFullAndCarpetBlocks(EBlocks.RUSTY_MOSS_BLOCK, EBlocks.RUSTY_MOSS_CARPET);
+        gen.createFullAndCarpetBlocks(EBlocks.OCHRE_MOSS_BLOCK, EBlocks.OCHRE_MOSS_CARPET);
 
-        gen.createCrossBlockWithDefaultItem(EBlocks.SHORT_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
-        gen.createDoublePlantWithDefaultItem(EBlocks.TALL_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
-
-        gen.createCrossBlockWithDefaultItem(EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
-        gen.createDoublePlantWithDefaultItem(EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
-
-        gen.createCrossBlockWithDefaultItem(EBlocks.SHORT_PALE_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.EMISSIVE_NOT_TINTED);
-        mGen.createEmissiveDoublePlantWithDefaultItem(EBlocks.TALL_PALE_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.EMISSIVE_NOT_TINTED);
+        gen.createCrossBlockWithDefaultItem(EBlocks.MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
+        gen.createCrossBlockWithDefaultItem(EBlocks.RUSTY_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
+        gen.createCrossBlockWithDefaultItem(EBlocks.OCHRE_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.NOT_TINTED);
+        gen.createCrossBlockWithDefaultItem(EBlocks.PALE_MOSS_SPOROPHYTE, BlockModelGenerators.PlantType.EMISSIVE_NOT_TINTED);
 
         gen.woodProvider(EBlocks.AZALEA_LOG).logWithHorizontal(EBlocks.AZALEA_LOG).wood(EBlocks.AZALEA_WOOD);
         gen.woodProvider(EBlocks.STRIPPED_AZALEA_LOG).logWithHorizontal(EBlocks.STRIPPED_AZALEA_LOG).wood(EBlocks.STRIPPED_AZALEA_WOOD);

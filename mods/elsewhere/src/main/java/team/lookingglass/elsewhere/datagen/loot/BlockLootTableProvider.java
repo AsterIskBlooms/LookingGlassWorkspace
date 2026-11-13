@@ -415,15 +415,12 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
 
         dropSelf(EBlocks.RUSTY_MOSS_BLOCK);
         dropSelf(EBlocks.RUSTY_MOSS_CARPET);
+        dropSelf(EBlocks.OCHRE_MOSS_BLOCK);
+        dropSelf(EBlocks.OCHRE_MOSS_CARPET);
 
-        add(EBlocks.SHORT_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.SHORT_MOSS_SPOROPHYTE));
-        add(EBlocks.TALL_MOSS_SPOROPHYTE, createSegmentedBlockDrops(EBlocks.TALL_MOSS_SPOROPHYTE));
-
-        add(EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.SHORT_RUSTY_MOSS_SPOROPHYTE));
-        add(EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE, createSegmentedBlockDrops(EBlocks.TALL_RUSTY_MOSS_SPOROPHYTE));
-
-        add(EBlocks.SHORT_PALE_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.SHORT_PALE_MOSS_SPOROPHYTE));
-        add(EBlocks.TALL_PALE_MOSS_SPOROPHYTE, createSegmentedBlockDrops(EBlocks.TALL_PALE_MOSS_SPOROPHYTE));
+        add(EBlocks.MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.MOSS_SPOROPHYTE));
+        add(EBlocks.RUSTY_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.RUSTY_MOSS_SPOROPHYTE));
+        add(EBlocks.PALE_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.PALE_MOSS_SPOROPHYTE));
 
         dropSelf(EBlocks.AZALEA_LOG);
         dropSelf(EBlocks.STRIPPED_AZALEA_LOG);

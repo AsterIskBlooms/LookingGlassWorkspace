@@ -16,17 +16,16 @@
         "weight": 25
       },
       {
-        "data": "elsewhere:short_moss_sporophyte",
+        "data": "minecraft:short_grass",
         "weight": 50
       },
       {
-        "data": {
-          "id": "elsewhere:tall_moss_sporophyte",
-          "properties": {
-            "half": "lower"
-          }
-        },
+        "data": "minecraft:tall_grass",
         "weight": 10
+      },
+      {
+        "data": "elsewhere:moss_sporophyte",
+        "weight": 15
       }
     ]
   }

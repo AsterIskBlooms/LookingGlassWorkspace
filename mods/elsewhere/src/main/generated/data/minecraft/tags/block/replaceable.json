@@ -17,11 +17,9 @@
     "elsewhere:cattails",
     "elsewhere:cave_weed",
     "elsewhere:gleamshroom",
-    "elsewhere:short_moss_sporophyte",
-    "elsewhere:tall_moss_sporophyte",
-    "elsewhere:short_rusty_moss_sporophyte",
-    "elsewhere:tall_rusty_moss_sporophyte",
-    "elsewhere:short_pale_moss_sporophyte",
-    "elsewhere:tall_pale_moss_sporophyte"
+    "elsewhere:moss_sporophyte",
+    "elsewhere:rusty_moss_sporophyte",
+    "elsewhere:ochre_moss_sporophyte",
+    "elsewhere:pale_moss_sporophyte"
   ]
 }

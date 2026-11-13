@@ -1,5 +1,5 @@
-// 26.4-snapshot-7	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:worldgen/biome
-a438c3523b28cc2043b791a74838a96895e2390d data/elsewhere/tags/worldgen/biome/has_trial_room.json
+// 26.4-snapshot-8	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:worldgen/biome
+f4f475ec1ff00b06ff7cadfc8ec0d00372ff8166 data/elsewhere/tags/worldgen/biome/has_trial_room.json
 d69d458fb2d711dbce7787eb1485725df08e10b5 data/minecraft/tags/worldgen/biome/allows_surface_slime_spawns.json
 ff6206eb6a0405e1cc26d7654df5ca9851ab4413 data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_cherry_grove.json
 6eddc1066fce3af02b24d0b4645bb06283bf148c data/minecraft/tags/worldgen/biome/has_structure/abandoned_camp_forest.json

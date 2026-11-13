@@ -8,12 +8,8 @@
         "weight": 18
       },
       {
-        "data": "elsewhere:short_moss_sporophyte",
+        "data": "elsewhere:moss_sporophyte",
         "weight": 40
-      },
-      {
-        "data": "elsewhere:tall_moss_sporophyte",
-        "weight": 10
       }
     ]
   }

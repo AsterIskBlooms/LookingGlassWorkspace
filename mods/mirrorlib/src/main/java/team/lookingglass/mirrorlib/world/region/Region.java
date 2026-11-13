@@ -15,4 +15,8 @@ public final class Region {
     public static ResourceKey<Region> key(String namespace, String path) {
         return ResourceKey.create(REGISTRY, Identifier.fromNamespaceAndPath(namespace, path));
     }
+
+    public interface RegionHolder {
+        void mirrorlib$setRegion(RegionBiomeBuilder region);
+    }
 }

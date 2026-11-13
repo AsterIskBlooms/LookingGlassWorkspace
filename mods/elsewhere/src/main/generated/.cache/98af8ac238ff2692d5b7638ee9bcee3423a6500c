@@ -1,4 +1,4 @@
-// 26.4-snapshot-7	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:item
+// 26.4-snapshot-8	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:item
 85a6beb11f0c71fb3406098fe7b4aae4e4dd70d3 data/elsewhere/tags/item/azalea_logs.json
 79256687af643dfc35a6f3672813fb32dd794324 data/elsewhere/tags/item/bamboo_stems.json
 ba90f2e11812eba06c4e0e419d6e1074c67147e4 data/elsewhere/tags/item/boards.json
@@ -45,7 +45,7 @@ e04698231d5a8098234f5258c7fe090b06895081 data/minecraft/tags/item/hanging_signs.
 85931cbda8cb89db8ef353079306b33074107bbf data/minecraft/tags/item/leg_armor.json
 10162e322f2e609dbcaf33ebea1cf5873ad428a2 data/minecraft/tags/item/logs_that_burn.json
 2c4168d9c8f036c8deb0f3a85f9f6cb0010b6874 data/minecraft/tags/item/meat.json
-3d7e98972d62567721ebbd097dfb22bc186b8010 data/minecraft/tags/item/moss_blocks.json
+0091ff4f1ecdbf3b401d1f6af78ebeef882b24d9 data/minecraft/tags/item/moss_blocks.json
 45769fe110e5befa1801beb62684e057d867b66d data/minecraft/tags/item/mud.json
 925f8b9432b8e2440cfff55c36b68c96574e2677 data/minecraft/tags/item/ocelot_food.json
 b97219a7d91699bbc848783d67be10664f179215 data/minecraft/tags/item/pickaxes.json
@@ -58,6 +58,7 @@ bdde8485a39f0e2eba940dfa6639a068206bc983 data/minecraft/tags/item/slabs.json
 986a182685988a76efcddd35543a02f07597e1e5 data/minecraft/tags/item/spears.json
 2ff1f453ea8f9f45ca128ea4d9f27e4f32b674b3 data/minecraft/tags/item/stairs.json
 9e0e3d3876b9f5285a8e1dc674c0d27062c449ea data/minecraft/tags/item/sulfur_cube_archetype/bouncy.json
+43595d9fa9d37e49d78a8eb4c204d38e72e1637a data/minecraft/tags/item/sulfur_cube_archetype/fast_flat.json
 889cb082044a3767b0e7db538f18e1ee7ad5f3f3 data/minecraft/tags/item/sulfur_cube_archetype/fast_sliding.json
 7a5c7d4504650f366c9fc0d7e3bc1cb8411e6b29 data/minecraft/tags/item/sulfur_cube_archetype/regular.json
 6f1dcc369c0a292e4bdbb25a83d1a4add68123c0 data/minecraft/tags/item/sulfur_cube_archetype/slow_bouncy.json

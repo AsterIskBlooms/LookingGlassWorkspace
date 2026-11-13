@@ -27,7 +27,7 @@ public class BlockItemTagProvider extends BlockItemTagsProvider {
         );
         tag(BlockItemTags.MUD).add(BlockItemIds.MUD, EBlockItemIds.MOSSY_MUD);
         tag(BlockItemTags.SAND).add(EBlockItemIds.PINK_SAND, EBlockItemIds.ARID_SAND, EBlockItemIds.SEAGRASS_SAND);
-        tag(BlockItemTags.MOSS_BLOCKS).add(EBlockItemIds.RUSTY_MOSS_BLOCK, EBlockItemIds.MOSSY_MUD);
+        tag(BlockItemTags.MOSS_BLOCKS).add(EBlockItemIds.RUSTY_MOSS_BLOCK, EBlockItemIds.OCHRE_MOSS_BLOCK, EBlockItemIds.MOSSY_MUD);
         tag(BlockItemTags.LEAVES).add(
                 EBlockItemIds.CEDAR_LEAVES, EBlockItemIds.MAHOGANY_LEAVES, EBlockItemIds.PINE_LEAVES,
                 EBlockItemIds.GILDED_BIRCH_LEAVES

@@ -64,9 +64,8 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 EBlockItemIds.MAGENTA_CONEFLOWER, EBlockItemIds.YELLOW_CONEFLOWER, EBlockItemIds.IRONWEED,
                 EBlockItemIds.CATTAILS,
                 EBlockItemIds.CAVE_WEED, EBlockItemIds.GLEAMSHROOM,
-                EBlockItemIds.SHORT_MOSS_SPOROPHYTE, EBlockItemIds.TALL_MOSS_SPOROPHYTE,
-                EBlockItemIds.SHORT_RUSTY_MOSS_SPOROPHYTE, EBlockItemIds.TALL_RUSTY_MOSS_SPOROPHYTE,
-                EBlockItemIds.SHORT_PALE_MOSS_SPOROPHYTE, EBlockItemIds.TALL_PALE_MOSS_SPOROPHYTE
+                EBlockItemIds.MOSS_SPOROPHYTE, EBlockItemIds.RUSTY_MOSS_SPOROPHYTE,
+                EBlockItemIds.OCHRE_MOSS_SPOROPHYTE, EBlockItemIds.PALE_MOSS_SPOROPHYTE
         );
 
         // Wall Signs (Itemless)

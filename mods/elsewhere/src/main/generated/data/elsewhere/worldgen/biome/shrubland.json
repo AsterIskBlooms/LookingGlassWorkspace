@@ -13,6 +13,26 @@
           ],
           "creature": [
             {
+              "type": "minecraft:sheep",
+              "count": 4,
+              "weight": 12
+            },
+            {
+              "type": "minecraft:pig",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:chicken",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:cow",
+              "count": 4,
+              "weight": 8
+            },
+            {
               "type": "minecraft:horse",
               "count": {
                 "type": "minecraft:uniform",
@@ -22,13 +42,13 @@
               "weight": 3
             },
             {
-              "type": "minecraft:armadillo",
+              "type": "minecraft:rabbit",
               "count": {
                 "type": "minecraft:uniform",
-                "max_inclusive": 4,
+                "max_inclusive": 3,
                 "min_inclusive": 2
               },
-              "weight": 8
+              "weight": 6
             }
           ],
           "monster": [
@@ -92,16 +112,19 @@
       },
       "modifier": "overlay"
     },
-    "minecraft:visual/water_fog_color": "#041633"
+    "minecraft:visual/sky_color": "#73aaf8",
+    "minecraft:visual/water_fog_color": "#050533"
   },
   "carvers": [
     "minecraft:cave",
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.15,
+  "downfall": 0.35,
   "effects": {
-    "water_color": "#45adf2"
+    "foliage_color": "#8a9f4f",
+    "grass_color": "#a0b45e",
+    "water_color": "#3f76e4"
   },
   "features": [
     [],
@@ -142,7 +165,6 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
@@ -154,18 +176,16 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:flower_warm",
-      "minecraft:patch_grass_savanna",
-      "minecraft:patch_sugar_cane_desert",
-      "minecraft:patch_pumpkin",
-      "elsewhere:desert_short_cactus",
-      "elsewhere:oak_shrubs",
-      "elsewhere:cedar_trees_sparse"
+      "elsewhere:shrubland_shrubs",
+      "minecraft:patch_bush",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_berry_rare"
     ],
     [
       "minecraft:freeze_top_layer"
     ]
   ],
   "has_precipitation": true,
-  "temperature": 1.8
+  "temperature": 0.9
 }

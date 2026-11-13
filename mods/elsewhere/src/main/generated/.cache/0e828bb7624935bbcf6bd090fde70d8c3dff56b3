@@ -1,4 +1,4 @@
-// 26.4-snapshot-7	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
+// 26.4-snapshot-8	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:block
 8673e2653fcd324a4c803eb5c338996af05f4d38 data/elsewhere/tags/block/amethyst_spire_replaceable.json
 85a6beb11f0c71fb3406098fe7b4aae4e4dd70d3 data/elsewhere/tags/block/azalea_logs.json
 79256687af643dfc35a6f3672813fb32dd794324 data/elsewhere/tags/block/bamboo_stems.json
@@ -51,7 +51,7 @@ f9c225f54fd18649c89df5dfba6bd070cc3afe83 data/minecraft/tags/block/incorrect_for
 f0101b24fba4f2b4d8f5a6f3e8287f133a6a7d15 data/minecraft/tags/block/mineable/axe.json
 e9bade9ba3df4644bb7a1d6ca70526bece77f69c data/minecraft/tags/block/mineable/pickaxe.json
 d0f3c74a96c5359b6669e62d4737e41c023a4a1b data/minecraft/tags/block/mineable/shovel.json
-3d7e98972d62567721ebbd097dfb22bc186b8010 data/minecraft/tags/block/moss_blocks.json
+0091ff4f1ecdbf3b401d1f6af78ebeef882b24d9 data/minecraft/tags/block/moss_blocks.json
 29e4272e09de071bc62fd6b5ae878daf25aa0652 data/minecraft/tags/block/moss_replaceable.json
 45769fe110e5befa1801beb62684e057d867b66d data/minecraft/tags/block/mud.json
 de7df0368aed4423ad766829f8f3c5e2f0bf9e9e data/minecraft/tags/block/needs_diamond_tool.json
@@ -59,7 +59,7 @@ de7df0368aed4423ad766829f8f3c5e2f0bf9e9e data/minecraft/tags/block/needs_diamond
 5307fde67733efac1f0f34fb8d341f898eee3cb2 data/minecraft/tags/block/needs_stone_tool.json
 a0fc52ee862d0a67540a9ae925d06cbbad90c0a7 data/minecraft/tags/block/overworld_natural_logs.json
 26b3b7411cbcd12c756c109b5d8b1b317dbee817 data/minecraft/tags/block/planks.json
-6337336443877e51f0de3cf8e62c722d3d6f9ff9 data/minecraft/tags/block/replaceable.json
+3e1001ec1ee814771453b07bd41e53b3c1b9c2a2 data/minecraft/tags/block/replaceable.json
 85976fa7ff6d830c9ee83d4612d4ff43a64d1869 data/minecraft/tags/block/sand.json
 bdde8485a39f0e2eba940dfa6639a068206bc983 data/minecraft/tags/block/slabs.json
 2a6d0ef55b9671c362206dea53a3a32ebbf17842 data/minecraft/tags/block/small_flowers.json

@@ -127,6 +127,7 @@
       },
       "modifier": "overlay"
     },
+    "minecraft:visual/sky_color": "#d2dce6",
     "minecraft:visual/water_fog_color": "#050533"
   },
   "carvers": [
@@ -136,7 +137,7 @@
   ],
   "downfall": 0.55,
   "effects": {
-    "grass_color": "#a9b564",
+    "grass_color": "#e3dc7b",
     "water_color": "#3d57d6"
   },
   "features": [
@@ -194,6 +195,7 @@
     [
       "minecraft:glow_lichen",
       "elsewhere:trees_tundra",
+      "elsewhere:ochre_moss_patch",
       "elsewhere:tundra_rusty_moss_patch",
       "minecraft:patch_bush",
       "minecraft:patch_large_fern",

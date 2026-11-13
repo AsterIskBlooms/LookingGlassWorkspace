@@ -147,6 +147,10 @@ public class ItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 EBlockItemIds.SOULSTEEL_BLOCK, EBlockItemIds.ELECTRUM_BLOCK, EBlockItemIds.URANIUM_BLOCK
         );
 
+        builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_FLAT).add(
+                EBlockItemIds.RUSTY_MOSS_BLOCK, EBlockItemIds.OCHRE_MOSS_BLOCK
+        );
+
         builder(ItemTags.SULFUR_CUBE_ARCHETYPE_FAST_SLIDING).add(
                 EBlockItemIds.CHISELED_PACKED_ICE_BRICKS, EBlockItemIds.CHISELED_SNOW_BRICKS
         );

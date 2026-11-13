@@ -457,16 +457,11 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("block.elsewhere.rose", "Rose");
         translationBuilder.add("block.elsewhere.cattails", "Cattails");
 
-        translationBuilder.add("block.elsewhere.cave_weed", "CaveModifier Weed");
+        translationBuilder.add("block.elsewhere.cave_weed", "Cave Weed");
         translationBuilder.add("block.elsewhere.gleamshroom", "Gleamshroom");
 
         translationBuilder.add("block.elsewhere.arid_dirt", "Arid Dirt");
         translationBuilder.add("block.elsewhere.arid_grass_block", "Arid Grass Block");
-
-        translationBuilder.add("block.elsewhere.red_grass_block", "Red Grass Block");
-        translationBuilder.add("block.elsewhere.short_red_grass", "Short Red Grass");
-        translationBuilder.add("block.elsewhere.tall_red_grass", "Tall Red Grass");
-        translationBuilder.add("block.elsewhere.red_shrub", "Red Shrub");
 
         translationBuilder.add("block.elsewhere.gilded_birch_leaves", "Gilded Birch Leaves");
 
@@ -624,15 +619,13 @@ public class LangProviderEN extends FabricLanguageProvider {
 
         translationBuilder.add("block.elsewhere.rusty_moss_block", "Rusty Moss Block");
         translationBuilder.add("block.elsewhere.rusty_moss_carpet", "Rusty Moss Carpet");
+        translationBuilder.add("block.elsewhere.ochre_moss_block", "Ochre Moss Block");
+        translationBuilder.add("block.elsewhere.ochre_moss_carpet", "Ochre Moss Carpet");
 
-        translationBuilder.add("block.elsewhere.short_moss_sporophyte", "Short Moss Sporophyte");
-        translationBuilder.add("block.elsewhere.tall_moss_sporophyte", "Tall Moss Sporophyte");
-
-        translationBuilder.add("block.elsewhere.short_rusty_moss_sporophyte", "Short Rusty Moss Sporophyte");
-        translationBuilder.add("block.elsewhere.tall_rusty_moss_sporophyte", "Tall Rusty Moss Sporophyte");
-
-        translationBuilder.add("block.elsewhere.short_pale_moss_sporophyte", "Short Pale Moss Sporophyte");
-        translationBuilder.add("block.elsewhere.tall_pale_moss_sporophyte", "Tall Pale Moss Sporophyte");
+        translationBuilder.add("block.elsewhere.moss_sporophyte", "Moss Sporophyte");
+        translationBuilder.add("block.elsewhere.rusty_moss_sporophyte", "Rusty Moss Sporophyte");
+        translationBuilder.add("block.elsewhere.ochre_moss_sporophyte", "Ochre Moss Sporophyte");
+        translationBuilder.add("block.elsewhere.pale_moss_sporophyte", "Pale Moss Sporophyte");
 
         translationBuilder.add("item.elsewhere.diamond_nugget", "Diamond Nugget");
         translationBuilder.add("item.elsewhere.emerald_nugget", "Emerald Nugget");
@@ -946,7 +939,7 @@ public class LangProviderEN extends FabricLanguageProvider {
 
 
         // Tags
-        translationBuilder.add("tag.elsewhere.is_cave", "Is CaveModifier");
+        translationBuilder.add("tag.elsewhere.is_cave", "Is Cave");
 
         translationBuilder.add("tag.elsewhere.mosaics", "Mosaics");
         translationBuilder.add("tag.elsewhere.mosaic_stairs", "Mosaic Stairs");
@@ -1023,12 +1016,22 @@ public class LangProviderEN extends FabricLanguageProvider {
         translationBuilder.add("biome.elsewhere.steppe", "Steppe");
         translationBuilder.add("biome.elsewhere.pine_barrens", "Pine Barrens");
         translationBuilder.add("biome.elsewhere.rainforest", "Rainforest");
+        translationBuilder.add("biome.elsewhere.alpine_plains", "Alpine Plains");
+        translationBuilder.add("biome.elsewhere.alpine_grove", "Alpine Grove");
+        translationBuilder.add("biome.elsewhere.fir_thicket", "Fir Thicket");
+        translationBuilder.add("biome.elsewhere.highlands", "Highlands");
+        translationBuilder.add("biome.elsewhere.howling_peaks", "Howling Peaks");
+        translationBuilder.add("biome.elsewhere.cold_desert", "Cold Desert");
 
         translationBuilder.add("biome.elsewhere.cherry_fields", "Cherry Fields");
         translationBuilder.add("biome.elsewhere.old_growth_forest", "Old Growth Forest");
         translationBuilder.add("biome.elsewhere.oak_woodland", "Oak Woodland");
-
+        translationBuilder.add("biome.elsewhere.prairie", "Prairie");
         translationBuilder.add("biome.elsewhere.shrubland", "Shrubland");
+        translationBuilder.add("biome.elsewhere.dappled_clearing", "Dappled Clearing");
+
+        translationBuilder.add("biome.elsewhere.arid_shrubland", "Arid Shrubland");
+        translationBuilder.add("biome.elsewhere.dryland", "Dryland");
         translationBuilder.add("biome.elsewhere.cedar_forest", "Cedar Forest");
         translationBuilder.add("biome.elsewhere.rocky_jungle", "Rocky Jungle");
         translationBuilder.add("biome.elsewhere.tropical_basin", "Tropical Basin");

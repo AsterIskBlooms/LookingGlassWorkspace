@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.SharedConstants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -92,7 +93,7 @@ public class DungeonSpawnerBlockEntity extends BlockEntity implements TrialSpawn
     }
 
     @Override
-    public CompoundTag getUpdateTag(final HolderLookup.Provider registries) {
+    public CompoundTag getUpdateTag(final HolderGetter.Provider registries) {
         return this.trialSpawner.getStateData().getUpdateTag(this.getBlockState().getValue(BlockStateProperties.TRIAL_SPAWNER_STATE));
     }
 

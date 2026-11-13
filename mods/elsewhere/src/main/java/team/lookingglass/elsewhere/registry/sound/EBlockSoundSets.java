@@ -37,7 +37,7 @@ public interface EBlockSoundSets {
         context.register(SHALE_TILES, new BlockSoundSet(1F, 1.2F, ESounds.SHALE_BRICKS));
 
         context.register(CACTUS, new BlockSoundSet(0.2F, 1F, ESounds.CACTUS));
-        context.register(ROCKWEED_BASALT, new BlockSoundSet(1F, 1F, ESounds.ROCKWEED_BASALT));
+        context.register(ROCKWEED_BASALT, new BlockSoundSet(0.8F, 1F, ESounds.ROCKWEED_BASALT));
         context.register(SOUL_STONE, new BlockSoundSet(1F, 1F, ESounds.SOUL_STONE));
 
         context.register(MOSSY_MUD, new BlockSoundSet(1F, 1F, SoundEvents.MUD

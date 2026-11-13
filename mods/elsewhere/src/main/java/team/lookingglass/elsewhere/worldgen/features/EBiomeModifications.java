@@ -21,25 +21,9 @@ import java.util.function.Predicate;
 
 public class EBiomeModifications {
     public static void initialize() {
-        List<ResourceKey<Biome>> forestRockBiomes = List.of(
-                Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.WINDSWEPT_FOREST, Biomes.DARK_FOREST,
-                Biomes.BIRCH_FOREST, Biomes.GROVE, Biomes.OLD_GROWTH_BIRCH_FOREST,
-                Biomes.JUNGLE, Biomes.BAMBOO_JUNGLE,
-                Biomes.TAIGA, Biomes.SNOWY_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA,
-                EBiomes.CEDAR_FOREST, Biomes.DAPPLED_FOREST
-        );
-        List<ResourceKey<Biome>> meadowRockBiomes = List.of(
-                Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS, Biomes.MEADOW, EBiomes.SHRUBLAND,
-                Biomes.SPARSE_JUNGLE, EBiomes.SHRUBLAND, EBiomes.STEPPE
-        );
-
         // Basic Features
         BiomeModifications.addFeature(ctx -> ctx.hasTag(BiomeTags.IS_OVERWORLD) && !ctx.hasTag(BiomeTags.IS_OCEAN),
                 GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.PEBBLE);
-        BiomeModifications.addFeature(ctx -> forestRockBiomes.contains(ctx.getBiomeKey()),
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.FOREST_ROCK_SPARSE);
-        BiomeModifications.addFeature(ctx -> meadowRockBiomes.contains(ctx.getBiomeKey()),
-                GenerationStep.Decoration.LOCAL_MODIFICATIONS, EPlacements.MEADOW_ROCK);
 
         // Ores
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Decoration.UNDERGROUND_ORES, EPlacements.ORE_TIN);
@@ -133,7 +117,7 @@ public class EBiomeModifications {
 
         // Dappled Forest
         BiomeModifications.addFeature(ctx -> ctx.getBiomeKey() == Biomes.DAPPLED_FOREST,
-                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.RUSTY_MOSS_PATCH);
+                GenerationStep.Decoration.VEGETAL_DECORATION, EPlacements.DAPPLED_OCHRE_MOSS_PATCH);
 
         // Taigas
         List<ResourceKey<Biome>> taigas = List.of(Biomes.TAIGA, Biomes.SNOWY_TAIGA);

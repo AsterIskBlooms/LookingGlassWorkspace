@@ -577,7 +577,7 @@ public interface EBlocks {
             .mapColor(MapColor.COLOR_LIGHT_GRAY).strength(0.2F).sound(BlockSoundSets.SAND)
     );
     Block SALT = BlockRegistry.register(EBlockItemIds.SALT, Block::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.QUARTZ).strength(1.5F).sound(BlockSoundSets.SUSPICIOUS_GRAVEL)
+            .mapColor(MapColor.QUARTZ).strength(1.5F).sound(BlockSoundSets.ROOTED_DIRT)
     );
 
 
@@ -591,26 +591,29 @@ public interface EBlocks {
             BlockBehaviour.Properties.ofFullCopy(RUSTY_MOSS_BLOCK).sound(BlockSoundSets.MOSS_CARPET)
     );
 
+    Block OCHRE_MOSS_BLOCK = BlockRegistry.register(EBlockItemIds.OCHRE_MOSS_BLOCK, p -> new BonemealableFeaturePlacerBlock(EFeatures.OCHRE_MOSS_PATCH_BONEMEAL, p),
+            BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.1F).sound(BlockSoundSets.MOSS)
+    );
+    Block OCHRE_MOSS_CARPET = BlockRegistry.register(EBlockItemIds.OCHRE_MOSS_CARPET, CarpetBlock::new,
+            BlockBehaviour.Properties.ofFullCopy(OCHRE_MOSS_BLOCK).sound(BlockSoundSets.MOSS_CARPET)
+    );
+
     // Sporophytes
-    Block SHORT_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.SHORT_MOSS_SPOROPHYTE, BushBlock::new,
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.PLANT).sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ)
+    Block MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.MOSS_SPOROPHYTE, BushBlock::new, BlockBehaviour.Properties.of()
+            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.PLANT)
+            .sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-    Block TALL_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.TALL_MOSS_SPOROPHYTE, DoublePlantBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(SHORT_MOSS_SPOROPHYTE)
+    Block RUSTY_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.RUSTY_MOSS_SPOROPHYTE, BushBlock::new, BlockBehaviour.Properties.of()
+            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.COLOR_ORANGE)
+            .sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-
-    Block SHORT_RUSTY_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.SHORT_RUSTY_MOSS_SPOROPHYTE, BushBlock::new,
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.COLOR_ORANGE).sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ)
+    Block OCHRE_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.OCHRE_MOSS_SPOROPHYTE, BushBlock::new, BlockBehaviour.Properties.of()
+            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.COLOR_YELLOW)
+            .sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ)
     );
-    Block TALL_RUSTY_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.TALL_RUSTY_MOSS_SPOROPHYTE, DoublePlantBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(SHORT_RUSTY_MOSS_SPOROPHYTE)
-    );
-
-    Block SHORT_PALE_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.SHORT_PALE_MOSS_SPOROPHYTE, BushBlock::new,
-            BlockBehaviour.Properties.of().noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.COLOR_LIGHT_GRAY).sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(_ -> 5)
-    );
-    Block TALL_PALE_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.TALL_PALE_MOSS_SPOROPHYTE, DoublePlantBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(SHORT_PALE_MOSS_SPOROPHYTE)
+    Block PALE_MOSS_SPOROPHYTE = BlockRegistry.register(EBlockItemIds.PALE_MOSS_SPOROPHYTE, BushBlock::new, BlockBehaviour.Properties.of()
+            .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).mapColor(MapColor.COLOR_LIGHT_GRAY)
+            .sound(BlockSoundSets.MOSS_CARPET).offsetType(BlockBehaviour.OffsetType.XZ).lightLevel(_ -> 3)
     );
 
     Block GILDED_BIRCH_LEAVES = BlockRegistry.register(EBlockItemIds.GILDED_BIRCH_LEAVES,
