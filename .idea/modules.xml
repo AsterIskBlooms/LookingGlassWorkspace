@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/lavaswim/Workspace.lavaswim.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/mirrorlib/Workspace.mirrorlib.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/monstrous/Workspace.monstrous.main.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/monstrous/Workspace.monstrous.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mods/monstrous/Workspace.monstrous.test.iml" filepath="$PROJECT_DIR$/.idea/modules/mods/monstrous/Workspace.monstrous.test.iml" />
     </modules>
   </component>
 </project>

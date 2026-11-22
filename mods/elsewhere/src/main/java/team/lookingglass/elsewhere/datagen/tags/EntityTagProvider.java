@@ -11,6 +11,7 @@ import team.lookingglass.elsewhere.registry.tags.EEntityTags;
 
 import java.util.concurrent.CompletableFuture;
 
+@SuppressWarnings("unchecked")
 public class EntityTagProvider extends FabricTagsProvider.EntityTypeTagsProvider {
     public EntityTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
@@ -43,5 +44,7 @@ public class EntityTagProvider extends FabricTagsProvider.EntityTypeTagsProvider
         builder(EntityTypeTags.AQUATIC).add(EEntities.PERCH_KEY);
         builder(EntityTypeTags.NOT_SCARY_FOR_PUFFERFISH).add(EEntities.PERCH_KEY);
         builder(EntityTypeTags.CAN_BREATHE_UNDER_WATER).add(EEntities.PERCH_KEY);
+
+        builder(EntityTypeTags.ARROWS).add(EEntities.IRON_BOLT_KEY, EEntities.SILVER_BOLT_KEY);
     }
 }

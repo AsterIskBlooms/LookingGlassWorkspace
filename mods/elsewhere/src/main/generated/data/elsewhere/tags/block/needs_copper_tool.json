@@ -2,7 +2,6 @@
   "values": [
     "minecraft:iron_ore",
     "minecraft:deepslate_iron_ore",
-    "elsewhere:cinnabar_iron_ore",
     "minecraft:iron_block",
     "minecraft:raw_iron_block",
     "minecraft:redstone_ore",
@@ -10,7 +9,6 @@
     "minecraft:deepslate_redstone_ore",
     "minecraft:redstone_block",
     "minecraft:lapis_ore",
-    "elsewhere:cinnabar_lapis_ore",
     "minecraft:deepslate_lapis_ore",
     "minecraft:lapis_block",
     "elsewhere:lapis_bricks",

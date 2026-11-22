@@ -82,13 +82,6 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "elsewhere:item/soulsteel_chestplate_elsewhere_tin_trim"
-        },
-        "when": "elsewhere:tin"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
           "model": "elsewhere:item/soulsteel_chestplate_elsewhere_silver_trim"
         },
         "when": "elsewhere:silver"
@@ -99,13 +92,6 @@
           "model": "elsewhere:item/soulsteel_chestplate_elsewhere_uranium_trim"
         },
         "when": "elsewhere:uranium"
-      },
-      {
-        "model": {
-          "type": "minecraft:model",
-          "model": "elsewhere:item/soulsteel_chestplate_elsewhere_bronze_trim"
-        },
-        "when": "elsewhere:bronze"
       },
       {
         "model": {

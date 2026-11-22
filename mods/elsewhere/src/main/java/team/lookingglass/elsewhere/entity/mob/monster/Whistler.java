@@ -34,6 +34,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import team.lookingglass.elsewhere.registry.sound.ESounds;
+import team.lookingglass.elsewhere.registry.sound.WhistlerFuseSoundInstance;
 
 public class Whistler extends Monster {
     private static final EntityDataAccessor<Integer> DATA_FUSE = SynchedEntityData.defineId(Whistler.class, EntityDataSerializers.INT);
@@ -45,6 +46,7 @@ public class Whistler extends Monster {
     private static final double PRIMED_SPEED = 0.38;
     private float headSpin;
     private float headSpinO;
+    private boolean fuseSoundStarted;
 
     public Whistler(EntityType<? extends Monster> type, Level level) {
         super(type, level);
@@ -88,6 +90,15 @@ public class Whistler extends Monster {
         return Mth.clampedLerp(entityData.get(DATA_FUSE) / (float) DETONATION_TICKS, 0.0F, 1.0F);
     }
 
+    @Override
+    public void onSyncedDataUpdated(EntityDataAccessor<?> accessor) {
+        super.onSyncedDataUpdated(accessor);
+        if (DATA_FUSE.equals(accessor) && level().isClientSide() && !fuseSoundStarted && isPrimed()) {
+            fuseSoundStarted = true;
+            WhistlerFuseSoundInstance.play(this);
+        }
+    }
+
     public float getHeadSpin(float partialTick) {
         return Mth.lerp(partialTick, headSpinO, headSpin);
     }
@@ -121,7 +132,6 @@ public class Whistler extends Monster {
         if (speed != null) {
             speed.setBaseValue(PRIMED_SPEED);
         }
-        playSound(ESounds.WHISTLER_DETONATE, 1.0F, 1.0F);
         gameEvent(GameEvent.PRIME_FUSE);
     }
 

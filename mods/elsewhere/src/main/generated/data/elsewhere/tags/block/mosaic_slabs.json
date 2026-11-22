@@ -9,12 +9,15 @@
     "elsewhere:acacia_mosaic_slab",
     "elsewhere:cherry_mosaic_slab",
     "elsewhere:mangrove_mosaic_slab",
+    "elsewhere:poplar_mosaic_slab",
     "elsewhere:crimson_mosaic_slab",
     "elsewhere:warped_mosaic_slab",
     "elsewhere:azalea_mosaic_slab",
     "elsewhere:cedar_mosaic_slab",
     "elsewhere:mahogany_mosaic_slab",
     "elsewhere:pine_mosaic_slab",
+    "elsewhere:fir_mosaic_slab",
+    "elsewhere:willow_mosaic_slab",
     "minecraft:bamboo_mosaic_slab"
   ]
 }

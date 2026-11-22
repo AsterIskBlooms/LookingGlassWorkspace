@@ -3,6 +3,7 @@ package team.lookingglass.elsewhere.worldgen.features;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BlockStateProviders;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -10,6 +11,7 @@ import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.TreePlacements;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
@@ -24,6 +26,9 @@ import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
+import net.minecraft.world.level.levelgen.feature.rootplacers.AboveRootPlacement;
+import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacement;
+import net.minecraft.world.level.levelgen.feature.rootplacers.MangroveRootPlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
@@ -39,6 +44,7 @@ import team.lookingglass.elsewhere.registry.blocktypes.PebbleBlock;
 import team.lookingglass.elsewhere.worldgen.features.types.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalInt;
 
 public class EFeatures {
@@ -64,9 +70,8 @@ public class EFeatures {
     public static final ResourceKey<Feature> ORE_BEJEWELED_CALCITE = registerKey("ore_bejeweled_calcite");
     public static final ResourceKey<Feature> ORE_SILVER = registerKey("ore_silver");
     public static final ResourceKey<Feature> ORE_SILVER_SMALL = registerKey("ore_silver_small");
-    public static final ResourceKey<Feature> ORE_TIN = registerKey("ore_tin");
-    public static final ResourceKey<Feature> ORE_TIN_LARGE = registerKey("ore_tin_large");
-    public static final ResourceKey<Feature> ORE_TIN_SMALL = registerKey("ore_tin_small");
+    public static final ResourceKey<Feature> SULFUR_CAVE_ORE_SILVER = registerKey("sulfur_cave_ore_silver");
+    public static final ResourceKey<Feature> SULFUR_CAVE_ORE_REDSTONE = registerKey("sulfur_cave_ore_redstone");
     public static final ResourceKey<Feature> ORE_SHALE = registerKey("ore_shale");
     public static final ResourceKey<Feature> ORE_ANCIENT_DEBRIS_LAVA = registerKey("ore_ancient_debris_lava");
 
@@ -119,16 +124,18 @@ public class EFeatures {
 
     public static final ResourceKey<Feature> SANDSTONE_ROCK = registerKey("sandstone_rock");
     public static final ResourceKey<Feature> RED_SANDSTONE_ROCK = registerKey("red_sandstone_rock");
-    public static final ResourceKey<Feature> PINK_SANDSTONE_ROCK = registerKey("pink_sandstone_rock");
+    public static final ResourceKey<Feature> ORANGE_SANDSTONE_ROCK = registerKey("orange_sandstone_rock");
     public static final ResourceKey<Feature> LUSH_SANDSTONE_ROCKS = registerKey("lush_sandstone_rocks");
+    public static final ResourceKey<Feature> GRANITE_ROCK = registerKey("granite_rock");
 
     public static final ResourceKey<Feature> RUSTY_MOSS_VEGETATION = registerKey("rusty_moss_vegetation");
     public static final ResourceKey<Feature> RUSTY_MOSS_PATCH = registerKey("rusty_moss_patch");
-    public static final ResourceKey<Feature> LARGE_RUSTY_MOSS_PATCH = registerKey("large_rusty_moss_patch");
+    public static final ResourceKey<Feature> TUNDRA_RUSTY_MOSS_PATCH = registerKey("tundra_rusty_moss_patch");
     public static final ResourceKey<Feature> RUSTY_MOSS_PATCH_BONEMEAL = registerKey("rusty_moss_patch_bonemeal");
 
     public static final ResourceKey<Feature> OCHRE_MOSS_VEGETATION = registerKey("ochre_moss_vegetation");
     public static final ResourceKey<Feature> OCHRE_MOSS_PATCH = registerKey("ochre_moss_patch");
+    public static final ResourceKey<Feature> TUNDRA_OCHRE_MOSS_PATCH = registerKey("tundra_ochre_moss_patch");
     public static final ResourceKey<Feature> OCHRE_MOSS_PATCH_BONEMEAL = registerKey("ochre_moss_patch_bonemeal");
 
     public static final ResourceKey<Feature> MOSSY_MUD_VEGETATION = registerKey("mossy_mud_vegetation");
@@ -170,6 +177,8 @@ public class EFeatures {
     public static final ResourceKey<Feature> TREES_OLD_GROWTH_FOREST = registerKey("trees_old_growth_forest");
 
     public static final ResourceKey<Feature> FOREST_POND = registerKey("forest_pond");
+    public static final ResourceKey<Feature> COLD_BEACH_POND = registerKey("cold_beach_pond");
+    public static final ResourceKey<Feature> SWAMP_POND = registerKey("swamp_pond");
 
     public static final ResourceKey<Feature> ROSE_PATCH = registerKey("rose_patch");
     public static final ResourceKey<Feature> AZURE_PATCH = registerKey("azure_patch");
@@ -187,9 +196,15 @@ public class EFeatures {
 
     public static final ResourceKey<Feature> FIR_TREE = registerKey("fir_tree");
     public static final ResourceKey<Feature> FALLEN_FIR_TREE = registerKey("fallen_fir_tree");
+
+    public static final ResourceKey<Feature> WILLOW_TREE = registerKey("willow_tree");
+    public static final ResourceKey<Feature> FALLEN_WILLOW_TREE = registerKey("fallen_willow_tree");
+
     public static final ResourceKey<Feature> TREES_FIR_THICKET = registerKey("trees_fir_thicket");
     public static final ResourceKey<Feature> TREES_ALPINE = registerKey("trees_alpine");
     public static final ResourceKey<Feature> TREES_HIGHLANDS = registerKey("trees_highlands");
+
+    public static final ResourceKey<Feature> TREES_SWAMP = registerKey("trees_swamp");
 
     public static final ResourceKey<Feature> TREES_DAPPLED_CLEARING = registerKey("trees_dappled_clearing");
     public static final ResourceKey<Feature> TREES_HOWLING_PEAKS = registerKey("trees_howling_peaks");
@@ -326,21 +341,10 @@ public class EFeatures {
                 new BlockReplacement(new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_SILVER_ORE.defaultBlockState())
         ), 1));
 
-        context.register(ORE_TIN, new OreFeature(List.of(
-                new BlockReplacement(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EBlocks.TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EBlocks.DEEPSLATE_TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_TIN_ORE.defaultBlockState())
-        ), 6));
-        context.register(ORE_TIN_LARGE, new OreFeature(List.of(
-                new BlockReplacement(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EBlocks.TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EBlocks.DEEPSLATE_TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_TIN_ORE.defaultBlockState())
-        ), 15));
-        context.register(ORE_TIN_SMALL, new OreFeature(List.of(
-                new BlockReplacement(new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES), EBlocks.TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EBlocks.DEEPSLATE_TIN_ORE.defaultBlockState()),
-                new BlockReplacement(new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_TIN_ORE.defaultBlockState())
-        ), 4));
+        context.register(SULFUR_CAVE_ORE_SILVER, new OreFeature(
+                new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_SILVER_ORE.defaultBlockState(), 5));
+        context.register(SULFUR_CAVE_ORE_REDSTONE, new OreFeature(
+                new TagMatchTest(EBlockTags.CINNABAR_ORE_REPLACEABLES), EBlocks.CINNABAR_REDSTONE_ORE.defaultBlockState(), 15));
 
         context.register(ORE_SHALE, new OreFeature(new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES), EBlocks.SHALE.defaultBlockState(), 32));
         context.register(ORE_ANCIENT_DEBRIS_LAVA, new OreFeature(new TagMatchTest(BlockTags.BASE_STONE_NETHER), Blocks.ANCIENT_DEBRIS.defaultBlockState(), 5));
@@ -417,13 +421,14 @@ public class EFeatures {
 
         context.register(SANDSTONE_ROCK, new LargeBlobFeature(Blocks.SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
         context.register(RED_SANDSTONE_ROCK, new LargeBlobFeature(Blocks.RED_SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
-        context.register(PINK_SANDSTONE_ROCK, new LargeBlobFeature(EBlocks.PINK_SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
+        context.register(ORANGE_SANDSTONE_ROCK, new LargeBlobFeature(EBlocks.ORANGE_SANDSTONE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 5)));
         context.register(LUSH_SANDSTONE_ROCKS, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(SANDSTONE_ROCK)), 75)
-                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(PINK_SANDSTONE_ROCK)), 25)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(ORANGE_SANDSTONE_ROCK)), 25)
                         .build()
         ));
+        context.register(GRANITE_ROCK, new LargeBlobFeature(Blocks.GRANITE.defaultBlockState(), BlockPredicate.solid(), UniformInt.of(3, 4)));
 
         context.register(COARSE_DIRT_PATCH, new VegetationPatchFeature(
                 blocks.getOrThrow(EBlockTags.SOIL), Holder.direct(BlockStateProvider.of(Blocks.COARSE_DIRT)),
@@ -690,15 +695,15 @@ public class EFeatures {
                 Holder.direct(BlockStateProvider.of(EBlocks.RUSTY_MOSS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(RUSTY_MOSS_VEGETATION)),
                 CaveSurface.FLOOR, ConstantInt.of(1),
-                0.0F, 5, 0.5F,
+                0.15F, 5, 0.5F,
                 UniformInt.of(3, 5), 0.3F
         ));
-        context.register(LARGE_RUSTY_MOSS_PATCH, new VegetationPatchFeature(
-                blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
+        context.register(TUNDRA_RUSTY_MOSS_PATCH, new VegetationPatchFeature(
+                blocks.getOrThrow(EBlockTags.SOIL),
                 Holder.direct(BlockStateProvider.of(EBlocks.RUSTY_MOSS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(RUSTY_MOSS_VEGETATION)),
                 CaveSurface.FLOOR, ConstantInt.of(1),
-                0.0F, 5, 0.62F,
+                0.15F, 5, 0.62F,
                 UniformInt.of(6, 9), 0.35F
         ));
         context.register(RUSTY_MOSS_PATCH_BONEMEAL, new VegetationPatchFeature(
@@ -722,8 +727,16 @@ public class EFeatures {
                 Holder.direct(BlockStateProvider.of(EBlocks.OCHRE_MOSS_BLOCK)),
                 PlacementUtils.inlinePlaced(features.getOrThrow(OCHRE_MOSS_VEGETATION)),
                 CaveSurface.FLOOR, ConstantInt.of(1),
-                0.0F, 5, 0.5F,
+                0.15F, 5, 0.5F,
                 UniformInt.of(3, 5), 0.3F
+        ));
+        context.register(TUNDRA_OCHRE_MOSS_PATCH, new VegetationPatchFeature(
+                blocks.getOrThrow(EBlockTags.SOIL),
+                Holder.direct(BlockStateProvider.of(EBlocks.OCHRE_MOSS_BLOCK)),
+                PlacementUtils.inlinePlaced(features.getOrThrow(OCHRE_MOSS_VEGETATION)),
+                CaveSurface.FLOOR, ConstantInt.of(1),
+                0.15F, 5, 0.62F,
+                UniformInt.of(5, 7), 0.35F
         ));
         context.register(OCHRE_MOSS_PATCH_BONEMEAL, new VegetationPatchFeature(
                 blocks.getOrThrow(BlockTags.MOSS_REPLACEABLE),
@@ -1020,6 +1033,29 @@ public class EFeatures {
                 canReplace, canReplace, canReplace
         ));
 
+        context.register(COLD_BEACH_POND, new BasinLakeFeature(
+                BlockStateProvider.of(Blocks.WATER),
+                BlockStateProvider.of(Blocks.MUD),
+                List.of(
+                        BlockStateProvider.of(Blocks.MUD),
+                        new WeightedStateProvider(WeightedList.<BlockState>builder()
+                                .add(Blocks.MUD.defaultBlockState(), 4)
+                                .add(Blocks.GRAVEL.defaultBlockState(), 1)
+                                .build()),
+                        BlockStateProvider.of(Blocks.GRAVEL)
+                ),
+                ConstantInt.of(1), UniformInt.of(11, 16),
+                canReplace, canReplace, canReplace
+        ));
+
+        context.register(SWAMP_POND, new BasinLakeFeature(
+                BlockStateProvider.of(Blocks.WATER),
+                BlockStateProvider.of(Blocks.MUD),
+                List.of(BlockStateProvider.of(Blocks.MUD), BlockStateProvider.of(Blocks.MUD)),
+                ConstantInt.of(1), UniformInt.of(9, 16),
+                canReplace, canReplace, canReplace
+        ));
+
         context.register(ROSE_PATCH, new BlockPatchFeature(
                 new WeightedStateProvider(WeightedList.<BlockState>builder()
                         .add(EBlocks.ROSE.defaultBlockState(), 7)
@@ -1137,15 +1173,32 @@ public class EFeatures {
         ));
 
         context.register(FIR_TREE, new TreeFeature.Builder(
-                BlockStateProvider.of(EBlocks.PINE_LOG),
+                BlockStateProvider.of(EBlocks.FIR_LOG),
                 new StraightTrunkPlacer(7, 3, 2),
-                BlockStateProvider.of(EBlocks.PINE_LEAVES),
+                BlockStateProvider.of(EBlocks.FIR_LEAVES),
                 new EPineFoliagePlacer(ConstantInt.of(2), UniformInt.of(2, 3), UniformInt.of(7, 9)),
                 new TwoLayersFeatureSize(2, 0, 2),
                 belowTrunkProvider
         ).decorators(List.of(shelf15)).build());
-        context.register(FALLEN_FIR_TREE, createFallenTrees(EBlocks.PINE_LOG, 6, 9)
+        context.register(FALLEN_FIR_TREE, createFallenTrees(EBlocks.FIR_LOG, 6, 9)
                 .stumpDecorator(TrunkVineDecorator.INSTANCE).logDecorator(shelf33).build());
+
+        context.register(WILLOW_TREE, new TreeFeature.Builder(
+                BlockStateProvider.of(EBlocks.WILLOW_LOG),
+                new ForkingTrunkPlacer(7, 3, 2),
+                BlockStateProvider.of(EBlocks.WILLOW_LEAVES),
+                new CherryFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(4),
+                        0.35F, 0.75F, 0.48F, 0.62F),
+                Optional.of(new MangroveRootPlacer(UniformInt.of(2, 3), BlockStateProvider.holderOf(EBlocks.WILLOW_LOG),
+                        Optional.of(new AboveRootPlacement(BlockStateProvider.holderOf(Blocks.MOSS_CARPET), 0.45F)),
+                        new MangroveRootPlacement(HolderSet.empty(), HolderSet.empty(), BlockStateProvider.holderOf(EBlocks.WILLOW_LOG),
+                                3, 3, 0.2F))),
+                new TwoLayersFeatureSize(9, 0, 2),
+                BlockStateProvider.holderOf(Blocks.AIR)
+        ).decorators(List.of(shelf66, new LeaveVineDecorator(0.35F))).build());
+        context.register(FALLEN_WILLOW_TREE, createFallenTrees(EBlocks.WILLOW_LOG, 5, 11)
+                .stumpDecorator(TrunkVineDecorator.INSTANCE).logDecorator(shelf100)
+                .logDecorator(new AttachedToLogsDecorator(0.42F, fallenMushrooms, List.of(Direction.UP))).build());
 
         context.register(TREES_FIR_THICKET, new WeightedRandomSelectorFeature(
                 WeightedList.<Holder<PlacedFeature>>builder()
@@ -1172,6 +1225,14 @@ public class EFeatures {
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(FIR_TREE)), 10)
                         .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_BIRCH)), 3)
                         .add(placedFeatures.getOrThrow(TreePlacements.FALLEN_SPRUCE_TREE), 2)
+                        .build()
+        ));
+
+        context.register(TREES_SWAMP, new WeightedRandomSelectorFeature(
+                WeightedList.<Holder<PlacedFeature>>builder()
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(WILLOW_TREE)), 57)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(OLD_GROWTH_FANCY_OAK)), 3)
+                        .add(PlacementUtils.inlinePlaced(features.getOrThrow(FALLEN_WILLOW_TREE)), 2)
                         .build()
         ));
 

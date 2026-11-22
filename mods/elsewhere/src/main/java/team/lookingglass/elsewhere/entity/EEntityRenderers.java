@@ -74,5 +74,23 @@ public class EEntityRenderers {
         EntityRenderers.register(registry, EEntities.PINE_BOAT, context -> new BoatRenderer(context, PINE_BOAT_LAYER));
         ModelLayerRegistry.registerModelLayer(PINE_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
         EntityRenderers.register(registry, EEntities.PINE_CHEST_BOAT, context -> new BoatRenderer(context, PINE_CHEST_BOAT_LAYER));
+
+        ModelLayerLocation FIR_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "boat/fir"), "main");
+        ModelLayerLocation FIR_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "chest_boat/fir"), "main");
+        ModelLayerRegistry.registerModelLayer(FIR_BOAT_LAYER, BoatModel::createBoatModel);
+        EntityRenderers.register(registry, EEntities.FIR_BOAT, context -> new BoatRenderer(context, FIR_BOAT_LAYER));
+        ModelLayerRegistry.registerModelLayer(FIR_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        EntityRenderers.register(registry, EEntities.FIR_CHEST_BOAT, context -> new BoatRenderer(context, FIR_CHEST_BOAT_LAYER));
+
+        ModelLayerLocation WILLOW_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "boat/willow"), "main");
+        ModelLayerLocation WILLOW_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "chest_boat/willow"), "main");
+        ModelLayerRegistry.registerModelLayer(WILLOW_BOAT_LAYER, BoatModel::createBoatModel);
+        EntityRenderers.register(registry, EEntities.WILLOW_BOAT, context -> new BoatRenderer(context, WILLOW_BOAT_LAYER));
+        ModelLayerRegistry.registerModelLayer(WILLOW_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        EntityRenderers.register(registry, EEntities.WILLOW_CHEST_BOAT, context -> new BoatRenderer(context, WILLOW_CHEST_BOAT_LAYER));
+
+        ModelLayerRegistry.registerModelLayer(BoltModel.LAYER, BoltModel::createBodyLayer);
+        EntityRenderers.register(registry, EEntities.IRON_BOLT,   context -> new BoltRenderer(context, "iron_bolt"));
+        EntityRenderers.register(registry, EEntities.SILVER_BOLT, context -> new BoltRenderer(context, "silver_bolt"));
     }
 }

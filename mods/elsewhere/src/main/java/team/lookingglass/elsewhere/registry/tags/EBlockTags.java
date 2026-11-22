@@ -19,7 +19,6 @@ public interface EBlockTags {
     TagKey<Block> AMETHYST_SPIRE_REPLACEABLE = create("amethyst_spire_replaceable");
 
     TagKey<Block> NEEDS_COPPER_TOOL = create("needs_copper_tool");
-    TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = create("incorrect_for_bronze_tool");
 
     private static TagKey<Block> create(String name) {
         return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Elsewhere.MODID, name));

@@ -2,7 +2,6 @@
   "fabric:remove": [
     "minecraft:diamond_ore",
     "minecraft:deepslate_diamond_ore",
-    "elsewhere:cinnabar_diamond_ore",
     "minecraft:diamond_block",
     "minecraft:obsidian",
     "minecraft:crying_obsidian",

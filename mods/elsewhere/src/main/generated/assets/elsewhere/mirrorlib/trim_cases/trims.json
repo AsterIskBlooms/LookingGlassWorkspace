@@ -2,20 +2,12 @@
   "items": {
     "minecraft:chainmail_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/chainmail_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/chainmail_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/chainmail_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/chainmail_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -28,20 +20,12 @@
     ],
     "minecraft:chainmail_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/chainmail_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/chainmail_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/chainmail_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/chainmail_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -54,20 +38,12 @@
     ],
     "minecraft:chainmail_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/chainmail_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/chainmail_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/chainmail_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/chainmail_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -80,20 +56,12 @@
     ],
     "minecraft:chainmail_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/chainmail_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/chainmail_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/chainmail_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/chainmail_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -106,20 +74,12 @@
     ],
     "minecraft:copper_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/copper_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/copper_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/copper_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/copper_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -132,20 +92,12 @@
     ],
     "minecraft:copper_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/copper_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/copper_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/copper_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/copper_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -158,20 +110,12 @@
     ],
     "minecraft:copper_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/copper_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/copper_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/copper_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/copper_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -184,20 +128,12 @@
     ],
     "minecraft:copper_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/copper_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/copper_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/copper_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/copper_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -210,20 +146,12 @@
     ],
     "minecraft:diamond_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/diamond_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/diamond_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/diamond_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/diamond_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -236,20 +164,12 @@
     ],
     "minecraft:diamond_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/diamond_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/diamond_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/diamond_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/diamond_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -262,20 +182,12 @@
     ],
     "minecraft:diamond_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/diamond_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/diamond_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/diamond_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/diamond_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -288,20 +200,12 @@
     ],
     "minecraft:diamond_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/diamond_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/diamond_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/diamond_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/diamond_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -314,20 +218,12 @@
     ],
     "minecraft:golden_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/golden_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/golden_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/golden_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/golden_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -340,20 +236,12 @@
     ],
     "minecraft:golden_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/golden_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/golden_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/golden_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/golden_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -366,20 +254,12 @@
     ],
     "minecraft:golden_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/golden_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/golden_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/golden_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/golden_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -392,20 +272,12 @@
     ],
     "minecraft:golden_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/golden_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/golden_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/golden_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/golden_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -418,20 +290,12 @@
     ],
     "minecraft:iron_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/iron_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/iron_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/iron_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/iron_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -444,20 +308,12 @@
     ],
     "minecraft:iron_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/iron_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/iron_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/iron_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/iron_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -470,20 +326,12 @@
     ],
     "minecraft:iron_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/iron_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/iron_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/iron_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/iron_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -496,20 +344,12 @@
     ],
     "minecraft:iron_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/iron_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/iron_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/iron_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/iron_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -522,20 +362,12 @@
     ],
     "minecraft:leather_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/leather_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/leather_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/leather_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/leather_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -548,20 +380,12 @@
     ],
     "minecraft:leather_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/leather_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/leather_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/leather_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/leather_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -574,20 +398,12 @@
     ],
     "minecraft:leather_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/leather_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/leather_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/leather_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/leather_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -600,20 +416,12 @@
     ],
     "minecraft:leather_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/leather_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/leather_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/leather_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/leather_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -626,20 +434,12 @@
     ],
     "minecraft:netherite_boots": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/netherite_boots_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/netherite_boots_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/netherite_boots_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/netherite_boots_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -652,20 +452,12 @@
     ],
     "minecraft:netherite_chestplate": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/netherite_chestplate_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/netherite_chestplate_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/netherite_chestplate_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/netherite_chestplate_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -678,20 +470,12 @@
     ],
     "minecraft:netherite_helmet": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/netherite_helmet_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/netherite_helmet_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/netherite_helmet_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/netherite_helmet_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",
@@ -704,20 +488,12 @@
     ],
     "minecraft:netherite_leggings": [
       {
-        "material": "elsewhere:tin",
-        "model": "elsewhere:item/netherite_leggings_elsewhere_tin_trim"
-      },
-      {
         "material": "elsewhere:silver",
         "model": "elsewhere:item/netherite_leggings_elsewhere_silver_trim"
       },
       {
         "material": "elsewhere:uranium",
         "model": "elsewhere:item/netherite_leggings_elsewhere_uranium_trim"
-      },
-      {
-        "material": "elsewhere:bronze",
-        "model": "elsewhere:item/netherite_leggings_elsewhere_bronze_trim"
       },
       {
         "material": "elsewhere:soulsteel",

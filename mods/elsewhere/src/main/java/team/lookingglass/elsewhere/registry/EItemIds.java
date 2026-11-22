@@ -15,27 +15,15 @@ public interface EItemIds {
     ResourceKey<Item> MAHOGANY_CHEST_BOAT = register("mahogany_chest_boat");
     ResourceKey<Item> PINE_BOAT = register("pine_boat");
     ResourceKey<Item> PINE_CHEST_BOAT = register("pine_chest_boat");
+    ResourceKey<Item> FIR_BOAT = register("fir_boat");
+    ResourceKey<Item> FIR_CHEST_BOAT = register("fir_chest_boat");
+    ResourceKey<Item> WILLOW_BOAT = register("willow_boat");
+    ResourceKey<Item> WILLOW_CHEST_BOAT = register("willow_chest_boat");
+
 
     ResourceKey<Item> DIAMOND_NUGGET = register("diamond_nugget");
     ResourceKey<Item> EMERALD_NUGGET = register("emerald_nugget");
     ResourceKey<Item> SOULGLASS_SHARD = register("soulglass_shard");
-    ResourceKey<Item> RAW_TIN = register("raw_tin");
-    ResourceKey<Item> TIN_INGOT = register("tin_ingot");
-    ResourceKey<Item> TIN_NUGGET = register("tin_nugget");
-
-    ResourceKey<Item> BRONZE_ALLOY = register("bronze_alloy");
-    ResourceKey<Item> BRONZE_UPGRADE_SMITHING_TEMPLATE = register("bronze_upgrade_smithing_template");
-    ResourceKey<Item> BRONZE_HELMET = register("bronze_helmet");
-    ResourceKey<Item> BRONZE_CHESTPLATE = register("bronze_chestplate");
-    ResourceKey<Item> BRONZE_LEGGINGS = register("bronze_leggings");
-    ResourceKey<Item> BRONZE_BOOTS = register("bronze_boots");
-    ResourceKey<Item> BRONZE_SWORD = register("bronze_sword");
-    ResourceKey<Item> BRONZE_AXE = register("bronze_axe");
-    ResourceKey<Item> BRONZE_SPEAR = register("bronze_spear");
-    ResourceKey<Item> BRONZE_PICKAXE = register("bronze_pickaxe");
-    ResourceKey<Item> BRONZE_SHOVEL = register("bronze_shovel");
-    ResourceKey<Item> BRONZE_HOE = register("bronze_hoe");
-
     ResourceKey<Item> RAW_SILVER = register("raw_silver");
     ResourceKey<Item> SILVER_INGOT = register("silver_ingot");
     ResourceKey<Item> SILVER_NUGGET = register("silver_nugget");
@@ -68,6 +56,9 @@ public interface EItemIds {
 
     ResourceKey<Item> URANIUM = register("uranium");
     ResourceKey<Item> URANIUM_SHARD = register("uranium_shard");
+
+    ResourceKey<Item> IRON_BOLT = register("iron_bolt");
+    ResourceKey<Item> SILVER_BOLT = register("silver_bolt");
 
     ResourceKey<Item> REINFORCED_SHIELD = register("reinforced_shield");
     ResourceKey<Item> QUICK_SHIELD = register("quick_shield");

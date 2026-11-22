@@ -18,26 +18,6 @@ import java.util.Map;
 
 public interface EMaterials {
 
-    ResourceKey<EquipmentAsset> BRONZE_ARMOR_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "bronze"));
-    ToolMaterial BRONZE_TOOL = new ToolMaterial(
-            EBlockTags.INCORRECT_FOR_BRONZE_TOOL,
-            620,
-            7F,
-            2.5F,
-            11,
-            EItemTags.REPAIRS_BRONZE_ARMOR
-    );
-    ArmorMaterial BRONZE_ARMOR = new ArmorMaterial(
-            19,
-            makeDefense(3, 6, 5, 2),
-            11,
-            SoundEvents.ARMOR_EQUIP_GOLD,
-            0F,
-            0.0F,
-            EItemTags.REPAIRS_BRONZE_ARMOR,
-            BRONZE_ARMOR_KEY
-    );
-
     ResourceKey<EquipmentAsset> SOULSTEEL_ARMOR_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "soulsteel"));
     ToolMaterial SOULSTEEL_TOOL = new ToolMaterial(
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,

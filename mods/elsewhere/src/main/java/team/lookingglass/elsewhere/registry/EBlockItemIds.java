@@ -99,7 +99,6 @@ public interface EBlockItemIds {
     BlockItemId DRIPSTONE_PILLAR = register("dripstone_pillar");
 
     // Sandstone
-    BlockItemId ARID_SAND = register("arid_sand");
     BlockItemId POLISHED_SANDSTONE = register("polished_sandstone");
     BlockItemId POLISHED_SANDSTONE_STAIRS = register("polished_sandstone_stairs");
     BlockItemId POLISHED_SANDSTONE_SLAB = register("polished_sandstone_slab");
@@ -200,14 +199,7 @@ public interface EBlockItemIds {
 
     BlockItemId SILVER_ORE = register("silver_ore");
     BlockItemId DEEPSLATE_SILVER_ORE = register("deepslate_silver_ore");
-    BlockItemId CINNABAR_SILVER_ORE = register("cinnabar_silver_ore");
 
-    BlockItemId TIN_ORE = register("tin_ore");
-    BlockItemId DEEPSLATE_TIN_ORE = register("deepslate_tin_ore");
-    BlockItemId CINNABAR_TIN_ORE = register("cinnabar_tin_ore");
-    BlockItemId TIN_BLOCK = register("tin_block");
-    BlockItemId RAW_TIN_BLOCK = register("raw_tin_block");
-    BlockItemId BRONZE_BLOCK = register("bronze_block");
     BlockItemId SILVER_BLOCK = register("silver_block");
     BlockItemId RAW_SILVER_BLOCK = register("raw_silver_block");
     BlockItemId SOULSTEEL_BLOCK = register("soulsteel_block");
@@ -216,14 +208,8 @@ public interface EBlockItemIds {
 
     BlockItemId SULFUR_PILLAR = register("sulfur_pillar");
     BlockItemId CINNABAR_PILLAR = register("cinnabar_pillar");
-    BlockItemId CINNABAR_COAL_ORE = register("cinnabar_coal_ore");
-    BlockItemId CINNABAR_COPPER_ORE = register("cinnabar_copper_ore");
-    BlockItemId CINNABAR_IRON_ORE = register("cinnabar_iron_ore");
-    BlockItemId CINNABAR_GOLD_ORE = register("cinnabar_gold_ore");
     BlockItemId CINNABAR_REDSTONE_ORE = register("cinnabar_redstone_ore");
-    BlockItemId CINNABAR_DIAMOND_ORE = register("cinnabar_diamond_ore");
-    BlockItemId CINNABAR_LAPIS_ORE = register("cinnabar_lapis_ore");
-    BlockItemId CINNABAR_EMERALD_ORE = register("cinnabar_emerald_ore");
+    BlockItemId CINNABAR_SILVER_ORE = register("cinnabar_silver_ore");
 
     // Netherrack
     BlockItemId NETHERRACK_STAIRS = register("netherrack_stairs");
@@ -338,6 +324,11 @@ public interface EBlockItemIds {
     BlockItemId MANGROVE_MOSAIC_SLAB = register("mangrove_mosaic_slab");
     BlockItemId MANGROVE_BOARDS = register("mangrove_boards");
     BlockItemId MANGROVE_TRIM = register("mangrove_trim");
+    BlockItemId POPLAR_MOSAIC = register("poplar_mosaic");
+    BlockItemId POPLAR_MOSAIC_STAIRS = register("poplar_mosaic_stairs");
+    BlockItemId POPLAR_MOSAIC_SLAB = register("poplar_mosaic_slab");
+    BlockItemId POPLAR_BOARDS = register("poplar_boards");
+    BlockItemId POPLAR_TRIM = register("poplar_trim");
     BlockItemId CRIMSON_MOSAIC = register("crimson_mosaic");
     BlockItemId CRIMSON_MOSAIC_STAIRS = register("crimson_mosaic_stairs");
     BlockItemId CRIMSON_MOSAIC_SLAB = register("crimson_mosaic_slab");
@@ -492,9 +483,67 @@ public interface EBlockItemIds {
     BlockItemId PINE_SAPLING = register("pine_sapling");
     BlockItemId PINE_LEAVES = register("pine_leaves");
 
+    // Fir
+    BlockItemId FIR_LOG = register("fir_log");
+    BlockItemId STRIPPED_FIR_LOG = register("stripped_fir_log");
+    BlockItemId FIR_WOOD = register("fir_wood");
+    BlockItemId STRIPPED_FIR_WOOD = register("stripped_fir_wood");
+    BlockItemId FIR_PLANKS = register("fir_planks");
+    BlockItemId FIR_STAIRS = register("fir_stairs");
+    BlockItemId FIR_SLAB = register("fir_slab");
+    BlockItemId FIR_MOSAIC = register("fir_mosaic");
+    BlockItemId FIR_MOSAIC_STAIRS = register("fir_mosaic_stairs");
+    BlockItemId FIR_MOSAIC_SLAB = register("fir_mosaic_slab");
+    BlockItemId FIR_BOARDS = register("fir_boards");
+    BlockItemId FIR_TRIM = register("fir_trim");
+    BlockItemId FIR_FENCE = register("fir_fence");
+    BlockItemId FIR_FENCE_GATE = register("fir_fence_gate");
+    BlockItemId FIR_DOOR = register("fir_door");
+    BlockItemId FIR_TRAPDOOR = register("fir_trapdoor");
+    BlockItemId FIR_PRESSURE_PLATE = register("fir_pressure_plate");
+    BlockItemId FIR_BUTTON = register("fir_button");
+    BlockItemId FIR_SIGN = register("fir_sign");
+    BlockItemId FIR_WALL_SIGN = register("fir_wall_sign");
+    BlockItemId FIR_HANGING_SIGN = register("fir_hanging_sign");
+    BlockItemId FIR_WALL_HANGING_SIGN = register("fir_wall_hanging_sign");
+    BlockItemId FIR_SHELF = register("fir_shelf");
+    BlockItemId FIR_SAPLING = register("fir_sapling");
+    BlockItemId FIR_LEAVES = register("fir_leaves");
+
+    // Pine
+    BlockItemId WILLOW_LOG = register("willow_log");
+    BlockItemId STRIPPED_WILLOW_LOG = register("stripped_willow_log");
+    BlockItemId WILLOW_WOOD = register("willow_wood");
+    BlockItemId STRIPPED_WILLOW_WOOD = register("stripped_willow_wood");
+    BlockItemId WILLOW_PLANKS = register("willow_planks");
+    BlockItemId WILLOW_STAIRS = register("willow_stairs");
+    BlockItemId WILLOW_SLAB = register("willow_slab");
+    BlockItemId WILLOW_MOSAIC = register("willow_mosaic");
+    BlockItemId WILLOW_MOSAIC_STAIRS = register("willow_mosaic_stairs");
+    BlockItemId WILLOW_MOSAIC_SLAB = register("willow_mosaic_slab");
+    BlockItemId WILLOW_BOARDS = register("willow_boards");
+    BlockItemId WILLOW_TRIM = register("willow_trim");
+    BlockItemId WILLOW_FENCE = register("willow_fence");
+    BlockItemId WILLOW_FENCE_GATE = register("willow_fence_gate");
+    BlockItemId WILLOW_DOOR = register("willow_door");
+    BlockItemId WILLOW_TRAPDOOR = register("willow_trapdoor");
+    BlockItemId WILLOW_PRESSURE_PLATE = register("willow_pressure_plate");
+    BlockItemId WILLOW_BUTTON = register("willow_button");
+    BlockItemId WILLOW_SIGN = register("willow_sign");
+    BlockItemId WILLOW_WALL_SIGN = register("willow_wall_sign");
+    BlockItemId WILLOW_HANGING_SIGN = register("willow_hanging_sign");
+    BlockItemId WILLOW_WALL_HANGING_SIGN = register("willow_wall_hanging_sign");
+    BlockItemId WILLOW_SHELF = register("willow_shelf");
+    BlockItemId WILLOW_SAPLING = register("willow_sapling");
+    BlockItemId WILLOW_LEAVES = register("willow_leaves");
+
     // Arid Dirt
     BlockItemId ARID_DIRT = register("arid_dirt");
+    BlockItemId COARSE_ARID_DIRT = register("coarse_arid_dirt");
     BlockItemId ARID_GRASS_BLOCK = register("arid_grass_block");
+    BlockItemId GLOOMY_DIRT = register("gloomy_dirt");
+    BlockItemId COARSE_GLOOMY_DIRT = register("coarse_gloomy_dirt");
+    BlockItemId GLOOMY_GRASS_BLOCK = register("gloomy_grass_block");
     BlockItemId CATTAILS = register("cattails");
 
     // CaveModifier Flora
@@ -547,24 +596,24 @@ public interface EBlockItemIds {
     // Basalt / Sandstone
     BlockItemId ROCKWEED_BASALT = register("rockweed_basalt");
     BlockItemId BASALT_VENT = register("basalt_vent");
-    BlockItemId PINK_SAND = register("pink_sand");
-    BlockItemId PINK_SANDSTONE = register("pink_sandstone");
-    BlockItemId PINK_SANDSTONE_STAIRS = register("pink_sandstone_stairs");
-    BlockItemId PINK_SANDSTONE_SLAB = register("pink_sandstone_slab");
-    BlockItemId PINK_SANDSTONE_WALL = register("pink_sandstone_wall");
-    BlockItemId SMOOTH_PINK_SANDSTONE = register("smooth_pink_sandstone");
-    BlockItemId SMOOTH_PINK_SANDSTONE_STAIRS = register("smooth_pink_sandstone_stairs");
-    BlockItemId SMOOTH_PINK_SANDSTONE_SLAB = register("smooth_pink_sandstone_slab");
-    BlockItemId SMOOTH_PINK_SANDSTONE_WALL = register("smooth_pink_sandstone_wall");
-    BlockItemId CUT_PINK_SANDSTONE = register("cut_pink_sandstone");
-    BlockItemId CUT_PINK_SANDSTONE_STAIRS = register("cut_pink_sandstone_stairs");
-    BlockItemId CUT_PINK_SANDSTONE_SLAB = register("cut_pink_sandstone_slab");
-    BlockItemId CUT_PINK_SANDSTONE_WALL = register("cut_pink_sandstone_wall");
-    BlockItemId POLISHED_PINK_SANDSTONE = register("polished_pink_sandstone");
-    BlockItemId POLISHED_PINK_SANDSTONE_STAIRS = register("polished_pink_sandstone_stairs");
-    BlockItemId POLISHED_PINK_SANDSTONE_SLAB = register("polished_pink_sandstone_slab");
-    BlockItemId POLISHED_PINK_SANDSTONE_WALL = register("polished_pink_sandstone_wall");
-    BlockItemId CHISELED_PINK_SANDSTONE = register("chiseled_pink_sandstone");
+    BlockItemId ORANGE_SAND = register("orange_sand");
+    BlockItemId ORANGE_SANDSTONE = register("orange_sandstone");
+    BlockItemId ORANGE_SANDSTONE_STAIRS = register("orange_sandstone_stairs");
+    BlockItemId ORANGE_SANDSTONE_SLAB = register("orange_sandstone_slab");
+    BlockItemId ORANGE_SANDSTONE_WALL = register("orange_sandstone_wall");
+    BlockItemId SMOOTH_ORANGE_SANDSTONE = register("smooth_orange_sandstone");
+    BlockItemId SMOOTH_ORANGE_SANDSTONE_STAIRS = register("smooth_orange_sandstone_stairs");
+    BlockItemId SMOOTH_ORANGE_SANDSTONE_SLAB = register("smooth_orange_sandstone_slab");
+    BlockItemId SMOOTH_ORANGE_SANDSTONE_WALL = register("smooth_orange_sandstone_wall");
+    BlockItemId CUT_ORANGE_SANDSTONE = register("cut_orange_sandstone");
+    BlockItemId CUT_ORANGE_SANDSTONE_STAIRS = register("cut_orange_sandstone_stairs");
+    BlockItemId CUT_ORANGE_SANDSTONE_SLAB = register("cut_orange_sandstone_slab");
+    BlockItemId CUT_ORANGE_SANDSTONE_WALL = register("cut_orange_sandstone_wall");
+    BlockItemId POLISHED_ORANGE_SANDSTONE = register("polished_orange_sandstone");
+    BlockItemId POLISHED_ORANGE_SANDSTONE_STAIRS = register("polished_orange_sandstone_stairs");
+    BlockItemId POLISHED_ORANGE_SANDSTONE_SLAB = register("polished_orange_sandstone_slab");
+    BlockItemId POLISHED_ORANGE_SANDSTONE_WALL = register("polished_orange_sandstone_wall");
+    BlockItemId CHISELED_ORANGE_SANDSTONE = register("chiseled_orange_sandstone");
 
     // Mud / Metals
     BlockItemId MOSSY_MUD = register("mossy_mud");
@@ -580,11 +629,6 @@ public interface EBlockItemIds {
     BlockItemId SILVER_CHAIN = register("silver_chain");
     BlockItemId GOLD_CHAIN = register("gold_chain");
     BlockItemId REDSTONE_LANTERN = register("redstone_lantern");
-    BlockItemId CUT_TIN = register("cut_tin");
-    BlockItemId CUT_TIN_STAIRS = register("cut_tin_stairs");
-    BlockItemId CUT_TIN_SLAB = register("cut_tin_slab");
-    BlockItemId CHISELED_TIN = register("chiseled_tin");
-    BlockItemId TIN_BARS = register("tin_bars");
     BlockItemId WROUGHT_IRON_BLOCK = register("wrought_iron_block");
     BlockItemId WROUGHT_IRON_STAIRS = register("wrought_iron_stairs");
     BlockItemId WROUGHT_IRON_SLAB = register("wrought_iron_slab");

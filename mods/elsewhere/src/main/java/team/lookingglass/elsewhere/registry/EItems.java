@@ -2,17 +2,24 @@ package team.lookingglass.elsewhere.registry;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.dispenser.DispenseBehavior;
+import net.minecraft.core.dispenser.DispenseBehaviorIds;
+import net.minecraft.core.dispenser.ShootProjectileDispenseBehavior;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.BlocksAttacks;
@@ -20,8 +27,10 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.BannerPatternLayers;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import team.lookingglass.elsewhere.Elsewhere;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,6 +44,9 @@ import team.lookingglass.elsewhere.registry.equipment.*;
 import team.lookingglass.elsewhere.registry.equipment.items.ConfigurableShieldItem;
 import team.lookingglass.elsewhere.registry.equipment.items.SoulsteelItem;
 import team.lookingglass.elsewhere.registry.sets.EDiscs;
+import team.lookingglass.elsewhere.registry.util.bolt.Bolt;
+import team.lookingglass.elsewhere.registry.util.bolt.BoltItem;
+import team.lookingglass.elsewhere.registry.util.bolt.BoltStats;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,52 +56,34 @@ public interface EItems {
 
     Item AZALEA_SIGN = register(EBlockItemIds.AZALEA_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.AZALEA_SIGN, EBlocks.AZALEA_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
     Item AZALEA_HANGING_SIGN = register(EBlockItemIds.AZALEA_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.AZALEA_HANGING_SIGN, EBlocks.AZALEA_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
-    Item AZALEA_BOAT = register(EItemIds.AZALEA_BOAT, p -> new BoatItem(EEntities.AZALEA_BOAT, p), new Item.Properties().stacksTo(1));
-    Item AZALEA_CHEST_BOAT = register(EItemIds.AZALEA_CHEST_BOAT, p -> new BoatItem(EEntities.AZALEA_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
+    Item AZALEA_BOAT = registerBoat(EItemIds.AZALEA_BOAT, EEntities.AZALEA_BOAT);
+    Item AZALEA_CHEST_BOAT = registerBoat(EItemIds.AZALEA_CHEST_BOAT, EEntities.AZALEA_CHEST_BOAT);
     Item CEDAR_SIGN = register(EBlockItemIds.CEDAR_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.CEDAR_SIGN, EBlocks.CEDAR_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
     Item CEDAR_HANGING_SIGN = register(EBlockItemIds.CEDAR_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.CEDAR_HANGING_SIGN, EBlocks.CEDAR_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
-    Item CEDAR_BOAT = register(EItemIds.CEDAR_BOAT, p -> new BoatItem(EEntities.CEDAR_BOAT, p), new Item.Properties().stacksTo(1));
-    Item CEDAR_CHEST_BOAT = register(EItemIds.CEDAR_CHEST_BOAT, p -> new BoatItem(EEntities.CEDAR_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
+    Item CEDAR_BOAT = registerBoat(EItemIds.CEDAR_BOAT, EEntities.CEDAR_BOAT);
+    Item CEDAR_CHEST_BOAT = registerBoat(EItemIds.CEDAR_CHEST_BOAT, EEntities.CEDAR_CHEST_BOAT);
     Item MAHOGANY_SIGN = register(EBlockItemIds.MAHOGANY_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.MAHOGANY_SIGN, EBlocks.MAHOGANY_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
     Item MAHOGANY_HANGING_SIGN = register(EBlockItemIds.MAHOGANY_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.MAHOGANY_HANGING_SIGN, EBlocks.MAHOGANY_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
-    Item MAHOGANY_BOAT = register(EItemIds.MAHOGANY_BOAT, p -> new BoatItem(EEntities.MAHOGANY_BOAT, p), new Item.Properties().stacksTo(1));
-    Item MAHOGANY_CHEST_BOAT = register(EItemIds.MAHOGANY_CHEST_BOAT, p -> new BoatItem(EEntities.MAHOGANY_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
+    Item MAHOGANY_BOAT = registerBoat(EItemIds.MAHOGANY_BOAT, EEntities.MAHOGANY_BOAT);
+    Item MAHOGANY_CHEST_BOAT = registerBoat(EItemIds.MAHOGANY_CHEST_BOAT, EEntities.MAHOGANY_CHEST_BOAT);
     Item PINE_SIGN = register(EBlockItemIds.PINE_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.PINE_SIGN, EBlocks.PINE_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
     Item PINE_HANGING_SIGN = register(EBlockItemIds.PINE_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.PINE_HANGING_SIGN, EBlocks.PINE_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
-    Item PINE_BOAT = register(EItemIds.PINE_BOAT, p -> new BoatItem(EEntities.PINE_BOAT, p), new Item.Properties().stacksTo(1));
-    Item PINE_CHEST_BOAT = register(EItemIds.PINE_CHEST_BOAT, p -> new BoatItem(EEntities.PINE_CHEST_BOAT, p), new Item.Properties().stacksTo(1));
+    Item PINE_BOAT = registerBoat(EItemIds.PINE_BOAT, EEntities.PINE_BOAT);
+    Item PINE_CHEST_BOAT = registerBoat(EItemIds.PINE_CHEST_BOAT, EEntities.PINE_CHEST_BOAT);
+
+    Item FIR_SIGN = register(EBlockItemIds.FIR_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.FIR_SIGN, EBlocks.FIR_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item FIR_HANGING_SIGN = register(EBlockItemIds.FIR_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.FIR_HANGING_SIGN, EBlocks.FIR_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item FIR_BOAT = registerBoat(EItemIds.FIR_BOAT, EEntities.FIR_BOAT);
+    Item FIR_CHEST_BOAT = registerBoat(EItemIds.FIR_CHEST_BOAT, EEntities.FIR_CHEST_BOAT);
+    Item WILLOW_SIGN = register(EBlockItemIds.WILLOW_SIGN.item(), p -> new StandingAndWallBlockItem(EBlocks.WILLOW_SIGN, EBlocks.WILLOW_WALL_SIGN, Direction.DOWN, p), new Item.Properties().stacksTo(16));
+    Item WILLOW_HANGING_SIGN = register(EBlockItemIds.WILLOW_HANGING_SIGN.item(), p -> new HangingSignItem(EBlocks.WILLOW_HANGING_SIGN, EBlocks.WILLOW_WALL_HANGING_SIGN, p), new Item.Properties().stacksTo(16));
+    Item WILLOW_BOAT = registerBoat(EItemIds.WILLOW_BOAT, EEntities.WILLOW_BOAT);
+    Item WILLOW_CHEST_BOAT = registerBoat(EItemIds.WILLOW_CHEST_BOAT, EEntities.WILLOW_CHEST_BOAT);
 
     Item DIAMOND_NUGGET = register(EItemIds.DIAMOND_NUGGET, Item::new, new Item.Properties());
     Item EMERALD_NUGGET = register(EItemIds.EMERALD_NUGGET, Item::new, new Item.Properties());
 
     Item SOULGLASS_SHARD = register(EItemIds.SOULGLASS_SHARD, Item::new, new Item.Properties());
-
-    Item RAW_TIN = register(EItemIds.RAW_TIN, Item::new, new Item.Properties());
-    Item TIN_INGOT = register(EItemIds.TIN_INGOT, Item::new, new Item.Properties().trimMaterial(ETrims.TIN));
-    Item TIN_NUGGET = register(EItemIds.TIN_NUGGET, Item::new, new Item.Properties());
-
-    Item BRONZE_ALLOY = register(EItemIds.BRONZE_ALLOY, Item::new, new Item.Properties().trimMaterial(ETrims.BRONZE));
-    Item BRONZE_UPGRADE_SMITHING_TEMPLATE = register(EItemIds.BRONZE_UPGRADE_SMITHING_TEMPLATE, p -> new SmithingTemplateItem(
-                    Component.translatable("item.elsewhere.smithing_template.bronze_upgrade.applies_to").withStyle(ChatFormatting.BLUE),
-                    Component.translatable("item.elsewhere.smithing_template.bronze_upgrade.ingredients").withStyle(ChatFormatting.BLUE),
-                    Component.translatable("item.elsewhere.smithing_template.bronze_upgrade.base_slot_description"),
-                    Component.translatable("item.elsewhere.smithing_template.bronze_upgrade.additions_slot_description"),
-                    SmithingTemplateItem.createNetheriteUpgradeIconList(), SmithingTemplateItem.createNetheriteUpgradeMaterialList(), p),
-            new Item.Properties().rarity(Rarity.UNCOMMON)
-    );
-    Item BRONZE_HELMET = register(EItemIds.BRONZE_HELMET, Item::new, new Item.Properties().humanoidArmor(EMaterials.BRONZE_ARMOR, ArmorType.HELMET));
-    Item BRONZE_CHESTPLATE = register(EItemIds.BRONZE_CHESTPLATE, Item::new, new Item.Properties().humanoidArmor(EMaterials.BRONZE_ARMOR, ArmorType.CHESTPLATE));
-    Item BRONZE_LEGGINGS = register(EItemIds.BRONZE_LEGGINGS, Item::new, new Item.Properties().humanoidArmor(EMaterials.BRONZE_ARMOR, ArmorType.LEGGINGS));
-    Item BRONZE_BOOTS = register(EItemIds.BRONZE_BOOTS, Item::new, new Item.Properties().humanoidArmor(EMaterials.BRONZE_ARMOR, ArmorType.BOOTS));
-    Item BRONZE_SWORD = register(EItemIds.BRONZE_SWORD, Item::new, new Item.Properties().sword(EMaterials.BRONZE_TOOL, 3.0F, -2.4F));
-    Item BRONZE_AXE = register(EItemIds.BRONZE_AXE, Item::new, new Item.Properties().axe(EMaterials.BRONZE_TOOL, 5.0F, -3.0F));
-    Item BRONZE_SPEAR = register(EItemIds.BRONZE_SPEAR, Item::new, new Item.Properties()
-            .spear(EMaterials.BRONZE_TOOL,
-                    1.0F, 1.013F, 0.6F, 2.8F, 10.5F,
-                    6.63F, 5.1F, 10.63F, 4.6F));
-    Item BRONZE_PICKAXE = register(EItemIds.BRONZE_PICKAXE, Item::new, new Item.Properties().pickaxe(EMaterials.BRONZE_TOOL, 1.0F, -2.8F));
-    Item BRONZE_SHOVEL = register(EItemIds.BRONZE_SHOVEL, Item::new, new Item.Properties().shovel(EMaterials.BRONZE_TOOL, 1.5F, -3.0F));
-    Item BRONZE_HOE = register(EItemIds.BRONZE_HOE, Item::new, new Item.Properties().hoe(EMaterials.BRONZE_TOOL, -2.5F, -1.0F));
 
     Item RAW_SILVER = register(EItemIds.RAW_SILVER, Item::new, new Item.Properties());
     Item SILVER_INGOT = register(EItemIds.SILVER_INGOT, Item::new, new Item.Properties().trimMaterial(ETrims.SILVER));
@@ -166,17 +160,22 @@ public interface EItems {
     Item URANIUM = register(EItemIds.URANIUM, Item::new, new Item.Properties().trimMaterial(ETrims.URANIUM));
     Item URANIUM_SHARD = register(EItemIds.URANIUM_SHARD, Item::new, new Item.Properties());
 
+    Holder<List<DispenseBehavior>> boltShot = Holder.direct(List.of(ShootProjectileDispenseBehavior.builder().power(2.0F).uncertainty(3.0F).build()));
+
+    Item IRON_BOLT = registerBolt(EItemIds.IRON_BOLT, EEntities.IRON_BOLT);
+    Item SILVER_BOLT = registerBolt(EItemIds.SILVER_BOLT, EEntities.SILVER_BOLT);
 
 
-    Item WEREWOLF_SPAWN_EGG = register(EItemIds.WEREWOLF_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.WEREWOLF));
-    Item VANGUARD_SPAWN_EGG = register(EItemIds.VANGUARD_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.VANGUARD));
-    Item SUBSLIME_SPAWN_EGG = register(EItemIds.SUBSLIME_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.SUBSLIME));
-    Item SWEEPER_SPAWN_EGG = register(EItemIds.SWEEPER_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.SWEEPER));
-    Item MUD_GOLEM_SPAWN_EGG = register(EItemIds.MUD_GOLEM_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.MUD_GOLEM));
-    Item LOST_SOUL_SPAWN_EGG = register(EItemIds.LOST_SOUL_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.LOST_SOUL));
-    Item TROLL_SPAWN_EGG = register(EItemIds.TROLL_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.TROLL));
-    Item GRAVEKEEPER_SPAWN_EGG = register(EItemIds.GRAVEKEEPER_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.GRAVEKEEPER));
-    Item WHISTLER_SPAWN_EGG = register(EItemIds.WHISTLER_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.WHISTLER));
+
+    Item WEREWOLF_SPAWN_EGG = register(EItemIds.WEREWOLF_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.WEREWOLF));
+    Item VANGUARD_SPAWN_EGG = register(EItemIds.VANGUARD_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.VANGUARD));
+    Item SUBSLIME_SPAWN_EGG = register(EItemIds.SUBSLIME_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.SUBSLIME));
+    Item SWEEPER_SPAWN_EGG = register(EItemIds.SWEEPER_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.SWEEPER));
+    Item MUD_GOLEM_SPAWN_EGG = register(EItemIds.MUD_GOLEM_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.MUD_GOLEM));
+    Item LOST_SOUL_SPAWN_EGG = register(EItemIds.LOST_SOUL_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.LOST_SOUL));
+    Item TROLL_SPAWN_EGG = register(EItemIds.TROLL_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.TROLL));
+    Item GRAVEKEEPER_SPAWN_EGG = register(EItemIds.GRAVEKEEPER_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.GRAVEKEEPER));
+    Item WHISTLER_SPAWN_EGG = registerSpawnEgg(EItemIds.WHISTLER_SPAWN_EGG, EEntities.WHISTLER);
 
     Item VANGUARD_MASK = register(EItemIds.VANGUARD_MASK, Item::new, new Item.Properties()
             .humanoidArmor(EMaterials.VANGUARD_MASK, ArmorType.HELMET)
@@ -190,7 +189,7 @@ public interface EItems {
             )
     );
 
-    Item PERCH_SPAWN_EGG = register(EItemIds.PERCH_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawnEgg(EEntities.PERCH));
+    Item PERCH_SPAWN_EGG = register(EItemIds.PERCH_SPAWN_EGG, SpawnEggItem::new, new Item.Properties().spawns(EEntities.PERCH));
 
     Item RAW_PERCH = register(EItemIds.RAW_PERCH, Item::new, new Item.Properties()
             .food(new FoodProperties.Builder().nutrition(2).saturationModifier(0.25F).build()));
@@ -204,7 +203,7 @@ public interface EItems {
 
     Item PERCH_BUCKET = register(EItemIds.PERCH_BUCKET, p -> new MobBucketItem(EEntities.PERCH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, p), new Item.Properties());
 
-    Item MUSIC_DISC_FOX = register(EItemIds.MUSIC_DISC_FOX, Item::new, new Item.Properties().jukeboxPlayable(EDiscs.FOX).rarity(Rarity.UNCOMMON));
+    Item MUSIC_DISC_FOX = register(EItemIds.MUSIC_DISC_FOX, Item::new, new Item.Properties().jukeboxPlayable(EDiscs.FOX).rarity(Rarity.UNCOMMON).stacksTo(1));
 
     Item DUNGEON_KEY = register(EItemIds.DUNGEON_KEY, Item::new, new Item.Properties());
     Item OMINOUS_DUNGEON_KEY = register(EItemIds.OMINOUS_DUNGEON_KEY, Item::new, new Item.Properties());
@@ -256,6 +255,20 @@ public interface EItems {
         Registry.register(BuiltInRegistries.ITEM, id, item);
         return item;
     }
+    private static Item registerBoat(final ResourceKey<Item> id, final EntityType<? extends AbstractBoat> type) {
+        return register(id, BoatItem::new, new Item.Properties().cookingFuel(ContextIntProviders.COOKING_TIME_BOATS).stacksTo(1).spawns(type).dispensed(DispenseBehaviorIds.BOAT));
+    }
+    private static Item registerSpawnEgg(final ResourceKey<Item> id, final EntityType<?> type) {
+        return register(id, SpawnEggItem::new, new Item.Properties().spawns(type).dispensed(DispenseBehaviorIds.SPAWN_EGG));
+    }
+    private static Item registerBolt(final ResourceKey<Item> id, final EntityType<? extends Bolt> type) {
+        return register(id, p -> new BoltItem(p, type), new Item.Properties().stacksTo(16).component(DataComponents.DISPENSE_BEHAVIOR, boltShot));
+    }
+
+
     // Initialize
-    static void initialize() {}
+    static void initialize() {
+        BoltStats.register(EEntities.IRON_BOLT, new BoltStats(3.0, 0.08, 2, false, () -> IRON_BOLT));
+        BoltStats.register(EEntities.SILVER_BOLT, new BoltStats(2.5, 0.08, 2, true, () -> SILVER_BOLT));
+    }
 }

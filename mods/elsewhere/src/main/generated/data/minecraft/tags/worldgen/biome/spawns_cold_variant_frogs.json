@@ -1,13 +1,17 @@
 {
   "values": [
-    "elsewhere:glacial_valley",
-    "elsewhere:snowy_tundra",
     "elsewhere:tundra",
+    "elsewhere:fir_thicket",
+    "elsewhere:alpine_plains",
+    "elsewhere:alpine_grove",
     "elsewhere:pine_barrens",
     "elsewhere:rainforest",
+    "elsewhere:steppe",
+    "elsewhere:highlands",
+    "elsewhere:howling_peaks",
+    "elsewhere:cold_desert",
     "elsewhere:bog",
     "elsewhere:frozen_beach",
-    "elsewhere:cold_beach",
-    "elsewhere:steppe"
+    "elsewhere:cold_beach"
   ]
 }

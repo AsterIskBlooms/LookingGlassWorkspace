@@ -12,17 +12,14 @@ import net.minecraft.client.renderer.block.dispatch.Variant;
 import net.minecraft.client.renderer.block.dispatch.VariantMutator;
 import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.SpeleothemThickness;
 import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.registry.EBlocks;
 import team.lookingglass.elsewhere.registry.util.EBlockStateProperties;
+import team.lookingglass.mirrorlib.registry.block.MBlockModelGenerators;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -43,14 +40,37 @@ public class EBlockModelGenerators extends BlockModelGenerators {
                 .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(EBlocks.ARID_GRASS_BLOCK, "_snow"));
 
         MultiVariant aridSnowyGrass = createRotatedVariants(
-                plainModel(ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(EBlocks.ARID_GRASS_BLOCK, "_snow", snowyMapping, modelOutput))
-        );
-
+                plainModel(ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(EBlocks.ARID_GRASS_BLOCK, "_snow", snowyMapping, modelOutput)));
         Identifier aridPlainGrassModel = ModelLocationUtils.getModelLocation(EBlocks.ARID_GRASS_BLOCK);
         MultiVariant aridPlainGrass = createRotatedVariants(plainModel(aridPlainGrassModel));
 
         createGrassLikeBlock(EBlocks.ARID_GRASS_BLOCK, aridPlainGrass, aridSnowyGrass);
         registerSimpleTintedItemModel(EBlocks.ARID_GRASS_BLOCK, aridPlainGrassModel, new GrassColorSource(1.0F, 0.0F));
+    }
+    public void createGloomyGrassBlock() {
+        Material bottomTexture = TextureMapping.getBlockTexture(EBlocks.GLOOMY_DIRT);
+
+        TextureMapping plainMapping = new TextureMapping()
+                .put(TextureSlot.BOTTOM, bottomTexture)
+                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(EBlocks.GLOOMY_GRASS_BLOCK, "_top"))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(EBlocks.GLOOMY_GRASS_BLOCK, "_side"))
+                .put(MBlockModelGenerators.OVERLAY, TextureMapping.getBlockTexture(EBlocks.GLOOMY_GRASS_BLOCK, "_side_overlay"));
+
+        TextureMapping snowyMapping = new TextureMapping()
+                .put(TextureSlot.BOTTOM, bottomTexture)
+                .copyForced(TextureSlot.BOTTOM, TextureSlot.PARTICLE)
+                .put(TextureSlot.TOP, TextureMapping.getBlockTexture(Blocks.SNOW))
+                .put(TextureSlot.SIDE, TextureMapping.getBlockTexture(EBlocks.GLOOMY_GRASS_BLOCK, "_snow"));
+
+        Identifier gloomyPlainGrassModel = MBlockModelGenerators.TINTED_GRASS_BLOCK.create(EBlocks.GLOOMY_GRASS_BLOCK, plainMapping, this.modelOutput);
+        MultiVariant gloomyPlainGrass = createRotatedVariants(plainModel(gloomyPlainGrassModel));
+
+        MultiVariant gloomySnowyGrass = createRotatedVariants(
+                plainModel(ModelTemplates.CUBE_BOTTOM_TOP.createWithSuffix(EBlocks.GLOOMY_GRASS_BLOCK, "_snow", snowyMapping, this.modelOutput)));
+
+        createGrassLikeBlock(EBlocks.GLOOMY_GRASS_BLOCK, gloomyPlainGrass, gloomySnowyGrass);
+        registerSimpleTintedItemModel(EBlocks.GLOOMY_GRASS_BLOCK, gloomyPlainGrassModel, new GrassColorSource(0.2F, 0.25F));
     }
     public void createSeagrassSandBlock() {
         Material bottomTexture = TextureMapping.getBlockTexture(Blocks.SAND);
@@ -77,7 +97,6 @@ public class EBlockModelGenerators extends BlockModelGenerators {
     private static final ModelTemplate BIG_HANGING_LANTERN = new ModelTemplate(
             Optional.of(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "block/template_big_hanging_lantern")),
             Optional.of("_hanging"), TextureSlot.LANTERN);
-
     private static final ModelTemplate BIG_WALL_HANGING_LANTERN = new ModelTemplate(
             Optional.of(Identifier.fromNamespaceAndPath(Elsewhere.MODID, "block/template_big_wall_hanging_lantern")),
             Optional.of("_wall_hanging"), TextureSlot.LANTERN);

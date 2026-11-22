@@ -41,11 +41,11 @@ public final class ERegions {
             RegionBiomeBuilder builder = new RegionBiomeBuilder();
 
             builder.middle().replace(new ResourceKey[][]{
-                    { EBiomes.SNOWY_TUNDRA, EBiomes.SNOWY_TUNDRA, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA, Biomes.TAIGA },
-                    { EBiomes.TUNDRA, EBiomes.TUNDRA, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
+                    { EBiomes.TUNDRA, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA, Biomes.TAIGA },
+                    { EBiomes.STEPPE, EBiomes.STEPPE, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA },
                     { EBiomes.DAPPLED_CLEARING, Biomes.PLAINS, Biomes.FOREST, EBiomes.OLD_GROWTH_FOREST, Biomes.DARK_FOREST },
                     { Biomes.SAVANNA, Biomes.SAVANNA, EBiomes.ARID_SHRUBLAND, Biomes.SPARSE_JUNGLE, Biomes.JUNGLE },
-                    { EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.DUNES, EBiomes.ACACIA_FLATS, EBiomes.ACACIA_FLATS }
+                    { EBiomes.OUTBACK, EBiomes.OUTBACK, EBiomes.DUNES, EBiomes.DUNES, EBiomes.LUSH_DUNES}
             });
             builder.middleVariant().replace(new ResourceKey[][]{
                     { Biomes.ICE_SPIKES, null, EBiomes.FIR_THICKET, EBiomes.FIR_THICKET, null },
@@ -60,14 +60,14 @@ public final class ERegions {
                     { EBiomes.HIGHLANDS, EBiomes.HIGHLANDS, EBiomes.HIGHLANDS, null, null },
                     { Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, null, null, Biomes.PALE_GARDEN },
                     { Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU, null, null, null },
-                    { null, null, null, null, null }
+                    { Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS }
             });
             builder.plateauVariant().replace(new ResourceKey[][]{
                     { null, null, null, null, null },
                     { null, null, null, null, null },
                     { null, null, null, null, null },
                     { null, null, null, null, null },
-                    { null, null, null, null, null }
+                    { Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, null, null },
             });
 
             builder.rivers().byTemperature(new ResourceKey[]{
@@ -82,12 +82,11 @@ public final class ERegions {
             });
             builder.swamps().replace(new ResourceKey[][]{
                     { EBiomes.BOG, EBiomes.BOG, EBiomes.BOG, EBiomes.BOG, EBiomes.BOG },
-                    { EBiomes.MARSH, EBiomes.MARSH, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
-                    { EBiomes.MARSH, EBiomes.MARSH, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
+                    { Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
+                    { Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
                     { Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, EBiomes.TROPICAL_BASIN, EBiomes.TROPICAL_BASIN },
-                    { EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND }
+                    { Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, EBiomes.SALT_FLATS, EBiomes.SALT_FLATS }
             });
-            builder.badlands().replaceRow(new ResourceKey[]{null, null, null, Biomes.WOODED_BADLANDS, Biomes.WOODED_BADLANDS });
 
             return builder;
         }
@@ -102,23 +101,23 @@ public final class ERegions {
             RegionBiomeBuilder builder = new RegionBiomeBuilder();
 
             builder.middle().replace(new ResourceKey[][] {
-                    { Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, EBiomes.ALPINE_PLAINS, EBiomes.ALPINE_PLAINS, EBiomes.PINE_BARRENS },
+                    { EBiomes.TUNDRA, Biomes.SNOWY_PLAINS, EBiomes.ALPINE_PLAINS, EBiomes.ALPINE_PLAINS, EBiomes.PINE_BARRENS },
                     { EBiomes.COLD_DESERT, EBiomes.STEPPE, EBiomes.STEPPE, Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST },
-                    { EBiomes.PRAIRIE, EBiomes.PRAIRIE, EBiomes.SHRUBLAND, EBiomes.OAK_WOODLAND, Biomes.DARK_FOREST },
+                    { Biomes.FLOWER_FOREST, Biomes.PLAINS, EBiomes.SHRUBLAND, EBiomes.OAK_WOODLAND, Biomes.DARK_FOREST },
                     { EBiomes.DRYLAND, EBiomes.DRYLAND, EBiomes.CEDAR_FOREST, EBiomes.CEDAR_FOREST, EBiomes.ROCKY_JUNGLE },
-                    { EBiomes.DRYLAND, Biomes.DESERT, Biomes.DESERT, EBiomes.DUNES, EBiomes.LUSH_DUNES }
+                    { EBiomes.ROCKY_DESERT, EBiomes.ROCKY_DESERT, Biomes.DESERT, Biomes.DESERT, EBiomes.ROCKY_JUNGLE }
             });
             builder.middleVariant().replace(new ResourceKey[][] {
-                    { EBiomes.GLACIAL_VALLEY, null, EBiomes.ALPINE_GROVE, EBiomes.ALPINE_GROVE, null },
-                    { null, null, null, null, Biomes.OLD_GROWTH_BIRCH_FOREST },
+                    { null, null, EBiomes.ALPINE_GROVE, EBiomes.ALPINE_GROVE, null },
                     { null, null, null, null, null },
+                    { EBiomes.PRAIRIE, EBiomes.PRAIRIE, null, null, null },
                     { null, null, null, null, null },
                     { null, null, null, null, null }
             });
 
             builder.plateau().replace(new ResourceKey[][] {
                     { null, null, null, null, null },
-                    { EBiomes.HIGHLANDS, null, null, null, EBiomes.RAINFOREST },
+                    { EBiomes.HIGHLANDS, EBiomes.HIGHLANDS, EBiomes.HIGHLANDS, null, EBiomes.RAINFOREST },
                     { Biomes.FLOWER_FOREST, Biomes.MEADOW, null, null, Biomes.PALE_GARDEN },
                     { null, null, null, null, null },
                     { Biomes.BADLANDS, Biomes.BADLANDS, Biomes.BADLANDS, EBiomes.CLOUD_FOREST, EBiomes.CLOUD_FOREST }
@@ -126,7 +125,7 @@ public final class ERegions {
             builder.plateauVariant().replace(new ResourceKey[][] {
                     { null, null, null, null, null },
                     { null, null, null, null, null },
-                    { null, null, null, null, null },
+                    { EBiomes.OAK_WOODLAND, null, null, null, null },
                     { null, null, null, null, null },
                     { Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, null, null, null }
             });
@@ -150,10 +149,10 @@ public final class ERegions {
             });
             builder.swamps().replace(new ResourceKey[][]{
                     { EBiomes.BOG, EBiomes.BOG, EBiomes.BOG, EBiomes.BOG, EBiomes.BOG },
-                    { EBiomes.MARSH, EBiomes.MARSH, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
-                    { EBiomes.MARSH, EBiomes.MARSH, Biomes.SWAMP, Biomes.SWAMP, Biomes.SWAMP },
+                    { EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH },
+                    { EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH, EBiomes.MARSH },
                     { Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, Biomes.MANGROVE_SWAMP, EBiomes.TROPICAL_BASIN, EBiomes.TROPICAL_BASIN },
-                    { EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND }
+                    { EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.DESERT_WETLAND, EBiomes.SALT_FLATS, EBiomes.SALT_FLATS }
             });
             builder.badlands().replaceRow(new ResourceKey[]{null, null, null, EBiomes.CLOUD_FOREST, EBiomes.CLOUD_FOREST });
 

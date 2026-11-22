@@ -179,16 +179,11 @@ public interface EBlocks {
 
 
     // Sandstone Fills
-    Block ARID_SAND = BlockRegistry.register(EBlockItemIds.ARID_SAND, p -> new SandBlock(new ColorRGBA(14406560), p),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.SAND));
-
     Block POLISHED_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.POLISHED_SANDSTONE, Blocks.CUT_SANDSTONE);
     Block POLISHED_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_SANDSTONE_STAIRS, POLISHED_SANDSTONE);
     Block POLISHED_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_SANDSTONE_SLAB, POLISHED_SANDSTONE);
     Block POLISHED_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.POLISHED_SANDSTONE_WALL, POLISHED_SANDSTONE);
-
     Block SMOOTH_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.SMOOTH_SANDSTONE_WALL, Blocks.SMOOTH_SANDSTONE);
-
     Block CUT_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_SANDSTONE_STAIRS, Blocks.CUT_SANDSTONE);
     Block CUT_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.CUT_SANDSTONE_WALL, Blocks.CUT_SANDSTONE);
 
@@ -196,9 +191,7 @@ public interface EBlocks {
     Block POLISHED_RED_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_RED_SANDSTONE_STAIRS, POLISHED_RED_SANDSTONE);
     Block POLISHED_RED_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_RED_SANDSTONE_SLAB, POLISHED_RED_SANDSTONE);
     Block POLISHED_RED_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.POLISHED_RED_SANDSTONE_WALL, POLISHED_RED_SANDSTONE);
-
     Block SMOOTH_RED_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.SMOOTH_RED_SANDSTONE_WALL, Blocks.SMOOTH_RED_SANDSTONE);
-
     Block CUT_RED_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_RED_SANDSTONE_STAIRS, Blocks.CUT_RED_SANDSTONE);
     Block CUT_RED_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.CUT_RED_SANDSTONE_WALL, Blocks.CUT_RED_SANDSTONE);
 
@@ -323,16 +316,7 @@ public interface EBlocks {
     Block CINNABAR_SILVER_ORE = BlockRegistry.register(EBlockItemIds.CINNABAR_SILVER_ORE, Block::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.TERRACOTTA_RED).instrument(NoteBlockInstrument.BASEDRUM)
             .requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(BlockSoundSets.CINNABAR));
-    Block TIN_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.TIN_ORE, Blocks.COAL_ORE);
-    Block DEEPSLATE_TIN_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.DEEPSLATE_TIN_ORE, Blocks.DEEPSLATE_COAL_ORE);
-    Block CINNABAR_TIN_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_TIN_ORE, CINNABAR_SILVER_ORE);
 
-    Block TIN_BLOCK = BlockRegistry.register(EBlockItemIds.TIN_BLOCK, Block::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_LIGHT_GRAY).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(BlockSoundSets.IRON));
-    Block RAW_TIN_BLOCK = BlockRegistry.register(EBlockItemIds.RAW_TIN_BLOCK, Block::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).requiresCorrectToolForDrops().strength(4.0F, 6.0F).sound(BlockSoundSets.STONE));
-    Block BRONZE_BLOCK = BlockRegistry.register(EBlockItemIds.BRONZE_BLOCK, Block::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.TERRACOTTA_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(BlockSoundSets.COPPER));
     Block SILVER_BLOCK = BlockRegistry.register(EBlockItemIds.SILVER_BLOCK, Block::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_CYAN).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(BlockSoundSets.COPPER));
     Block RAW_SILVER_BLOCK = BlockRegistry.register(EBlockItemIds.RAW_SILVER_BLOCK, Block::new, BlockBehaviour.Properties.of()
@@ -350,19 +334,10 @@ public interface EBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_SULFUR));
     Block CINNABAR_PILLAR = BlockRegistry.register(EBlockItemIds.CINNABAR_PILLAR, RotatedPillarBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_CINNABAR));
-    Block CINNABAR_COAL_ORE = BlockRegistry.register(EBlockItemIds.CINNABAR_COAL_ORE, Block::new,
-            BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(BlockSoundSets.CINNABAR));
-    Block CINNABAR_COPPER_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_COPPER_ORE, CINNABAR_COAL_ORE);
-    Block CINNABAR_IRON_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_IRON_ORE, CINNABAR_COAL_ORE);
-    Block CINNABAR_GOLD_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_GOLD_ORE, CINNABAR_COAL_ORE);
     Block CINNABAR_REDSTONE_ORE = BlockRegistry.register(EBlockItemIds.CINNABAR_REDSTONE_ORE, p -> new RedStoneOreBlock(UniformInt.of(1, 5), p),
             BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops().randomTicks().lightLevel(Blocks.litBlockEmission(9))
                     .strength(3.0F, 6.0F).sound(BlockSoundSets.CINNABAR));
-    Block CINNABAR_DIAMOND_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_DIAMOND_ORE, CINNABAR_COAL_ORE);
-    Block CINNABAR_LAPIS_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_LAPIS_ORE, CINNABAR_COAL_ORE);
-    Block CINNABAR_EMERALD_ORE = BlockRegistry.registerCopyBlock(EBlockItemIds.CINNABAR_EMERALD_ORE, CINNABAR_COAL_ORE);
 
     // Netherrack
     Block NETHERRACK_STAIRS = BlockRegistry.registerStair(EBlockItemIds.NETHERRACK_STAIRS, Blocks.NETHERRACK);
@@ -498,6 +473,12 @@ public interface EBlocks {
     Block MANGROVE_BOARDS = BlockRegistry.register(EBlockItemIds.MANGROVE_BOARDS, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS));
     Block MANGROVE_TRIM = BlockRegistry.register(EBlockItemIds.MANGROVE_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS));
 
+    Block POPLAR_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.POPLAR_MOSAIC, Blocks.POPLAR_PLANKS);
+    Block POPLAR_MOSAIC_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POPLAR_MOSAIC_STAIRS, POPLAR_MOSAIC);
+    Block POPLAR_MOSAIC_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POPLAR_MOSAIC_SLAB, POPLAR_MOSAIC);
+    Block POPLAR_BOARDS = BlockRegistry.register(EBlockItemIds.POPLAR_BOARDS, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POPLAR_PLANKS));
+    Block POPLAR_TRIM = BlockRegistry.register(EBlockItemIds.POPLAR_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.POPLAR_PLANKS));
+
     Block CRIMSON_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.CRIMSON_MOSAIC, Blocks.CRIMSON_PLANKS);
     Block CRIMSON_MOSAIC_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CRIMSON_MOSAIC_STAIRS, CRIMSON_MOSAIC);
     Block CRIMSON_MOSAIC_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CRIMSON_MOSAIC_SLAB, CRIMSON_MOSAIC);
@@ -631,13 +612,13 @@ public interface EBlocks {
     Block AZALEA_LOG = BlockRegistry.register(EBlockItemIds.AZALEA_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
     Block STRIPPED_AZALEA_LOG = BlockRegistry.register(EBlockItemIds.STRIPPED_AZALEA_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
+            .mapColor(MapColor.COLOR_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
     Block AZALEA_WOOD = BlockRegistry.register(EBlockItemIds.AZALEA_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.COLOR_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
     Block STRIPPED_AZALEA_WOOD = BlockRegistry.register(EBlockItemIds.STRIPPED_AZALEA_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
+            .mapColor(MapColor.COLOR_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
     Block AZALEA_PLANKS = BlockRegistry.register(EBlockItemIds.AZALEA_PLANKS, Block::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.COLOR_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
+            .mapColor(MapColor.COLOR_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.CHERRY_WOOD));
     Block AZALEA_STAIRS = BlockRegistry.registerStair(EBlockItemIds.AZALEA_STAIRS, AZALEA_PLANKS);
     Block AZALEA_SLAB = BlockRegistry.registerSlab(EBlockItemIds.AZALEA_SLAB, AZALEA_PLANKS);
     Block AZALEA_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.AZALEA_MOSAIC, AZALEA_PLANKS);
@@ -759,11 +740,85 @@ public interface EBlocks {
     Block PINE_LEAVES = BlockRegistry.register(EBlockItemIds.PINE_LEAVES, p -> new UntintedParticleLeavesBlock(0.005F, EParticles.PINE_LEAVES, Optional.empty(), p),
             BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
 
+    // Fir
+    Block FIR_LOG = BlockRegistry.register(EBlockItemIds.FIR_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BLACK).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_FIR_LOG = BlockRegistry.register(EBlockItemIds.STRIPPED_FIR_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_GRAY).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block FIR_WOOD = BlockRegistry.register(EBlockItemIds.FIR_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BLACK).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_FIR_WOOD = BlockRegistry.register(EBlockItemIds.STRIPPED_FIR_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_GRAY).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block FIR_PLANKS = BlockRegistry.register(EBlockItemIds.FIR_PLANKS, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block FIR_STAIRS = BlockRegistry.registerStair(EBlockItemIds.FIR_STAIRS, FIR_PLANKS);
+    Block FIR_SLAB = BlockRegistry.registerSlab(EBlockItemIds.FIR_SLAB, FIR_PLANKS);
+    Block FIR_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.FIR_MOSAIC, FIR_PLANKS);
+    Block FIR_MOSAIC_STAIRS = BlockRegistry.registerStair(EBlockItemIds.FIR_MOSAIC_STAIRS, FIR_MOSAIC);
+    Block FIR_MOSAIC_SLAB = BlockRegistry.registerSlab(EBlockItemIds.FIR_MOSAIC_SLAB, FIR_MOSAIC);
+    Block FIR_BOARDS = BlockRegistry.register(EBlockItemIds.FIR_BOARDS, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS));
+    Block FIR_TRIM = BlockRegistry.register(EBlockItemIds.FIR_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(FIR_PLANKS));
+    Block FIR_FENCE = BlockRegistry.registerFence(EBlockItemIds.FIR_FENCE, FIR_PLANKS);
+    Block FIR_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.FIR_FENCE_GATE, EWoodTypes.FIR, FIR_PLANKS);
+    Block FIR_DOOR = BlockRegistry.registerDoor(EBlockItemIds.FIR_DOOR, BlockSetType.DEFAULT_WOOD, FIR_PLANKS);
+    Block FIR_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.FIR_TRAPDOOR, BlockSetType.DEFAULT_WOOD, FIR_PLANKS);
+    Block FIR_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.FIR_PRESSURE_PLATE, BlockSetType.DEFAULT_WOOD, FIR_PLANKS);
+    Block FIR_BUTTON = BlockRegistry.registerButton(EBlockItemIds.FIR_BUTTON, BlockSetType.DEFAULT_WOOD, FIR_PLANKS, 30);
+    Block FIR_SIGN = BlockRegistry.registerSign(EBlockItemIds.FIR_SIGN, EWoodTypes.FIR, FIR_PLANKS);
+    Block FIR_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.FIR_WALL_SIGN, EWoodTypes.FIR, FIR_PLANKS);
+    Block FIR_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.FIR_HANGING_SIGN, EWoodTypes.FIR, FIR_PLANKS);
+    Block FIR_WALL_HANGING_SIGN = BlockRegistry.registerWallHangingSign(EBlockItemIds.FIR_WALL_HANGING_SIGN, EWoodTypes.FIR, FIR_PLANKS);
+    Block FIR_SHELF = BlockRegistry.registerShelf(EBlockItemIds.FIR_SHELF, FIR_PLANKS);
+    Block FIR_SAPLING = BlockRegistry.registerSapling(EBlockItemIds.FIR_SAPLING, ETreeGrowers.FIR);
+    Block POTTED_FIR_SAPLING = BlockRegistry.registerPottedSapling(blockKey("potted_fir_sapling"), FIR_SAPLING);
+    Block FIR_LEAVES = BlockRegistry.register(EBlockItemIds.FIR_LEAVES, p -> new UntintedParticleLeavesBlock(0.0025F, EParticles.FIR_LEAVES, Optional.empty(), p),
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
+
+    // Willow
+    Block WILLOW_LOG = BlockRegistry.register(EBlockItemIds.WILLOW_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_WILLOW_LOG = BlockRegistry.register(EBlockItemIds.STRIPPED_WILLOW_LOG, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block WILLOW_WOOD = BlockRegistry.register(EBlockItemIds.WILLOW_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_BROWN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block STRIPPED_WILLOW_WOOD = BlockRegistry.register(EBlockItemIds.STRIPPED_WILLOW_WOOD, RotatedPillarBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block WILLOW_PLANKS = BlockRegistry.register(EBlockItemIds.WILLOW_PLANKS, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_LIGHT_GREEN).strength(2.0F, 2.0F).sound(BlockSoundSets.WOOD));
+    Block WILLOW_STAIRS = BlockRegistry.registerStair(EBlockItemIds.WILLOW_STAIRS, WILLOW_PLANKS);
+    Block WILLOW_SLAB = BlockRegistry.registerSlab(EBlockItemIds.WILLOW_SLAB, WILLOW_PLANKS);
+    Block WILLOW_MOSAIC = BlockRegistry.registerCopyBlock(EBlockItemIds.WILLOW_MOSAIC, WILLOW_PLANKS);
+    Block WILLOW_MOSAIC_STAIRS = BlockRegistry.registerStair(EBlockItemIds.WILLOW_MOSAIC_STAIRS, WILLOW_MOSAIC);
+    Block WILLOW_MOSAIC_SLAB = BlockRegistry.registerSlab(EBlockItemIds.WILLOW_MOSAIC_SLAB, WILLOW_MOSAIC);
+    Block WILLOW_BOARDS = BlockRegistry.register(EBlockItemIds.WILLOW_BOARDS, RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(WILLOW_PLANKS));
+    Block WILLOW_TRIM = BlockRegistry.register(EBlockItemIds.WILLOW_TRIM, HorizontalBlock::new, BlockBehaviour.Properties.ofFullCopy(WILLOW_PLANKS));
+    Block WILLOW_FENCE = BlockRegistry.registerFence(EBlockItemIds.WILLOW_FENCE, WILLOW_PLANKS);
+    Block WILLOW_FENCE_GATE = BlockRegistry.registerFenceGate(EBlockItemIds.WILLOW_FENCE_GATE, EWoodTypes.WILLOW, WILLOW_PLANKS);
+    Block WILLOW_DOOR = BlockRegistry.registerDoor(EBlockItemIds.WILLOW_DOOR, BlockSetType.DEFAULT_WOOD, WILLOW_PLANKS);
+    Block WILLOW_TRAPDOOR = BlockRegistry.registerTrapdoor(EBlockItemIds.WILLOW_TRAPDOOR, BlockSetType.DEFAULT_WOOD, WILLOW_PLANKS);
+    Block WILLOW_PRESSURE_PLATE = BlockRegistry.registerPressurePlate(EBlockItemIds.WILLOW_PRESSURE_PLATE, BlockSetType.DEFAULT_WOOD, WILLOW_PLANKS);
+    Block WILLOW_BUTTON = BlockRegistry.registerButton(EBlockItemIds.WILLOW_BUTTON, BlockSetType.DEFAULT_WOOD, WILLOW_PLANKS, 30);
+    Block WILLOW_SIGN = BlockRegistry.registerSign(EBlockItemIds.WILLOW_SIGN, EWoodTypes.WILLOW, WILLOW_PLANKS);
+    Block WILLOW_WALL_SIGN = BlockRegistry.registerWallSign(EBlockItemIds.WILLOW_WALL_SIGN, EWoodTypes.WILLOW, WILLOW_PLANKS);
+    Block WILLOW_HANGING_SIGN = BlockRegistry.registerCeilingHangingSign(EBlockItemIds.WILLOW_HANGING_SIGN, EWoodTypes.WILLOW, WILLOW_PLANKS);
+    Block WILLOW_WALL_HANGING_SIGN = BlockRegistry.registerWallHangingSign(EBlockItemIds.WILLOW_WALL_HANGING_SIGN, EWoodTypes.WILLOW, WILLOW_PLANKS);
+    Block WILLOW_SHELF = BlockRegistry.registerShelf(EBlockItemIds.WILLOW_SHELF, WILLOW_PLANKS);
+    Block WILLOW_SAPLING = BlockRegistry.registerSapling(EBlockItemIds.WILLOW_SAPLING, ETreeGrowers.WILLOW);
+    Block POTTED_WILLOW_SAPLING = BlockRegistry.registerPottedSapling(blockKey("potted_willow_sapling"), WILLOW_SAPLING);
+    Block WILLOW_LEAVES = BlockRegistry.register(EBlockItemIds.WILLOW_LEAVES, p -> new TintedParticleLeavesBlock(0.01F, p),
+            BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F, 0.2F).sound(BlockSoundSets.AZALEA_LEAVES).noOcclusion());
+
     // Arid Dirt
     Block ARID_DIRT = BlockRegistry.register(EBlockItemIds.ARID_DIRT, Block::new, BlockBehaviour.Properties.of()
             .mapColor(MapColor.WOOD).strength(0.5F).sound(BlockSoundSets.ROOTED_DIRT));
+    Block COARSE_ARID_DIRT = BlockRegistry.registerCopyBlock(EBlockItemIds.COARSE_ARID_DIRT, ARID_DIRT);
     Block ARID_GRASS_BLOCK = BlockRegistry.register(EBlockItemIds.ARID_GRASS_BLOCK, AridGrassBlock::new, BlockBehaviour.Properties.of()
-            .mapColor(MapColor.TERRACOTTA_BROWN).strength(0.5F).sound(BlockSoundSets.ROOTED_DIRT).randomTicks());
+            .mapColor(MapColor.GRASS).strength(0.5F).sound(BlockSoundSets.ROOTED_DIRT).randomTicks());
+    Block GLOOMY_DIRT = BlockRegistry.register(EBlockItemIds.GLOOMY_DIRT, Block::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.TERRACOTTA_LIGHT_GRAY).strength(0.5F).sound(BlockSoundSets.GRAVEL));
+    Block COARSE_GLOOMY_DIRT = BlockRegistry.registerCopyBlock(EBlockItemIds.COARSE_GLOOMY_DIRT, GLOOMY_DIRT);
+    Block GLOOMY_GRASS_BLOCK = BlockRegistry.register(EBlockItemIds.GLOOMY_GRASS_BLOCK, GloomyGrassBlock::new, BlockBehaviour.Properties.of()
+            .mapColor(MapColor.GRASS).strength(0.5F).sound(BlockSoundSets.GRASS).randomTicks());
 
     Block CATTAILS = BlockRegistry.register(EBlockItemIds.CATTAILS, AmphibiousDoublePlantBlock::new, BlockBehaviour.Properties.of()
             .noCollision().instabreak().noOcclusion().pushReaction(PushReaction.POPPED).sound(BlockSoundSets.WET_GRASS)
@@ -844,39 +899,32 @@ public interface EBlocks {
     Block BASALT_VENT = BlockRegistry.register(EBlockItemIds.BASALT_VENT, BasaltVentBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT)
                     .lightLevel(state -> state.getValue(BasaltVentBlock.ACTIVE) ? 3 : 0));
 
-    Block PINK_SAND = BlockRegistry.register(EBlockItemIds.PINK_SAND, p -> new SandBlock(new ColorRGBA(0xFFECCFBD), p),
+    Block ORANGE_SAND = BlockRegistry.register(EBlockItemIds.ORANGE_SAND, p -> new SandBlock(new ColorRGBA(0xFFECCFBD), p),
             BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).mapColor(MapColor.TERRACOTTA_PINK));
-    Block PINK_SANDSTONE = BlockRegistry.register(EBlockItemIds.PINK_SANDSTONE, Block::new,
+    Block ORANGE_SANDSTONE = BlockRegistry.register(EBlockItemIds.ORANGE_SANDSTONE, Block::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).mapColor(MapColor.TERRACOTTA_PINK));
-    Block PINK_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.PINK_SANDSTONE_STAIRS, PINK_SANDSTONE);
-    Block PINK_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.PINK_SANDSTONE_SLAB, PINK_SANDSTONE);
-    Block PINK_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.PINK_SANDSTONE_WALL, PINK_SANDSTONE);
-    Block SMOOTH_PINK_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.SMOOTH_PINK_SANDSTONE, PINK_SANDSTONE);
-    Block SMOOTH_PINK_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.SMOOTH_PINK_SANDSTONE_STAIRS, SMOOTH_PINK_SANDSTONE);
-    Block SMOOTH_PINK_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.SMOOTH_PINK_SANDSTONE_SLAB, SMOOTH_PINK_SANDSTONE);
-    Block SMOOTH_PINK_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.SMOOTH_PINK_SANDSTONE_WALL, SMOOTH_PINK_SANDSTONE);
-    Block CUT_PINK_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.CUT_PINK_SANDSTONE, PINK_SANDSTONE);
-    Block CUT_PINK_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_PINK_SANDSTONE_STAIRS, CUT_PINK_SANDSTONE);
-    Block CUT_PINK_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CUT_PINK_SANDSTONE_SLAB, CUT_PINK_SANDSTONE);
-    Block CUT_PINK_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.CUT_PINK_SANDSTONE_WALL, CUT_PINK_SANDSTONE);
-    Block POLISHED_PINK_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.POLISHED_PINK_SANDSTONE, PINK_SANDSTONE);
-    Block POLISHED_PINK_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_PINK_SANDSTONE_STAIRS, POLISHED_PINK_SANDSTONE);
-    Block POLISHED_PINK_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_PINK_SANDSTONE_SLAB, POLISHED_PINK_SANDSTONE);
-    Block POLISHED_PINK_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.POLISHED_PINK_SANDSTONE_WALL, POLISHED_PINK_SANDSTONE);
-    Block CHISELED_PINK_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_PINK_SANDSTONE, PINK_SANDSTONE);
+    Block ORANGE_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.ORANGE_SANDSTONE_STAIRS, ORANGE_SANDSTONE);
+    Block ORANGE_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.ORANGE_SANDSTONE_SLAB, ORANGE_SANDSTONE);
+    Block ORANGE_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.ORANGE_SANDSTONE_WALL, ORANGE_SANDSTONE);
+    Block SMOOTH_ORANGE_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.SMOOTH_ORANGE_SANDSTONE, ORANGE_SANDSTONE);
+    Block SMOOTH_ORANGE_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_STAIRS, SMOOTH_ORANGE_SANDSTONE);
+    Block SMOOTH_ORANGE_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_SLAB, SMOOTH_ORANGE_SANDSTONE);
+    Block SMOOTH_ORANGE_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_WALL, SMOOTH_ORANGE_SANDSTONE);
+    Block CUT_ORANGE_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.CUT_ORANGE_SANDSTONE, ORANGE_SANDSTONE);
+    Block CUT_ORANGE_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_ORANGE_SANDSTONE_STAIRS, CUT_ORANGE_SANDSTONE);
+    Block CUT_ORANGE_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CUT_ORANGE_SANDSTONE_SLAB, CUT_ORANGE_SANDSTONE);
+    Block CUT_ORANGE_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.CUT_ORANGE_SANDSTONE_WALL, CUT_ORANGE_SANDSTONE);
+    Block POLISHED_ORANGE_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.POLISHED_ORANGE_SANDSTONE, ORANGE_SANDSTONE);
+    Block POLISHED_ORANGE_SANDSTONE_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_ORANGE_SANDSTONE_STAIRS, POLISHED_ORANGE_SANDSTONE);
+    Block POLISHED_ORANGE_SANDSTONE_SLAB = BlockRegistry.registerSlab(EBlockItemIds.POLISHED_ORANGE_SANDSTONE_SLAB, POLISHED_ORANGE_SANDSTONE);
+    Block POLISHED_ORANGE_SANDSTONE_WALL = BlockRegistry.registerWall(EBlockItemIds.POLISHED_ORANGE_SANDSTONE_WALL, POLISHED_ORANGE_SANDSTONE);
+    Block CHISELED_ORANGE_SANDSTONE = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_ORANGE_SANDSTONE, ORANGE_SANDSTONE);
 
 
     // Mud
     Block MOSSY_MUD = BlockRegistry.register(EBlockItemIds.MOSSY_MUD, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD)
             .sound(EBlockSoundSets.MOSSY_MUD).mapColor(MapColor.COLOR_LIGHT_GREEN));
     Block MUDSTONE = BlockRegistry.register(EBlockItemIds.MUDSTONE, Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUD).sound(BlockSoundSets.SULFUR));
-
-    Block CUT_TIN = BlockRegistry.registerCopyBlock(EBlockItemIds.CUT_TIN, TIN_BLOCK);
-    Block CUT_TIN_STAIRS = BlockRegistry.registerStair(EBlockItemIds.CUT_TIN_STAIRS, CUT_TIN);
-    Block CUT_TIN_SLAB = BlockRegistry.registerSlab(EBlockItemIds.CUT_TIN_SLAB, CUT_TIN);
-    Block CHISELED_TIN = BlockRegistry.registerCopyBlock(EBlockItemIds.CHISELED_TIN, TIN_BLOCK);
-    Block TIN_BARS = BlockRegistry.register(EBlockItemIds.TIN_BARS, IronBarsBlock::new,
-            BlockBehaviour.Properties.ofFullCopy(TIN_BLOCK).strength(1.0F));
 
     Block POLISHED_SILVER = BlockRegistry.registerCopyBlock(EBlockItemIds.POLISHED_SILVER, SILVER_BLOCK);
     Block POLISHED_SILVER_STAIRS = BlockRegistry.registerStair(EBlockItemIds.POLISHED_SILVER_STAIRS, SILVER_BLOCK);
@@ -951,7 +999,13 @@ public interface EBlocks {
 
     // Initialize
     static void initialize() {
-        BlockSpreadRegistry.register(EBlocks.ARID_GRASS_BLOCK, Blocks.DIRT, Blocks.GRASS_BLOCK);
         BlockSpreadRegistry.register(Blocks.GRASS_BLOCK, EBlocks.ARID_DIRT, EBlocks.ARID_GRASS_BLOCK);
+        BlockSpreadRegistry.register(Blocks.GRASS_BLOCK, EBlocks.GLOOMY_DIRT, EBlocks.GLOOMY_GRASS_BLOCK);
+
+        BlockSpreadRegistry.register(EBlocks.ARID_GRASS_BLOCK, Blocks.DIRT, Blocks.GRASS_BLOCK);
+        BlockSpreadRegistry.register(EBlocks.ARID_GRASS_BLOCK, EBlocks.GLOOMY_DIRT, EBlocks.GLOOMY_GRASS_BLOCK);
+
+        BlockSpreadRegistry.register(EBlocks.GLOOMY_GRASS_BLOCK, Blocks.DIRT, Blocks.GRASS_BLOCK);
+        BlockSpreadRegistry.register(EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.ARID_DIRT, EBlocks.ARID_GRASS_BLOCK);
     }
 }

@@ -1,5 +1,6 @@
 package team.lookingglass.elsewhere.worldgen;
 
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -7,6 +8,7 @@ import net.minecraft.data.worldgen.placement.*;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.attribute.AmbientParticle;
 import net.minecraft.world.attribute.BackgroundMusic;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.EntityTypes;
@@ -22,14 +24,14 @@ import team.lookingglass.elsewhere.entity.EEntities;
 import team.lookingglass.elsewhere.registry.sound.ESounds;
 import team.lookingglass.elsewhere.worldgen.features.EPlacements;
 
+import java.util.List;
+
 public interface EBiomes {
-    ResourceKey<Biome> GLACIAL_VALLEY = create("glacial_valley");
-    ResourceKey<Biome> SNOWY_TUNDRA = create("snowy_tundra");
+    ResourceKey<Biome> TUNDRA = create("tundra");
     ResourceKey<Biome> FIR_THICKET = create("fir_thicket");
     ResourceKey<Biome> ALPINE_PLAINS = create("alpine_plains");
     ResourceKey<Biome> ALPINE_GROVE = create("alpine_grove");
 
-    ResourceKey<Biome> TUNDRA = create("tundra");
     ResourceKey<Biome> STEPPE = create("steppe");
     ResourceKey<Biome> PINE_BARRENS = create("pine_barrens");
     ResourceKey<Biome> RAINFOREST = create("rainforest");
@@ -48,7 +50,7 @@ public interface EBiomes {
     ResourceKey<Biome> CEDAR_FOREST = create("cedar_forest");
     ResourceKey<Biome> ROCKY_JUNGLE = create("rocky_jungle");
 
-    ResourceKey<Biome> ACACIA_FLATS = create("acacia_flats");
+    ResourceKey<Biome> ROCKY_DESERT = create("rocky_desert");
     ResourceKey<Biome> DRYLAND = create("dryland");
     ResourceKey<Biome> OUTBACK = create("outback");
     ResourceKey<Biome> DUNES = create("dunes");
@@ -58,6 +60,7 @@ public interface EBiomes {
     ResourceKey<Biome> BOG = create("bog");
     ResourceKey<Biome> MARSH = create("marsh");
     ResourceKey<Biome> TROPICAL_BASIN = create("tropical_basin");
+    ResourceKey<Biome> SALT_FLATS = create("salt_flats");
     ResourceKey<Biome> DESERT_WETLAND = create("desert_wetland");
 
     ResourceKey<Biome> FROZEN_BEACH = create("frozen_beach");
@@ -73,13 +76,11 @@ public interface EBiomes {
     ResourceKey<Biome> VOLCANIC_DEPTHS = create("volcanic_depths");
 
     static void bootstrap(BootstrapContext<Biome> context) {
-        context.register(GLACIAL_VALLEY, createGlacialValley(context));
-        context.register(SNOWY_TUNDRA, createSnowyTundra(context));
+        context.register(TUNDRA, createTundra(context));
         context.register(FIR_THICKET, createFirThicket(context));
         context.register(ALPINE_PLAINS, createAlpinePlains(context));
         context.register(ALPINE_GROVE, createAlpineGrove(context));
 
-        context.register(TUNDRA, createTundra(context));
         context.register(STEPPE, createSteppe(context));
         context.register(PINE_BARRENS, createPineBarrens(context));
         context.register(RAINFOREST, createRainforest(context));
@@ -98,7 +99,7 @@ public interface EBiomes {
         context.register(CEDAR_FOREST, createCedarForest(context));
         context.register(ROCKY_JUNGLE, createRockyJungle(context));
 
-        context.register(ACACIA_FLATS, createAcaciaFlats(context));
+        context.register(ROCKY_DESERT, createRockyDesert(context));
         context.register(DRYLAND, createDryland(context));
         context.register(OUTBACK, createOutback(context));
         context.register(DUNES, createDunes(context));
@@ -108,6 +109,7 @@ public interface EBiomes {
         context.register(BOG, createBog(context));
         context.register(MARSH, createMarsh(context));
         context.register(TROPICAL_BASIN, createTropicalBasin(context));
+        context.register(SALT_FLATS, createSaltFlats(context));
         context.register(DESERT_WETLAND, createDesertWetland(context));
 
         context.register(FROZEN_BEACH, createFrozenBeach(context));
@@ -123,27 +125,12 @@ public interface EBiomes {
         context.register(VOLCANIC_DEPTHS, createVolcanicDepths(context));
     }
 
-    // ------------------------------------------------------------------
     // Snowy
-    // ------------------------------------------------------------------
 
-    private static Biome createGlacialValley(BootstrapContext<Biome> context) {
+    private static Biome createTundra(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.snowySpawns(spawns, false);
-
-        BiomeGenerationSettings.Builder gen = baseGen(context);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
-        BiomeDefaultFeatures.addFrozenSprings(gen);
-        BiomeDefaultFeatures.addSnowyTrees(gen);
-        BiomeDefaultFeatures.addBlueIce(gen);
-
-        return biome(-0.5F, 0.4F, new Water(0x5FB8D6, 0x0A2F4A), Sky.of(0xC8DCF0).fog(0xE4EEF8), Music.FROZEN_PEAKS, spawns, gen).build();
-    }
-
-    private static Biome createSnowyTundra(BootstrapContext<Biome> context) {
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        hostiles(spawns, 15, 20);
-        spawns.addSpawn(EntityTypes.FROSTBITE, 80, 4, 4);
+        hostiles(spawns, 20, 20);
+        spawns.addSpawn(EntityTypes.FROSTBITE, 75, 4, 4);
         spawns.addSpawn(EntityTypes.STRAY, 80, 4, 4);
         spawns.addSpawn(EntityTypes.ZOMBIE_HORSE, 5, 1, 1);
         spawns.addSpawn(EntityTypes.RABBIT, 8, 2, 3);
@@ -151,16 +138,23 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.FOX, 2, 2, 4);
         spawns.addSpawn(EntityTypes.POLAR_BEAR, 1, 1, 2);
 
-        BiomeGenerationSettings.Builder gen = baseGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, false, false, false, false);
         BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
         BiomeDefaultFeatures.addFrozenSprings(gen);
-        veg(gen, EPlacements.TREES_TUNDRA, EPlacements.OCHRE_MOSS_PATCH, EPlacements.TUNDRA_RUSTY_MOSS_PATCH);
+        veg(gen, EPlacements.TREES_TUNDRA, EPlacements.TUNDRA_OCHRE_MOSS_PATCH, EPlacements.TUNDRA_RUSTY_MOSS_PATCH);
+        BiomeDefaultFeatures.addBushes(gen);
+        BiomeDefaultFeatures.addFerns(gen);
         BiomeDefaultFeatures.addDefaultGrass(gen);
         BiomeDefaultFeatures.addSavannaExtraGrass(gen);
+        veg(gen, VegetationPlacements.PATCH_RED_SHRUB);
+        BiomeDefaultFeatures.addNearWaterVegetation(gen);
         BiomeDefaultFeatures.addRareBerryBushes(gen);
         local(gen, EPlacements.DRY_GRASS_CLUMP_SPARSE, EPlacements.TUNDRA_ROCK);
 
-        return biome(-0.2F, 0.2F, Water.FROZEN.grass(0xa9b564), Sky.of(0xE8EEF4).fog(0xF2F5F8), Music.SNOWY_SLOPES, spawns, gen).build();
+        return biome(-0.2F, -1.0F, Water.FROZEN.grass(0xc4a96e), Sky.of(0xD2DCE6), Music.FROZEN_PEAKS, spawns, gen)
+                .hasPrecipitation(false)
+                .setAttribute(EnvironmentAttributes.AMBIENT_PARTICLES, AmbientParticle.of(ParticleTypes.SNOWFLAKE, 0.002F))
+                .build();
     }
 
     private static Biome createFirThicket(BootstrapContext<Biome> context) {
@@ -180,7 +174,7 @@ public interface EBiomes {
         BiomeDefaultFeatures.addDefaultMushrooms(gen);
         BiomeDefaultFeatures.addCommonBerryBushes(gen);
 
-        return biome(0.1F, 0.8F, new Water(0x2F5C7A, 0x08202E).grass(0x5b8f5e).foliage(0x3d6e4c), Sky.of(0x84A4C6), Music.FOREST, spawns, gen).build();
+        return biome(0.1F, 0.8F, new Water(0x2F5C7A, 0x08202E).grass(0x6da370).foliage(0x3d6e4c), Sky.of(0x84A4C6), Music.FOREST, spawns, gen).build();
     }
 
     private static Biome createAlpinePlains(BootstrapContext<Biome> context) {
@@ -220,42 +214,14 @@ public interface EBiomes {
         return biome(0.1F, 0.6F, new Water(0x2C7DA0, 0x0A2A40).grass(0x6e9d68).foliage(0x4a7f58), Sky.of(0x6FA0F0), Music.FOREST, spawns, gen).build();
     }
 
-    // ------------------------------------------------------------------
     // Cold
-    // ------------------------------------------------------------------
-
-    private static Biome createTundra(BootstrapContext<Biome> context) {
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        hostiles(spawns, 95, 20);
-        spawns.addSpawn(EntityTypes.STRAY, 80, 4, 4);
-        spawns.addSpawn(EntityTypes.ZOMBIE_HORSE, 5, 1, 1);
-        spawns.addSpawn(EntityTypes.RABBIT, 8, 2, 3);
-        spawns.addSpawn(EntityTypes.GOAT, 4, 1, 3);
-        spawns.addSpawn(EntityTypes.FOX, 2, 2, 4);
-        spawns.addSpawn(EntityTypes.POLAR_BEAR, 1, 1, 2);
-
-        BiomeGenerationSettings.Builder gen = baseGen(context);
-        BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
-        BiomeDefaultFeatures.addFrozenSprings(gen);
-        veg(gen, EPlacements.TREES_TUNDRA, EPlacements.OCHRE_MOSS_PATCH, EPlacements.TUNDRA_RUSTY_MOSS_PATCH);
-        BiomeDefaultFeatures.addBushes(gen);
-        BiomeDefaultFeatures.addFerns(gen);
-        BiomeDefaultFeatures.addDefaultGrass(gen);
-        BiomeDefaultFeatures.addSavannaExtraGrass(gen);
-        veg(gen, VegetationPlacements.PATCH_RED_SHRUB);
-        BiomeDefaultFeatures.addNearWaterVegetation(gen);
-        BiomeDefaultFeatures.addRareBerryBushes(gen);
-        local(gen, EPlacements.DRY_GRASS_CLUMP_SPARSE, EPlacements.TUNDRA_ROCK);
-
-        return biome(0.4F, 0.55F, Water.COLD.grass(0xe3dc7b), Sky.of(0xD2DCE6), Music.SNOWY_SLOPES, spawns, gen).build();
-    }
 
     private static Biome createSteppe(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(EntityTypes.HORSE, 3, 2, 6);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addSavannaGrass(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
@@ -293,13 +259,14 @@ public interface EBiomes {
         BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addMossyStoneBlock(gen);
-        veg(gen, EPlacements.TREES_RAINFOREST);
+        veg(gen, EPlacements.TREES_RAINFOREST, EPlacements.RAINFOREST_MOSS_PATCH);
         BiomeDefaultFeatures.addBushes(gen);
         BiomeDefaultFeatures.addFerns(gen);
         BiomeDefaultFeatures.addGiantTaigaVegetation(gen);
         BiomeDefaultFeatures.addLeafLitterPatch(gen);
+        raw(gen, EPlacements.FOREST_POND);
 
-        return biome(0.5F, 1.0F, new Water(0x6A4A2A, 0x2E1F10).grass(0x58a05a).foliage(0x3a8650), Sky.of(0x9DB3BE).fog(0xB4C6C4), Music.FOREST, spawns, gen).build();
+        return biome(0.5F, 1.0F, new Water(0x4f3c29, 0x473a2f).grass(0x58a05a).foliage(0x3a8650), Sky.of(0x9DB3BE).fog(0xB4C6C4), Music.FOREST, spawns, gen).build();
     }
 
     private static Biome createHighlands(BootstrapContext<Biome> context) {
@@ -350,7 +317,7 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.RABBIT, 6, 2, 3);
         spawns.addSpawn(EntityTypes.GOAT, 3, 1, 2);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addDesertVegetation(gen);
         raw(gen, EPlacements.DESERT_DIRT_PATCH);
@@ -361,9 +328,7 @@ public interface EBiomes {
                 .build();
     }
 
-    // ------------------------------------------------------------------
     // Temperate
-    // ------------------------------------------------------------------
 
     private static Biome createCherryFields(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -388,7 +353,7 @@ public interface EBiomes {
         BiomeDefaultFeatures.commonSpawns(spawns);
         BiomeDefaultFeatures.farmAnimals(spawns);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addMossyStoneBlock(gen);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         veg(gen, EPlacements.OLD_GROWTH_FLOWERS);
@@ -474,9 +439,7 @@ public interface EBiomes {
         return biome(0.7F, 0.5F, new Water(0x5A6F73, 0x8A9A9C).grass(0xD4B445).foliage(0xC8922E), Sky.of(0xA9BCD6).fog(0xE0CB8A), Music.FOREST, spawns, gen).build();
     }
 
-    // ------------------------------------------------------------------
     // Warm
-    // ------------------------------------------------------------------
 
     private static Biome createAridShrubland(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -484,7 +447,7 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.HORSE, 3, 2, 6);
         spawns.addSpawn(EntityTypes.ARMADILLO, 8, 2, 4);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
         BiomeDefaultFeatures.addSavannaExtraGrass(gen);
@@ -500,7 +463,7 @@ public interface EBiomes {
         BiomeDefaultFeatures.farmAnimals(spawns);
         spawns.addSpawn(EntityTypes.ARMADILLO, 6, 1, 2);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
         veg(gen, EPlacements.CEDAR_FOREST_TREES);
@@ -528,21 +491,20 @@ public interface EBiomes {
         return biome(1.3F, 0.7F, Water.WARM, Sky.of(0x78AEE0), Music.JUNGLE, spawns, gen).build();
     }
 
-    // ------------------------------------------------------------------
     // Hot
-    // ------------------------------------------------------------------
 
-    private static Biome createAcaciaFlats(BootstrapContext<Biome> context) {
+    private static Biome createRockyDesert(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.plainsSpawns(spawns);
-        spawns.addSpawn(EntityTypes.ARMADILLO, 6, 1, 2);
+        BiomeDefaultFeatures.desertSpawns(spawns);
+        spawns.addSpawn(EntityTypes.ARMADILLO, 6, 2, 4);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, true);
         BiomeDefaultFeatures.addDefaultSprings(gen);
-        BiomeDefaultFeatures.addSavannaGrass(gen);
-        BiomeDefaultFeatures.addSavannaTrees(gen);
-        BiomeDefaultFeatures.addWarmFlowers(gen);
-        BiomeDefaultFeatures.addSavannaExtraGrass(gen);
+        BiomeDefaultFeatures.addBushes(gen);
+        BiomeDefaultFeatures.addDefaultGrass(gen);
+        BiomeDefaultFeatures.addDesertVegetation(gen);
+        veg(gen, EPlacements.DUNE_DRY_GRASS, EPlacements.ROCKY_SHORT_CACTUS, EPlacements.ROCKY_TALL_CACTUS);
+        local(gen, EPlacements.ROCKY_DESERT_ROCKS);
 
         return biome(2.0F, 0.08F, Water.HOT, Sky.of(0x86B8F0), Music.DESERT, spawns, gen)
                 .hasPrecipitation(false)
@@ -557,7 +519,7 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.ARMADILLO, 4, 1, 3);
         spawns.addSpawn(EntityTypes.RABBIT, 6, 2, 3);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addDefaultGrass(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
@@ -573,7 +535,7 @@ public interface EBiomes {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.desertSpawns(spawns);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, true);
         BiomeDefaultFeatures.addDefaultSprings(gen);
         BiomeDefaultFeatures.addSavannaGrass(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
@@ -592,12 +554,11 @@ public interface EBiomes {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.desertSpawns(spawns);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
-        BiomeDefaultFeatures.addBushes(gen);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addWarmFlowers(gen);
         veg(gen, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
         BiomeDefaultFeatures.addDesertExtraDecoration(gen);
-        veg(gen, EPlacements.DUNE_DRY_GRASS);
+        veg(gen, EPlacements.DUNE_DRY_GRASS, EPlacements.DESERT_SHORT_CACTUS, EPlacements.DESERT_TALL_CACTUS);
 
         return biome(2.0F, 0.0F, Water.HOT, Sky.of(0x8CC6FF), Music.DESERT, spawns, gen)
                 .hasPrecipitation(false)
@@ -608,7 +569,7 @@ public interface EBiomes {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.desertSpawns(spawns);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addBushes(gen);
         veg(gen, VegetationPlacements.PATCH_GRASS_BADLANDS, VegetationPlacements.PATCH_DRY_GRASS_BADLANDS);
         BiomeDefaultFeatures.addWarmFlowers(gen);
@@ -631,7 +592,7 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.BOGGED, 80, 4, 4);
         spawns.addSpawn(EntityTypes.ZOMBIE_HORSE, 5, 1, 1);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, true);
         BiomeDefaultFeatures.addBushes(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
         veg(gen, VegetationPlacements.PATCH_GRASS_JUNGLE, VegetationPlacements.PATCH_SUGAR_CANE, VegetationPlacements.PATCH_MELON);
@@ -639,14 +600,11 @@ public interface EBiomes {
 
         return biome(2.0F, 0.6F, new Water(0x5CC8D8, 0x2E5A66), Sky.of(0xC5D8E4).fog(0xDDE8EE), Music.DESERT, spawns, gen)
                 .hasPrecipitation(false)
-                .setAttribute(EnvironmentAttributes.FOG_END_DISTANCE, 128F)
                 .setAttribute(EnvironmentAttributes.SNOW_GOLEM_MELTS, true)
                 .build();
     }
 
-    // ------------------------------------------------------------------
     // Swamp
-    // ------------------------------------------------------------------
 
     private static Biome createBog(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -675,15 +633,15 @@ public interface EBiomes {
         BiomeGenerationSettings.Builder gen = baseGen(context);
         BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
         BiomeDefaultFeatures.addDefaultSprings(gen);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
-        gen.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
+        raw(gen, EPlacements.SWAMP_POND);
+        BiomeDefaultFeatures.addBushes(gen);
+        BiomeDefaultFeatures.addFerns(gen);
+        veg(gen, VegetationPlacements.FLOWER_SWAMP, VegetationPlacements.PATCH_GRASS_NORMAL, EPlacements.TREES_MARSH,
+                VegetationPlacements.PATCH_WATERLILY, VegetationPlacements.BROWN_MUSHROOM_SWAMP, VegetationPlacements.RED_MUSHROOM_SWAMP);
         BiomeDefaultFeatures.addSwampExtraVegetation(gen);
         veg(gen, EPlacements.SWAMP_CATTAILS);
 
-        return biome(0.8F, 0.9F, new Water(0x3E8F8A, 0x0F3A36), Sky.of(0x8FB0B0), Music.SWAMP, spawns, gen).build();
+        return biome(0.8F, 0.9F, new Water(0x3E8F8A, 0x0F3A36).grass(0x5e753e).foliage(0x758f46), Sky.of(0x80bdbd), Music.SWAMP, spawns, gen).build();
     }
 
     private static Biome createTropicalBasin(BootstrapContext<Biome> context) {
@@ -706,11 +664,20 @@ public interface EBiomes {
         return biome(1.6F, 0.9F, new Water(0x30C7B0, 0x0B4B45), Sky.of(0x62B6F0), Music.JUNGLE, spawns, gen).build();
     }
 
+    private static Biome createSaltFlats(BootstrapContext<Biome> context) {
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.swampSpawns(spawns, 30);
+
+        BiomeGenerationSettings.Builder gen = baseGen(context, false, false);
+
+        return biome(1.4F, 0.55F, Water.WARM, Sky.of(0x50c4f2), Music.SWAMP, spawns, gen).build();
+    }
+
     private static Biome createDesertWetland(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.swampSpawns(spawns, 30);
 
-        BiomeGenerationSettings.Builder gen = goldGen(context);
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
         BiomeDefaultFeatures.addBushes(gen);
         BiomeDefaultFeatures.addWarmFlowers(gen);
         veg(gen, VegetationPlacements.PATCH_SUGAR_CANE_DESERT);
@@ -718,12 +685,10 @@ public interface EBiomes {
         veg(gen, EPlacements.DUNE_DRY_GRASS);
         veg(gen, EPlacements.SWAMP_CATTAILS);
 
-        return biome(1.8F, 0.9F, Water.HOT, Sky.of(0x0B4B45), Music.SWAMP, spawns, gen).build();
+        return biome(1.8F, 0.9F, Water.HOT, Sky.of(0xa6efff), Music.SWAMP, spawns, gen).build();
     }
 
-    // ------------------------------------------------------------------
     // Beaches
-    // ------------------------------------------------------------------
 
     private static Biome createFrozenBeach(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -731,7 +696,9 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.STRAY, 80, 4, 4);
         spawns.addSpawn(EntityTypes.TURTLE, 1, 2, 5);
 
-        return biome(0.1F, 0.0F, Water.FROZEN, Sky.of(0xD0DCE8), Music.FROZEN_PEAKS, spawns, baseGen(context)).build();
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
+
+        return biome(0.1F, 0.0F, Water.FROZEN, Sky.of(0xD0DCE8), Music.FROZEN_PEAKS, spawns, gen).build();
     }
 
     private static Biome createColdBeach(BootstrapContext<Biome> context) {
@@ -739,7 +706,10 @@ public interface EBiomes {
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(EntityTypes.TURTLE, 1, 2, 5);
 
-        return biome(0.6F, 0.6F, Water.COLD, Sky.of(0x98B4DC), null, spawns, baseGen(context))
+        BiomeGenerationSettings.Builder gen = baseGen(context, true, false);
+        raw(gen, EPlacements.COLD_BEACH_POND);
+
+        return biome(0.6F, 0.6F, Water.COLD, Sky.of(0x98B4DC), null, spawns, gen)
                 .setAttribute(EnvironmentAttributes.SNOW_GOLEM_MELTS, false)
                 .build();
     }
@@ -759,9 +729,7 @@ public interface EBiomes {
                 .build();
     }
 
-    // ------------------------------------------------------------------
     // Rivers
-    // ------------------------------------------------------------------
 
     private static Biome createColdRiver(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -795,9 +763,7 @@ public interface EBiomes {
         return biome(1.5F, 0.7F, Water.WARM, Sky.of(0x76B0EA), Music.JUNGLE, spawns, gen).build();
     }
 
-    // ------------------------------------------------------------------
     // Caves
-    // ------------------------------------------------------------------
 
     private static Biome createDefaultCaves(BootstrapContext<Biome> context) {
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
@@ -809,7 +775,8 @@ public interface EBiomes {
         BiomeGenerationSettings.Builder gen = baseGen(context);
         BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
         BiomeDefaultFeatures.addInfestedStone(gen);
-        veg(gen, EPlacements.CAVE_WEEDS, EPlacements.CAVE_ROOTS);
+        underground(gen, EPlacements.SPARSE_DRIPSTONE);
+        decoration(gen, EPlacements.CAVE_WEEDS, EPlacements.CAVE_ROOTS);
 
         return biome(0.8F, 0.4F, Water.TEMPERATE, Sky.of(0x78A7FF).fog(0x323342), Music.DRIPSTONE_CAVES, spawns, gen)
                 .hasPrecipitation(false)
@@ -831,9 +798,7 @@ public interface EBiomes {
         BiomeDefaultFeatures.addDefaultOres(gen);
         BiomeDefaultFeatures.addDefaultSoftDisks(gen);
         BiomeDefaultFeatures.addExtraEmeralds(gen);
-        BiomeDefaultFeatures.addSurfaceFreezing(gen);
         decoration(gen, EPlacements.AMETHYST_NODE, EPlacements.AMETHYST_SPIRE_CLUSTER);
-        veg(gen, EPlacements.CAVE_WEEDS);
 
         return biome(1.0F, 1.0F, new Water(0x6B38C9, 0x140533), Sky.of(0x8A6FD0).fog(0x48344d),
                 new BackgroundMusic(ESounds.MUSIC_BIOME_CRYSTAL_CAVERNS), spawns, gen)
@@ -854,7 +819,6 @@ public interface EBiomes {
         BiomeDefaultFeatures.addDefaultOres(gen);
         BiomeDefaultFeatures.addExtraGold(gen);
         BiomeDefaultFeatures.addDefaultSoftDisks(gen);
-        BiomeDefaultFeatures.addSurfaceFreezing(gen);
 
         return biome(2.0F, 0.0F, Water.HOT, Sky.of(0xE0C890).fog(0xFFE991), Music.DESERT, spawns, gen)
                 .hasPrecipitation(false)
@@ -877,12 +841,17 @@ public interface EBiomes {
                 .build();
     }
 
-    // ==================================================================
-    //  SHORTHANDS
-    // ==================================================================
 
-    // ---- Biome builder -----------------------------------------------
 
+
+
+
+
+
+
+
+
+    // Biome builder
     /**
      * Returns an un-built BiomeBuilder with the stuff every biome needs.
      * Precipitation defaults to true; chain extras (.hasPrecipitation(false), .setAttribute(...)) then .build().
@@ -964,35 +933,36 @@ public interface EBiomes {
         }
     }
 
-    // ---- Generation --------------------------------------------------
+    // Generation
 
     private static BiomeGenerationSettings.Builder gen(BootstrapContext<Biome> context) {
         return new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CARVER));
     }
 
     /** Carvers/lakes, geodes, underground variety, ores, soft disks, surface freezing. In nearly every biome. */
-    private static BiomeGenerationSettings.Builder baseGen(BootstrapContext<Biome> context) {
-        return baseGen(context, true, false);
-    }
-
-    /** Same as baseGen, plus extra gold between the ores and the soft disks (vanilla badlands/savanna order). */
-    private static BiomeGenerationSettings.Builder goldGen(BootstrapContext<Biome> context) {
-        return baseGen(context, true, true);
+    private static BiomeGenerationSettings.Builder baseGen(BootstrapContext<Biome> context, boolean softDisks, boolean extraGold) {
+        return baseGen(context, true, softDisks, extraGold, true);
     }
 
     private static BiomeGenerationSettings.Builder baseGen(BootstrapContext<Biome> context, boolean softDisks) {
         return baseGen(context, softDisks, false);
     }
 
-    private static BiomeGenerationSettings.Builder baseGen(BootstrapContext<Biome> context, boolean softDisks, boolean extraGold) {
+    private static BiomeGenerationSettings.Builder baseGen(BootstrapContext<Biome> context) {
+        return baseGen(context, true, false);
+    }
+
+    private static BiomeGenerationSettings.Builder baseGen(
+            BootstrapContext<Biome> context, boolean oreSoils, boolean softDisks, boolean extraGold, boolean surfaceFreezing) {
         BiomeGenerationSettings.Builder gen = gen(context);
         BiomeDefaultFeatures.addDefaultCarversAndLakes(gen);
         BiomeDefaultFeatures.addDefaultCrystalFormations(gen);
-        BiomeDefaultFeatures.addDefaultUndergroundVariety(gen);
+        if (oreSoils) BiomeDefaultFeatures.addDefaultUndergroundVariety(gen);
+        else oresNoSoil(gen);
         BiomeDefaultFeatures.addDefaultOres(gen);
         if (extraGold) BiomeDefaultFeatures.addExtraGold(gen);
         if (softDisks) BiomeDefaultFeatures.addDefaultSoftDisks(gen);
-        BiomeDefaultFeatures.addSurfaceFreezing(gen);
+        if (surfaceFreezing) BiomeDefaultFeatures.addSurfaceFreezing(gen);
         return gen;
     }
 
@@ -1001,6 +971,7 @@ public interface EBiomes {
         BiomeDefaultFeatures.addDefaultCarversAndLakes(gen);
         BiomeDefaultFeatures.addDefaultCrystalFormations(gen);
         BiomeDefaultFeatures.addDefaultMonsterRoom(gen);
+        BiomeDefaultFeatures.addSurfaceFreezing(gen);
     }
 
     /** Sugar cane (desert) + pumpkins: the dry-land produce combo used by several biomes. */
@@ -1013,6 +984,17 @@ public interface EBiomes {
             underground(gen, EPlacements.MUD_DISK_GRAVEL);
         }
         underground(gen, EPlacements.MUD_DISK_CLAY, EPlacements.MUD_DISK_SAND);
+    }
+
+    static void oresNoSoil(final BiomeGenerationSettings.Builder builder) {
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRANITE_UPPER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_GRANITE_LOWER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIORITE_UPPER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_DIORITE_LOWER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_ANDESITE_UPPER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_ANDESITE_LOWER);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, OrePlacements.ORE_TUFF);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
     }
 
     // Per-step feature adders. Pick the step by name instead of typing GenerationStep.Decoration.X every time.
@@ -1048,8 +1030,7 @@ public interface EBiomes {
         }
     }
 
-    // ---- Spawns ------------------------------------------------------
-
+    // Spawns
     /**
      * The standard surface monster set (creeper/slime/spider/zombie/zombie villager/skeleton/enderman/witch)
      * plus bats and glow squid. Add variants (stray, husk, bogged...) after calling this.
@@ -1076,7 +1057,7 @@ public interface EBiomes {
         spawns.addSpawn(EntityTypes.HUSK, 95, 4, 4);
     }
 
-    // ---- Misc --------------------------------------------------------
+    // Misc
     private static Vector3f rgb(int color) {
         return new Vector3f(((color >> 16) & 0xFF) / 255.0F, ((color >> 8) & 0xFF) / 255.0F, (color & 0xFF) / 255.0F);
     }

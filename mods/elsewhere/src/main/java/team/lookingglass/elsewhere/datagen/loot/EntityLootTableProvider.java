@@ -76,9 +76,10 @@ public class EntityLootTableProvider extends FabricEntityLootSubProvider {
         );
         add(EEntities.WHISTLER, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ContextIntProviders.exactly(1))
-                        .add(LootItem.lootTableItem(Items.COBBLED_DEEPSLATE)
-                                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2))))
-                )
+                        .add(LootItem.lootTableItem(Items.COBBLED_DEEPSLATE).apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))))
+                .withPool(LootPool.lootPool().setRolls(ContextIntProviders.exactly(1))
+                        .add(LootItem.lootTableItem(Items.GUNPOWDER).apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 9)))
+                                .apply(EnchantedCountIncreaseFunction.lootingMultiplier(enchantments, ContextFloatProviders.between(2, 3)))))
         );
         add(EEntities.LOST_SOUL, LootTable.lootTable()
                 .withPool(LootPool.lootPool().setRolls(ContextIntProviders.exactly(1))

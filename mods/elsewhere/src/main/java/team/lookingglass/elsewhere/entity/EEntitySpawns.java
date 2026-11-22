@@ -18,7 +18,7 @@ public class EEntitySpawns {
 
         // Surface Mobs
         BiomeModifications.addSpawn(ctx -> ctx.hasTag(BiomeTags.IS_OVERWORLD),
-                MobCategory.MONSTER, EEntities.GRAVEKEEPER, 60, 1, 1);
+                MobCategory.MONSTER, EEntities.GRAVEKEEPER, 50, 1, 1);
 
         // CaveModifier Mobs
         BiomeModifications.addSpawn(ctx -> ctx.hasTag(BiomeTags.IS_CAVE),

@@ -43,9 +43,6 @@ accessible method net/minecraft/world/item/SmithingTemplateItem createNetheriteU
 
 accessible method net/minecraft/world/entity/LivingEntity blockUsingItem (Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/damagesource/DamageSource;FZ)V
 
-accessible method net/minecraft/world/level/block/state/properties/BlockSetType register (Lnet/minecraft/world/level/block/state/properties/BlockSetType;)Lnet/minecraft/world/level/block/state/properties/BlockSetType;
-accessible method net/minecraft/world/level/block/state/properties/WoodType register (Lnet/minecraft/world/level/block/state/properties/WoodType;)Lnet/minecraft/world/level/block/state/properties/WoodType;
-
 accessible method net/minecraft/world/level/levelgen/NoiseGeneratorSettings overworld (Lnet/minecraft/data/worldgen/BootstrapContext;ZZ)Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;
 accessible method net/minecraft/world/level/levelgen/NoiseGeneratorSettings nether (Lnet/minecraft/data/worldgen/BootstrapContext;)Lnet/minecraft/world/level/levelgen/NoiseGeneratorSettings;
 
@@ -56,3 +53,6 @@ accessible field net/minecraft/world/level/block/entity/trialspawner/TrialSpawne
 
 accessible method net/minecraft/world/level/block/entity/vault/VaultServerData set (Lnet/minecraft/world/level/block/entity/vault/VaultServerData;)V
 accessible method net/minecraft/world/level/block/entity/vault/VaultSharedData set (Lnet/minecraft/world/level/block/entity/vault/VaultSharedData;)V
+
+accessible method net/minecraft/world/entity/projectile/arrow/AbstractArrow setPierceLevel (B)V
+accessible field net/minecraft/world/entity/projectile/arrow/AbstractArrow ARROW_BASE_DAMAGE D

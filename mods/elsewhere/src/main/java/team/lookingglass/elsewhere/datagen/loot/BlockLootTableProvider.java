@@ -42,30 +42,13 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(Blocks.COPPER_ORE, createMultipleOreDrops(Blocks.COPPER_ORE, Items.RAW_COPPER, 1, 2));
         add(Blocks.DEEPSLATE_COPPER_ORE, createMultipleOreDrops(Blocks.DEEPSLATE_COPPER_ORE, Items.RAW_COPPER, 1, 2));
 
-        // Cinnabar Ores
-        add(EBlocks.CINNABAR_COAL_ORE, createOreDrop(EBlocks.CINNABAR_COAL_ORE, Items.COAL));
-        add(EBlocks.CINNABAR_COPPER_ORE, createMultipleOreDrops(EBlocks.CINNABAR_COPPER_ORE, Items.RAW_COPPER, 1, 2));
-        add(EBlocks.CINNABAR_IRON_ORE, createOreDrop(EBlocks.CINNABAR_IRON_ORE, Items.RAW_IRON));
-        add(EBlocks.CINNABAR_GOLD_ORE, createOreDrop(EBlocks.CINNABAR_GOLD_ORE, Items.RAW_GOLD));
-        add(EBlocks.CINNABAR_REDSTONE_ORE, createRedstoneOreDrops(EBlocks.CINNABAR_REDSTONE_ORE));
-        add(EBlocks.CINNABAR_DIAMOND_ORE, createOreDrop(EBlocks.CINNABAR_DIAMOND_ORE, Items.DIAMOND));
-        add(EBlocks.CINNABAR_LAPIS_ORE, createLapisOreDrops(EBlocks.CINNABAR_LAPIS_ORE));
-        add(EBlocks.CINNABAR_EMERALD_ORE, createOreDrop(EBlocks.CINNABAR_EMERALD_ORE, Items.EMERALD));
-
-        // Tin
-        add(EBlocks.TIN_ORE, createOreDrop(EBlocks.TIN_ORE, EItems.RAW_TIN));
-        add(EBlocks.DEEPSLATE_TIN_ORE, createOreDrop(EBlocks.DEEPSLATE_TIN_ORE, EItems.RAW_TIN));
-        add(EBlocks.CINNABAR_TIN_ORE, createOreDrop(EBlocks.CINNABAR_TIN_ORE, EItems.RAW_TIN));
-
         // Silver
         add(EBlocks.SILVER_ORE, createOreDrop(EBlocks.SILVER_ORE, EItems.RAW_SILVER));
         add(EBlocks.DEEPSLATE_SILVER_ORE, createOreDrop(EBlocks.DEEPSLATE_SILVER_ORE, EItems.RAW_SILVER));
+
+        // Cinnabar Ores
         add(EBlocks.CINNABAR_SILVER_ORE, createOreDrop(EBlocks.CINNABAR_SILVER_ORE, EItems.RAW_SILVER));
-
-        dropSelf(EBlocks.RAW_TIN_BLOCK);
-        dropSelf(EBlocks.TIN_BLOCK);
-
-        dropSelf(EBlocks.BRONZE_BLOCK);
+        add(EBlocks.CINNABAR_REDSTONE_ORE, createRedstoneOreDrops(EBlocks.CINNABAR_REDSTONE_ORE));
 
         dropSelf(EBlocks.RAW_SILVER_BLOCK);
         dropSelf(EBlocks.SILVER_BLOCK);
@@ -90,12 +73,6 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.CUT_WROUGHT_IRON_SLAB, createSlabItemTable(EBlocks.CUT_WROUGHT_IRON_SLAB));
         dropSelf(EBlocks.WROUGHT_IRON_GRATE);
         dropSelf(EBlocks.WROUGHT_IRON_BARS);
-
-        dropSelf(EBlocks.CUT_TIN);
-        dropSelf(EBlocks.CUT_TIN_STAIRS);
-        add(EBlocks.CUT_TIN_SLAB, createSlabItemTable(EBlocks.CUT_TIN_SLAB));
-        dropSelf(EBlocks.CHISELED_TIN);
-        dropSelf(EBlocks.TIN_BARS);
 
         dropSelf(EBlocks.SOULSTEEL_BLOCK);
         dropSelf(EBlocks.ELECTRUM_BLOCK);
@@ -198,7 +175,6 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.CHISELED_DRIPSTONE_TILES);
         dropSelf(EBlocks.DRIPSTONE_PILLAR);
 
-        dropSelf(EBlocks.ARID_SAND);
         dropSelf(EBlocks.POLISHED_SANDSTONE);
         dropSelf(EBlocks.POLISHED_SANDSTONE_STAIRS);
         add(EBlocks.POLISHED_SANDSTONE_SLAB, createSlabItemTable(EBlocks.POLISHED_SANDSTONE_SLAB));
@@ -352,24 +328,24 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.RAW_SOULGLASS, createMultipleOreDrops(EBlocks.RAW_SOULGLASS, EItems.SOULGLASS_SHARD, 2, 4));
         add(EBlocks.SOULGLASS, createSilkTouchOnlyTable(EBlocks.SOULGLASS));
 
-        dropSelf(EBlocks.PINK_SAND);
-        dropSelf(EBlocks.PINK_SANDSTONE);
-        dropSelf(EBlocks.PINK_SANDSTONE_STAIRS);
-        add(EBlocks.PINK_SANDSTONE_SLAB, createSlabItemTable(EBlocks.PINK_SANDSTONE_SLAB));
-        dropSelf(EBlocks.PINK_SANDSTONE_WALL);
-        dropSelf(EBlocks.SMOOTH_PINK_SANDSTONE);
-        dropSelf(EBlocks.SMOOTH_PINK_SANDSTONE_STAIRS);
-        add(EBlocks.SMOOTH_PINK_SANDSTONE_SLAB, createSlabItemTable(EBlocks.SMOOTH_PINK_SANDSTONE_SLAB));
-        dropSelf(EBlocks.SMOOTH_PINK_SANDSTONE_WALL);
-        dropSelf(EBlocks.CUT_PINK_SANDSTONE);
-        dropSelf(EBlocks.CUT_PINK_SANDSTONE_STAIRS);
-        add(EBlocks.CUT_PINK_SANDSTONE_SLAB, createSlabItemTable(EBlocks.CUT_PINK_SANDSTONE_SLAB));
-        dropSelf(EBlocks.CUT_PINK_SANDSTONE_WALL);
-        dropSelf(EBlocks.POLISHED_PINK_SANDSTONE);
-        dropSelf(EBlocks.POLISHED_PINK_SANDSTONE_STAIRS);
-        add(EBlocks.POLISHED_PINK_SANDSTONE_SLAB, createSlabItemTable(EBlocks.POLISHED_PINK_SANDSTONE_SLAB));
-        dropSelf(EBlocks.POLISHED_PINK_SANDSTONE_WALL);
-        dropSelf(EBlocks.CHISELED_PINK_SANDSTONE);
+        dropSelf(EBlocks.ORANGE_SAND);
+        dropSelf(EBlocks.ORANGE_SANDSTONE);
+        dropSelf(EBlocks.ORANGE_SANDSTONE_STAIRS);
+        add(EBlocks.ORANGE_SANDSTONE_SLAB, createSlabItemTable(EBlocks.ORANGE_SANDSTONE_SLAB));
+        dropSelf(EBlocks.ORANGE_SANDSTONE_WALL);
+        dropSelf(EBlocks.SMOOTH_ORANGE_SANDSTONE);
+        dropSelf(EBlocks.SMOOTH_ORANGE_SANDSTONE_STAIRS);
+        add(EBlocks.SMOOTH_ORANGE_SANDSTONE_SLAB, createSlabItemTable(EBlocks.SMOOTH_ORANGE_SANDSTONE_SLAB));
+        dropSelf(EBlocks.SMOOTH_ORANGE_SANDSTONE_WALL);
+        dropSelf(EBlocks.CUT_ORANGE_SANDSTONE);
+        dropSelf(EBlocks.CUT_ORANGE_SANDSTONE_STAIRS);
+        add(EBlocks.CUT_ORANGE_SANDSTONE_SLAB, createSlabItemTable(EBlocks.CUT_ORANGE_SANDSTONE_SLAB));
+        dropSelf(EBlocks.CUT_ORANGE_SANDSTONE_WALL);
+        dropSelf(EBlocks.POLISHED_ORANGE_SANDSTONE);
+        dropSelf(EBlocks.POLISHED_ORANGE_SANDSTONE_STAIRS);
+        add(EBlocks.POLISHED_ORANGE_SANDSTONE_SLAB, createSlabItemTable(EBlocks.POLISHED_ORANGE_SANDSTONE_SLAB));
+        dropSelf(EBlocks.POLISHED_ORANGE_SANDSTONE_WALL);
+        dropSelf(EBlocks.CHISELED_ORANGE_SANDSTONE);
 
         dropSelf(EBlocks.BEACHSTONE);
         dropSelf(EBlocks.POLISHED_BEACHSTONE);
@@ -409,7 +385,11 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(EBlocks.MUD_BRICK_PILLAR);
 
         dropSelf(EBlocks.ARID_DIRT);
+        dropSelf(EBlocks.COARSE_ARID_DIRT);
         add(EBlocks.ARID_GRASS_BLOCK, createSingleItemTableWithSilkTouch(EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT));
+        dropSelf(EBlocks.GLOOMY_DIRT);
+        dropSelf(EBlocks.COARSE_GLOOMY_DIRT);
+        add(EBlocks.GLOOMY_GRASS_BLOCK, createSingleItemTableWithSilkTouch(EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.GLOOMY_DIRT));
 
         add(EBlocks.GILDED_BIRCH_LEAVES, createLeavesDrops(EBlocks.GILDED_BIRCH_LEAVES, Blocks.BIRCH_SAPLING, 0.05F));
 
@@ -420,6 +400,7 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
 
         add(EBlocks.MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.MOSS_SPOROPHYTE));
         add(EBlocks.RUSTY_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.RUSTY_MOSS_SPOROPHYTE));
+        add(EBlocks.OCHRE_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.OCHRE_MOSS_SPOROPHYTE));
         add(EBlocks.PALE_MOSS_SPOROPHYTE, createShearsOrSilkTouchOnlyDrop(EBlocks.PALE_MOSS_SPOROPHYTE));
 
         dropSelf(EBlocks.AZALEA_LOG);
@@ -527,6 +508,60 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.POTTED_PINE_SAPLING, createPotFlowerItemTable(EBlocks.BLUEBONNET));
         add(EBlocks.PINE_LEAVES, createLeavesDrops(EBlocks.PINE_LEAVES, EBlocks.PINE_SAPLING, 0.05F));
 
+        dropSelf(EBlocks.FIR_LOG);
+        dropSelf(EBlocks.STRIPPED_FIR_LOG);
+        dropSelf(EBlocks.FIR_WOOD);
+        dropSelf(EBlocks.STRIPPED_FIR_WOOD);
+        dropSelf(EBlocks.FIR_PLANKS);
+        dropSelf(EBlocks.FIR_MOSAIC);
+        dropSelf(EBlocks.FIR_BOARDS);
+        dropSelf(EBlocks.FIR_TRIM);
+        dropSelf(EBlocks.FIR_STAIRS);
+        dropSelf(EBlocks.FIR_MOSAIC_STAIRS);
+        dropSelf(EBlocks.FIR_FENCE);
+        dropSelf(EBlocks.FIR_FENCE_GATE);
+        add(EBlocks.FIR_SLAB, createSlabItemTable(EBlocks.FIR_SLAB));
+        add(EBlocks.FIR_MOSAIC_SLAB, createSlabItemTable(EBlocks.FIR_MOSAIC_SLAB));
+        add(EBlocks.FIR_DOOR, createDoorTable(EBlocks.FIR_DOOR));
+        dropSelf(EBlocks.FIR_TRAPDOOR);
+        dropSelf(EBlocks.FIR_PRESSURE_PLATE);
+        dropSelf(EBlocks.FIR_BUTTON);
+        dropOther(EBlocks.FIR_SIGN, EItems.FIR_SIGN);
+        dropOther(EBlocks.FIR_WALL_SIGN, EItems.FIR_SIGN);
+        dropOther(EBlocks.FIR_HANGING_SIGN, EItems.FIR_HANGING_SIGN);
+        dropOther(EBlocks.FIR_WALL_HANGING_SIGN, EItems.FIR_HANGING_SIGN);
+        dropSelf(EBlocks.FIR_SHELF);
+        dropSelf(EBlocks.FIR_SAPLING);
+        add(EBlocks.POTTED_FIR_SAPLING, createPotFlowerItemTable(EBlocks.FIR_SAPLING));
+        add(EBlocks.FIR_LEAVES, createLeavesDrops(EBlocks.FIR_LEAVES, EBlocks.FIR_SAPLING, 0.05F));
+
+        dropSelf(EBlocks.WILLOW_LOG);
+        dropSelf(EBlocks.STRIPPED_WILLOW_LOG);
+        dropSelf(EBlocks.WILLOW_WOOD);
+        dropSelf(EBlocks.STRIPPED_WILLOW_WOOD);
+        dropSelf(EBlocks.WILLOW_PLANKS);
+        dropSelf(EBlocks.WILLOW_MOSAIC);
+        dropSelf(EBlocks.WILLOW_BOARDS);
+        dropSelf(EBlocks.WILLOW_TRIM);
+        dropSelf(EBlocks.WILLOW_STAIRS);
+        dropSelf(EBlocks.WILLOW_MOSAIC_STAIRS);
+        dropSelf(EBlocks.WILLOW_FENCE);
+        dropSelf(EBlocks.WILLOW_FENCE_GATE);
+        add(EBlocks.WILLOW_SLAB, createSlabItemTable(EBlocks.WILLOW_SLAB));
+        add(EBlocks.WILLOW_MOSAIC_SLAB, createSlabItemTable(EBlocks.WILLOW_MOSAIC_SLAB));
+        add(EBlocks.WILLOW_DOOR, createDoorTable(EBlocks.WILLOW_DOOR));
+        dropSelf(EBlocks.WILLOW_TRAPDOOR);
+        dropSelf(EBlocks.WILLOW_PRESSURE_PLATE);
+        dropSelf(EBlocks.WILLOW_BUTTON);
+        dropOther(EBlocks.WILLOW_SIGN, EItems.WILLOW_SIGN);
+        dropOther(EBlocks.WILLOW_WALL_SIGN, EItems.WILLOW_SIGN);
+        dropOther(EBlocks.WILLOW_HANGING_SIGN, EItems.WILLOW_HANGING_SIGN);
+        dropOther(EBlocks.WILLOW_WALL_HANGING_SIGN, EItems.WILLOW_HANGING_SIGN);
+        dropSelf(EBlocks.WILLOW_SHELF);
+        dropSelf(EBlocks.WILLOW_SAPLING);
+        add(EBlocks.POTTED_WILLOW_SAPLING, createPotFlowerItemTable(EBlocks.WILLOW_SAPLING));
+        add(EBlocks.WILLOW_LEAVES, createLeavesDrops(EBlocks.WILLOW_LEAVES, EBlocks.WILLOW_SAPLING, 0.05F));
+
         dropSelf(EBlocks.LATERITE);
         dropSelf(EBlocks.PEAT);
         dropSelf(EBlocks.SILT);
@@ -613,6 +648,11 @@ public class BlockLootTableProvider extends FabricBlockLootSubProvider {
         add(EBlocks.MANGROVE_MOSAIC_SLAB, createSlabItemTable(EBlocks.MANGROVE_MOSAIC_SLAB));
         dropSelf(EBlocks.MANGROVE_BOARDS);
         dropSelf(EBlocks.MANGROVE_TRIM);
+        dropSelf(EBlocks.POPLAR_MOSAIC);
+        dropSelf(EBlocks.POPLAR_MOSAIC_STAIRS);
+        add(EBlocks.POPLAR_MOSAIC_SLAB, createSlabItemTable(EBlocks.POPLAR_MOSAIC_SLAB));
+        dropSelf(EBlocks.POPLAR_BOARDS);
+        dropSelf(EBlocks.POPLAR_TRIM);
         dropSelf(EBlocks.CRIMSON_MOSAIC);
         dropSelf(EBlocks.CRIMSON_MOSAIC_STAIRS);
         add(EBlocks.CRIMSON_MOSAIC_SLAB, createSlabItemTable(EBlocks.CRIMSON_MOSAIC_SLAB));

@@ -7,7 +7,6 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import team.lookingglass.elsewhere.Elsewhere;
 
 public interface EEquipmentAssets {
-    ResourceKey<EquipmentAsset> BRONZE = createKey("bronze");
     ResourceKey<EquipmentAsset> SOULSTEEL = createKey("soulsteel");
     ResourceKey<EquipmentAsset> ELECTRUM = createKey("electrum");
 

@@ -18,6 +18,7 @@ import team.lookingglass.elsewhere.Elsewhere;
 import team.lookingglass.elsewhere.entity.mob.creature.Perch;
 import team.lookingglass.elsewhere.entity.mob.monster.*;
 import team.lookingglass.elsewhere.registry.EItems;
+import team.lookingglass.elsewhere.registry.util.bolt.Bolt;
 
 import java.util.function.Supplier;
 
@@ -119,6 +120,10 @@ public interface EEntities {
     ResourceKey<EntityType<?>> MAHOGANY_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "mahogany_chest_boat"));
     ResourceKey<EntityType<?>> PINE_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine_boat"));
     ResourceKey<EntityType<?>> PINE_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "pine_chest_boat"));
+    ResourceKey<EntityType<?>> FIR_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "fir_boat"));
+    ResourceKey<EntityType<?>> FIR_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "fir_chest_boat"));
+    ResourceKey<EntityType<?>> WILLOW_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "willow_boat"));
+    ResourceKey<EntityType<?>> WILLOW_CHEST_BOAT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "willow_chest_boat"));
 
     EntityType<Boat> AZALEA_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, AZALEA_BOAT_KEY, EntityType.Builder.of(boatFactory(() -> EItems.AZALEA_BOAT), MobCategory.MISC)
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(AZALEA_BOAT_KEY));
@@ -139,6 +144,21 @@ public interface EEntities {
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(PINE_BOAT_KEY));
     EntityType<ChestBoat> PINE_CHEST_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, PINE_CHEST_BOAT_KEY, EntityType.Builder.of(chestBoatFactory(() -> EItems.PINE_CHEST_BOAT), MobCategory.MISC)
             .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(PINE_CHEST_BOAT_KEY));
+
+    EntityType<Boat> FIR_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, FIR_BOAT_KEY, EntityType.Builder.of(boatFactory(() -> EItems.FIR_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(FIR_BOAT_KEY));
+    EntityType<ChestBoat> FIR_CHEST_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, FIR_CHEST_BOAT_KEY, EntityType.Builder.of(chestBoatFactory(() -> EItems.FIR_CHEST_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(FIR_CHEST_BOAT_KEY));
+
+    EntityType<Boat> WILLOW_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, WILLOW_BOAT_KEY, EntityType.Builder.of(boatFactory(() -> EItems.WILLOW_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(WILLOW_BOAT_KEY));
+    EntityType<ChestBoat> WILLOW_CHEST_BOAT = Registry.register(BuiltInRegistries.ENTITY_TYPE, WILLOW_CHEST_BOAT_KEY, EntityType.Builder.of(chestBoatFactory(() -> EItems.WILLOW_CHEST_BOAT), MobCategory.MISC)
+            .noLootTable().sized(1.375F, 0.5625F).eyeHeight(0.5625F).clientTrackingRange(10).build(WILLOW_CHEST_BOAT_KEY));
+
+    ResourceKey<EntityType<?>> IRON_BOLT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "iron_bolt"));
+    ResourceKey<EntityType<?>> SILVER_BOLT_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Elsewhere.MODID, "silver_bolt"));
+    EntityType<Bolt> IRON_BOLT = registerBolt(IRON_BOLT_KEY);
+    EntityType<Bolt> SILVER_BOLT = registerBolt(SILVER_BOLT_KEY);
 
     @SuppressWarnings("DataFlowIssue")
     static void initialize() {
@@ -173,6 +193,11 @@ public interface EEntities {
         SpawnPlacements.register(WHISTLER, SpawnPlacementTypes.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Whistler::checkWhistlerSpawnRules);
     }
 
+    private static EntityType<Bolt> registerBolt(ResourceKey<EntityType<?>> key) {
+        EntityType<Bolt> type = EntityType.Builder.<Bolt>of(Bolt::new, MobCategory.MISC)
+                .sized(0.5F, 0.5F).eyeHeight(0.13F).clientTrackingRange(4).updateInterval(20).build(key);
+        return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, type);
+    }
     private static EntityType.EntityFactory<Boat> boatFactory(final Supplier<Item> boatItem) {
         return (entityType, level) -> new Boat(entityType, level, boatItem);
     }

@@ -26,6 +26,18 @@ public interface ETreeGrowers {
             WeightedList.<ResourceKey<Feature>>builder().build(),
             EFeatures.PINE_TREE
     );
+    TreeGrower FIR = new TreeGrower(
+            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.FIR_TREE).build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            EFeatures.FIR_TREE
+    );
+    TreeGrower WILLOW = new TreeGrower(
+            WeightedList.<ResourceKey<Feature>>builder().add(EFeatures.WILLOW_TREE).build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            WeightedList.<ResourceKey<Feature>>builder().build(),
+            EFeatures.WILLOW_TREE
+    );
 
     static void initialize() {
     }

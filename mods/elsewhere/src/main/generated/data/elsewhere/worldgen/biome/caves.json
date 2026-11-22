@@ -141,16 +141,17 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "elsewhere:sparse_dripstone"
     ],
     [
-      "minecraft:ore_infested"
+      "minecraft:ore_infested",
+      "elsewhere:cave_weeds",
+      "elsewhere:cave_roots"
     ],
     [],
     [
-      "minecraft:glow_lichen",
-      "elsewhere:cave_weeds",
-      "elsewhere:cave_roots"
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer"

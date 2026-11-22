@@ -32,7 +32,7 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 BlockItemIds.STONE, BlockItemIds.DEEPSLATE, BlockItemIds.GRANITE, BlockItemIds.DIORITE, BlockItemIds.ANDESITE,
                 BlockItemIds.CALCITE, EBlockItemIds.SODALITE, BlockItemIds.TUFF, EBlockItemIds.SHALE, BlockItemIds.DRIPSTONE_BLOCK,
                 BlockItemIds.SULFUR, EBlockItemIds.ORPIMENT, BlockItemIds.CINNABAR, BlockItemIds.PRISMARINE, BlockItemIds.MAGMA_BLOCK, BlockItemIds.BLACKSTONE,
-                BlockItemIds.BASALT, BlockItemIds.SMOOTH_BASALT, BlockItemIds.SANDSTONE, BlockItemIds.RED_SANDSTONE, EBlockItemIds.PINK_SANDSTONE, EBlockItemIds.SOUL_STONE
+                BlockItemIds.BASALT, BlockItemIds.SMOOTH_BASALT, BlockItemIds.SANDSTONE, BlockItemIds.RED_SANDSTONE, EBlockItemIds.ORANGE_SANDSTONE, EBlockItemIds.SOUL_STONE
         );
         builder(BlockTags.MOSS_REPLACEABLE).addTag(EBlockTags.NATURAL_STONE_BLOCKS).addTag(BlockTags.DIRT);
         builder(BlockTags.SUPPORTS_SUGAR_CANE).addTag(EBlockTags.SOIL);
@@ -44,7 +44,8 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         builder(EBlockTags.AMETHYST_SPIRE_REPLACEABLE).add(BlockItemIds.AMETHYST_BLOCK).addTag(EBlockTags.NATURAL_STONE_BLOCKS);
         builder(BlockTags.SPELEOTHEMS).add(EBlockItemIds.AMETHYST_SPIRE);
 
-        builder(EBlockTags.SOIL).addTag(BlockItemTags.DIRT.block()).addTag(BlockItemTags.GRASS_BLOCKS.block());
+        builder(EBlockTags.SOIL).addTag(BlockItemTags.DIRT.block()).addTag(BlockItemTags.GRASS_BLOCKS.block())
+                .addTag(BlockItemTags.MUD.block()).addTag(BlockItemTags.MOSS_BLOCKS.block());
         builder(EBlockTags.DRY_SOIL).addTag(EBlockTags.SOIL).addTag(BlockItemTags.SAND.block()).add(BlockItemIds.GRAVEL, EBlockItemIds.SALT);
         builder(EBlockTags.NETHER_SOIL).addTag(EBlockTags.DRY_SOIL)
                 .add(BlockItemIds.NETHERRACK, BlockItemIds.CRIMSON_NYLIUM, BlockItemIds.WARPED_NYLIUM, BlockItemIds.SOUL_SAND, BlockItemIds.SOUL_SOIL);
@@ -72,12 +73,18 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         builder(BlockTags.WALL_SIGNS).add(
                 EBlockItemIds.AZALEA_WALL_SIGN,
                 EBlockItemIds.CEDAR_WALL_SIGN,
-                EBlockItemIds.MAHOGANY_WALL_SIGN
+                EBlockItemIds.MAHOGANY_WALL_SIGN,
+                EBlockItemIds.PINE_WALL_SIGN,
+                EBlockItemIds.FIR_WALL_SIGN,
+                EBlockItemIds.WILLOW_WALL_SIGN
         );
         builder(BlockTags.WALL_HANGING_SIGNS).add(
                 EBlockItemIds.AZALEA_WALL_HANGING_SIGN,
                 EBlockItemIds.CEDAR_WALL_HANGING_SIGN,
-                EBlockItemIds.MAHOGANY_WALL_HANGING_SIGN
+                EBlockItemIds.MAHOGANY_WALL_HANGING_SIGN,
+                EBlockItemIds.PINE_WALL_HANGING_SIGN,
+                EBlockItemIds.FIR_WALL_HANGING_SIGN,
+                EBlockItemIds.WILLOW_WALL_HANGING_SIGN
         );
 
         // Logs
@@ -85,14 +92,18 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 .addTag(EBlockItemTags.AZALEA_LOGS.block())
                 .addTag(EBlockItemTags.CEDAR_LOGS.block())
                 .addTag(EBlockItemTags.MAHOGANY_LOGS.block())
+                .addTag(EBlockItemTags.PINE_LOGS.block())
+                .addTag(EBlockItemTags.FIR_LOGS.block())
+                .addTag(EBlockItemTags.WILLOW_LOGS.block())
                 .addTag(EBlockItemTags.BAMBOO_STEMS.block())
         ;
 
         // Tool Mineables
         builder(BlockTags.MINEABLE_WITH_SHOVEL).add(
-                EBlockItemIds.ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK,
+                EBlockItemIds.ARID_DIRT, EBlockItemIds.COARSE_ARID_DIRT, EBlockItemIds.ARID_GRASS_BLOCK,
+                EBlockItemIds.GLOOMY_DIRT, EBlockItemIds.COARSE_GLOOMY_DIRT, EBlockItemIds.GLOOMY_GRASS_BLOCK,
                 EBlockItemIds.LATERITE, EBlockItemIds.PEAT, EBlockItemIds.SILT, EBlockItemIds.SALT,
-                EBlockItemIds.ARID_SAND, EBlockItemIds.PINK_SAND, EBlockItemIds.SEAGRASS_SAND,
+                EBlockItemIds.ORANGE_SAND, EBlockItemIds.SEAGRASS_SAND,
                 EBlockItemIds.CHISELED_SNOW_BRICKS
         );
         builder(BlockTags.MINEABLE_WITH_AXE)
@@ -187,14 +198,7 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.SHALE_BRICKS, EBlockItemIds.SHALE_BRICK_STAIRS, EBlockItemIds.SHALE_BRICK_SLAB, EBlockItemIds.SHALE_BRICK_WALL,
                         EBlockItemIds.SHALE_PILLAR, EBlockItemIds.CHISELED_SHALE, EBlockItemIds.CHISELED_SHALE_BRICKS,
 
-                        EBlockItemIds.CINNABAR_COAL_ORE, EBlockItemIds.CINNABAR_COPPER_ORE, EBlockItemIds.CINNABAR_IRON_ORE, EBlockItemIds.CINNABAR_GOLD_ORE, EBlockItemIds.CINNABAR_REDSTONE_ORE, EBlockItemIds.CINNABAR_DIAMOND_ORE, EBlockItemIds.CINNABAR_LAPIS_ORE, EBlockItemIds.CINNABAR_EMERALD_ORE,
-
-                        EBlockItemIds.TIN_ORE, EBlockItemIds.DEEPSLATE_TIN_ORE, EBlockItemIds.CINNABAR_TIN_ORE,
-                        EBlockItemIds.TIN_BLOCK, EBlockItemIds.RAW_TIN_BLOCK,
-                        EBlockItemIds.CUT_TIN, EBlockItemIds.CUT_TIN_STAIRS, EBlockItemIds.CUT_TIN_SLAB,
-                        EBlockItemIds.CHISELED_TIN, EBlockItemIds.TIN_BARS,
-
-                        EBlockItemIds.BRONZE_BLOCK,
+                        EBlockItemIds.CINNABAR_REDSTONE_ORE,
 
                         EBlockItemIds.SILVER_ORE, EBlockItemIds.DEEPSLATE_SILVER_ORE, EBlockItemIds.CINNABAR_SILVER_ORE,
                         EBlockItemIds.SILVER_BLOCK, EBlockItemIds.RAW_SILVER_BLOCK,
@@ -227,11 +231,11 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                         EBlockItemIds.CHISELED_SOUL_STONE,
                         EBlockItemIds.SOUL_SILVER_ORE, EBlockItemIds.SOUL_QUARTZ_ORE,
 
-                        EBlockItemIds.PINK_SANDSTONE, EBlockItemIds.PINK_SANDSTONE_STAIRS, EBlockItemIds.PINK_SANDSTONE_SLAB, EBlockItemIds.PINK_SANDSTONE_WALL,
-                        EBlockItemIds.SMOOTH_PINK_SANDSTONE, EBlockItemIds.SMOOTH_PINK_SANDSTONE_STAIRS, EBlockItemIds.SMOOTH_PINK_SANDSTONE_SLAB, EBlockItemIds.SMOOTH_PINK_SANDSTONE_WALL,
-                        EBlockItemIds.CUT_PINK_SANDSTONE, EBlockItemIds.CUT_PINK_SANDSTONE_STAIRS, EBlockItemIds.CUT_PINK_SANDSTONE_SLAB, EBlockItemIds.CUT_PINK_SANDSTONE_WALL,
-                        EBlockItemIds.POLISHED_PINK_SANDSTONE, EBlockItemIds.POLISHED_PINK_SANDSTONE_STAIRS, EBlockItemIds.POLISHED_PINK_SANDSTONE_SLAB, EBlockItemIds.POLISHED_PINK_SANDSTONE_WALL,
-                        EBlockItemIds.CHISELED_PINK_SANDSTONE,
+                        EBlockItemIds.ORANGE_SANDSTONE, EBlockItemIds.ORANGE_SANDSTONE_STAIRS, EBlockItemIds.ORANGE_SANDSTONE_SLAB, EBlockItemIds.ORANGE_SANDSTONE_WALL,
+                        EBlockItemIds.SMOOTH_ORANGE_SANDSTONE, EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_STAIRS, EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_SLAB, EBlockItemIds.SMOOTH_ORANGE_SANDSTONE_WALL,
+                        EBlockItemIds.CUT_ORANGE_SANDSTONE, EBlockItemIds.CUT_ORANGE_SANDSTONE_STAIRS, EBlockItemIds.CUT_ORANGE_SANDSTONE_SLAB, EBlockItemIds.CUT_ORANGE_SANDSTONE_WALL,
+                        EBlockItemIds.POLISHED_ORANGE_SANDSTONE, EBlockItemIds.POLISHED_ORANGE_SANDSTONE_STAIRS, EBlockItemIds.POLISHED_ORANGE_SANDSTONE_SLAB, EBlockItemIds.POLISHED_ORANGE_SANDSTONE_WALL,
+                        EBlockItemIds.CHISELED_ORANGE_SANDSTONE,
 
                         EBlockItemIds.BEACHSTONE, EBlockItemIds.BEACHSTONE_STAIRS, EBlockItemIds.BEACHSTONE_SLAB, EBlockItemIds.BEACHSTONE_WALL,
                         EBlockItemIds.POLISHED_BEACHSTONE, EBlockItemIds.POLISHED_BEACHSTONE_STAIRS, EBlockItemIds.POLISHED_BEACHSTONE_SLAB, EBlockItemIds.POLISHED_BEACHSTONE_WALL,
@@ -265,12 +269,12 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
                 ));
         builder(EBlockTags.NEEDS_COPPER_TOOL)
                 .add(
-                        BlockItemIds.IRON_ORE, BlockItemIds.DEEPSLATE_IRON_ORE, EBlockItemIds.CINNABAR_IRON_ORE,
+                        BlockItemIds.IRON_ORE, BlockItemIds.DEEPSLATE_IRON_ORE,
                         BlockItemIds.IRON_BLOCK, BlockItemIds.RAW_IRON_BLOCK,
 
                         BlockItemIds.REDSTONE_ORE, EBlockItemIds.CINNABAR_REDSTONE_ORE, BlockItemIds.DEEPSLATE_REDSTONE_ORE, BlockItemIds.REDSTONE_BLOCK,
 
-                        BlockItemIds.LAPIS_ORE, EBlockItemIds.CINNABAR_LAPIS_ORE, BlockItemIds.DEEPSLATE_LAPIS_ORE,
+                        BlockItemIds.LAPIS_ORE, BlockItemIds.DEEPSLATE_LAPIS_ORE,
                         BlockItemIds.LAPIS_BLOCK, EBlockItemIds.LAPIS_BRICKS, EBlockItemIds.LAPIS_BRICK_STAIRS, EBlockItemIds.LAPIS_BRICK_SLAB,
 
                         BlockItemIds.DEEPSLATE_COAL_ORE, BlockItemIds.DEEPSLATE_COPPER_ORE,
@@ -285,18 +289,13 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         ;
         builder(BlockTags.NEEDS_IRON_TOOL)
                 .add(
-                        EBlockItemIds.TIN_ORE, EBlockItemIds.CINNABAR_TIN_ORE, EBlockItemIds.DEEPSLATE_TIN_ORE,
-                        EBlockItemIds.TIN_BLOCK, EBlockItemIds.RAW_TIN_BLOCK,
-
-                        EBlockItemIds.BRONZE_BLOCK,
-
-                        BlockItemIds.GOLD_ORE, BlockItemIds.DEEPSLATE_GOLD_ORE, EBlockItemIds.CINNABAR_GOLD_ORE, BlockItemIds.NETHER_GOLD_ORE,
+                        BlockItemIds.GOLD_ORE, BlockItemIds.DEEPSLATE_GOLD_ORE, BlockItemIds.NETHER_GOLD_ORE,
                         BlockItemIds.GOLD_BLOCK, BlockItemIds.RAW_GOLD_BLOCK,
 
                         EBlockItemIds.SILVER_ORE, EBlockItemIds.DEEPSLATE_SILVER_ORE, EBlockItemIds.CINNABAR_SILVER_ORE,
                         EBlockItemIds.SILVER_BLOCK, EBlockItemIds.RAW_SILVER_BLOCK,
 
-                        BlockItemIds.EMERALD_ORE, BlockItemIds.DEEPSLATE_EMERALD_ORE, EBlockItemIds.CINNABAR_EMERALD_ORE, BlockItemIds.EMERALD_BLOCK,
+                        BlockItemIds.EMERALD_ORE, BlockItemIds.DEEPSLATE_EMERALD_ORE, BlockItemIds.EMERALD_BLOCK,
 
                         EBlockItemIds.SOULSTEEL_BLOCK, EBlockItemIds.ELECTRUM_BLOCK,
 
@@ -312,7 +311,7 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         builder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .removeAll(List.of(
                         BlockItemIds.DIAMOND_ORE.block(),
-                        BlockItemIds.DEEPSLATE_DIAMOND_ORE.block(), EBlockItemIds.CINNABAR_DIAMOND_ORE.block(), BlockItemIds.DIAMOND_BLOCK.block(),
+                        BlockItemIds.DEEPSLATE_DIAMOND_ORE.block(), BlockItemIds.DIAMOND_BLOCK.block(),
                         BlockItemIds.OBSIDIAN.block(), BlockItemIds.CRYING_OBSIDIAN.block(), BlockItemIds.RESPAWN_ANCHOR.block()
                 ));
 
@@ -337,9 +336,6 @@ public class BlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
         builder(BlockTags.INCORRECT_FOR_GOLD_TOOL)
                 .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .removeTag(BlockTags.NEEDS_IRON_TOOL)
-        ;
-        builder(EBlockTags.INCORRECT_FOR_BRONZE_TOOL)
-                .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
         ;
         builder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
         ;

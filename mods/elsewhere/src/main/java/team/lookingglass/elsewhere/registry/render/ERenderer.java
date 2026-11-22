@@ -41,18 +41,19 @@ public class ERenderer {
         ParticleProviderRegistry.getInstance().register(EParticles.SPARKLE, SparkleParticle.Provider::new);
         ParticleProviderRegistry.getInstance().register(EParticles.GILDED_BIRCH_LEAVES, FallingLeavesParticle.PaleOakProvider::new);
         ParticleProviderRegistry.getInstance().register(EParticles.PINE_LEAVES, FallingLeavesParticle.PoplarProvider::new);
+        ParticleProviderRegistry.getInstance().register(EParticles.FIR_LEAVES, FallingLeavesParticle.PoplarProvider::new);
         ParticleProviderRegistry.getInstance().register(EParticles.SUBSLIME_PARTICLE, CubeParticle.Provider::new);
 
         BlockColorRegistry.register(List.of(BlockTintSources.grassBlock()), EBlocks.ARID_GRASS_BLOCK);
+        BlockColorRegistry.register(List.of(BlockTintSources.grassBlock()), EBlocks.GLOOMY_GRASS_BLOCK);
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.CEDAR_LEAVES);
         BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.MAHOGANY_LEAVES);
-        BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.PINE_LEAVES);
+        BlockColorRegistry.register(List.of(BlockTintSources.foliage()), EBlocks.WILLOW_LEAVES);
 
         special("quick_shield", QuickShieldSpecialRenderer.Unbaked.MAP_CODEC);
         special("reinforced_shield", ReinforcedShieldSpecialRenderer.Unbaked.MAP_CODEC);
 
 //        BiomeColorRegistry.register(EBiomes.TUNDRA, BiomeColors.TundraGrassColor::get);
-        BiomeColorRegistry.register(EBiomes.SNOWY_TUNDRA, BiomeColors.TundraGrassColor::get);
     }
 
     private static void special(String name, MapCodec<? extends SpecialModelRenderer.Unbaked<?>> codec) {

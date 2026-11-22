@@ -21,9 +21,6 @@
       }
     },
     {
-      "type": "minecraft:biome"
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:all_of",
@@ -38,6 +35,9 @@
           }
         ]
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

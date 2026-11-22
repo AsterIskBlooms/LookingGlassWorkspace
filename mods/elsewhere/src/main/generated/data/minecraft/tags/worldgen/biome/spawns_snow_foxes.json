@@ -1,7 +1,8 @@
 {
   "values": [
-    "elsewhere:glacial_valley",
-    "elsewhere:snowy_tundra",
+    "elsewhere:fir_thicket",
+    "elsewhere:alpine_plains",
+    "elsewhere:alpine_grove",
     "elsewhere:bog",
     "elsewhere:frozen_beach"
   ]

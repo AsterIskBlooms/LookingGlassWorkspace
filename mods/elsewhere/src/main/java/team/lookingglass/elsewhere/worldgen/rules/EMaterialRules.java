@@ -8,6 +8,7 @@ import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.material.MaterialRules;
 import net.minecraft.world.level.levelgen.material.condition.AbovePreliminarySurfaceCondition;
 import net.minecraft.world.level.levelgen.material.condition.MaterialCondition;
@@ -25,15 +26,14 @@ public class EMaterialRules {
     private final MaterialCondition deepUnderFloor;
     private final MaterialCondition veryDeepUnderFloor;
 
-    // Cliff presets (exposed on steep slopes above the preliminary surface)
+    // Cliff presets
     private final MaterialRule stoneCliffs = cliffs(block(Blocks.STONE));
     private final MaterialRule terracottaCliffs = cliffs(block(Blocks.TERRACOTTA));
     private final MaterialRule steppeCliffs = cliffs(SteppeRule.INSTANCE);
     private final MaterialRule badlandsCliffs = cliffs(MaterialRules.bandlands());
     private final MaterialRule sandstoneCliffs;
+    private final MaterialRule orangeSandstoneCliffs;
     private final MaterialRule redSandstoneCliffs;
-    private final MaterialRule pinkSandstoneCliffs;
-    private final MaterialRule aridSandstoneCliffs;
 
     private EMaterialRules(HolderGetter<Biome> biomes, HolderGetter<MaterialCondition> conditions) {
         this.biomes = biomes;
@@ -41,11 +41,9 @@ public class EMaterialRules {
         this.underFloor = MaterialRules.getCondition(conditions, VanillaMaterialConditions.UNDER_FLOOR);
         this.deepUnderFloor = MaterialRules.getCondition(conditions, VanillaMaterialConditions.DEEP_UNDER_FLOOR);
         this.veryDeepUnderFloor = MaterialRules.getCondition(conditions, VanillaMaterialConditions.VERY_DEEP_UNDER_FLOOR);
-
         this.sandstoneCliffs = sandCliffs(Blocks.SAND, Blocks.SANDSTONE);
+        this.orangeSandstoneCliffs = sandCliffs(EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE);
         this.redSandstoneCliffs = sandCliffs(Blocks.RED_SAND, Blocks.RED_SANDSTONE);
-        this.pinkSandstoneCliffs = sandCliffs(EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE);
-        this.aridSandstoneCliffs = sandCliffs(EBlocks.ARID_SAND, Blocks.SANDSTONE);
     }
 
     public static MaterialRule buildOverworld(HolderGetter<Biome> biomes, HolderGetter<MaterialCondition> conditions) {
@@ -57,13 +55,10 @@ public class EMaterialRules {
         return new EMaterialRules(biomes, conditions).netherRules();
     }
 
-    // ==================================================================
-    //  VANILLA BIOMES
-    // ==================================================================
-
+    // Vanilla
     private MaterialRule vanillaRules() {
         return seq(
-                // ---- cliffs ----
+                // cliffs
                 when(in(Biomes.PLAINS, Biomes.SUNFLOWER_PLAINS, Biomes.MEADOW, Biomes.SNOWY_PLAINS,
                                 Biomes.FOREST, Biomes.FLOWER_FOREST, Biomes.DARK_FOREST, Biomes.CHERRY_GROVE,
                                 Biomes.BIRCH_FOREST, Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.GROVE,
@@ -76,12 +71,14 @@ public class EMaterialRules {
                 when(in(Biomes.DESERT), sandstoneCliffs),
                 when(in(Biomes.BADLANDS, Biomes.ERODED_BADLANDS, Biomes.WOODED_BADLANDS), badlandsCliffs),
 
-                // ---- surface patches ----
+                // surface patches
                 aboveWater(seq(
-                        when(in(Biomes.DESERT), patch(badlandsNoise(0.0, 0.15), EBlocks.ARID_SAND, EBlocks.ARID_SAND)),
+                        when(in(Biomes.DESERT), patch(badlandsNoise(0.0, 0.15), EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND)),
                         when(in(Biomes.SAVANNA, Biomes.SAVANNA_PLATEAU), patch(badlandsNoise(-1.0, 0.0), EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT)),
                         when(in(Biomes.TAIGA, Biomes.SNOWY_TAIGA), patch(smallPatchNoise(1.2), Blocks.COARSE_DIRT)),
-                        when(in(Biomes.DARK_FOREST), patch(badlandsNoise(-1.0, 0.0), EBlocks.PEAT)),
+                        when(in(Biomes.DARK_FOREST),
+                                patch(smallPatchNoise(1.15), EBlocks.PEAT),
+                                layers(EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.GLOOMY_DIRT)),
                         when(in(Biomes.OLD_GROWTH_BIRCH_FOREST),
                                 patch(smallPatchNoise(1.15), Blocks.COARSE_DIRT),
                                 bothSides(0.35, Blocks.PODZOL)),
@@ -91,7 +88,7 @@ public class EMaterialRules {
                         when(in(Biomes.SPARSE_JUNGLE), patch(patchNoise(0.5, 1.0), EBlocks.LATERITE, EBlocks.LATERITE))
                 )),
 
-                // ---- water / wetlands ----
+                // water / wetlands
                 when(in(Biomes.SWAMP), swampSurface()),
                 when(in(Biomes.RIVER), river(Blocks.COARSE_DIRT, Blocks.COARSE_DIRT, Blocks.DIRT)),
                 when(in(Biomes.FROZEN_RIVER), river(Blocks.GRAVEL, Blocks.STONE, Blocks.STONE)),
@@ -100,38 +97,47 @@ public class EMaterialRules {
                         patch(patchNoise(-0.5, 0.2), EBlocks.SEAGRASS_SAND),
                         deepestLayers(Blocks.SAND, Blocks.SAND, Blocks.SANDSTONE)),
 
-                // ---- caves ----
+                // caves
                 when(in(Biomes.DRIPSTONE_CAVES),
                         gradientBand(EBlocks.SHALE, -0.15F, 0.08F),
                         gradientBand(EBlocks.SHALE, 0.5F)),
                 when(in(Biomes.SULFUR_CAVES), gradientBand(EBlocks.ORPIMENT, 0.325F, 0.4F))
         );
     }
-
-    // ==================================================================
-    //  ELSEWHERE BIOMES  (same order as EBiomes)
-    // ==================================================================
-
+    
+    // Elsewhere Biomes
     private MaterialRule elsewhereRules() {
-        MaterialCondition pinkZone = badlandsNoise(-0.5, 0.0);
+        MaterialCondition orangeSandLush = badlandsNoise(-0.5, 0.0);
+
+        MaterialRule dunesOrangeCliff = seq(
+                when(patchNoise(-1.0, -0.35), layers(EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE)),
+                when(patchNoise(0.35, 1.0), layers(EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE))
+        );
+        MaterialRule dunesRedCliff = seq(
+                when(patchNoise(-1.0, -0.45), layers(Blocks.RED_SAND, Blocks.RED_SAND, Blocks.RED_SANDSTONE)),
+                when(patchNoise(0.45, 1.0), layers(Blocks.RED_SAND, Blocks.RED_SAND, Blocks.RED_SANDSTONE))
+        );
 
         return seq(
-                // ---- land (only above the waterline) ----
+                // land (only above the waterline)
                 aboveWater(seq(
                         // snowy
-                        when(in(EBiomes.GLACIAL_VALLEY), stoneCliffs,
-                                patch(smallPatchNoise(1.1), Blocks.COARSE_DIRT),
-                                patch(patchNoise(0.4, 1.0), Blocks.GRAVEL, Blocks.GRAVEL)),
-                        when(in(EBiomes.SNOWY_TUNDRA), stoneCliffs,
-                                bothSides(0.1, Blocks.GRASS_BLOCK, Blocks.DIRT),
-                                patch(smallPatchNoise(1.15), Blocks.COARSE_DIRT),
-                                layers(Blocks.GRAVEL, Blocks.GRAVEL, Blocks.STONE)),
+                        when(in(EBiomes.TUNDRA), cliffs(block(Blocks.DEEPSLATE)),
+                                patch(smallPatchNoise(1.15), EBlocks.COARSE_GLOOMY_DIRT),
+                                bothSides(0.8, Blocks.MUD, Blocks.MUD),
+                                bothSides(0.2, EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.GLOOMY_DIRT),
+                                bothSides(0.18, Blocks.MUD, Blocks.MUD),
+                                deepestLayers(Blocks.DEEPSLATE, Blocks.DEEPSLATE, Blocks.DEEPSLATE)),
+                        when(in(EBiomes.ALPINE_PLAINS), stoneCliffs,
+                                patch(patchNoise(0.5, 1.0), Blocks.GRAVEL, Blocks.GRAVEL),
+                                patch(smallPatchNoise(1.1), Blocks.COARSE_DIRT)),
+                        when(in(EBiomes.ALPINE_GROVE), stoneCliffs,
+                                patch(smallPatchNoise(1.15), Blocks.COARSE_DIRT)),
+                        when(in(EBiomes.FIR_THICKET), stoneCliffs,
+                                bothSides(0.45, Blocks.PODZOL),
+                                patch(smallPatchNoise(1.2), Blocks.ROOTED_DIRT)),
 
                         // cold
-                        when(in(EBiomes.TUNDRA), stoneCliffs,
-                                bothSides(0.1, Blocks.GRASS_BLOCK, Blocks.DIRT),
-                                patch(smallPatchNoise(1.15), Blocks.COARSE_DIRT),
-                                layers(Blocks.GRAVEL, Blocks.GRAVEL, Blocks.STONE)),
                         when(in(EBiomes.STEPPE), steppeCliffs,
                                 patch(surfaceNoise(0.4, 0.6), Blocks.GRASS_BLOCK),
                                 patch(secondaryNoise(-0.2, 0.0), Blocks.GRASS_BLOCK),
@@ -143,18 +149,9 @@ public class EMaterialRules {
                                 patch(badlandsNoise(-0.05, 0.15), Blocks.GRANITE, Blocks.GRANITE),
                                 patch(smallPatchNoise(0.9), EBlocks.SALT)),
                         when(in(EBiomes.RAINFOREST), stoneCliffs,
-                                patch(patchNoise(0.7, 1.0), Blocks.MUD, Blocks.MUD),
-                                patch(smallPatchNoise(1.0), EBlocks.MOSSY_MUD, Blocks.MUD),
+                                bothSides(0.55, Blocks.MUD, Blocks.MUD),
+                                patch(smallPatchNoise(0.75), EBlocks.MOSSY_MUD, Blocks.MUD),
                                 layers(EBlocks.PEAT, EBlocks.PEAT)),
-                        when(in(EBiomes.ALPINE_PLAINS), stoneCliffs,
-                                patch(patchNoise(0.5, 1.0), Blocks.GRAVEL, Blocks.GRAVEL),
-                                patch(smallPatchNoise(1.1), Blocks.COARSE_DIRT)),
-                        when(in(EBiomes.ALPINE_GROVE), stoneCliffs,
-                                patch(smallPatchNoise(1.15), Blocks.COARSE_DIRT),
-                                bothSides(0.4, Blocks.PODZOL)),
-                        when(in(EBiomes.FIR_THICKET), stoneCliffs,
-                                bothSides(0.3, Blocks.PODZOL),
-                                patch(smallPatchNoise(1.2), Blocks.ROOTED_DIRT)),
                         when(in(EBiomes.HIGHLANDS), stoneCliffs,
                                 patch(patchNoise(0.5, 1.0), EBlocks.PEAT),
                                 patch(badlandsNoise(0.0, 0.25), Blocks.STONE),
@@ -164,7 +161,6 @@ public class EMaterialRules {
                                 patch(patchNoise(-0.4, -0.25), Blocks.STONE, Blocks.STONE)),
                         when(in(EBiomes.COLD_DESERT), stoneCliffs,
                                 patch(patchNoise(-1.0, -0.6), EBlocks.SALT),
-                                patch(smallPatchNoise(1.0), Blocks.COARSE_DIRT),
                                 layers(Blocks.GRAVEL, Blocks.GRAVEL, Blocks.STONE)),
 
 
@@ -192,20 +188,23 @@ public class EMaterialRules {
                                 deepestLayers(Blocks.TERRACOTTA, Blocks.TERRACOTTA, Blocks.TERRACOTTA)),
 
                         // hot
-                        when(in(EBiomes.ACACIA_FLATS), terracottaCliffs,
-                                patch(badlandsNoise(-1.0, 0.0), EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT),
-                                patch(patchNoise(0.5, 1.0), Blocks.COARSE_DIRT),
-                                deepestLayers(Blocks.SAND, Blocks.SAND, Blocks.TERRACOTTA)),
-                        when(in(EBiomes.DRYLAND), cliffs(block(EBlocks.PINK_SANDSTONE)),
-                                deepestLayers(EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT, EBlocks.PINK_SANDSTONE)),
+                        when(in(EBiomes.ROCKY_DESERT), terracottaCliffs,
+                                bothSides(0.35, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE),
+                                patch(patchNoise(-0.05, 0.05), Blocks.GRANITE, Blocks.GRANITE),
+                                deepestLayers(EBlocks.COARSE_ARID_DIRT, EBlocks.ARID_DIRT, Blocks.GRANITE)),
+                        when(in(EBiomes.DRYLAND), cliffs(block(EBlocks.ORANGE_SANDSTONE)),
+                                patch(smallPatchNoise(0.9), EBlocks.COARSE_ARID_DIRT),
+                                deepestLayers(EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT, EBlocks.ORANGE_SANDSTONE)),
                         when(in(EBiomes.OUTBACK), redSandstoneCliffs,
                                 bothSides(0.3, Blocks.RED_SAND, Blocks.RED_SAND, Blocks.RED_SANDSTONE),
                                 layers(EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT, Blocks.GRANITE)),
-                        when(in(EBiomes.DUNES), aridSandstoneCliffs,
-                                layers(EBlocks.ARID_SAND, EBlocks.ARID_SAND, Blocks.SANDSTONE)),
+                        when(in(EBiomes.DUNES), cliffs(dunesRedCliff), cliffs(dunesOrangeCliff),
+                                patch(patchNoise(-1.0, -0.1), Blocks.RED_SAND, Blocks.RED_SAND, Blocks.RED_SANDSTONE),
+                                patch(patchNoise(-0.1, 0.1), EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE),
+                                layers(Blocks.SAND, Blocks.SAND, Blocks.SANDSTONE)),
                         when(in(EBiomes.LUSH_DUNES),
-                                when(pinkZone, pinkSandstoneCliffs), sandstoneCliffs,
-                                when(pinkZone, layers(EBlocks.PINK_SAND, EBlocks.PINK_SAND), veryDeep(EBlocks.PINK_SANDSTONE)),
+                                when(orangeSandLush, orangeSandstoneCliffs), sandstoneCliffs,
+                                when(orangeSandLush, layers(EBlocks.ORANGE_SAND, EBlocks.ORANGE_SAND), veryDeep(EBlocks.ORANGE_SANDSTONE)),
                                 deepestLayers(Blocks.SAND, Blocks.SAND, Blocks.SANDSTONE)),
                         when(in(EBiomes.CLOUD_FOREST), badlandsCliffs,
                                 patch(badlandsNoise(0.15, 1.0), Blocks.MUD),
@@ -217,12 +216,14 @@ public class EMaterialRules {
                         when(in(EBiomes.TROPICAL_BASIN),
                                 patch(smallPatchNoise(1.0), Blocks.MUD, Blocks.MUD),
                                 bothSides(0.45, EBlocks.LATERITE, EBlocks.LATERITE)),
+                        when(in(EBiomes.SALT_FLATS), cliffs(block(Blocks.DYED_TERRACOTTA.white())),
+                                layers(EBlocks.SALT, EBlocks.SALT, Blocks.DYED_TERRACOTTA.white())),
                         when(in(EBiomes.DESERT_WETLAND),
                                 patch(secondaryNoise(0.0, 1.0), EBlocks.SILT, EBlocks.SILT),
                                 deepestLayers(Blocks.SAND, Blocks.SAND, Blocks.SANDSTONE))
                 )),
 
-                // ---- beaches ----
+                // beaches
                 when(in(EBiomes.FROZEN_BEACH), stoneCliffs, layers(Blocks.PACKED_ICE, Blocks.STONE)),
                 when(in(EBiomes.COLD_BEACH), stoneCliffs, layers(Blocks.GRAVEL, Blocks.GRAVEL)),
                 when(in(EBiomes.TIDEPOOLS), sandstoneCliffs,
@@ -230,11 +231,11 @@ public class EMaterialRules {
                         under(Blocks.SAND),
                         deep(Blocks.SANDSTONE)),
 
-                // ---- rivers ----
+                // rivers
                 when(in(EBiomes.COLD_RIVER), river(Blocks.GRAVEL, Blocks.STONE, Blocks.GRAVEL)),
                 when(in(EBiomes.WARM_RIVER), river(Blocks.SAND, Blocks.SAND, Blocks.MUD)),
 
-                // ---- caves ----
+                // caves
                 when(in(EBiomes.CAVES), caveStone()),
                 when(in(EBiomes.CRYSTAL_CAVERNS),
                         gradientBand(EBlocks.SODALITE, -0.3F, -0.2F),
@@ -255,6 +256,7 @@ public class EMaterialRules {
         );
     }
 
+    // Nether
     private MaterialRule netherRules() {
         return when(in(Biomes.SOUL_SAND_VALLEY),
                 when(gradient(-0.1F, 0.0F), floor(EBlocks.SOUL_STONE)),
@@ -263,15 +265,36 @@ public class EMaterialRules {
                 when(SteepCondition.INSTANCE, block(EBlocks.SOUL_STONE)));
     }
 
-    // ==================================================================
-    //  SHARED SURFACES
-    // ==================================================================
+    private static final int SEA_LEVEL = 63;
+    private static final int MUD_FADE_HEIGHT = 8; // blocks above sea level where mud is fully gone
 
-    /** Grass/dirt patches on dry ground, mud everywhere else. Used by swamp, bog and marsh. */
+    /** Grass/dirt on dry ground, with mud that thins out the higher you go. Used by swamp, bog and marsh. */
     private MaterialRule swampSurface() {
-        return seq(
-                aboveWater(patch(secondaryNoise(0.0, 1.0), Blocks.GRASS_BLOCK, Blocks.DIRT)),
-                layers(Blocks.MUD, Blocks.MUD));
+        return seq(aboveWater(muddyLowlands(deepestLayers(EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.GLOOMY_DIRT, Blocks.STONE))),
+                deepestLayers(Blocks.MUD, Blocks.MUD, EBlocks.MUDSTONE));
+    }
+
+    private MaterialRule muddyLowlands(MaterialRule grass) {
+        MaterialRule[] bands = new MaterialRule[MUD_FADE_HEIGHT + 1];
+        for (int i = 0; i <= MUD_FADE_HEIGHT; i++) {
+            int dy = MUD_FADE_HEIGHT - i;
+            double t = mudThreshold(dy);
+            MaterialRule inBand = (dy == MUD_FADE_HEIGHT)
+                    ? grass
+                    : seq(when(secondaryNoise(-1.0, t), layers(Blocks.MUD, Blocks.MUD)), grass);
+            bands[i] = when(yAtLeast(SEA_LEVEL + dy), inBand);
+        }
+        return seq(seq(bands), layers(Blocks.MUD, Blocks.MUD));
+    }
+
+    /** Mud appears where noise < threshold. 1.0 = basically everywhere, -1.0 = nowhere. */
+    private static double mudThreshold(int dyAboveSea) {
+        double f = dyAboveSea / (double) MUD_FADE_HEIGHT;
+        return 1.0 - 2.0 * f;
+    }
+
+    private static MaterialCondition yAtLeast(int y) {
+        return MaterialRules.yBlockCheck(VerticalAnchor.absolute(y), 0);
     }
 
     /** Dry banks use bankTop/bankSub (plus stone cliffs), the underwater bed is mud over bedSub. */
@@ -293,7 +316,7 @@ public class EMaterialRules {
     //  BUILDING BLOCKS
     // ==================================================================
 
-    // ---- layers ----
+    // layers
     private MaterialRule floor(Block block) {
         return MaterialRules.ifTrue(onFloor, block(block));
     }
@@ -323,13 +346,17 @@ public class EMaterialRules {
         return seq(floor(top), under(sub), veryDeep(base));
     }
 
-    // ---- noise patches: the layer blocks, but only where the noise condition holds ----
+    // noise patches: the layer blocks, but only where the noise condition holds
     private MaterialRule patch(MaterialCondition noise, Block top) {
         return when(noise, floor(top));
     }
 
     private MaterialRule patch(MaterialCondition noise, Block top, Block sub) {
         return when(noise, layers(top, sub));
+    }
+
+    private MaterialRule patch(MaterialCondition noise, Block top, Block sub, Block base) {
+        return when(noise, layers(top, sub, base));
     }
 
     /** Patches on both tails of the PATCH noise (below -t and above t). */
@@ -355,7 +382,7 @@ public class EMaterialRules {
         return when(gradient(min), block(block));
     }
 
-    // ---- conditions ----
+    // conditions
     @SafeVarargs
     private MaterialCondition in(ResourceKey<Biome>... keys) {
         return MaterialRules.isBiome(biomes, keys);
@@ -389,7 +416,7 @@ public class EMaterialRules {
         return MaterialRules.noiseCondition3d(Noises.SULFUR_CAVE_GRADIENT, min);
     }
 
-    // ---- wrappers ----
+    // wrappers
     private static MaterialRule seq(MaterialRule... rules) {
         return MaterialRules.sequence(rules);
     }

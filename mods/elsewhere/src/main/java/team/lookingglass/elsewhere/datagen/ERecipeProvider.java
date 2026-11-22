@@ -71,6 +71,9 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(EBlocks.PEBBLE), has(EBlocks.PEBBLE)).save(output);
 
                 fullCookingBook(EItems.RAW_PERCH, EItems.COOKED_PERCH);
+                shaped(RecipeCategory.FOOD, EItems.SHINING_PERCH, 1).pattern(" # ").pattern("#P#").pattern(" # ")
+                        .define('#', Items.DIAMOND).define('P', EItems.COOKED_PERCH)
+                        .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND)).save(output);
 
                 shapeless(RecipeCategory.MISC, EItems.DIAMOND_NUGGET, 9).requires(Items.DIAMOND)
                         .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND)).save(output);
@@ -91,38 +94,6 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         .define('#', Items.COPPER_INGOT).define('O', Blocks.COBBLED_DEEPSLATE).define('F', Blocks.FURNACE)
                         .pattern("###").pattern("#F#").pattern("OOO")
                         .unlockedBy(getHasName(Blocks.COBBLED_DEEPSLATE), has(Blocks.COBBLED_DEEPSLATE)).save(output);
-
-                // Tin
-                itemFullSmeltableNBSet(0.7F,
-                        EBlocks.TIN_ORE, EBlocks.DEEPSLATE_TIN_ORE, EBlocks.CINNABAR_TIN_ORE, EItems.RAW_TIN,
-                        EItems.TIN_INGOT, EItems.TIN_NUGGET, EBlocks.RAW_TIN_BLOCK, EBlocks.TIN_BLOCK
-                );
-                recipe2x2t1(EItems.TIN_INGOT, EBlocks.CUT_TIN);
-                recipeStairSlab(EBlocks.CUT_TIN, EBlocks.CUT_TIN_STAIRS, EBlocks.CUT_TIN_SLAB);
-                recipe2x1t1(EBlocks.CUT_TIN, EBlocks.CHISELED_TIN);
-                stonecutterSet(List.of(EBlocks.CUT_TIN, EBlocks.CUT_TIN_STAIRS), List.of(EBlocks.CUT_TIN_SLAB));
-                shaped(RecipeCategory.BUILDING_BLOCKS, EBlocks.TIN_BARS, 16).define('#', EItems.TIN_INGOT)
-                        .pattern("###").pattern("###")
-                        .unlockedBy(getHasName(EItems.TIN_INGOT), has(EItems.TIN_INGOT)).save(output);
-
-                // Bronze
-                shapeless(RecipeCategory.MISC, EItems.BRONZE_ALLOY).requires(Items.COPPER_INGOT, 3).requires(EItems.TIN_INGOT, 2)
-                        .unlockedBy(getHasName(EItems.TIN_INGOT), has(EItems.TIN_INGOT)).save(output);
-                itemUnsmeltableBSet(EItems.BRONZE_ALLOY, EBlocks.BRONZE_BLOCK);
-                shaped(RecipeCategory.MISC, EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE, 2).define('#', Items.LAPIS_LAZULI).define('C', Blocks.STONE).define('T', EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE)
-                        .pattern("#T#").pattern("#C#").pattern("###")
-                        .unlockedBy(getHasName(EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE), has(EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE)).save(output);
-                equipmentSetSmithing(
-                        EItems.BRONZE_ALLOY, EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE,
-
-                        Items.IRON_SWORD, Items.IRON_AXE, Items.IRON_SPEAR, Items.IRON_PICKAXE, Items.IRON_SHOVEL, Items.IRON_HOE,
-                        Items.IRON_HELMET, Items.IRON_CHESTPLATE, Items.IRON_LEGGINGS, Items.IRON_BOOTS,
-
-                        EItems.BRONZE_SWORD, EItems.BRONZE_AXE, EItems.BRONZE_SPEAR, EItems.BRONZE_PICKAXE, EItems.BRONZE_SHOVEL, EItems.BRONZE_HOE,
-                        EItems.BRONZE_HELMET, EItems.BRONZE_CHESTPLATE, EItems.BRONZE_LEGGINGS, EItems.BRONZE_BOOTS,
-
-                        EItems.TIN_INGOT
-                );
 
                 // Silver
                 itemFullSmeltableNBSet(1.0F,
@@ -146,6 +117,9 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 shaped(RecipeCategory.BUILDING_BLOCKS, EBlocks.REDSTONE_LANTERN).define('#', Items.GOLD_NUGGET).define('T', Items.REDSTONE_TORCH)
                         .pattern("###").pattern("#T#").pattern("###")
                         .unlockedBy(getHasName(Items.REDSTONE_TORCH), has(Items.REDSTONE_TORCH)).save(output);
+
+                customOreSmelting(EBlocks.CINNABAR_REDSTONE_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, Items.REDSTONE, 0.7F, 200, getItemName(Items.REDSTONE));
+                customOreBlasting(EBlocks.CINNABAR_REDSTONE_ORE, RecipeCategory.MISC, CookingBookCategory.MISC, Items.REDSTONE, 0.7F, 100, getItemName(Items.REDSTONE));
 
                 // Wrought Iron
                 shaped(RecipeCategory.BUILDING_BLOCKS, EBlocks.WROUGHT_IRON_BLOCK).define('#', Items.IRON_INGOT)
@@ -545,6 +519,26 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         EBlocks.PINE_PRESSURE_PLATE, EBlocks.PINE_BUTTON, EItems.PINE_SIGN, EItems.PINE_HANGING_SIGN,
                         EItems.PINE_BOAT, EBlocks.PINE_SHELF
                 );
+                fullWoodSet(
+                        EBlocks.FIR_LOG, EBlocks.STRIPPED_FIR_LOG, EBlocks.FIR_WOOD, EBlocks.STRIPPED_FIR_WOOD,
+                        EBlockItemTags.FIR_LOGS.item(),
+                        EBlocks.FIR_PLANKS, EBlocks.FIR_STAIRS, EBlocks.FIR_SLAB,
+                        EBlocks.FIR_MOSAIC, EBlocks.FIR_MOSAIC_STAIRS, EBlocks.FIR_MOSAIC_SLAB,
+                        EBlocks.FIR_BOARDS, EBlocks.FIR_TRIM,
+                        EBlocks.FIR_FENCE, EBlocks.FIR_FENCE_GATE, EBlocks.FIR_DOOR, EBlocks.FIR_TRAPDOOR,
+                        EBlocks.FIR_PRESSURE_PLATE, EBlocks.FIR_BUTTON, EItems.FIR_SIGN, EItems.FIR_HANGING_SIGN,
+                        EItems.FIR_BOAT, EBlocks.FIR_SHELF
+                );
+                fullWoodSet(
+                        EBlocks.WILLOW_LOG, EBlocks.STRIPPED_WILLOW_LOG, EBlocks.WILLOW_WOOD, EBlocks.STRIPPED_WILLOW_WOOD,
+                        EBlockItemTags.WILLOW_LOGS.item(),
+                        EBlocks.WILLOW_PLANKS, EBlocks.WILLOW_STAIRS, EBlocks.WILLOW_SLAB,
+                        EBlocks.WILLOW_MOSAIC, EBlocks.WILLOW_MOSAIC_STAIRS, EBlocks.WILLOW_MOSAIC_SLAB,
+                        EBlocks.WILLOW_BOARDS, EBlocks.WILLOW_TRIM,
+                        EBlocks.WILLOW_FENCE, EBlocks.WILLOW_FENCE_GATE, EBlocks.WILLOW_DOOR, EBlocks.WILLOW_TRAPDOOR,
+                        EBlocks.WILLOW_PRESSURE_PLATE, EBlocks.WILLOW_BUTTON, EItems.WILLOW_SIGN, EItems.WILLOW_HANGING_SIGN,
+                        EItems.WILLOW_BOAT, EBlocks.WILLOW_SHELF
+                );
                 woodSet(
                         Blocks.OAK_PLANKS, Blocks.OAK_STAIRS, Blocks.OAK_SLAB,
                         EBlocks.OAK_MOSAIC, EBlocks.OAK_MOSAIC_STAIRS, EBlocks.OAK_MOSAIC_SLAB,
@@ -589,6 +583,11 @@ public class ERecipeProvider extends FabricRecipeProvider {
                         Blocks.CHERRY_PLANKS, Blocks.CHERRY_STAIRS, Blocks.CHERRY_SLAB,
                         EBlocks.CHERRY_MOSAIC, EBlocks.CHERRY_MOSAIC_STAIRS, EBlocks.CHERRY_MOSAIC_SLAB,
                         EBlocks.CHERRY_BOARDS, EBlocks.CHERRY_TRIM
+                );
+                woodSet(
+                        Blocks.POPLAR_PLANKS, Blocks.POPLAR_STAIRS, Blocks.POPLAR_SLAB,
+                        EBlocks.POPLAR_MOSAIC, EBlocks.POPLAR_MOSAIC_STAIRS, EBlocks.POPLAR_MOSAIC_SLAB,
+                        EBlocks.POPLAR_BOARDS, EBlocks.POPLAR_TRIM
                 );
                 woodSet(
                         Blocks.CRIMSON_PLANKS, Blocks.CRIMSON_STAIRS, Blocks.CRIMSON_SLAB,
@@ -1100,8 +1099,16 @@ public class ERecipeProvider extends FabricRecipeProvider {
                 customOreCooking(SmeltingRecipe::new, smeltables, craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_smelting");
             }
 
+            public void customOreSmelting(ItemLike smeltable, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group) {
+                customOreCooking(SmeltingRecipe::new, List.of(smeltable), craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_smelting");
+            }
+
             public void customOreBlasting(List<ItemLike> smeltables, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group) {
                 customOreCooking(BlastingRecipe::new, smeltables, craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_blasting");
+            }
+
+            public void customOreBlasting(ItemLike smeltable, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group) {
+                customOreCooking(BlastingRecipe::new, List.of(smeltable), craftingCategory, cookingCategory, result, experience, cookingTime, group, "_from_blasting");
             }
 
             public <T extends AbstractCookingRecipe> void customOreCooking(AbstractCookingRecipe.Factory<T> factory, List<ItemLike> smeltables, RecipeCategory craftingCategory, CookingBookCategory cookingCategory, ItemLike result, float experience, int cookingTime, String group, String fromDesc) {

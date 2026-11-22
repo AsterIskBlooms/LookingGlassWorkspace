@@ -23,6 +23,12 @@
                   <Item>
                     <option name="path" value="mods/stratum/src/main/resources/stratum.mixins.json" />
                   </Item>
+                  <Item>
+                    <option name="path" value="mods/monstrous/src/main/resources/lavaswim.mixins.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="mods/monstrous/src/main/resources/monstrous.mixins.json" />
+                  </Item>
                 </list>
               </option>
             </SchemaInfo>
@@ -47,6 +53,9 @@
                   </Item>
                   <Item>
                     <option name="path" value="mods/stratum/src/main/resources/fabric.mod.json" />
+                  </Item>
+                  <Item>
+                    <option name="path" value="mods/monstrous/src/main/resources/fabric.mod.json" />
                   </Item>
                 </list>
               </option>

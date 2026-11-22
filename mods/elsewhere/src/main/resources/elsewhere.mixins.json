@@ -3,11 +3,6 @@
   "package": "team.lookingglass.elsewhere.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "entity.CreeperMixin",
-    "entity.SkeletonMixin",
-    "entity.SlimeMixin",
-    "entity.WitherSkeletonSwordsMixin",
-    "entity.ZombieMixins",
     "entity.possession.PossessedFiringMixin",
     "entity.possession.PossessionMixin",
     "equipment.ArmorMaterialsMixin",
@@ -15,6 +10,9 @@
     "equipment.SpearMixin",
     "equipment.ToolMaterialMixin",
     "equipment.ToolReconfig",
+    "equipment.arrow.AbstractArrowMixin",
+    "equipment.arrow.ArrowTooltipMixin",
+    "equipment.arrow.CrossbowItemMixin",
     "equipment.shield.ShieldBlockDelayMixin",
     "equipment.shield.ShieldCooldownMixin",
     "equipment.shield.ShieldItemMixin",
@@ -36,6 +34,7 @@
     "entity.possession.PossessionRenderingMixin",
     "entity.possession.PossessionRenderLayerMixin",
     "entity.possession.PossessionRenderStateMixin",
-    "equipment.EquipmentLayerRendererMixin"
+    "equipment.EquipmentLayerRendererMixin",
+    "equipment.arrow.SelectItemModelPropertiesMixin"
   ]
 }

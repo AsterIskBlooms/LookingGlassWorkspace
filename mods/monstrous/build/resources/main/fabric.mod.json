@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "monstrous",
+	"version": "1.0.0-26.4",
+	"name": "Monstrous",
+	"description": "Making Monsters More Malicious",
+	"authors": [
+		"Team LookingGlass"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "LGPL-3.0-only",
+	"icon": "assets/monstrous/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"team.lookingglass.monstrous.Monstrous"
+		]
+	},
+	"mixins": [
+		"monstrous.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.0",
+		"minecraft": "~26.4-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

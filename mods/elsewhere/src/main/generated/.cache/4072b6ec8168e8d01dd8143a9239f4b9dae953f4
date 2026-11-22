@@ -1,6 +1,7 @@
-// 26.4-snapshot-8	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:entity_type
+// 26.4-snapshot-10	-999999999-01-01T00:00:00	Elsewhere/Tags for minecraft:entity_type
 930aa4fb9a2cefed969e50982f9d4bc13508cb12 data/elsewhere/tags/entity_type/possessable.json
 32fdd69dc4fb3287ffe28e84de12b6454188689b data/minecraft/tags/entity_type/aquatic.json
+674263b3e6556272863485954e95863a8df1895d data/minecraft/tags/entity_type/arrows.json
 32fdd69dc4fb3287ffe28e84de12b6454188689b data/minecraft/tags/entity_type/can_breathe_under_water.json
 204bde994af65e8c3ffacfcc4ada9e6c2848c52e data/minecraft/tags/entity_type/immune_to_freezing.json
 3c5e28b789854bb3b16841ff3446a491c9053a89 data/minecraft/tags/entity_type/not_affected_by_geysers.json

@@ -158,8 +158,6 @@ public class ModelProvider extends FabricModelProvider {
 
 
         // Sandstone Sets
-        gen.createTrivialCube(EBlocks.ARID_SAND);
-
         gen.family(EBlocks.POLISHED_SANDSTONE)
                 .stairs(EBlocks.POLISHED_SANDSTONE_STAIRS)
                 .slab(EBlocks.POLISHED_SANDSTONE_SLAB)
@@ -301,14 +299,7 @@ public class ModelProvider extends FabricModelProvider {
         // Sulfur & Cinnabar
         gen.createAxisAlignedPillarBlock(EBlocks.SULFUR_PILLAR, TexturedModel.COLUMN);
         gen.createAxisAlignedPillarBlock(EBlocks.CINNABAR_PILLAR, TexturedModel.COLUMN);
-        gen.createTrivialCube(EBlocks.CINNABAR_COAL_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_COPPER_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_IRON_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_GOLD_ORE);
         gen.createTrivialCube(EBlocks.CINNABAR_REDSTONE_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_DIAMOND_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_LAPIS_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_EMERALD_ORE);
 
         // Netherrack
         mGen.netherrackFamily(Blocks.NETHERRACK)
@@ -379,28 +370,28 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(EBlocks.RAW_SOULGLASS);
         gen.createTrivialCube(EBlocks.SOULGLASS);
 
-        gen.createRotatedVariantBlock(EBlocks.PINK_SAND);
-        mGen.cubeTopFamily(EBlocks.PINK_SANDSTONE)
-                .stairs(EBlocks.PINK_SANDSTONE_STAIRS)
-                .slab(EBlocks.PINK_SANDSTONE_SLAB)
-                .wall(EBlocks.PINK_SANDSTONE_WALL)
+        gen.createRotatedVariantBlock(EBlocks.ORANGE_SAND);
+        mGen.cubeTopFamily(EBlocks.ORANGE_SANDSTONE)
+                .stairs(EBlocks.ORANGE_SANDSTONE_STAIRS)
+                .slab(EBlocks.ORANGE_SANDSTONE_SLAB)
+                .wall(EBlocks.ORANGE_SANDSTONE_WALL)
         ;
-        gen.family(EBlocks.SMOOTH_PINK_SANDSTONE)
-                .stairs(EBlocks.SMOOTH_PINK_SANDSTONE_STAIRS)
-                .slab(EBlocks.SMOOTH_PINK_SANDSTONE_SLAB)
-                .wall(EBlocks.SMOOTH_PINK_SANDSTONE_WALL)
+        gen.family(EBlocks.SMOOTH_ORANGE_SANDSTONE)
+                .stairs(EBlocks.SMOOTH_ORANGE_SANDSTONE_STAIRS)
+                .slab(EBlocks.SMOOTH_ORANGE_SANDSTONE_SLAB)
+                .wall(EBlocks.SMOOTH_ORANGE_SANDSTONE_WALL)
         ;
-        mGen.columnFamily(EBlocks.CUT_PINK_SANDSTONE)
-                .stairs(EBlocks.CUT_PINK_SANDSTONE_STAIRS)
-                .slab(EBlocks.CUT_PINK_SANDSTONE_SLAB)
-                .wall(EBlocks.CUT_PINK_SANDSTONE_WALL)
+        mGen.columnFamily(EBlocks.CUT_ORANGE_SANDSTONE)
+                .stairs(EBlocks.CUT_ORANGE_SANDSTONE_STAIRS)
+                .slab(EBlocks.CUT_ORANGE_SANDSTONE_SLAB)
+                .wall(EBlocks.CUT_ORANGE_SANDSTONE_WALL)
         ;
-        gen.family(EBlocks.POLISHED_PINK_SANDSTONE)
-                .stairs(EBlocks.POLISHED_PINK_SANDSTONE_STAIRS)
-                .slab(EBlocks.POLISHED_PINK_SANDSTONE_SLAB)
-                .wall(EBlocks.POLISHED_PINK_SANDSTONE_WALL)
+        gen.family(EBlocks.POLISHED_ORANGE_SANDSTONE)
+                .stairs(EBlocks.POLISHED_ORANGE_SANDSTONE_STAIRS)
+                .slab(EBlocks.POLISHED_ORANGE_SANDSTONE_SLAB)
+                .wall(EBlocks.POLISHED_ORANGE_SANDSTONE_WALL)
         ;
-        gen.createTrivialBlock(EBlocks.CHISELED_PINK_SANDSTONE, TexturedModel.COLUMN);
+        gen.createTrivialBlock(EBlocks.CHISELED_ORANGE_SANDSTONE, TexturedModel.COLUMN);
 
 
         // Beachstone
@@ -493,6 +484,10 @@ public class ModelProvider extends FabricModelProvider {
         mGen.createWoodenBoards(EBlocks.MANGROVE_BOARDS);
         mGen.createSimpleHorizontallyRotatedBlock(EBlocks.MANGROVE_TRIM, TexturedModel.CUBE);
 
+        gen.family(EBlocks.POPLAR_MOSAIC).stairs(EBlocks.POPLAR_MOSAIC_STAIRS).slab(EBlocks.POPLAR_MOSAIC_SLAB);
+        mGen.createWoodenBoards(EBlocks.POPLAR_BOARDS);
+        mGen.createSimpleHorizontallyRotatedBlock(EBlocks.POPLAR_TRIM, TexturedModel.CUBE);
+
         gen.family(EBlocks.CRIMSON_MOSAIC).stairs(EBlocks.CRIMSON_MOSAIC_STAIRS).slab(EBlocks.CRIMSON_MOSAIC_SLAB);
         mGen.createWoodenBoards(EBlocks.CRIMSON_BOARDS);
         mGen.createSimpleHorizontallyRotatedBlock(EBlocks.CRIMSON_TRIM, TexturedModel.CUBE);
@@ -528,7 +523,12 @@ public class ModelProvider extends FabricModelProvider {
         gen.createCrossBlockWithDefaultItem(EBlocks.GLEAMSHROOM, BlockModelGenerators.PlantType.NOT_TINTED);
 
         mGen.createRotatedVariantColumn(EBlocks.ARID_DIRT);
+        gen.createRotatedVariantBlock(EBlocks.COARSE_ARID_DIRT);
         eGen.createAridGrassBlock();
+
+        gen.createRotatedVariantBlock(EBlocks.GLOOMY_DIRT);
+        gen.createRotatedVariantBlock(EBlocks.COARSE_GLOOMY_DIRT);
+        eGen.createGloomyGrassBlock();
 
         gen.createTrivialCube(EBlocks.GILDED_BIRCH_LEAVES);
 
@@ -622,20 +622,54 @@ public class ModelProvider extends FabricModelProvider {
         gen.createTrivialCube(EBlocks.PINE_LEAVES);
         gen.createPlantWithDefaultItem(EBlocks.PINE_SAPLING, EBlocks.POTTED_PINE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
 
+        gen.woodProvider(EBlocks.FIR_LOG).logWithHorizontal(EBlocks.FIR_LOG).wood(EBlocks.FIR_WOOD);
+        gen.woodProvider(EBlocks.STRIPPED_FIR_LOG).logWithHorizontal(EBlocks.STRIPPED_FIR_LOG).wood(EBlocks.STRIPPED_FIR_WOOD);
+        gen.family(EBlocks.FIR_PLANKS)
+                .stairs(EBlocks.FIR_STAIRS)
+                .slab(EBlocks.FIR_SLAB)
+                .fence(EBlocks.FIR_FENCE)
+                .fenceGate(EBlocks.FIR_FENCE_GATE)
+                .pressurePlate(EBlocks.FIR_PRESSURE_PLATE)
+                .button(EBlocks.FIR_BUTTON)
+        ;
+        gen.createDoor(EBlocks.FIR_DOOR);
+        gen.createOrientableTrapdoor(EBlocks.FIR_TRAPDOOR);
+        mGen.createSignModel(EBlocks.FIR_SIGN, EBlocks.FIR_WALL_SIGN, EBlocks.FIR_PLANKS);
+        mGen.createHangingSignModel(EBlocks.FIR_HANGING_SIGN, EBlocks.FIR_WALL_HANGING_SIGN, EBlocks.STRIPPED_FIR_LOG);
+        gen.family(EBlocks.FIR_MOSAIC).stairs(EBlocks.FIR_MOSAIC_STAIRS).slab(EBlocks.FIR_MOSAIC_SLAB);
+        mGen.createWoodenBoards(EBlocks.FIR_BOARDS);
+        mGen.createSimpleHorizontallyRotatedBlock(EBlocks.FIR_TRIM, TexturedModel.CUBE);
+        gen.createShelf(EBlocks.FIR_SHELF, EBlocks.STRIPPED_FIR_LOG);
+        gen.createTrivialCube(EBlocks.FIR_LEAVES);
+        gen.createPlantWithDefaultItem(EBlocks.FIR_SAPLING, EBlocks.POTTED_FIR_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+
+        gen.woodProvider(EBlocks.WILLOW_LOG).logWithHorizontal(EBlocks.WILLOW_LOG).wood(EBlocks.WILLOW_WOOD);
+        gen.woodProvider(EBlocks.STRIPPED_WILLOW_LOG).logWithHorizontal(EBlocks.STRIPPED_WILLOW_LOG).wood(EBlocks.STRIPPED_WILLOW_WOOD);
+        gen.family(EBlocks.WILLOW_PLANKS)
+                .stairs(EBlocks.WILLOW_STAIRS)
+                .slab(EBlocks.WILLOW_SLAB)
+                .fence(EBlocks.WILLOW_FENCE)
+                .fenceGate(EBlocks.WILLOW_FENCE_GATE)
+                .pressurePlate(EBlocks.WILLOW_PRESSURE_PLATE)
+                .button(EBlocks.WILLOW_BUTTON)
+        ;
+        gen.createDoor(EBlocks.WILLOW_DOOR);
+        gen.createOrientableTrapdoor(EBlocks.WILLOW_TRAPDOOR);
+        mGen.createSignModel(EBlocks.WILLOW_SIGN, EBlocks.WILLOW_WALL_SIGN, EBlocks.WILLOW_PLANKS);
+        mGen.createHangingSignModel(EBlocks.WILLOW_HANGING_SIGN, EBlocks.WILLOW_WALL_HANGING_SIGN, EBlocks.STRIPPED_WILLOW_LOG);
+        gen.family(EBlocks.WILLOW_MOSAIC).stairs(EBlocks.WILLOW_MOSAIC_STAIRS).slab(EBlocks.WILLOW_MOSAIC_SLAB);
+        mGen.createWoodenBoards(EBlocks.WILLOW_BOARDS);
+        mGen.createSimpleHorizontallyRotatedBlock(EBlocks.WILLOW_TRIM, TexturedModel.CUBE);
+        gen.createShelf(EBlocks.WILLOW_SHELF, EBlocks.STRIPPED_WILLOW_LOG);
+        gen.createTintedLeaves(EBlocks.WILLOW_LEAVES, TexturedModel.LEAVES, 0x638234);
+        gen.createPlantWithDefaultItem(EBlocks.WILLOW_SAPLING, EBlocks.POTTED_WILLOW_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+
         gen.createTrivialBlock(EBlocks.LATERITE, TexturedModel.COLUMN);
         gen.createTrivialCube(EBlocks.PEAT);
         gen.createTrivialCube(EBlocks.SILT);
         gen.createTrivialCube(EBlocks.SALT);
 
         gen.createTrivialCube(EBlocks.BEJEWELED_CALCITE);
-
-        gen.createTrivialCube(EBlocks.TIN_ORE);
-        gen.createTrivialCube(EBlocks.DEEPSLATE_TIN_ORE);
-        gen.createTrivialCube(EBlocks.CINNABAR_TIN_ORE);
-        gen.createTrivialCube(EBlocks.RAW_TIN_BLOCK);
-        gen.createTrivialCube(EBlocks.TIN_BLOCK);
-
-        gen.createTrivialCube(EBlocks.BRONZE_BLOCK);
 
         gen.createTrivialCube(EBlocks.SILVER_ORE);
         gen.createTrivialCube(EBlocks.DEEPSLATE_SILVER_ORE);
@@ -666,13 +700,6 @@ public class ModelProvider extends FabricModelProvider {
         ;
         gen.createTrivialCube(EBlocks.WROUGHT_IRON_GRATE);
         gen.createBarsAndItem(EBlocks.WROUGHT_IRON_BARS);
-
-        gen.family(EBlocks.CUT_TIN)
-                .stairs(EBlocks.CUT_TIN_STAIRS)
-                .slab(EBlocks.CUT_TIN_SLAB)
-        ;
-        gen.createTrivialCube(EBlocks.CHISELED_TIN);
-        gen.createBarsAndItem(EBlocks.TIN_BARS);
 
         gen.createTrivialCube(EBlocks.SOULSTEEL_BLOCK);
         gen.createTrivialCube(EBlocks.ELECTRUM_BLOCK);
@@ -718,21 +745,6 @@ public class ModelProvider extends FabricModelProvider {
 
         gen.generateFlatItem(EItems.DIAMOND_NUGGET, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.EMERALD_NUGGET, ModelTemplates.FLAT_ITEM);
-
-        gen.generateFlatItem(EItems.RAW_TIN, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(EItems.TIN_INGOT, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(EItems.TIN_NUGGET, ModelTemplates.FLAT_ITEM);
-
-        gen.generateFlatItem(EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(EItems.BRONZE_ALLOY, ModelTemplates.FLAT_ITEM);
-        armorGen.generateTrimmableArmorSet(ETrims.KIT, EEquipmentAssets.BRONZE,
-                EItems.BRONZE_HELMET, EItems.BRONZE_CHESTPLATE, EItems.BRONZE_LEGGINGS, EItems.BRONZE_BOOTS, false);
-        gen.generateFlatItem(EItems.BRONZE_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(EItems.BRONZE_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateSpear(EItems.BRONZE_SPEAR);
-        gen.generateFlatItem(EItems.BRONZE_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(EItems.BRONZE_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        gen.generateFlatItem(EItems.BRONZE_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
         gen.generateFlatItem(EItems.RAW_SILVER, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.SILVER_INGOT, ModelTemplates.FLAT_ITEM);
@@ -808,6 +820,19 @@ public class ModelProvider extends FabricModelProvider {
         gen.generateFlatItem(EItems.PINE_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.PINE_BOAT, ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(EItems.PINE_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(EItems.FIR_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.FIR_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.FIR_BOAT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.FIR_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(EItems.WILLOW_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.WILLOW_HANGING_SIGN, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.WILLOW_BOAT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.WILLOW_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(EItems.IRON_BOLT, ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(EItems.SILVER_BOLT, ModelTemplates.FLAT_ITEM);
     }
 
 

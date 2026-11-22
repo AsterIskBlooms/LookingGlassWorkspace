@@ -27,6 +27,7 @@ public class MBlockModelGenerators extends BlockModelGenerators {
     public MBlockModelGenerators(Consumer<BlockModelDefinitionGenerator> blockStateOutput, ItemModelOutput itemModelOutput, BiConsumer<Identifier, ModelInstance> modelOutput) {
         super(blockStateOutput, itemModelOutput, modelOutput);
     }
+    public static final TextureSlot OVERLAY = TextureSlot.create("overlay");
 
     public static final ModelTemplate CUBE_ALL_DIRECTIONAL = new ModelTemplate(
             Optional.of(Identifier.fromNamespaceAndPath(MirrorLib.MODID, "block/cube_directional")),
@@ -46,6 +47,10 @@ public class MBlockModelGenerators extends BlockModelGenerators {
             block -> new TextureMapping().put(TextureSlot.ALL, TextureMapping.getBlockTexture(block)),
             CUBE_ALL_DIRECTIONAL_HORIZONTAL
     );
+    public static final ModelTemplate TINTED_GRASS_BLOCK = new ModelTemplate(
+            Optional.of(Identifier.withDefaultNamespace("block/grass_block")),
+            Optional.empty(),
+            TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE, OVERLAY);
 
     public final void createWoodenBoards(final Block block) {
         MultiVariant model = plainVariant(CUBE_DIRECTIONAL.create(block, this.modelOutput));

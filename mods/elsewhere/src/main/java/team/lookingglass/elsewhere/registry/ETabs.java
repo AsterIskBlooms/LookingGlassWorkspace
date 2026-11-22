@@ -15,12 +15,15 @@ public class ETabs {
 
     public static void initialize() {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(output -> {
-            output.insertAfter(Items.GRASS_BLOCK, EBlocks.ARID_GRASS_BLOCK);
-            output.insertAfter(Items.DIRT, EBlocks.ARID_DIRT);
-            output.insertAfter(Items.PODZOL, EBlocks.PEAT, EBlocks.LATERITE);
+            output.insertAfter(Items.COARSE_DIRT,
+                    EBlocks.ARID_GRASS_BLOCK, EBlocks.ARID_DIRT, EBlocks.COARSE_ARID_DIRT,
+                    EBlocks.GLOOMY_GRASS_BLOCK, EBlocks.GLOOMY_DIRT, EBlocks.COARSE_GLOOMY_DIRT
+            );
+            output.insertAfter(Items.PODZOL, EBlocks.LATERITE);
             output.insertAfter(Items.CLAY, EBlocks.SILT, EBlocks.SALT);
 
-            output.insertAfter(Items.RED_SANDSTONE, EBlocks.PINK_SAND, EBlocks.PINK_SANDSTONE, EBlocks.ARID_SAND, EBlocks.BEACHSTONE);
+            output.insertAfter(Items.SANDSTONE, EBlocks.ORANGE_SAND, EBlocks.ORANGE_SANDSTONE);
+            output.insertAfter(Items.RED_SANDSTONE, EBlocks.BEACHSTONE);
 
             output.insertAfter(Items.DEAD_BUSH,
                     EBlocks.MOSS_SPOROPHYTE, EBlocks.RUSTY_MOSS_SPOROPHYTE,
@@ -34,7 +37,7 @@ public class ETabs {
                     EBlocks.RUSTY_MOSS_BLOCK, EBlocks.RUSTY_MOSS_CARPET,
                     EBlocks.OCHRE_MOSS_BLOCK, EBlocks.OCHRE_MOSS_CARPET
             );
-            output.insertAfter(Items.MUD, EBlocks.MOSSY_MUD, EBlocks.MUDSTONE);
+            output.insertAfter(Items.MUD, EBlocks.MOSSY_MUD, EBlocks.MUDSTONE, EBlocks.PEAT);
 
             output.insertAfter(Items.NETHER_SPROUTS, EBlocks.SHORT_SOUL_SPROUT, EBlocks.TALL_SOUL_SPROUT, EBlocks.SOULGLASS_CLUSTER);
 
@@ -42,33 +45,36 @@ public class ETabs {
             output.insertAfter(Items.SMOOTH_BASALT, EBlocks.ROCKWEED_BASALT);
             output.insertAfter(Items.SEAGRASS, EBlocks.SEAGRASS_SAND);
 
-            output.insertAfter(Items.SPRUCE_SAPLING, EBlocks.PINE_SAPLING);
+            output.insertAfter(Items.SPRUCE_SAPLING, EBlocks.PINE_SAPLING, EBlocks.FIR_SAPLING);
+            output.insertAfter(Items.SPRUCE_LOG, EBlocks.PINE_LOG, EBlocks.FIR_LOG);
+            output.insertAfter(Items.SPRUCE_LEAVES, EBlocks.PINE_LEAVES, EBlocks.FIR_LEAVES);
+
             output.insertAfter(Items.BIRCH_SAPLING, EBlocks.CEDAR_SAPLING);
             output.insertAfter(Items.BIRCH_LOG, EBlocks.CEDAR_LOG);
-            output.insertAfter(Items.SPRUCE_LEAVES, EBlocks.PINE_LEAVES);
             output.insertAfter(Items.BIRCH_LEAVES, EBlocks.GILDED_BIRCH_LEAVES, EBlocks.CEDAR_LEAVES);
 
             output.insertAfter(Items.JUNGLE_SAPLING, EBlocks.MAHOGANY_SAPLING);
             output.insertAfter(Items.JUNGLE_LOG, EBlocks.MAHOGANY_LOG);
             output.insertAfter(Items.JUNGLE_LEAVES, EBlocks.MAHOGANY_LEAVES);
 
+            output.insertAfter(Items.DARK_OAK_SAPLING, EBlocks.WILLOW_SAPLING);
+            output.insertAfter(Items.DARK_OAK_LOG, EBlocks.WILLOW_LOG);
+            output.insertAfter(Items.DARK_OAK_LEAVES, EBlocks.WILLOW_LEAVES);
+
             output.insertAfter(Items.TUFF, EBlocks.SHALE);
             output.insertAfter(Items.CALCITE, EBlocks.SODALITE);
             output.insertAfter(Items.POINTED_DRIPSTONE, EBlocks.LIMESTONE);
             output.insertAfter(Items.CINNABAR, EBlocks.ORPIMENT);
             output.insertAfter(Items.SOUL_SOIL, EBlocks.SOUL_STONE);
-            output.insertAfter(Items.AMETHYST_CLUSTER, EBlocks.AMETHYST_SPIRE);
-            output.insertAfter(Items.AMETHYST_CLUSTER, EBlocks.RAW_SOULGLASS, EBlocks.SOULGLASS_CLUSTER);
+            output.insertAfter(Items.AMETHYST_CLUSTER, EBlocks.AMETHYST_SPIRE, EBlocks.RAW_SOULGLASS, EBlocks.SOULGLASS_CLUSTER);
 
-            output.insertAfter(Items.DEEPSLATE_COPPER_ORE, EBlocks.TIN_ORE, EBlocks.CINNABAR_TIN_ORE, EBlocks.DEEPSLATE_TIN_ORE);
-            output.insertAfter(Items.GOLD_ORE, EBlocks.CINNABAR_GOLD_ORE);
-            output.insertAfter(Items.DEEPSLATE_GOLD_ORE, EBlocks.SILVER_ORE, EBlocks.CINNABAR_SILVER_ORE, EBlocks.DEEPSLATE_SILVER_ORE);
+            output.insertAfter(Items.DEEPSLATE_REDSTONE_ORE, EBlocks.CINNABAR_REDSTONE_ORE);
+            output.insertAfter(Items.DEEPSLATE_GOLD_ORE, EBlocks.SILVER_ORE, EBlocks.DEEPSLATE_SILVER_ORE, EBlocks.CINNABAR_SILVER_ORE);
 
             output.insertAfter(Items.NETHER_GOLD_ORE, EBlocks.SOUL_SILVER_ORE);
             output.insertAfter(Items.NETHER_QUARTZ_ORE, EBlocks.SOUL_QUARTZ_ORE);
             output.insertBefore(Items.GILDED_BLACKSTONE, EBlocks.BEJEWELED_CALCITE);
 
-            output.insertAfter(Items.RAW_COPPER_BLOCK, EBlocks.RAW_TIN_BLOCK);
             output.insertAfter(Items.RAW_GOLD_BLOCK, EBlocks.RAW_SILVER_BLOCK);
 
             output.insertAfter(Items.LILY_OF_THE_VALLEY, EBlocks.BLUEBONNET, EBlocks.YELLOW_CONEFLOWER, EBlocks.MAGENTA_CONEFLOWER);
@@ -217,7 +223,14 @@ public class ETabs {
             output.insertAfter(Items.CUT_SANDSTONE, EBlocks.CUT_SANDSTONE_STAIRS);
             output.insertAfter(Blocks.CUT_SANDSTONE_SLAB,
                     EBlocks.CUT_SANDSTONE_WALL,
-                    EBlocks.POLISHED_SANDSTONE, EBlocks.POLISHED_SANDSTONE_STAIRS, EBlocks.POLISHED_SANDSTONE_SLAB, EBlocks.POLISHED_SANDSTONE_WALL);
+                    EBlocks.POLISHED_SANDSTONE, EBlocks.POLISHED_SANDSTONE_STAIRS, EBlocks.POLISHED_SANDSTONE_SLAB, EBlocks.POLISHED_SANDSTONE_WALL,
+
+                    EBlocks.ORANGE_SANDSTONE, EBlocks.ORANGE_SANDSTONE_STAIRS, EBlocks.ORANGE_SANDSTONE_SLAB, EBlocks.ORANGE_SANDSTONE_WALL,
+                    EBlocks.SMOOTH_ORANGE_SANDSTONE, EBlocks.SMOOTH_ORANGE_SANDSTONE_STAIRS, EBlocks.SMOOTH_ORANGE_SANDSTONE_SLAB, EBlocks.SMOOTH_ORANGE_SANDSTONE_WALL,
+                    EBlocks.CUT_ORANGE_SANDSTONE, EBlocks.CUT_ORANGE_SANDSTONE_STAIRS, EBlocks.CUT_ORANGE_SANDSTONE_SLAB, EBlocks.CUT_ORANGE_SANDSTONE_WALL,
+                    EBlocks.CHISELED_ORANGE_SANDSTONE,
+                    EBlocks.POLISHED_ORANGE_SANDSTONE, EBlocks.POLISHED_ORANGE_SANDSTONE_STAIRS, EBlocks.POLISHED_ORANGE_SANDSTONE_SLAB, EBlocks.POLISHED_ORANGE_SANDSTONE_WALL
+            );
 
             output.insertAfter(Items.SMOOTH_RED_SANDSTONE_SLAB,
                     EBlocks.SMOOTH_RED_SANDSTONE_WALL);
@@ -225,12 +238,6 @@ public class ETabs {
             output.insertAfter(Items.CUT_RED_SANDSTONE_SLAB,
                     EBlocks.CUT_RED_SANDSTONE_WALL,
                     EBlocks.POLISHED_RED_SANDSTONE, EBlocks.POLISHED_RED_SANDSTONE_STAIRS, EBlocks.POLISHED_RED_SANDSTONE_SLAB, EBlocks.POLISHED_RED_SANDSTONE_WALL,
-
-                    EBlocks.PINK_SANDSTONE, EBlocks.PINK_SANDSTONE_STAIRS, EBlocks.PINK_SANDSTONE_SLAB, EBlocks.PINK_SANDSTONE_WALL,
-                    EBlocks.SMOOTH_PINK_SANDSTONE, EBlocks.SMOOTH_PINK_SANDSTONE_STAIRS, EBlocks.SMOOTH_PINK_SANDSTONE_SLAB, EBlocks.SMOOTH_PINK_SANDSTONE_WALL,
-                    EBlocks.CUT_PINK_SANDSTONE, EBlocks.CUT_PINK_SANDSTONE_STAIRS, EBlocks.CUT_PINK_SANDSTONE_SLAB, EBlocks.CUT_PINK_SANDSTONE_WALL,
-                    EBlocks.CHISELED_PINK_SANDSTONE,
-                    EBlocks.POLISHED_PINK_SANDSTONE, EBlocks.POLISHED_PINK_SANDSTONE_STAIRS, EBlocks.POLISHED_PINK_SANDSTONE_SLAB, EBlocks.POLISHED_PINK_SANDSTONE_WALL,
 
                     EBlocks.BEACHSTONE, EBlocks.BEACHSTONE_STAIRS, EBlocks.BEACHSTONE_SLAB, EBlocks.BEACHSTONE_WALL, EBlocks.CHISELED_BEACHSTONE,
                     EBlocks.POLISHED_BEACHSTONE, EBlocks.POLISHED_BEACHSTONE_STAIRS, EBlocks.POLISHED_BEACHSTONE_SLAB, EBlocks.POLISHED_BEACHSTONE_WALL,
@@ -257,11 +264,6 @@ public class ETabs {
                     EBlocks.WROUGHT_IRON_GRATE,
                     EBlocks.CUT_WROUGHT_IRON, EBlocks.CUT_WROUGHT_IRON_STAIRS, EBlocks.CUT_WROUGHT_IRON_SLAB,
                     EBlocks.WROUGHT_IRON_BARS
-            );
-            output.insertAfter(Items.COAL_BLOCK,
-                    EBlocks.TIN_BLOCK, EBlocks.CHISELED_TIN,
-                    EBlocks.CUT_TIN, EBlocks.CUT_TIN_STAIRS, EBlocks.CUT_TIN_SLAB,
-                    EBlocks.TIN_BARS
             );
 
             output.insertAfter(
@@ -316,6 +318,10 @@ public class ETabs {
             output.insertAfter(Items.PALE_OAK_STAIRS, EBlocks.PALE_OAK_MOSAIC_STAIRS);
             output.insertAfter(Items.PALE_OAK_SLAB, EBlocks.PALE_OAK_MOSAIC_SLAB, EBlocks.PALE_OAK_BOARDS, EBlocks.PALE_OAK_TRIM);
 
+            output.insertAfter(Items.POPLAR_PLANKS, EBlocks.POPLAR_MOSAIC);
+            output.insertAfter(Items.POPLAR_STAIRS, EBlocks.POPLAR_MOSAIC_STAIRS);
+            output.insertAfter(Items.POPLAR_SLAB, EBlocks.POPLAR_MOSAIC_SLAB, EBlocks.POPLAR_BOARDS, EBlocks.POPLAR_TRIM);
+
             output.insertAfter(Items.CRIMSON_PLANKS, EBlocks.CRIMSON_MOSAIC);
             output.insertAfter(Items.CRIMSON_STAIRS, EBlocks.CRIMSON_MOSAIC_STAIRS);
             output.insertAfter(Items.CRIMSON_SLAB, EBlocks.CRIMSON_MOSAIC_SLAB, EBlocks.CRIMSON_BOARDS, EBlocks.CRIMSON_TRIM);
@@ -349,7 +355,29 @@ public class ETabs {
                     EBlocks.PINE_BOARDS, EBlocks.PINE_TRIM,
                     EBlocks.PINE_FENCE, EBlocks.PINE_FENCE_GATE,
                     EBlocks.PINE_DOOR, EBlocks.PINE_TRAPDOOR,
-                    EBlocks.PINE_PRESSURE_PLATE, EBlocks.PINE_BUTTON
+                    EBlocks.PINE_PRESSURE_PLATE, EBlocks.PINE_BUTTON,
+
+                    EBlocks.FIR_LOG, EBlocks.FIR_WOOD,
+                    EBlocks.STRIPPED_FIR_LOG, EBlocks.STRIPPED_FIR_WOOD,
+                    EBlocks.FIR_PLANKS, EBlocks.FIR_MOSAIC,
+                    EBlocks.FIR_STAIRS, EBlocks.FIR_MOSAIC_STAIRS,
+                    EBlocks.FIR_SLAB, EBlocks.FIR_MOSAIC_SLAB,
+                    EBlocks.FIR_BOARDS, EBlocks.FIR_TRIM,
+                    EBlocks.FIR_FENCE, EBlocks.FIR_FENCE_GATE,
+                    EBlocks.FIR_DOOR, EBlocks.FIR_TRAPDOOR,
+                    EBlocks.FIR_PRESSURE_PLATE, EBlocks.FIR_BUTTON
+            );
+
+            output.insertAfter(Items.DARK_OAK_BUTTON,
+                    EBlocks.WILLOW_LOG, EBlocks.WILLOW_WOOD,
+                    EBlocks.STRIPPED_WILLOW_LOG, EBlocks.STRIPPED_WILLOW_WOOD,
+                    EBlocks.WILLOW_PLANKS, EBlocks.WILLOW_MOSAIC,
+                    EBlocks.WILLOW_STAIRS, EBlocks.WILLOW_MOSAIC_STAIRS,
+                    EBlocks.WILLOW_SLAB, EBlocks.WILLOW_MOSAIC_SLAB,
+                    EBlocks.WILLOW_BOARDS, EBlocks.WILLOW_TRIM,
+                    EBlocks.WILLOW_FENCE, EBlocks.WILLOW_FENCE_GATE,
+                    EBlocks.WILLOW_DOOR, EBlocks.WILLOW_TRAPDOOR,
+                    EBlocks.WILLOW_PRESSURE_PLATE, EBlocks.WILLOW_BUTTON
             );
 
             output.insertAfter(Items.JUNGLE_BUTTON,
@@ -406,8 +434,11 @@ public class ETabs {
             output.insertAfter(Items.BIRCH_SHELF, EBlocks.CEDAR_SHELF);
             output.insertAfter(Items.BIRCH_HANGING_SIGN, EItems.CEDAR_SIGN, EItems.CEDAR_HANGING_SIGN);
 
-            output.insertAfter(Items.SPRUCE_SHELF, EBlocks.PINE_SHELF);
-            output.insertAfter(Items.SPRUCE_HANGING_SIGN, EItems.PINE_SIGN, EItems.PINE_HANGING_SIGN);
+            output.insertAfter(Items.SPRUCE_SHELF, EBlocks.PINE_SHELF, EBlocks.FIR_SHELF);
+            output.insertAfter(Items.SPRUCE_HANGING_SIGN, EItems.PINE_SIGN, EItems.PINE_HANGING_SIGN, EItems.FIR_SIGN, EItems.FIR_HANGING_SIGN);
+
+            output.insertAfter(Items.DARK_OAK_SHELF, EBlocks.WILLOW_SHELF);
+            output.insertAfter(Items.DARK_OAK_HANGING_SIGN, EItems.WILLOW_SIGN, EItems.WILLOW_HANGING_SIGN);
 
             output.insertAfter(Items.JUNGLE_SHELF, EBlocks.MAHOGANY_SHELF);
             output.insertAfter(Items.JUNGLE_HANGING_SIGN, EItems.MAHOGANY_SIGN, EItems.MAHOGANY_HANGING_SIGN);
@@ -423,13 +454,13 @@ public class ETabs {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
             output.insertAfter(Items.DIAMOND_HOE,
-                    EItems.BRONZE_SHOVEL, EItems.BRONZE_PICKAXE, EItems.BRONZE_AXE, EItems.BRONZE_HOE,
                     EItems.ELECTRUM_SHOVEL, EItems.ELECTRUM_PICKAXE, EItems.ELECTRUM_AXE, EItems.ELECTRUM_HOE,
                     EItems.SOULSTEEL_SHOVEL, EItems.SOULSTEEL_PICKAXE, EItems.SOULSTEEL_AXE, EItems.SOULSTEEL_HOE
             );
 
             output.insertAfter(Items.BIRCH_CHEST_BOAT, EItems.CEDAR_BOAT, EItems.CEDAR_CHEST_BOAT);
-            output.insertAfter(Items.SPRUCE_CHEST_BOAT, EItems.PINE_BOAT, EItems.PINE_CHEST_BOAT);
+            output.insertAfter(Items.SPRUCE_CHEST_BOAT, EItems.PINE_BOAT, EItems.PINE_CHEST_BOAT, EItems.FIR_BOAT, EItems.FIR_CHEST_BOAT);
+            output.insertAfter(Items.DARK_OAK_CHEST_BOAT, EItems.WILLOW_BOAT, EItems.WILLOW_CHEST_BOAT);
             output.insertAfter(Items.JUNGLE_CHEST_BOAT, EItems.MAHOGANY_BOAT, EItems.MAHOGANY_CHEST_BOAT);
             output.insertAfter(Items.PALE_OAK_BOAT, EItems.AZALEA_BOAT, EItems.AZALEA_CHEST_BOAT);
 
@@ -437,11 +468,10 @@ public class ETabs {
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(output -> {
-            output.insertAfter(Items.DIAMOND_SWORD, EItems.BRONZE_SWORD, EItems.ELECTRUM_SWORD, EItems.SOULSTEEL_SWORD);
-            output.insertAfter(Items.DIAMOND_SPEAR, EItems.BRONZE_SPEAR, EItems.ELECTRUM_SPEAR, EItems.SOULSTEEL_SPEAR);
-            output.insertAfter(Items.DIAMOND_AXE, EItems.BRONZE_AXE, EItems.ELECTRUM_AXE, EItems.SOULSTEEL_AXE);
+            output.insertAfter(Items.DIAMOND_SWORD, EItems.ELECTRUM_SWORD, EItems.SOULSTEEL_SWORD);
+            output.insertAfter(Items.DIAMOND_SPEAR, EItems.ELECTRUM_SPEAR, EItems.SOULSTEEL_SPEAR);
+            output.insertAfter(Items.DIAMOND_AXE, EItems.ELECTRUM_AXE, EItems.SOULSTEEL_AXE);
             output.insertAfter(Items.DIAMOND_BOOTS,
-                    EItems.BRONZE_HELMET, EItems.BRONZE_CHESTPLATE, EItems.BRONZE_LEGGINGS, EItems.BRONZE_BOOTS,
                     EItems.ELECTRUM_HELMET, EItems.ELECTRUM_CHESTPLATE, EItems.ELECTRUM_LEGGINGS, EItems.ELECTRUM_BOOTS,
                     EItems.SOULSTEEL_HELMET, EItems.SOULSTEEL_CHESTPLATE, EItems.SOULSTEEL_LEGGINGS, EItems.SOULSTEEL_BOOTS
             );
@@ -450,21 +480,20 @@ public class ETabs {
 
             output.insertBefore(Items.WIND_CHARGE, Items.FIRE_CHARGE);
 
+            output.insertBefore(Items.ARROW, EItems.IRON_BOLT, EItems.SILVER_BOLT);
+
             output.insertAfter(Items.TURTLE_HELMET, EItems.VANGUARD_MASK);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.insertAfter(Items.RAW_COPPER, EItems.RAW_TIN);
             output.insertAfter(Items.RAW_GOLD, EItems.RAW_SILVER);
-            output.insertAfter(Items.COPPER_NUGGET, EItems.TIN_NUGGET);
             output.insertAfter(Items.GOLD_NUGGET, EItems.SILVER_NUGGET);
-            output.insertAfter(Items.COPPER_INGOT, EItems.TIN_INGOT);
-            output.insertAfter(Items.GOLD_INGOT, EItems.SILVER_INGOT, EItems.BRONZE_ALLOY, EItems.ELECTRUM_ALLOY, EItems.SOULSTEEL_ALLOY);
+            output.insertAfter(Items.GOLD_INGOT, EItems.SILVER_INGOT, EItems.ELECTRUM_ALLOY, EItems.SOULSTEEL_ALLOY);
             output.insertAfter(Items.QUARTZ, EItems.SOULGLASS_SHARD);
+            output.insertBefore(Items.COPPER_NUGGET, EItems.EMERALD_NUGGET, EItems.DIAMOND_NUGGET);
 //            output.insertAfter(Items.AMETHYST_SHARD, EItems.URANIUM, EItems.URANIUM_SHARD);
 
             output.insertBefore(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
-                    EItems.BRONZE_UPGRADE_SMITHING_TEMPLATE,
                     EItems.ELECTRUM_UPGRADE_SMITHING_TEMPLATE,
                     EItems.SOULSTEEL_UPGRADE_SMITHING_TEMPLATE
             );

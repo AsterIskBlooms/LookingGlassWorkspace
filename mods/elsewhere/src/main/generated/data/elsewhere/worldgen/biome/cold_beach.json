@@ -97,7 +97,9 @@
     "water_color": "#3d57d6"
   },
   "features": [
-    [],
+    [
+      "elsewhere:cold_beach_pond"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"

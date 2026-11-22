@@ -10,6 +10,8 @@ public interface EWoodTypes {
     WoodType CEDAR = new WoodType(createKey("cedar"), BlockSetType.DEFAULT_WOOD);
     WoodType MAHOGANY = new WoodType(createKey("mahogany"), BlockSetType.DEFAULT_WOOD);
     WoodType PINE = new WoodType(createKey("pine"), BlockSetType.DEFAULT_WOOD);
+    WoodType FIR = new WoodType(createKey("fir"), BlockSetType.DEFAULT_WOOD);
+    WoodType WILLOW = new WoodType(createKey("willow"), BlockSetType.DEFAULT_WOOD);
 
     private static String createKey(String name) {
         return Identifier.fromNamespaceAndPath(Elsewhere.MODID, name).toString();

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "elsewhere:block/cinnabar_iron_ore"
-  }
-}

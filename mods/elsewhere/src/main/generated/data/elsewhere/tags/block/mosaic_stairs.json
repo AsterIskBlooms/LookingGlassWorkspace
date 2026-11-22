@@ -9,12 +9,15 @@
     "elsewhere:acacia_mosaic_stairs",
     "elsewhere:cherry_mosaic_stairs",
     "elsewhere:mangrove_mosaic_stairs",
+    "elsewhere:poplar_mosaic_stairs",
     "elsewhere:crimson_mosaic_stairs",
     "elsewhere:warped_mosaic_stairs",
     "elsewhere:azalea_mosaic_stairs",
     "elsewhere:cedar_mosaic_stairs",
     "elsewhere:mahogany_mosaic_stairs",
     "elsewhere:pine_mosaic_stairs",
+    "elsewhere:fir_mosaic_stairs",
+    "elsewhere:willow_mosaic_stairs",
     "minecraft:bamboo_mosaic_stairs"
   ]
 }

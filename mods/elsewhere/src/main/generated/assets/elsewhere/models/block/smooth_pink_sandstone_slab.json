@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "elsewhere:block/smooth_pink_sandstone",
-    "side": "elsewhere:block/smooth_pink_sandstone",
-    "top": "elsewhere:block/smooth_pink_sandstone"
-  }
-}

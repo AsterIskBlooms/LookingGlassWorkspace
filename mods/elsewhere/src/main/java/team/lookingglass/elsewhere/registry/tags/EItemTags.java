@@ -8,10 +8,6 @@ import net.minecraft.world.level.block.Block;
 import team.lookingglass.elsewhere.Elsewhere;
 
 public interface EItemTags {
-    TagKey<Item> REPAIRS_BRONZE_ARMOR = create("repairs_bronze_armor");
-    TagKey<Item> BRONZE_TOOLS = create("bronze_tools");
-    TagKey<Item> BRONZE_EQUIPMENT = create("bronze_equipment");
-
     TagKey<Item> REPAIRS_SOULSTEEL_ARMOR = create("repairs_soulsteel_armor");
     TagKey<Item> SOULSTEEL_TOOLS = create("soulsteel_tools");
     TagKey<Item> SOULSTEEL_EQUIPMENT = create("soulsteel_equipment");
@@ -21,6 +17,8 @@ public interface EItemTags {
     TagKey<Item> ELECTRUM_EQUIPMENT = create("electrum_equipment");
 
     TagKey<Item> REPAIRS_VANGUARD_MASK = create("repairs_vanguard_mask");
+
+    TagKey<Item> BOLTS = create("bolts");
 
     private static TagKey<Item> create(String name) {
         return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Elsewhere.MODID, name));

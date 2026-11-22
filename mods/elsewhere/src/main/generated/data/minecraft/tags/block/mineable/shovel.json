@@ -1,13 +1,16 @@
 {
   "values": [
     "elsewhere:arid_dirt",
+    "elsewhere:coarse_arid_dirt",
     "elsewhere:arid_grass_block",
+    "elsewhere:gloomy_dirt",
+    "elsewhere:coarse_gloomy_dirt",
+    "elsewhere:gloomy_grass_block",
     "elsewhere:laterite",
     "elsewhere:peat",
     "elsewhere:silt",
     "elsewhere:salt",
-    "elsewhere:arid_sand",
-    "elsewhere:pink_sand",
+    "elsewhere:orange_sand",
     "elsewhere:seagrass_sand",
     "elsewhere:chiseled_snow_bricks"
   ]

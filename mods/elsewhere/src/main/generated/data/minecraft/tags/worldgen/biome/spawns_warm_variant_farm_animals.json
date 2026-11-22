@@ -1,14 +1,18 @@
 {
   "values": [
     "elsewhere:shrubland",
+    "elsewhere:arid_shrubland",
     "elsewhere:cedar_forest",
     "elsewhere:rocky_jungle",
-    "elsewhere:tropical_basin",
-    "elsewhere:acacia_flats",
+    "elsewhere:rocky_desert",
+    "elsewhere:dryland",
     "elsewhere:outback",
     "elsewhere:dunes",
     "elsewhere:lush_dunes",
     "elsewhere:cloud_forest",
-    "elsewhere:tidepools"
+    "elsewhere:tropical_basin",
+    "elsewhere:desert_wetland",
+    "elsewhere:tidepools",
+    "elsewhere:salt_flats"
   ]
 }

@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "elsewhere:cut_tin",
-  "result": {
-    "id": "elsewhere:cut_tin_stairs"
-  }
-}

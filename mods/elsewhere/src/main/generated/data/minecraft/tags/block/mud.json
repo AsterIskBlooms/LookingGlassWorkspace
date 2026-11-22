@@ -1,6 +1,8 @@
 {
   "values": [
     "minecraft:mud",
+    "elsewhere:mossy_mud",
+    "minecraft:mud",
     "elsewhere:mossy_mud"
   ]
 }

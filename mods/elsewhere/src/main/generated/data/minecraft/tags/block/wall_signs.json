@@ -2,6 +2,9 @@
   "values": [
     "elsewhere:azalea_wall_sign",
     "elsewhere:cedar_wall_sign",
-    "elsewhere:mahogany_wall_sign"
+    "elsewhere:mahogany_wall_sign",
+    "elsewhere:pine_wall_sign",
+    "elsewhere:fir_wall_sign",
+    "elsewhere:willow_wall_sign"
   ]
 }
